@@ -1,0 +1,8 @@
+jupyter
+praw
+bs4
+requests
+snscrape
+pandas
+python-dateutil
+spacy

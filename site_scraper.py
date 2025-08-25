@@ -1,0 +1,134 @@
+import csv
+from datetime import datetime, timedelta, timezone
+from typing import Literal, Optional
+from urllib.parse import urljoin
+
+import requests
+from bs4 import BeautifulSoup
+
+from article_scraper import ArticleScraper
+
+
+class SiteScraper:
+    title_strategy: Literal["text", "attribute"]
+    title_attribute: Optional[str] = None  # e.g., "title"
+
+    def __init__(self, name, base_url, traffic, time_selector, block_selector, link_selector, title_strategy,
+                 title_attribute=None, weight=0.0):
+        self.name = name
+        self.base_url = base_url
+        self.traffic = traffic
+        self.weight = weight
+        self.articles = []
+        self.time_selector = time_selector
+        self.block_selector = block_selector
+        self.link_selector = link_selector
+        self.title_strategy = title_strategy
+        self.title_attribute = title_attribute
+
+    def compute_weight(self, total_traffic):
+        self.weight = self.traffic / total_traffic
+
+    def short_print(self):
+        print(f"\n📡 Site: {self.name} — {len(self.articles)} articles\n" + "-" * 60)
+        for article in self.articles:
+            title = article.get("title", "")
+            keywords = ", ".join(article.get("keywords", [])[:3])
+            summary_words = " ".join(article.get("summary", "").split()[:20])
+            timestamp = article.get("timestamp")
+            readable_time = timestamp.strftime("%Y-%m-%d %H:%M:%S %Z") if timestamp else "N/A"
+
+            print(f"📰 {title}")
+            print(f"🔑 Keywords: {keywords}")
+            print(f"📄 Summary: {summary_words}...")
+            print(f"🕒 Published: {readable_time}")
+            print("-" * 60)
+
+    def save_to_csv(self):
+        filename = f"{self.name}_{datetime.now().strftime('%Y%m%d')}.csv"
+        with open(filename, mode="w", encoding="utf-8", newline="") as file:
+            writer = csv.DictWriter(file, fieldnames=[
+                "site", "timestamp", "title", "entities", "keywords", "summary", "url", "comments"
+            ])
+            writer.writeheader()
+            for article in self.articles:
+                # Skip external links
+                if self.base_url not in article["url"]:
+                    continue
+                writer.writerow({
+                    "site": article["site"],
+                    "timestamp": article["timestamp"].isoformat(),
+                    "title": article["title"],
+                    "entities": article["entities"],
+                    "keywords": article["keywords"],
+                    "summary": article["summary"],
+                    "url": article["url"],
+                    "comments": article["comments"]
+                })
+
+    def load_recent_from_csv(self, minutes=180):
+        filename = f"{self.name}_{datetime.now().strftime('%Y%m%d')}.csv"
+        cutoff = datetime.now(timezone.utc) - timedelta(minutes=minutes)
+        self.articles = []
+
+        try:
+            with open(filename, mode="r", encoding="utf-8") as file:
+                reader = csv.DictReader(file)
+                for row in reader:
+                    try:
+                        timestamp = datetime.fromisoformat(row["timestamp"])
+                        if timestamp.tzinfo is None:
+                            timestamp = timestamp.replace(tzinfo=timezone.utc)
+
+                        if timestamp >= cutoff:
+                            self.articles.append({
+                                "site": row["site"],
+                                "timestamp": timestamp,
+                                "title": row["title"],
+                                "entities": row["entities"],
+                                "keywords": row["keywords"].split(","),
+                                "summary": row["summary"],
+                                "url": row["url"],
+                                "comments": int(row["comments"])
+                            })
+                    except Exception:
+                        continue
+        except FileNotFoundError:
+            print(f"CSV file not found: {filename}")
+
+    def scrape_recent_articles(self, minutes=180):
+        from datetime import timezone
+        cutoff = datetime.now(timezone.utc) - timedelta(minutes=minutes)
+
+        response = requests.get(self.base_url, headers={"User-Agent": "Mozilla/5.0"})
+        soup = BeautifulSoup(response.text, "html.parser")
+
+        for block in soup.select(self.block_selector):
+            try:
+                link_tag = block.select_one(self.link_selector)
+                if not link_tag or not link_tag.has_attr("href"):
+                    continue
+
+                relative_url = link_tag["href"]
+                if not relative_url.startswith("http"):
+                    full_url = urljoin(self.base_url, relative_url)
+                else:
+                    full_url = relative_url
+
+                if self.title_strategy == "text":
+                    homepage_title = link_tag.get_text(strip=True)
+                elif self.title_strategy == "attribute" and self.title_attribute:
+                    homepage_title = link_tag.get(self.title_attribute, "").strip()
+                else:
+                    continue
+
+                article_scraper = ArticleScraper(full_url, homepage_title, self.time_selector)
+                article_scraper.fetch()
+                article_data = article_scraper.extract()
+
+                if article_data and article_data["timestamp"] >= cutoff:
+                    article_data["site"] = self.name
+                    self.articles.append(article_data)
+
+            except Exception:
+                continue
