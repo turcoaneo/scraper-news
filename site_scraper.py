@@ -1,3 +1,4 @@
+import ast
 import csv
 from datetime import datetime, timedelta, timezone
 from typing import Literal, Optional
@@ -6,7 +7,35 @@ from urllib.parse import urljoin
 import requests
 from bs4 import BeautifulSoup
 
+from article import Article
 from article_scraper import ArticleScraper
+
+
+def is_filtered(article, filter_place_keys):
+    including = set(word.lower() for word in filter_place_keys.get("including", []))
+    excluding = set(word.lower() for word in filter_place_keys.get("excluding", []))
+    places = filter_place_keys.get("place", [])
+
+    # Gather text from specified places
+    text_blob = []
+    for place in places:
+        value = article.get(place, "")
+        if isinstance(value, list):
+            text_blob.extend(value)
+        elif isinstance(value, str):
+            text_blob.append(value)
+
+    combined_text = " ".join(text_blob).lower()
+
+    # Exclude if any exclusion keyword is found
+    if any(word in combined_text for word in excluding):
+        return True
+
+    # Include only if at least one inclusion keyword is found
+    if including and not any(word in combined_text for word in including):
+        return True
+
+    return False
 
 
 class SiteScraper:
@@ -19,12 +48,18 @@ class SiteScraper:
         self.base_url = base_url
         self.traffic = traffic
         self.weight = weight
-        self.articles = []
+        self.articles = set()
         self.time_selector = time_selector
         self.block_selector = block_selector
         self.link_selector = link_selector
         self.title_strategy = title_strategy
         self.title_attribute = title_attribute
+
+        self.filter_place_keys = {
+            "place": ["url", "summary", "keywords", "title"],
+            "including": [],
+            "excluding": ["video", "Becali"],
+        }
 
     def compute_weight(self, total_traffic):
         self.weight = self.traffic / total_traffic
@@ -53,7 +88,7 @@ class SiteScraper:
             writer.writeheader()
             for article in self.articles:
                 # Skip external links
-                if self.base_url not in article["url"]:
+                if self.base_url not in article["url"] or is_filtered(article, self.filter_place_keys):
                     continue
                 writer.writerow({
                     "site": article["site"],
@@ -66,8 +101,8 @@ class SiteScraper:
                     "comments": article["comments"]
                 })
 
-    def load_recent_from_csv(self, minutes=180):
-        filename = f"{self.name}_{datetime.now().strftime('%Y%m%d')}.csv"
+    def load_recent_from_csv(self, minutes=180, filename_override=None):
+        filename = filename_override or f"{self.name}_{datetime.now().strftime('%Y%m%d')}.csv"
         cutoff = datetime.now(timezone.utc) - timedelta(minutes=minutes)
         self.articles = []
 
@@ -81,17 +116,20 @@ class SiteScraper:
                             timestamp = timestamp.replace(tzinfo=timezone.utc)
 
                         if timestamp >= cutoff:
-                            self.articles.append({
-                                "site": row["site"],
-                                "timestamp": timestamp,
-                                "title": row["title"],
-                                "entities": row["entities"],
-                                "keywords": row["keywords"].split(","),
-                                "summary": row["summary"],
-                                "url": row["url"],
-                                "comments": int(row["comments"])
-                            })
-                    except Exception:
+                            article = Article(
+                                site=row["site"],
+                                timestamp=timestamp,
+                                title=row["title"],
+                                entities=ast.literal_eval(row["entities"]),
+                                # keywords=row["keywords"].split(","),
+                                keywords=[k.strip() for k in row["keywords"].split(",")],
+                                summary=row["summary"],
+                                url=row["url"],
+                                comments=int(row["comments"])
+                            )
+                            self.articles.append(article)
+                    except Exception as e:
+                        print(e)
                         continue
         except FileNotFoundError:
             print(f"CSV file not found: {filename}")
@@ -128,7 +166,7 @@ class SiteScraper:
 
                 if article_data and article_data["timestamp"] >= cutoff:
                     article_data["site"] = self.name
-                    self.articles.append(article_data)
+                    self.articles.add(article_data)
 
             except Exception:
                 continue

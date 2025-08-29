@@ -63,7 +63,7 @@ class ArticleScraper:
         self.data["title"] = self._extract_title()
         self.data["timestamp"] = self.extract_timestamp_from_selector(self.time_selector)
         self.data["entities"] = extract_named_entities(summary)
-        self.data["keywords"] = summary
+        self.data["keywords"] = self.extract_keywords_from_summary()
         self.data["summary"] = summary
         self.data["url"] = self.homepage_url
         self.data["comments"] = self._extract_comments()

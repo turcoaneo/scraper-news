@@ -6,3 +6,4 @@ snscrape
 pandas
 python-dateutil
 spacy
+pytest
