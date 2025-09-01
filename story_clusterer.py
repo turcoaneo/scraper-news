@@ -6,7 +6,7 @@ def _jaccard_similarity(set1, set2):
 
 def _display_cluster_info(cluster):
     print("-" * 60)
-    for article in cluster["articles"][0]:
+    for article in cluster:
         print(f"📰 {article.title}")
         print(f"🔗 {article.url}")
         print(f"🔑 Keywords: {', '.join(article.keywords)}")
@@ -21,9 +21,6 @@ def _verify_cluster(article_i, article_j, cluster_id, clusters, threshold, compo
         component_i = set(article_i.title.split(" "))
         component_j = set(article_j.title.split(" "))
 
-    # intersection = component_i & component_j
-    # union = component_i | component_j
-    # jaccard = len(intersection) / len(union) if union else 0
     jaccard = _jaccard_similarity(component_i, component_j)
     if jaccard >= threshold:  # Threshold can be tuned
         # Check if either article is already in a cluster
@@ -35,8 +32,8 @@ def _verify_cluster(article_i, article_j, cluster_id, clusters, threshold, compo
                 clusters[cid].update([article_i])
                 break
         else:
-            clusters[cluster_id] = {article_i, article_j}
-            cluster_id += 1
+            clusters[cluster_id[0]] = {article_i, article_j}
+            cluster_id[0] = cluster_id[0] + 1
         return True
     return False
 
@@ -48,7 +45,7 @@ class StoryClusterer:
         self.threshold_features = threshold_features
         for site in site_scrapers:
             site.load_recent_from_csv(minutes)
-        self.clusters = []
+        self.clusters = dict()
 
     def cluster_stories(self):
         all_articles = []
@@ -65,7 +62,7 @@ class StoryClusterer:
 
         article_array = list(all_articles)
         clusters = {}
-        cluster_id = 0
+        cluster_id = [0]
 
         for i in range(len(article_array)):
             article_i = article_array[i]
@@ -81,33 +78,34 @@ class StoryClusterer:
                 if is_clustered:
                     article_i.clustered = True
                     article_j.clustered = True
-        self.clusters.append(clusters)
+        self.clusters = clusters
+        self.print_score_by_cluster()
 
     def score_clusters(self):
         scored = []
-        for cluster in self.clusters:
+        for key, articles in self.clusters.items():
             score = sum(
                 next(scraper.weight for scraper in self.site_scrapers if scraper.name == article.site)
-                for article in cluster[0]
+                for article in articles
             )
             scored.append({
                 "score": round(score, 3),
-                "articles": cluster
+                "cluster": key
             })
         return sorted(scored, key=lambda x: x["score"], reverse=True)
 
-    def print_clusters(self):
+    def print_score_by_cluster(self):
         for i, cluster in enumerate(self.score_clusters(), 1):
             print(f"\n🧠 Cluster #{i} — Score: {cluster['score']}")
-            _display_cluster_info(cluster)
 
     def print_matched_clusters(self):
         print("\n🔍 Matched Clusters Across Multiple Sites")
         print("=" * 60)
-        for i, cluster in enumerate(self.score_clusters(), 1):
-            sites = {article.site for article in cluster["articles"][0]}
+        for i, scored_cluster in enumerate(self.score_clusters(), 1):
+            articles_cluster = self.clusters[i - 1]
+            sites = {article.site for article in articles_cluster}
             if len(sites) < 2:
                 continue  # Skip single-source clusters
 
-            print(f"\n🧠 Cluster #{i} — Score: {cluster['score']} — Sites: {', '.join(sites)}")
-            _display_cluster_info(cluster)
+            print(f"\n🧠 Cluster #{i} — Score: {scored_cluster['score']} — Sites: {', '.join(sites)}")
+            _display_cluster_info(articles_cluster)
