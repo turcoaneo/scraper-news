@@ -104,7 +104,7 @@ class TestStoryClusterer(unittest.TestCase):
         clusters = self.clusterer.clusters
         self.assertEqual(len(clusters), 1)  # One cluster for Chivu, none for Hagi
         chivu_cluster = clusters[0]
-        titles = [article.title for article in chivu_cluster[0]]
+        titles = [article.title for article in chivu_cluster]
         self.assertIn("Cristi Chivu la Inter Milano", titles)
         self.assertIn("Cristi Chivu dorit de Inter", titles)
 
@@ -128,7 +128,7 @@ class TestStoryClusterer(unittest.TestCase):
         clusterer_bug = StoryClusterer([scraper_bug], minutes=180)
         clusterer_bug.cluster_stories()
 
-        cluster_set = self.clusterer.clusters[0][0]
+        cluster_set = self.clusterer.clusters[0]
         features = next(iter(cluster_set)).features
         # Expecting 'Cristi Chivu' as one entity, but instead we get individual letters
         self.assertNotIn("C", features)
@@ -147,7 +147,7 @@ class TestStoryClusterer(unittest.TestCase):
         clusterer_good = StoryClusterer([scraper_good], minutes=180)
         clusterer_good.cluster_stories()
 
-        cluster_set = self.clusterer.clusters[0][0]
+        cluster_set = self.clusterer.clusters[0]
         features = next(iter(cluster_set)).features
         self.assertIn("Cristi Chivu", features)
         self.assertIn("Inter Milano", features)

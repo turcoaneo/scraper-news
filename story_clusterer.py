@@ -63,14 +63,16 @@ class StoryClusterer:
         article_array = list(all_articles)
         clusters = {}
         cluster_id = [0]
+        visited = set()
 
         for i in range(len(article_array)):
             article_i = article_array[i]
-            if article_i.clustered:
+            if article_i.clustered or article_i.site in visited:
                 continue
+            visited.add(article_i.site)
             for j in range(i + 1, len(article_array)):
                 article_j = article_array[j]
-                if article_j.clustered:
+                if article_j.clustered or article_j.site in visited:
                     continue
                 is_clustered = _verify_cluster(article_i, article_j, cluster_id, clusters, self.threshold_title, "title")
                 if not is_clustered:
@@ -78,6 +80,8 @@ class StoryClusterer:
                 if is_clustered:
                     article_i.clustered = True
                     article_j.clustered = True
+                    visited.add(article_j.site)
+            visited = set()
         self.clusters = clusters
         self.print_score_by_cluster()
 

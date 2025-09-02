@@ -19,7 +19,7 @@ def is_filtered(article, filter_place_keys):
     # Gather text from specified places
     text_blob = []
     for place in places:
-        value = article.get(place, "")
+        value = getattr(article, place, "")
         if isinstance(value, list):
             text_blob.extend(value)
         elif isinstance(value, str):
@@ -43,7 +43,7 @@ class SiteScraper:
     title_attribute: Optional[str] = None  # e.g., "title"
 
     def __init__(self, name, base_url, traffic, time_selector, block_selector, link_selector, title_strategy,
-                 title_attribute=None, weight=0.0):
+                 title_attribute=None, weight=0.0, filter_place_keys=None):
         self.name = name
         self.base_url = base_url
         self.traffic = traffic
@@ -55,11 +55,14 @@ class SiteScraper:
         self.title_strategy = title_strategy
         self.title_attribute = title_attribute
 
-        self.filter_place_keys = {
-            "place": ["url", "summary", "keywords", "title"],
-            "including": [],
-            "excluding": ["video", "Becali"],
-        }
+        if filter_place_keys is None:
+            self.filter_place_keys = {
+                "place": ["url", "summary", "keywords", "title"],
+                "including": [],
+                "excluding": ["video", "Becali"],
+            }
+        else:
+            self.filter_place_keys = filter_place_keys
 
     def compute_weight(self, total_traffic):
         self.weight = self.traffic / total_traffic
@@ -67,10 +70,10 @@ class SiteScraper:
     def short_print(self):
         print(f"\n📡 Site: {self.name} — {len(self.articles)} articles\n" + "-" * 60)
         for article in self.articles:
-            title = article.get("title", "")
-            keywords = ", ".join(article.get("keywords", [])[:3])
-            summary_words = " ".join(article.get("summary", "").split()[:20])
-            timestamp = article.get("timestamp")
+            title = getattr(article, "title", "")
+            keywords = ", ".join(getattr(article, "keywords", [])[:3])
+            summary_words = " ".join(getattr(article, "summary", "").split()[:20])
+            timestamp = getattr(article, "timestamp")
             readable_time = timestamp.strftime("%Y-%m-%d %H:%M:%S %Z") if timestamp else "N/A"
 
             print(f"📰 {title}")
@@ -88,17 +91,18 @@ class SiteScraper:
             writer.writeheader()
             for article in self.articles:
                 # Skip external links
-                if self.base_url not in article["url"] or is_filtered(article, self.filter_place_keys):
+                if self.base_url not in article.url or is_filtered(article, self.filter_place_keys):
                     continue
+                title = article.title
                 writer.writerow({
-                    "site": article["site"],
-                    "timestamp": article["timestamp"].isoformat(),
-                    "title": article["title"],
-                    "entities": article["entities"],
-                    "keywords": article["keywords"],
-                    "summary": article["summary"],
-                    "url": article["url"],
-                    "comments": article["comments"]
+                    "site": article.site,
+                    "timestamp": article.timestamp.isoformat(),
+                    "title": title,
+                    "entities": article.entities,
+                    "keywords": article.keywords,
+                    "summary": article.summary,
+                    "url": article.url,
+                    "comments": article.comments
                 })
 
     def load_recent_from_csv(self, minutes=180, filename_override=None):
@@ -165,8 +169,10 @@ class SiteScraper:
                 article_data = article_scraper.extract()
 
                 if article_data and article_data["timestamp"] >= cutoff:
-                    article_data["site"] = self.name
-                    self.articles.add(article_data)
+                    self.articles.add(Article(self.name, article_data["timestamp"], article_data["title"],
+                                              article_data["entities"], article_data["keywords"],
+                                              article_data["summary"], article_data["url"], article_data["comments"]))
 
-            except Exception:
+            except Exception as ex:
+                print("Failing scraping recent articles - ", ex)
                 continue

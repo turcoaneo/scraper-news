@@ -40,11 +40,11 @@ class ArticleScraper:
             response = requests.get(self.homepage_url, headers={"User-Agent": "Mozilla/5.0"})
             if response.status_code == 200:
                 self.soup = BeautifulSoup(response.text, "html.parser")
-                self.valid = self._validate_article()
+                self.valid = self.validate_article()
         except Exception:
             self.valid = False
 
-    def _validate_article(self):
+    def validate_article(self):
         page_title_tag = self.soup.find("h1")
         if not page_title_tag:
             return False
@@ -60,7 +60,7 @@ class ArticleScraper:
 
         summary = self._extract_summary()
 
-        self.data["title"] = self._extract_title()
+        self.data["title"] = self.extract_title()
         self.data["timestamp"] = self.extract_timestamp_from_selector(self.time_selector)
         self.data["entities"] = extract_named_entities(summary)
         self.data["keywords"] = self.extract_keywords_from_summary()
@@ -70,7 +70,7 @@ class ArticleScraper:
 
         return self.data
 
-    def _extract_title(self):
+    def extract_title(self):
         tag = self.soup.find("h1")
         return tag.get_text(strip=True) if tag else ""
 
