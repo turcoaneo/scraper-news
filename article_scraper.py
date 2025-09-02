@@ -9,9 +9,9 @@ from dateutil import parser
 from named_entity import NamedEntity
 
 stopwords = {
-            "asta", "ăsta", "acesta", "această", "există", "care", "pentru", "este", "și", "din", "cu", "sunt",
-            "mai", "mult", "foarte", "fie", "cum", "dar", "nu", "în", "la", "de"
-        }
+    "asta", "ăsta", "acesta", "această", "există", "care", "pentru", "este", "și", "din", "cu", "sunt",
+    "mai", "mult", "foarte", "fie", "cum", "dar", "nu", "în", "la", "de"
+}
 
 
 def extract_named_entities(summary):
@@ -54,7 +54,7 @@ class ArticleScraper:
 
         return homepage_title[:30] in page_title or page_title[:30] in homepage_title
 
-    def extract(self):
+    def extract_data(self):
         if not self.valid or not self.soup:
             return None
 
@@ -70,7 +70,28 @@ class ArticleScraper:
 
         return self.data
 
-    def extract_title(self):
+    def extract_title(self, unwanted_tags=None):
+        if unwanted_tags is None:
+            unwanted_tags = ["Exclusiv", "UPDATE", "Oficial", "FOTO", "VIDEO", "FOTO ȘI VIDEO", "EXCLUSIV / UPDATE"]
+
+        tag = self.soup.find("h1")
+        if not tag:
+            return ""
+
+        # Remove span tags with known classes
+        for span in tag.find_all("span", class_=["tag", "marcaj"]):
+            span.extract()
+
+        title = tag.get_text(strip=True)
+
+        # Remove unwanted phrases from the beginning of the title
+        for phrase in unwanted_tags:
+            if title.upper().startswith(phrase.upper()):
+                title = title[len(phrase):].strip(" :–-")
+
+        return title
+
+    def extract_title_naive(self):
         tag = self.soup.find("h1")
         return tag.get_text(strip=True) if tag else ""
 

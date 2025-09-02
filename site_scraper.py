@@ -166,7 +166,7 @@ class SiteScraper:
 
                 article_scraper = ArticleScraper(full_url, homepage_title, self.time_selector)
                 article_scraper.fetch()
-                article_data = article_scraper.extract()
+                article_data = article_scraper.extract_data()
 
                 if article_data and article_data["timestamp"] >= cutoff:
                     self.articles.add(Article(self.name, article_data["timestamp"], article_data["title"],
