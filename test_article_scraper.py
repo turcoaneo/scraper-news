@@ -22,7 +22,7 @@ class TestArticleScraper(unittest.TestCase):
         '''
         scraper = ArticleScraper("url", "title", "")
         scraper.soup = BeautifulSoup(html, "html.parser")
-        self.assertEqual(scraper.extract_title_naive(), "„Colosseumul” României e gata în proporție de 70%")
+        self.assertEqual(scraper.extract_title(), "„Colosseumul” României e gata în proporție de 70%")
 
     def test_title_without_span(self):
         html = '<h1>Un meci spectaculos în Liga 1</h1>'

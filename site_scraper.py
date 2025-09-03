@@ -11,6 +11,10 @@ from article import Article
 from article_scraper import ArticleScraper
 
 
+def sanitize_quotes(text):
+    return text.replace("„", '"').replace("”", '"') if text else text
+
+
 def is_filtered(article, filter_place_keys):
     including = set(word.lower() for word in filter_place_keys.get("including", []))
     excluding = set(word.lower() for word in filter_place_keys.get("excluding", []))
@@ -85,9 +89,11 @@ class SiteScraper:
     def save_to_csv(self):
         filename = f"{self.name}_{datetime.now().strftime('%Y%m%d')}.csv"
         with open(filename, mode="w", encoding="utf-8", newline="") as file:
-            writer = csv.DictWriter(file, fieldnames=[
+            columns = [
                 "site", "timestamp", "title", "entities", "keywords", "summary", "url", "comments"
-            ])
+            ]
+            writer = csv.DictWriter(file, fieldnames=columns, quoting=csv.QUOTE_ALL)
+
             writer.writeheader()
             for article in self.articles:
                 # Skip external links
@@ -105,10 +111,10 @@ class SiteScraper:
                     "comments": article.comments
                 })
 
+    # noinspection PyTypeChecker
     def load_recent_from_csv(self, minutes=180, filename_override=None):
         filename = filename_override or f"{self.name}_{datetime.now().strftime('%Y%m%d')}.csv"
         cutoff = datetime.now(timezone.utc) - timedelta(minutes=minutes)
-        self.articles = []
 
         try:
             with open(filename, mode="r", encoding="utf-8") as file:
@@ -123,15 +129,15 @@ class SiteScraper:
                             article = Article(
                                 site=row["site"],
                                 timestamp=timestamp,
-                                title=row["title"],
-                                entities=ast.literal_eval(row["entities"]),
+                                title=sanitize_quotes(row["title"]),
+                                entities=ast.literal_eval(sanitize_quotes(row["entities"])),
                                 # keywords=row["keywords"].split(","),
-                                keywords=[k.strip() for k in row["keywords"].split(",")],
-                                summary=row["summary"],
+                                keywords=[k.strip() for k in sanitize_quotes(row["keywords"]).split(",")],
+                                summary=sanitize_quotes(row["summary"]),
                                 url=row["url"],
                                 comments=int(row["comments"])
                             )
-                            self.articles.append(article)
+                            self.articles.add(article)
                     except Exception as e:
                         print(e)
                         continue

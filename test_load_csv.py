@@ -18,6 +18,29 @@ def create_csv(filename, rows):
 
 class TestLoadCsv(unittest.TestCase):
 
+    def test_load_recent_from_csv_with_romanian_quotes(self):
+        scraper = SiteScraper("gsp", "https://example.com", 100, "", "", "", "text")
+        now = datetime.now(timezone.utc)
+        rows = [{
+            "site": "gsp",
+            "timestamp": (now - timedelta(minutes=5)).isoformat(),
+            "title": "„Demisia, demisia!” » Prima „ciocnire” a sezonului",
+            "entities": "['Farul', 'Petrolul', 'Liviu Ciobotariu']",
+            "keywords": "farul, „demisia”, petrolul",
+            "summary": "Suporterii au scandat „Demisia” și „Jucați fotbal”",
+            "url": "https://gsp.ro/article",
+            "comments": "2"
+        }]
+        with tempfile.NamedTemporaryFile(delete=False, suffix=".csv") as tmp:
+            create_csv(tmp.name, rows)
+            scraper.load_recent_from_csv(minutes=180, filename_override=tmp.name)
+
+        self.assertEqual(len(scraper.articles), 1)
+        article = scraper.articles.pop()
+        self.assertIn("Demisia", article.title)
+        self.assertIn("Jucați fotbal", article.summary)
+        self.assertEqual(article.comments, 2)
+
     def test_load_recent_from_csv_all_loaded(self):
         scraper = SiteScraper("digisport", "https://example.com", 100, "", "", "", "text")
         now = datetime.now(timezone.utc)

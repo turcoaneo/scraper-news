@@ -25,7 +25,6 @@ class ArticleScraper:
         self.time_selector = time_selector
         self.soup = None
         self.valid = False
-        self.data = {}
 
     def extract_keywords_from_summary(self):
         summary = self._extract_summary().lower()
@@ -60,15 +59,15 @@ class ArticleScraper:
 
         summary = self._extract_summary()
 
-        self.data["title"] = self.extract_title()
-        self.data["timestamp"] = self.extract_timestamp_from_selector(self.time_selector)
-        self.data["entities"] = extract_named_entities(summary)
-        self.data["keywords"] = self.extract_keywords_from_summary()
-        self.data["summary"] = summary
-        self.data["url"] = self.homepage_url
-        self.data["comments"] = self._extract_comments()
-
-        return self.data
+        return {
+            "title": str(self.extract_title()),
+            "timestamp": self.extract_timestamp_from_selector(self.time_selector),
+            "entities": ", ".join(extract_named_entities(summary)),
+            "keywords": ", ".join(self.extract_keywords_from_summary()),
+            "summary": str(summary),
+            "url": str(self.homepage_url),
+            "comments": str(self._extract_comments())
+        }
 
     def extract_title(self, unwanted_tags=None):
         if unwanted_tags is None:
