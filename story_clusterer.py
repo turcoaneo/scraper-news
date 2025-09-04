@@ -9,8 +9,8 @@ def _display_cluster_info(cluster):
     for article in cluster:
         print(f"📰 {article.title}")
         print(f"🔗 {article.url}")
-        print(f"🔑 Keywords: {', '.join(article.keywords)}")
-        print(f"🏷️ Entities: {', '.join(article.entities)}")
+        print(f"🔑 Keywords: {article.keywords}")
+        print(f"🏷️ Entities: {article.entities}")
         print("-" * 60)
 
 
@@ -51,10 +51,10 @@ class StoryClusterer:
         all_articles = []
         for scraper in self.site_scrapers:
             for article in scraper.articles:
-                entities = list(article.entities) if article.entities else []
+                entities = article.entities if article.entities else []
                 if isinstance(entities, str):
                     entities = [entities]
-                keywords = list(article.keywords) if article.keywords else []
+                keywords = article.keywords if article.keywords else []
                 if isinstance(keywords, str):
                     keywords = [keywords]
                 article.features = set(entities) | set(keywords)
@@ -94,7 +94,8 @@ class StoryClusterer:
             )
             scored.append({
                 "score": round(score, 3),
-                "cluster": key
+                "cluster": key,
+                "articles": articles
             })
         return sorted(scored, key=lambda x: x["score"], reverse=True)
 

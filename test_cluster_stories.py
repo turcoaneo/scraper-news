@@ -69,7 +69,7 @@ def test_cluster_stories_grouping():
 
     assert len(clusterer.clusters) == 2
 
-    cluster_titles = [[a["title"] for a in cluster] for cluster in clusterer.clusters]
+    cluster_titles = [[a.title for a in cluster] for cluster in clusterer.clusters.values()]
 
     # Check that Argeș articles are clustered together
     assert any("Pițurcă" in t and "Andone" in t for t in cluster_titles[0] + cluster_titles[1])

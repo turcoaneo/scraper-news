@@ -130,7 +130,7 @@ class SiteScraper:
                                 site=row["site"],
                                 timestamp=timestamp,
                                 title=sanitize_quotes(row["title"]),
-                                entities=ast.literal_eval(sanitize_quotes(row["entities"])),
+                                entities=sanitize_quotes(row["entities"]),
                                 # keywords=row["keywords"].split(","),
                                 keywords=[k.strip() for k in sanitize_quotes(row["keywords"]).split(",")],
                                 summary=sanitize_quotes(row["summary"]),
