@@ -72,7 +72,10 @@ class StoryClusterer:
             visited.add(article_i.site)
             for j in range(i + 1, len(article_array)):
                 article_j = article_array[j]
-                if article_j.clustered or article_j.site in visited or article_i.url == article_j.url:
+                if article_i.url == article_j.url:
+                    print(f"Shared article {article_i.url} on {article_i.site} - {article_j.site} skipped",
+                          article_j.url, article_i.site, article_j.site)
+                if article_j.clustered or article_j.site in visited:
                     continue
                 is_clustered = _verify_cluster(article_i, article_j, cluster_id, clusters, self.threshold_title, "title")
                 if not is_clustered:
