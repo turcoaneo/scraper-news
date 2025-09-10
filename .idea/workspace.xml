@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="fa16a684-d2de-4beb-bea4-ae9fd900688f" name=" Basic task." comment=" Basic task. Remove output." />
+    <list id="99de0803-d25a-4ab6-898b-1284579f9db3" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="Basic-task" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="31HNgK2ZhbLoEvWlFcJKMMwjIDh" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python tests.Python tests for test_article_extract_data.TestArticleExtractor.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_article_extract_data.TestArticleExtractor.test_extract_data_returns_expected_dict.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_article_extract_data.TestArticleExtractor.test_extract_data_returns_none_if_invalid.executor&quot;: &quot;Debug&quot;,
+    &quot;Python tests.Python tests for test_article_extract_data.TestArticleExtractor.test_extract_data_returns_none_if_no_soup.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_article_filter.TestArticleFilter.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_article_filter.TestArticleFilter.test_including_keyword_passes.executor&quot;: &quot;Debug&quot;,
+    &quot;Python tests.Python tests for test_article_filter.TestArticleFilter.test_video_title.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_article_filter.TestArticleFilter.test_video_url.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_article_scraper.TestArticleScraper.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_article_scraper.TestArticleScraper.test_digisport_title.executor&quot;: &quot;Debug&quot;,
+    &quot;Python tests.Python tests for test_article_scraper.TestArticleScraper.test_gsp_title_with_multiple_tags.executor&quot;: &quot;Debug&quot;,
+    &quot;Python tests.Python tests for test_article_scraper.TestNamedEntityExtraction.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_article_scraper.TestNamedEntityExtraction.test_named_entities.executor&quot;: &quot;Debug&quot;,
+    &quot;Python tests.Python tests for test_cluster_stories.test_cluster_stories_grouping.executor&quot;: &quot;Debug&quot;,
+    &quot;Python tests.Python tests for test_load_csv.TestLoadCsv.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_load_csv.TestLoadCsv.test_load_recent_from_csv_all_loaded.executor&quot;: &quot;Debug&quot;,
+    &quot;Python tests.Python tests for test_load_csv.TestLoadCsv.test_load_recent_from_csv_none_loaded.executor&quot;: &quot;Debug&quot;,
+    &quot;Python tests.Python tests for test_load_csv.TestLoadCsv.test_load_recent_from_csv_with_romanian_quotes.executor&quot;: &quot;Debug&quot;,
+    &quot;Python tests.Python tests for test_named_entity.TestNamedEntity.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_named_entity.TestNamedEntity.test_Daniela.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_named_entity.TestNamedEntity.test_basic_person_name.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_named_entity.TestNamedEntity.test_basic_person_name_wrong.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_named_entity.TestNamedEntity.test_duplicate_removal.executor&quot;: &quot;Debug&quot;,
+    &quot;Python tests.Python tests for test_named_entity.TestNamedEntity.test_multiple_names.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_named_entity.TestNamedEntity.test_no_entities.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_named_entity.TestNamedEntity.test_no_first_word.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_named_entity.TestNamedEntity.test_organization_and_location.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_named_entity.TestNamedEntity.test_regex_only_detection.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_story_cluster.test_cluster_stories_grouping.executor&quot;: &quot;Debug&quot;,
+    &quot;Python tests.Python tests for test_story_clusterer.TestStoryClusterer.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_story_clusterer.TestStoryClusterer.test_cluster_stories.executor&quot;: &quot;Debug&quot;,
+    &quot;Python tests.Python tests for test_story_clusterer.TestStoryClusterer.test_entity_list_ok.executor&quot;: &quot;Debug&quot;,
+    &quot;Python tests.Python tests for test_story_clusterer.TestStoryClusterer.test_entity_string_bug.executor&quot;: &quot;Debug&quot;,
+    &quot;Python tests.Python tests for test_story_clusterer.TestStoryClusterer.test_score_clusters.executor&quot;: &quot;Debug&quot;,
+    &quot;Python tests.Python tests for test_story_clusterer.TestStoryClusterer.test_story_clusterer.executor&quot;: &quot;Debug&quot;,
+    &quot;Python tests.Python tests in test_article_filter.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_article_scraper.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_cluster_stories.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_load_csv.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_named_entity.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_story_clusterer.py.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/WORKSPACE/Python/scraper-news&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
+      &quot;PLAIN_TEXT&quot;
+    ]
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\WORKSPACE\Python\scraper-news" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python tests.Python tests for test_story_clusterer.TestStoryClusterer.test_score_clusters">
+    <configuration name="Python tests for test_cluster_stories.test_cluster_stories_grouping" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="scraper-news" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_cluster_stories.test_cluster_stories_grouping&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for test_story_clusterer.TestStoryClusterer" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="scraper-news" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_story_clusterer.TestStoryClusterer&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for test_story_clusterer.TestStoryClusterer.test_score_clusters" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="scraper-news" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_story_clusterer.TestStoryClusterer.test_score_clusters&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests in test_cluster_stories.py" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="scraper-news" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/test_cluster_stories.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests in test_story_clusterer.py" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="scraper-news" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/test_story_clusterer.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python tests.Python tests in test_story_clusterer.py" />
+        <item itemvalue="Python tests.Python tests in test_cluster_stories.py" />
+        <item itemvalue="Python tests.Python tests for test_story_clusterer.TestStoryClusterer.test_score_clusters" />
+        <item itemvalue="Python tests.Python tests for test_story_clusterer.TestStoryClusterer" />
+        <item itemvalue="Python tests.Python tests for test_cluster_stories.test_cluster_stories_grouping" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-7a29c1521ef0-c986f194a52a-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-233.11799.298" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <branch name="main" repository="D:\WORKSPACE\Python\scraper-news" />
+      <changelist id="99de0803-d25a-4ab6-898b-1284579f9db3" name="Changes" comment="" />
+      <created>1755177148175</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1757492316514</updated>
+      <workItem from="1755177159838" duration="7305000" />
+      <workItem from="1755254458110" duration="65161000" />
+      <workItem from="1757492316539" duration="211000" />
+      <workItem from="1757492544768" duration="378000" />
+      <workItem from="1757492941693" duration="351000" />
+    </task>
+    <task id="LOCAL-00002" summary="Basic">
+      <option name="closed" value="true" />
+      <created>1756105228575</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1756105228575</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Basic task.">
+      <branch name="main" repository="D:\WORKSPACE\Python\scraper-news" original="true" />
+      <branch name="Basic-task" repository="D:\WORKSPACE\Python\scraper-news" />
+      <changelist id="fa16a684-d2de-4beb-bea4-ae9fd900688f" name=" Basic task." comment="" />
+      <created>1756105246014</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1757492316514</updated>
+      <workItem from="1756105262006" duration="91209000" />
+      <workItem from="1756981529309" duration="73000" />
+      <workItem from="1756981621361" duration="3543000" />
+      <workItem from="1756988365379" duration="5019000" />
+      <workItem from="1757326496941" duration="3837000" />
+    </task>
+    <task id="LOCAL-00004" summary="Basic. Pycharm config.">
+      <option name="closed" value="true" />
+      <created>1756105332743</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1756105332743</updated>
+    </task>
+    <task id="LOCAL-00005" summary=" Basic task. Refactoring.">
+      <option name="closed" value="true" />
+      <created>1756461054895</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1756461054895</updated>
+    </task>
+    <task id="LOCAL-00006" summary=" Basic task. Fixing clustering.">
+      <option name="closed" value="true" />
+      <created>1756715813534</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1756715813534</updated>
+    </task>
+    <task id="LOCAL-00007" summary=" Basic task. Fixing clustering plus tests.">
+      <option name="closed" value="true" />
+      <created>1756801390993</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1756801390993</updated>
+    </task>
+    <task id="LOCAL-00008" summary=" Basic task. Fixing title.">
+      <option name="closed" value="true" />
+      <created>1756809975814</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1756809975814</updated>
+    </task>
+    <task id="LOCAL-00009" summary=" Basic task. Fixing Romanian quotes.">
+      <option name="closed" value="true" />
+      <created>1756885815353</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1756885815353</updated>
+    </task>
+    <task id="LOCAL-00010" summary=" Basic task. New fixes.">
+      <option name="closed" value="true" />
+      <created>1756988428302</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1756988428302</updated>
+    </task>
+    <task id="LOCAL-00011" summary=" Basic task. Remove shared links.">
+      <option name="closed" value="true" />
+      <created>1757491092614</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1757491092614</updated>
+    </task>
+    <task id="LOCAL-00012" summary=" Basic task. Remove shared links, logged.">
+      <option name="closed" value="true" />
+      <created>1757492176786</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1757492176786</updated>
+    </task>
+    <task id="LOCAL-00013" summary=" Basic task. Remove output.">
+      <option name="closed" value="true" />
+      <created>1757492223043</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1757492223043</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Basic" />
+    <MESSAGE value="Basic. Pycharm config." />
+    <MESSAGE value=" Basic task." />
+    <MESSAGE value=" Basic task. Refactoring." />
+    <MESSAGE value=" Basic task. Fixing clustering." />
+    <MESSAGE value=" Basic task. Fixing clustering plus tests." />
+    <MESSAGE value=" Basic task. Fixing title." />
+    <MESSAGE value=" Basic task. Fixing Romanian quotes." />
+    <MESSAGE value=" Basic task. New fixes." />
+    <MESSAGE value=" Basic task. Remove shared links." />
+    <MESSAGE value=" Basic task. Remove shared links, logged." />
+    <MESSAGE value=" Basic task. Remove output." />
+    <option name="LAST_COMMIT_MESSAGE" value=" Basic task. Remove output." />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/scraper_news$.coverage" NAME=" Coverage Results" MODIFIED="1756983978771" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+</project>
