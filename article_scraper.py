@@ -9,9 +9,9 @@ from dateutil import parser
 from named_entity import NamedEntity
 
 stopwords = {
-            "asta", "ăsta", "acesta", "această", "există", "care", "pentru", "este", "și", "din", "cu", "sunt",
-            "mai", "mult", "foarte", "fie", "cum", "dar", "nu", "în", "la", "de"
-        }
+    "asta", "ăsta", "acesta", "această", "există", "care", "pentru", "este", "și", "din", "cu", "sunt",
+    "mai", "mult", "foarte", "fie", "cum", "dar", "nu", "în", "la", "de"
+}
 
 
 def extract_named_entities(summary):
@@ -25,7 +25,6 @@ class ArticleScraper:
         self.time_selector = time_selector
         self.soup = None
         self.valid = False
-        self.data = {}
 
     def extract_keywords_from_summary(self):
         summary = self._extract_summary().lower()
@@ -40,11 +39,11 @@ class ArticleScraper:
             response = requests.get(self.homepage_url, headers={"User-Agent": "Mozilla/5.0"})
             if response.status_code == 200:
                 self.soup = BeautifulSoup(response.text, "html.parser")
-                self.valid = self._validate_article()
+                self.valid = self.validate_article()
         except Exception:
             self.valid = False
 
-    def _validate_article(self):
+    def validate_article(self):
         page_title_tag = self.soup.find("h1")
         if not page_title_tag:
             return False
@@ -54,23 +53,44 @@ class ArticleScraper:
 
         return homepage_title[:30] in page_title or page_title[:30] in homepage_title
 
-    def extract(self):
+    def extract_data(self):
         if not self.valid or not self.soup:
             return None
 
         summary = self._extract_summary()
 
-        self.data["title"] = self._extract_title()
-        self.data["timestamp"] = self.extract_timestamp_from_selector(self.time_selector)
-        self.data["entities"] = extract_named_entities(summary)
-        self.data["keywords"] = summary
-        self.data["summary"] = summary
-        self.data["url"] = self.homepage_url
-        self.data["comments"] = self._extract_comments()
+        return {
+            "title": str(self.extract_title()),
+            "timestamp": self.extract_timestamp_from_selector(self.time_selector),
+            "entities": ", ".join(extract_named_entities(summary)),
+            "keywords": ", ".join(self.extract_keywords_from_summary()),
+            "summary": str(summary),
+            "url": str(self.homepage_url),
+            "comments": str(self._extract_comments())
+        }
 
-        return self.data
+    def extract_title(self, unwanted_tags=None):
+        if unwanted_tags is None:
+            unwanted_tags = ["Exclusiv", "UPDATE", "Oficial", "FOTO", "VIDEO", "FOTO ȘI VIDEO", "EXCLUSIV / UPDATE"]
 
-    def _extract_title(self):
+        tag = self.soup.find("h1")
+        if not tag:
+            return ""
+
+        # Remove span tags with known classes
+        for span in tag.find_all("span", class_=["tag", "marcaj"]):
+            span.extract()
+
+        title = tag.get_text(strip=True)
+
+        # Remove unwanted phrases from the beginning of the title
+        for phrase in unwanted_tags:
+            if title.upper().startswith(phrase.upper()):
+                title = title[len(phrase):].strip(" :–-")
+
+        return title
+
+    def extract_title_naive(self):
         tag = self.soup.find("h1")
         return tag.get_text(strip=True) if tag else ""
 
