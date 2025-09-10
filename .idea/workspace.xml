@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fa16a684-d2de-4beb-bea4-ae9fd900688f" name=" Basic task." comment=" Basic task. Remove output." />
-    <list id="99de0803-d25a-4ab6-898b-1284579f9db3" name="Changes" comment="" />
+    <list default="true" id="99de0803-d25a-4ab6-898b-1284579f9db3" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,7 +13,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Basic-task" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -31,67 +30,68 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python tests.Python tests for test_article_extract_data.TestArticleExtractor.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_article_extract_data.TestArticleExtractor.test_extract_data_returns_expected_dict.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_article_extract_data.TestArticleExtractor.test_extract_data_returns_none_if_invalid.executor&quot;: &quot;Debug&quot;,
-    &quot;Python tests.Python tests for test_article_extract_data.TestArticleExtractor.test_extract_data_returns_none_if_no_soup.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_article_filter.TestArticleFilter.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_article_filter.TestArticleFilter.test_including_keyword_passes.executor&quot;: &quot;Debug&quot;,
-    &quot;Python tests.Python tests for test_article_filter.TestArticleFilter.test_video_title.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_article_filter.TestArticleFilter.test_video_url.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_article_scraper.TestArticleScraper.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_article_scraper.TestArticleScraper.test_digisport_title.executor&quot;: &quot;Debug&quot;,
-    &quot;Python tests.Python tests for test_article_scraper.TestArticleScraper.test_gsp_title_with_multiple_tags.executor&quot;: &quot;Debug&quot;,
-    &quot;Python tests.Python tests for test_article_scraper.TestNamedEntityExtraction.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_article_scraper.TestNamedEntityExtraction.test_named_entities.executor&quot;: &quot;Debug&quot;,
-    &quot;Python tests.Python tests for test_cluster_stories.test_cluster_stories_grouping.executor&quot;: &quot;Debug&quot;,
-    &quot;Python tests.Python tests for test_load_csv.TestLoadCsv.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_load_csv.TestLoadCsv.test_load_recent_from_csv_all_loaded.executor&quot;: &quot;Debug&quot;,
-    &quot;Python tests.Python tests for test_load_csv.TestLoadCsv.test_load_recent_from_csv_none_loaded.executor&quot;: &quot;Debug&quot;,
-    &quot;Python tests.Python tests for test_load_csv.TestLoadCsv.test_load_recent_from_csv_with_romanian_quotes.executor&quot;: &quot;Debug&quot;,
-    &quot;Python tests.Python tests for test_named_entity.TestNamedEntity.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_named_entity.TestNamedEntity.test_Daniela.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_named_entity.TestNamedEntity.test_basic_person_name.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_named_entity.TestNamedEntity.test_basic_person_name_wrong.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_named_entity.TestNamedEntity.test_duplicate_removal.executor&quot;: &quot;Debug&quot;,
-    &quot;Python tests.Python tests for test_named_entity.TestNamedEntity.test_multiple_names.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_named_entity.TestNamedEntity.test_no_entities.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_named_entity.TestNamedEntity.test_no_first_word.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_named_entity.TestNamedEntity.test_organization_and_location.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_named_entity.TestNamedEntity.test_regex_only_detection.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_story_cluster.test_cluster_stories_grouping.executor&quot;: &quot;Debug&quot;,
-    &quot;Python tests.Python tests for test_story_clusterer.TestStoryClusterer.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_story_clusterer.TestStoryClusterer.test_cluster_stories.executor&quot;: &quot;Debug&quot;,
-    &quot;Python tests.Python tests for test_story_clusterer.TestStoryClusterer.test_entity_list_ok.executor&quot;: &quot;Debug&quot;,
-    &quot;Python tests.Python tests for test_story_clusterer.TestStoryClusterer.test_entity_string_bug.executor&quot;: &quot;Debug&quot;,
-    &quot;Python tests.Python tests for test_story_clusterer.TestStoryClusterer.test_score_clusters.executor&quot;: &quot;Debug&quot;,
-    &quot;Python tests.Python tests for test_story_clusterer.TestStoryClusterer.test_story_clusterer.executor&quot;: &quot;Debug&quot;,
-    &quot;Python tests.Python tests in test_article_filter.py.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests in test_article_scraper.py.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests in test_cluster_stories.py.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests in test_load_csv.py.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests in test_named_entity.py.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests in test_story_clusterer.py.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/WORKSPACE/Python/scraper-news&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python tests.Python tests for test_article_extract_data.TestArticleExtractor.executor": "Run",
+    "Python tests.Python tests for test_article_extract_data.TestArticleExtractor.test_extract_data_returns_expected_dict.executor": "Run",
+    "Python tests.Python tests for test_article_extract_data.TestArticleExtractor.test_extract_data_returns_none_if_invalid.executor": "Debug",
+    "Python tests.Python tests for test_article_extract_data.TestArticleExtractor.test_extract_data_returns_none_if_no_soup.executor": "Run",
+    "Python tests.Python tests for test_article_filter.TestArticleFilter.executor": "Run",
+    "Python tests.Python tests for test_article_filter.TestArticleFilter.test_including_keyword_passes.executor": "Debug",
+    "Python tests.Python tests for test_article_filter.TestArticleFilter.test_video_title.executor": "Run",
+    "Python tests.Python tests for test_article_filter.TestArticleFilter.test_video_url.executor": "Run",
+    "Python tests.Python tests for test_article_scraper.TestArticleScraper.executor": "Run",
+    "Python tests.Python tests for test_article_scraper.TestArticleScraper.test_digisport_title.executor": "Debug",
+    "Python tests.Python tests for test_article_scraper.TestArticleScraper.test_gsp_title_with_multiple_tags.executor": "Debug",
+    "Python tests.Python tests for test_article_scraper.TestNamedEntityExtraction.executor": "Run",
+    "Python tests.Python tests for test_article_scraper.TestNamedEntityExtraction.test_named_entities.executor": "Debug",
+    "Python tests.Python tests for test_cluster_stories.test_cluster_stories_grouping.executor": "Debug",
+    "Python tests.Python tests for test_load_csv.TestLoadCsv.executor": "Run",
+    "Python tests.Python tests for test_load_csv.TestLoadCsv.test_load_recent_from_csv_all_loaded.executor": "Debug",
+    "Python tests.Python tests for test_load_csv.TestLoadCsv.test_load_recent_from_csv_none_loaded.executor": "Debug",
+    "Python tests.Python tests for test_load_csv.TestLoadCsv.test_load_recent_from_csv_with_romanian_quotes.executor": "Debug",
+    "Python tests.Python tests for test_named_entity.TestNamedEntity.executor": "Run",
+    "Python tests.Python tests for test_named_entity.TestNamedEntity.test_Daniela.executor": "Run",
+    "Python tests.Python tests for test_named_entity.TestNamedEntity.test_basic_person_name.executor": "Run",
+    "Python tests.Python tests for test_named_entity.TestNamedEntity.test_basic_person_name_wrong.executor": "Run",
+    "Python tests.Python tests for test_named_entity.TestNamedEntity.test_duplicate_removal.executor": "Debug",
+    "Python tests.Python tests for test_named_entity.TestNamedEntity.test_multiple_names.executor": "Run",
+    "Python tests.Python tests for test_named_entity.TestNamedEntity.test_no_entities.executor": "Run",
+    "Python tests.Python tests for test_named_entity.TestNamedEntity.test_no_first_word.executor": "Run",
+    "Python tests.Python tests for test_named_entity.TestNamedEntity.test_organization_and_location.executor": "Run",
+    "Python tests.Python tests for test_named_entity.TestNamedEntity.test_regex_only_detection.executor": "Run",
+    "Python tests.Python tests for test_story_cluster.test_cluster_stories_grouping.executor": "Debug",
+    "Python tests.Python tests for test_story_clusterer.TestStoryClusterer.executor": "Run",
+    "Python tests.Python tests for test_story_clusterer.TestStoryClusterer.test_cluster_stories.executor": "Debug",
+    "Python tests.Python tests for test_story_clusterer.TestStoryClusterer.test_entity_list_ok.executor": "Debug",
+    "Python tests.Python tests for test_story_clusterer.TestStoryClusterer.test_entity_string_bug.executor": "Debug",
+    "Python tests.Python tests for test_story_clusterer.TestStoryClusterer.test_score_clusters.executor": "Debug",
+    "Python tests.Python tests for test_story_clusterer.TestStoryClusterer.test_story_clusterer.executor": "Debug",
+    "Python tests.Python tests in test_article_filter.py.executor": "Run",
+    "Python tests.Python tests in test_article_scraper.py.executor": "Run",
+    "Python tests.Python tests in test_cluster_stories.py.executor": "Run",
+    "Python tests.Python tests in test_load_csv.py.executor": "Run",
+    "Python tests.Python tests in test_named_entity.py.executor": "Run",
+    "Python tests.Python tests in test_story_clusterer.py.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "D:/WORKSPACE/Python/scraper-news",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
-      &quot;PLAIN_TEXT&quot;
+  "keyToStringList": {
+    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
+      "PLAIN_TEXT"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\WORKSPACE\Python\scraper-news" />
@@ -203,12 +203,13 @@
       <created>1755177148175</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1757492316514</updated>
+      <updated>1757495844078</updated>
       <workItem from="1755177159838" duration="7305000" />
       <workItem from="1755254458110" duration="65161000" />
       <workItem from="1757492316539" duration="211000" />
       <workItem from="1757492544768" duration="378000" />
       <workItem from="1757492941693" duration="351000" />
+      <workItem from="1757495844225" duration="125000" />
     </task>
     <task id="LOCAL-00002" summary="Basic">
       <option name="closed" value="true" />
@@ -221,7 +222,7 @@
     <task id="LOCAL-00003" summary="Basic task.">
       <branch name="main" repository="D:\WORKSPACE\Python\scraper-news" original="true" />
       <branch name="Basic-task" repository="D:\WORKSPACE\Python\scraper-news" />
-      <changelist id="fa16a684-d2de-4beb-bea4-ae9fd900688f" name=" Basic task." comment="" />
+      <changelist id="" name=" Basic task." comment="" />
       <created>1756105246014</created>
       <option name="number" value="00003" />
       <option name="presentableId" value="LOCAL-00003" />
