@@ -6,7 +6,7 @@ import requests
 from bs4 import BeautifulSoup
 from dateutil import parser
 
-from named_entity import NamedEntity
+from service.util.named_entity import NamedEntity
 
 stopwords = {
     "asta", "ăsta", "acesta", "această", "există", "care", "pentru", "este", "și", "din", "cu", "sunt",
