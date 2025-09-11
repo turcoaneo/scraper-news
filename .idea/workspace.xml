@@ -4,19 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4faefce7-01cd-493b-8f50-6280f353265b" name=" Refactoring" comment="">
-      <change afterPath="$PROJECT_DIR$/test/__init__.py" afterDir="false" />
+    <list default="true" id="4faefce7-01cd-493b-8f50-6280f353265b" name=" Refactoring" comment=" Refactoring. Test and file base.">
+      <change afterPath="$PROJECT_DIR$/model/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/util/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site_scraper.py" beforeDir="false" afterPath="$PROJECT_DIR$/site_scraper.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-scraper.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/run-notebook-scraper.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_article_extract_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test_article_extract_data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_article_filter.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test_article_filter.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_article_scraper.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test_article_scraper.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_cluster_stories.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test_cluster_stories.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_load_csv.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test_load_csv.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_named_entity.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test_named_entity.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_story_clusterer.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test_story_clusterer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/article.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/article.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/article_scraper.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/article_scraper.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/named_entity.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/util/named_entity.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run-notebook-scraper.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/run-notebook-scraper.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site_scraper.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/site_scraper.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/story_clusterer.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/story_clusterer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/test_article_extract_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test_article_extract_data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/test_article_filter.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test_article_filter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/test_article_scraper.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test_article_scraper.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/test_cluster_stories.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test_cluster_stories.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/test_load_csv.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test_load_csv.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/test_named_entity.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test_named_entity.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/test_story_clusterer.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test_story_clusterer.py" afterDir="false" />
     </list>
     <list id="a7f942ad-3c95-41b0-b4b7-f43fce9ff07e" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -71,6 +76,9 @@
       <recent name="D:\WORKSPACE\Python\scraper-news" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\WORKSPACE\Python\scraper-news\service\util" />
+      <recent name="D:\WORKSPACE\Python\scraper-news\model" />
+      <recent name="D:\WORKSPACE\Python\scraper-news\service" />
       <recent name="D:\WORKSPACE\Python\scraper-news\test" />
     </key>
   </component>
@@ -252,9 +260,17 @@
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
       <updated>1757572710399</updated>
-      <workItem from="1757572711164" duration="2266000" />
+      <workItem from="1757572711164" duration="6626000" />
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary=" Refactoring. Test and file base.">
+      <option name="closed" value="true" />
+      <created>1757575066851</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1757575066851</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <option name="createBranch" value="false" />
     <option name="useBranch" value="true" />
     <servers />
@@ -264,9 +280,11 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Workspace." />
-    <option name="LAST_COMMIT_MESSAGE" value="Workspace." />
+    <MESSAGE value=" Refactoring" />
+    <MESSAGE value=" Refactoring. Test and file base." />
+    <option name="LAST_COMMIT_MESSAGE" value=" Refactoring. Test and file base." />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/scraper_news$.coverage" NAME=" Coverage Results" MODIFIED="1757573124167" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/scraper_news$.coverage" NAME=" Coverage Results" MODIFIED="1757579698973" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
   </component>
 </project>

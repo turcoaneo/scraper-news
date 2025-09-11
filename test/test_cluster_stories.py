@@ -1,7 +1,7 @@
 from datetime import datetime, timezone
 
-from article import Article
-from story_clusterer import StoryClusterer
+from model.article import Article
+from service.story_clusterer import StoryClusterer
 
 
 class MockScraper:

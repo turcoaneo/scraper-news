@@ -2,7 +2,7 @@ import unittest
 
 from bs4 import BeautifulSoup
 
-from article_scraper import ArticleScraper
+from service.article_scraper import ArticleScraper
 
 
 class TestArticleScraper(unittest.TestCase):

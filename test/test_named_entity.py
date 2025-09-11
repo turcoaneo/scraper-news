@@ -1,6 +1,6 @@
 import unittest
 
-from named_entity import NamedEntity
+from service.util.named_entity import NamedEntity
 
 
 class TestNamedEntity(unittest.TestCase):

@@ -1,12 +1,12 @@
 import unittest
 from unittest.mock import MagicMock, patch
 
-from article_scraper import ArticleScraper
+from service.article_scraper import ArticleScraper
 
 
 class TestArticleExtractor(unittest.TestCase):
     def setUp(self):
-        patcher = patch("article_scraper.extract_named_entities", return_value=["Entity1", "Entity2"])
+        patcher = patch("service.article_scraper.extract_named_entities", return_value=["Entity1", "Entity2"])
         self.mock_entities = patcher.start()
         self.addCleanup(patcher.stop)
 

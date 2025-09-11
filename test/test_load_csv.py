@@ -3,7 +3,7 @@ import tempfile
 import unittest
 from datetime import datetime, timedelta, timezone
 
-from site_scraper import SiteScraper  # Assuming Article is now imported from site_scraper
+from service.site_scraper import SiteScraper  # Assuming Article is now imported from site_scraper
 
 
 def create_csv(filename, rows):

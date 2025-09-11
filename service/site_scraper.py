@@ -1,5 +1,5 @@
-import ast
 import csv
+import os
 from datetime import datetime, timedelta, timezone
 from typing import Literal, Optional
 from urllib.parse import urljoin
@@ -7,8 +7,8 @@ from urllib.parse import urljoin
 import requests
 from bs4 import BeautifulSoup
 
-from article import Article
-from article_scraper import ArticleScraper
+from model.article import Article
+from service.article_scraper import ArticleScraper
 
 
 def sanitize_quotes(text):
@@ -88,6 +88,12 @@ class SiteScraper:
             print("-" * 60)
 
     def save_to_csv(self):
+        if not os.path.exists(self.file_base):
+            try:
+                os.makedirs(self.file_base)
+            except FileExistsError:
+                # directory already exists
+                pass
         filename = f"{self.file_base}/{self.name}_{datetime.now().strftime('%Y%m%d')}.csv"
         with open(filename, mode="w", encoding="utf-8", newline="") as file:
             columns = [
