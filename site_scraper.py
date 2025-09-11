@@ -45,6 +45,7 @@ def is_filtered(article, filter_place_keys):
 class SiteScraper:
     title_strategy: Literal["text", "attribute"]
     title_attribute: Optional[str] = None  # e.g., "title"
+    file_base: str = "storage"
 
     def __init__(self, name, base_url, traffic, time_selector, block_selector, link_selector, title_strategy,
                  title_attribute=None, weight=0.0, filter_place_keys=None):
@@ -87,7 +88,7 @@ class SiteScraper:
             print("-" * 60)
 
     def save_to_csv(self):
-        filename = f"{self.name}_{datetime.now().strftime('%Y%m%d')}.csv"
+        filename = f"{self.file_base}/{self.name}_{datetime.now().strftime('%Y%m%d')}.csv"
         with open(filename, mode="w", encoding="utf-8", newline="") as file:
             columns = [
                 "site", "timestamp", "title", "entities", "keywords", "summary", "url", "comments"
@@ -113,7 +114,7 @@ class SiteScraper:
 
     # noinspection PyTypeChecker
     def load_recent_from_csv(self, minutes=180, filename_override=None):
-        filename = filename_override or f"{self.name}_{datetime.now().strftime('%Y%m%d')}.csv"
+        filename = filename_override or f"{self.file_base}/{self.name}_{datetime.now().strftime('%Y%m%d')}.csv"
         cutoff = datetime.now(timezone.utc) - timedelta(minutes=minutes)
 
         try:
