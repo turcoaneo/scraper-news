@@ -4,26 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4faefce7-01cd-493b-8f50-6280f353265b" name=" Refactoring" comment=" Refactoring. Test and file base.">
-      <change afterPath="$PROJECT_DIR$/model/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/util/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/article.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/article.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/article_scraper.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/article_scraper.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/named_entity.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/util/named_entity.py" afterDir="false" />
+    <list default="true" id="a7f942ad-3c95-41b0-b4b7-f43fce9ff07e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/run-notebook-scraper.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/run-notebook-scraper.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site_scraper.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/site_scraper.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/story_clusterer.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/story_clusterer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/test_article_extract_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test_article_extract_data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/test_article_filter.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test_article_filter.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/test_article_scraper.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test_article_scraper.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/test_cluster_stories.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test_cluster_stories.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/test_load_csv.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test_load_csv.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/test_named_entity.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test_named_entity.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/test_story_clusterer.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test_story_clusterer.py" afterDir="false" />
     </list>
-    <list id="a7f942ad-3c95-41b0-b4b7-f43fce9ff07e" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -61,7 +44,7 @@
     "Python tests.Python tests for test_article_extract_data.TestArticleExtractor.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "refactor",
+    "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "last_opened_file_path": "D:/WORKSPACE/Python/scraper-news",
     "node.js.detected.package.eslint": "true",
@@ -234,15 +217,16 @@
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
-    <task id="Default" summary="Default task">
+    <task active="true" id="Default" summary="Default task">
       <branch name="refactor" repository="D:\WORKSPACE\Python\scraper-news" original="true" />
       <changelist id="a7f942ad-3c95-41b0-b4b7-f43fce9ff07e" name="Changes" comment="" />
       <created>1757496508751</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1757572710398</updated>
+      <updated>1758024660412</updated>
       <workItem from="1757496515016" duration="355000" />
       <workItem from="1757572223186" duration="485000" />
+      <workItem from="1758024660626" duration="760000" />
     </task>
     <task id="LOCAL-00001" summary="Workspace.">
       <option name="closed" value="true" />
@@ -252,15 +236,16 @@
       <option name="project" value="LOCAL" />
       <updated>1757496756062</updated>
     </task>
-    <task active="true" id="LOCAL-00002" summary="Refactoring">
+    <task id="LOCAL-00002" summary="Refactoring">
       <branch name="refactor" repository="D:\WORKSPACE\Python\scraper-news" />
-      <changelist id="4faefce7-01cd-493b-8f50-6280f353265b" name=" Refactoring" comment="" />
+      <changelist id="" name=" Refactoring" comment="" />
       <created>1757572705690</created>
       <option name="number" value="00002" />
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
-      <updated>1757572710399</updated>
+      <updated>1758024660410</updated>
       <workItem from="1757572711164" duration="6626000" />
+      <workItem from="1758024570626" duration="90000" />
     </task>
     <task id="LOCAL-00003" summary=" Refactoring. Test and file base.">
       <option name="closed" value="true" />
