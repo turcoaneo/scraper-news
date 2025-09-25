@@ -1,0 +1,22 @@
+[
+  {
+    "summary": "Fostul jucător de tenis, Alex Corretja, în prezent comentator, nu își pierde încrederea în tânărul danez Holger Rune (22 de ani, 11 ATP), pe care îl vede capabil să câștige un titlu de Grand Slam anul viitor, deși afirmă că acesta trebuie „să găsească o anumită continuitate și să descopere cum să o obțină\"",
+    "expected_entities": ["Alex Corretja", "Holger Rune", "Grand Slam"],
+    "expected_keywords": ["încredere", "comentator", "tânărul danez", "titlu", "continuitate"]
+  },
+  {
+    "summary": "Petrolul are același număr de victorii ca și FCSB-ul, una după nouă etape, dar un punct mai puțin față de roș-albaștri, astfel că Liviu Ciobotariu (54 de ani) a fost demis marți după-amiază. Cătălin Cîrjan (min. 44), Danny Armstrong (60) și Maxime Sivis (90+6) au fost marcatorii meciului, care a fost în direct la Digi […]",
+    "expected_entities": ["Petrolul", "FCSB", "Liviu Ciobotariu", "Cătălin Cîrjan", "Danny Armstrong", "Maxime Sivis", "Digi"],
+    "expected_keywords": ["victorie", "etape", "demis", "marcatori", "meci"]
+  },
+  {
+    "summary": "Situație inedită în tenis: un jucător thailandez a fost suspendat pe viață deoarece a aranjat 22 de meciuri în perioada 2023 - 2024.",
+    "expected_entities": ["jucător thailandez", "tenis"],
+    "expected_keywords": ["suspendat", "pe viață", "meciuri", "aranjat", "2023–2024"]
+  },
+  {
+    "summary": "Liviu Ciobotariu nu mai este antrenor la Petrolul! Tehnicianul în vârstă de 54 de ani a fost dat afară după umilința cu Dinamo",
+    "expected_entities": ["Liviu Ciobotariu", "Petrolul", "Dinamo"],
+    "expected_keywords": ["antrenor", "demis", "umilință", "vârstă", "dat afară"]
+  }
+]
