@@ -9,6 +9,7 @@ from bs4 import BeautifulSoup
 
 from model.article import Article
 from service.article_scraper import ArticleScraper
+from service.claude_prompt_builder import load_training_data
 
 
 def sanitize_quotes(text):
@@ -48,7 +49,7 @@ class SiteScraper:
     file_base: str = "storage"
 
     def __init__(self, name, base_url, traffic, time_selector, block_selector, link_selector, title_strategy,
-                 title_attribute=None, weight=0.0, filter_place_keys=None):
+                 title_attribute=None, weight=0.0, filter_place_keys=None, claude=True):
         self.name = name
         self.base_url = base_url
         self.traffic = traffic
@@ -59,6 +60,7 @@ class SiteScraper:
         self.link_selector = link_selector
         self.title_strategy = title_strategy
         self.title_attribute = title_attribute
+        self.claude = claude
 
         if filter_place_keys is None:
             self.filter_place_keys = {
@@ -179,7 +181,7 @@ class SiteScraper:
 
                 article_scraper = ArticleScraper(full_url, homepage_title, self.time_selector)
                 article_scraper.fetch()
-                article_data = article_scraper.extract_data()
+                article_data = article_scraper.extract_data(self.claude)
 
                 if article_data and article_data["timestamp"] >= cutoff:
                     self.articles.add(Article(self.name, article_data["timestamp"], article_data["title"],
