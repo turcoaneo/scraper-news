@@ -6,6 +6,7 @@ import requests
 from bs4 import BeautifulSoup
 from dateutil import parser
 
+from service.claude_prompt_builder import ClaudePromptBuilder, load_training_data
 from service.util.named_entity import NamedEntity
 
 stopwords = {
@@ -25,6 +26,7 @@ class ArticleScraper:
         self.time_selector = time_selector
         self.soup = None
         self.valid = False
+        self.training_data = load_training_data("storage/training/example.json")
 
     def extract_keywords_from_summary(self):
         summary = self._extract_summary().lower()
@@ -53,17 +55,24 @@ class ArticleScraper:
 
         return homepage_title[:30] in page_title or page_title[:30] in homepage_title
 
-    def extract_data(self):
+    def extract_data(self, claude: bool = False):
         if not self.valid or not self.soup:
             return None
 
         summary = self._extract_summary()
 
+        claude_response = None
+        if claude:
+            claude_prompt_builder = ClaudePromptBuilder(summary)
+            claude_response = claude_prompt_builder.extract_entities_and_keywords(self.training_data)
+
+        entities = claude_response["entities"] if claude else extract_named_entities(summary)
+        keywords_from_summary = claude_response["keywords"] if claude else self.extract_keywords_from_summary()
         return {
             "title": str(self.extract_title()),
             "timestamp": self.extract_timestamp_from_selector(self.time_selector),
-            "entities": ", ".join(extract_named_entities(summary)),
-            "keywords": ", ".join(self.extract_keywords_from_summary()),
+            "entities": ", ".join(entities),
+            "keywords": ", ".join(keywords_from_summary),
             "summary": str(summary),
             "url": str(self.homepage_url),
             "comments": str(self._extract_comments())
