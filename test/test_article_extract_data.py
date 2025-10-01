@@ -46,3 +46,18 @@ class TestArticleExtractor(unittest.TestCase):
         self.extractor.soup = False
         result = self.extractor.extract_data()
         self.assertIsNone(result)
+
+    def test_simple(self):
+        def stream():
+            for i in range(3):
+                yield i
+
+        gen = stream()
+        print(next(gen))  # 0
+        print(next(gen))  # 1
+
+        def f():
+            return [lambda x, i=i: x * i for i in range(3)]
+
+        print([func(2) for func in f()])  # Output: [0, 2, 4]
+
