@@ -9,3 +9,4 @@ spacy
 pytest
 python-dotenv
 anthropic
+openai

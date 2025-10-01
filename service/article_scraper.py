@@ -20,13 +20,14 @@ def extract_named_entities(summary):
 
 
 class ArticleScraper:
-    def __init__(self, homepage_url, homepage_title, time_selector):
+    def __init__(self, homepage_url, homepage_title, time_selector, path: str = None):
         self.homepage_url = homepage_url
         self.homepage_title = homepage_title
         self.time_selector = time_selector
         self.soup = None
         self.valid = False
-        self.training_data = load_training_data("storage/training/example.json")
+        if path is not None:
+            self.training_data = load_training_data("storage/training/example.json")
 
     def extract_keywords_from_summary(self):
         summary = self._extract_summary().lower()
