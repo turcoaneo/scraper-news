@@ -4,23 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="14b61608-27ab-45fe-a82a-65027ce208f6" name=" Claude" comment=" Claude. Entities and keywords.">
-      <change afterPath="$PROJECT_DIR$/gpt_keys_ents_csv_summary.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/quote_all_csv.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/test_gpt_input_corrupt.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/test_gpt_output_corrupt.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run-notebook-scraper.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/run-notebook-scraper.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/article_scraper.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/article_scraper.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/digisport_20250925.csv" beforeDir="false" afterPath="$PROJECT_DIR$/storage/digisport_20250930.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/fanatik_20250925.csv" beforeDir="false" afterPath="$PROJECT_DIR$/storage/fanatik_20250930.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/gsp_20250925.csv" beforeDir="false" afterPath="$PROJECT_DIR$/storage/gsp_20250930.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/prosport_20250925.csv" beforeDir="false" afterPath="$PROJECT_DIR$/storage/prosport_20250930.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/test_article_extract_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test_article_extract_data.py" afterDir="false" />
-    </list>
-    <list id="a7f942ad-3c95-41b0-b4b7-f43fce9ff07e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+    <list default="true" id="a7f942ad-3c95-41b0-b4b7-f43fce9ff07e" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/service/csv2jsonl.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/hf/gpt_20250930.jsonl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/hf/gpt_20250930.jsonl.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/storage/csv2jsonl_input.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/storage/csv2jsonl_output.jsonl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/test_csv2jsonl.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gpt_keys_ents_csv_summary.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/gpt_keys_ents_csv_summary.ipynb" afterDir="false" />
+    </list>
+    <list id="6508d4bf-b1d4-4e03-bff8-2d311d3ea368" name="Env" comment="">
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,44 +53,48 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python tests.Python tests for test_article_extract_data.TestArticleExtractor.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_article_extract_data.TestArticleExtractor.test_extract_data_returns_expected_dict.executor&quot;: &quot;Debug&quot;,
-    &quot;Python tests.Python tests for test_article_extract_data.TestArticleExtractor.test_extract_data_returns_none_if_invalid.executor&quot;: &quot;Debug&quot;,
-    &quot;Python tests.Python tests for test_article_extract_data.TestArticleExtractor.test_simple.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_claude_prompt_builder.TestClaudePromptBuilder.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_claude_prompt_builder.TestClaudePromptBuilder.test_extract_entities_and_keywords.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_claude_prompt_builder.TestClaudePromptBuilder.test_send_prompt_to_claude.executor&quot;: &quot;Debug&quot;,
-    &quot;Python tests.Python tests in test_claude_prompt_builder.py.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;claude&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/WORKSPACE/Python/scraper-news/storage&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.notebooks.jupyter.connections.configuration.JupyterServerConfigurable&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python tests.Python tests for test_article_extract_data.TestArticleExtractor.executor": "Run",
+    "Python tests.Python tests for test_article_extract_data.TestArticleExtractor.test_extract_data_returns_expected_dict.executor": "Debug",
+    "Python tests.Python tests for test_article_extract_data.TestArticleExtractor.test_extract_data_returns_none_if_invalid.executor": "Debug",
+    "Python tests.Python tests for test_article_extract_data.TestArticleExtractor.test_simple.executor": "Run",
+    "Python tests.Python tests for test_claude_prompt_builder.TestClaudePromptBuilder.executor": "Run",
+    "Python tests.Python tests for test_claude_prompt_builder.TestClaudePromptBuilder.test_extract_entities_and_keywords.executor": "Run",
+    "Python tests.Python tests for test_claude_prompt_builder.TestClaudePromptBuilder.test_send_prompt_to_claude.executor": "Debug",
+    "Python tests.Python tests for test_csv2jsonl.TestCsvToJsonlConverter.executor": "Run",
+    "Python tests.Python tests for test_csv2jsonl.TestCsvToJsonlConverter.test_conversion_creates_valid_jsonl.executor": "Run",
+    "Python tests.Python tests for test_csv2jsonl.TestCsvToJsonlConverter.test_creates_valid_jsonl_NaN.executor": "Run",
+    "Python tests.Python tests for test_csv2jsonl.TestCsvToJsonlConverter.test_creates_valid_jsonl_from_float.executor": "Run",
+    "Python tests.Python tests in test_claude_prompt_builder.py.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/WORKSPACE/Python/scraper-news",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "org.jetbrains.plugins.notebooks.jupyter.connections.configuration.JupyterServerConfigurable",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\WORKSPACE\Python\scraper-news\storage" />
       <recent name="D:\WORKSPACE\Python\scraper-news" />
+      <recent name="D:\WORKSPACE\Python\scraper-news\storage" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\WORKSPACE\Python\scraper-news\test\storage" />
       <recent name="D:\WORKSPACE\Python\scraper-news\storage\hf" />
       <recent name="D:\WORKSPACE\Python\scraper-news\service\util" />
       <recent name="D:\WORKSPACE\Python\scraper-news\model" />
       <recent name="D:\WORKSPACE\Python\scraper-news\service" />
-      <recent name="D:\WORKSPACE\Python\scraper-news\test" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.Python tests for test_article_extract_data.TestArticleExtractor.test_simple">
+  <component name="RunManager" selected="Python tests.Python tests for test_csv2jsonl.TestCsvToJsonlConverter.test_creates_valid_jsonl_NaN">
     <configuration default="true" type="DjangoTestsConfigurationType">
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -216,22 +215,6 @@
       <option name="docutils_open_in_browser" value="false" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for test_article_extract_data.TestArticleExtractor" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
-      <module name="scraper-news" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_article_extract_data.TestArticleExtractor&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
     <configuration name="Python tests for test_article_extract_data.TestArticleExtractor.test_simple" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="scraper-news" />
       <option name="ENV_FILES" value="" />
@@ -248,7 +231,7 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for test_claude_prompt_builder.TestClaudePromptBuilder" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for test_csv2jsonl.TestCsvToJsonlConverter" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="scraper-news" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -260,11 +243,11 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_claude_prompt_builder.TestClaudePromptBuilder&quot;" />
+      <option name="_new_target" value="&quot;test_csv2jsonl.TestCsvToJsonlConverter&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for test_claude_prompt_builder.TestClaudePromptBuilder.test_extract_entities_and_keywords" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for test_csv2jsonl.TestCsvToJsonlConverter.test_conversion_creates_valid_jsonl" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="scraper-news" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -276,11 +259,11 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_claude_prompt_builder.TestClaudePromptBuilder.test_extract_entities_and_keywords&quot;" />
+      <option name="_new_target" value="&quot;test_csv2jsonl.TestCsvToJsonlConverter.test_conversion_creates_valid_jsonl&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for test_claude_prompt_builder.TestClaudePromptBuilder.test_send_prompt_to_claude" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for test_csv2jsonl.TestCsvToJsonlConverter.test_creates_valid_jsonl_NaN" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="scraper-news" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -292,17 +275,33 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_claude_prompt_builder.TestClaudePromptBuilder.test_send_prompt_to_claude&quot;" />
+      <option name="_new_target" value="&quot;test_csv2jsonl.TestCsvToJsonlConverter.test_creates_valid_jsonl_NaN&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for test_csv2jsonl.TestCsvToJsonlConverter.test_creates_valid_jsonl_from_float" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="scraper-news" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_csv2jsonl.TestCsvToJsonlConverter.test_creates_valid_jsonl_from_float&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.Python tests for test_csv2jsonl.TestCsvToJsonlConverter.test_creates_valid_jsonl_NaN" />
+        <item itemvalue="Python tests.Python tests for test_csv2jsonl.TestCsvToJsonlConverter.test_creates_valid_jsonl_from_float" />
+        <item itemvalue="Python tests.Python tests for test_csv2jsonl.TestCsvToJsonlConverter" />
+        <item itemvalue="Python tests.Python tests for test_csv2jsonl.TestCsvToJsonlConverter.test_conversion_creates_valid_jsonl" />
         <item itemvalue="Python tests.Python tests for test_article_extract_data.TestArticleExtractor.test_simple" />
-        <item itemvalue="Python tests.Python tests for test_article_extract_data.TestArticleExtractor" />
-        <item itemvalue="Python tests.Python tests for test_claude_prompt_builder.TestClaudePromptBuilder.test_extract_entities_and_keywords" />
-        <item itemvalue="Python tests.Python tests for test_claude_prompt_builder.TestClaudePromptBuilder" />
-        <item itemvalue="Python tests.Python tests for test_claude_prompt_builder.TestClaudePromptBuilder.test_send_prompt_to_claude" />
       </list>
     </recent_temporary>
   </component>
@@ -329,79 +328,6 @@
       <workItem from="1758785038256" duration="53000" />
       <workItem from="1758785124414" duration="1048000" />
       <workItem from="1758787888622" duration="2393000" />
-    </task>
-    <task id="LOCAL-00001" summary="Workspace.">
-      <option name="closed" value="true" />
-      <created>1757496756062</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1757496756062</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Refactoring">
-      <branch name="refactor" repository="D:\WORKSPACE\Python\scraper-news" />
-      <created>1757572705690</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1758024660410</updated>
-      <workItem from="1757572711164" duration="6626000" />
-      <workItem from="1758024570626" duration="90000" />
-    </task>
-    <task id="LOCAL-00003" summary=" Refactoring. Test and file base.">
-      <option name="closed" value="true" />
-      <created>1757575066851</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1757575066851</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Run.">
-      <option name="closed" value="true" />
-      <created>1758026213234</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1758026213234</updated>
-    </task>
-    <task active="true" id="LOCAL-00005" summary="Claude">
-      <branch name="claude" repository="D:\WORKSPACE\Python\scraper-news" />
-      <changelist id="14b61608-27ab-45fe-a82a-65027ce208f6" name=" Claude" comment="" />
-      <created>1758790283843</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1758790286340</updated>
-      <workItem from="1758790286736" duration="18152000" />
-      <workItem from="1758981027431" duration="48000" />
-      <workItem from="1758981112889" duration="1193000" />
-      <workItem from="1759223460725" duration="8576000" />
-      <workItem from="1759301190990" duration="269000" />
-      <workItem from="1759301839747" duration="4348000" />
-    </task>
-    <task id="LOCAL-00006" summary=" Claude. Initial.">
-      <option name="closed" value="true" />
-      <created>1758790359168</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1758790359168</updated>
-    </task>
-    <task id="LOCAL-00007" summary=" Claude. SDK.">
-      <option name="closed" value="true" />
-      <created>1758792397826</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1758792397826</updated>
-    </task>
-    <task id="LOCAL-00008" summary=" Claude. Entities and keywords.">
-      <option name="closed" value="true" />
-      <created>1758869599127</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1758869599127</updated>
     </task>
     <option name="localTasksCounter" value="9" />
     <option name="createBranch" value="false" />
@@ -445,6 +371,11 @@
           <line>9</line>
           <option name="timeStamp" value="117" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/service/csv2jsonl.py</url>
+          <line>13</line>
+          <option name="timeStamp" value="122" />
+        </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="jupyter-line">
           <url>notebook://D:/WORKSPACE/Python/scraper-news/gpt_summary_from_csv.ipynb</url>
           <line>57</line>
@@ -461,6 +392,6 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/scraper_news$.coverage" NAME=" Coverage Results" MODIFIED="1758981696156" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/scraper_news$.coverage" NAME=" Coverage Results" MODIFIED="1759316890583" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
   </component>
 </project>
