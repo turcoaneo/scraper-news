@@ -10,3 +10,9 @@ pytest
 python-dotenv
 anthropic
 openai
+transformers>=4.30.0
+datasets
+evaluate
+scikit-learn
+torch>=2.0.0
+accelerate>=0.26.0
