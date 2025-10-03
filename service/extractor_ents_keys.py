@@ -1,7 +1,10 @@
 import re
+from typing import Dict, List
+
 import torch
 from transformers import AutoTokenizer, AutoModelForTokenClassification
-from typing import List, Dict
+
+from service.util.span_utils import SpanUtils
 
 
 def split_words(text: str) -> List[str]:
@@ -24,57 +27,14 @@ class EntityKeywordExtractor:
         )
 
         word_ids = encoding.word_ids(batch_index=0)
+
         with torch.no_grad():
             outputs = self.model(**encoding)
 
         predictions = torch.argmax(outputs.logits, dim=-1)[0].tolist()
         labels = [self.id2label[p] for p in predictions]
 
-        entities, keywords = [], []
-        current_words = []
-        current_type = None
-        previous_word_id = None
-
-        for word_id, label in zip(word_ids, labels):
-            if word_id is None:
-                continue
-
-            word = words[word_id]
-
-            if label in ["B-ENT", "B-KW"]:
-                if current_words and current_type:
-                    phrase = " ".join(current_words)
-                    if current_type == "B-ENT":
-                        entities.append(phrase)
-                    elif current_type == "B-KW":
-                        keywords.append(phrase)
-                current_words = [word]
-                current_type = label
-            elif label == current_type and word_id != previous_word_id:
-                current_words.append(word)
-            else:
-                if current_words and current_type:
-                    phrase = " ".join(current_words)
-                    if current_type == "B-ENT":
-                        entities.append(phrase)
-                    elif current_type == "B-KW":
-                        keywords.append(phrase)
-                current_words = []
-                current_type = None
-
-            previous_word_id = word_id
-
-        if current_words and current_type:
-            phrase = " ".join(current_words)
-            if current_type == "B-ENT":
-                entities.append(phrase)
-            elif current_type == "B-KW":
-                keywords.append(phrase)
-
-        return {
-            "entities": sorted(set(entities)),
-            "keywords": sorted(set(keywords))
-        }
+        return SpanUtils.group_labeled_phrases(word_ids, labels, words)
 
     def print_extraction(self, text: str) -> None:
         result = self.extract_with_roberta(text)

@@ -5,7 +5,7 @@ from service.extractor_ents_keys import EntityKeywordExtractor
 
 @pytest.fixture
 def extractor():
-    return EntityKeywordExtractor("../roberta_token_output/checkpoint-200")
+    return EntityKeywordExtractor("../dumitrescustefan_token_output/checkpoint-200")
 
 
 def test_extraction_basic(extractor):
