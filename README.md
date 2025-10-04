@@ -33,7 +33,7 @@ xxx_scraper = SiteScraper(
     model=ModelType.CLAUDE / SPACY / GPT
 )
 
-### run-notebook-scraper.ipynb to scrape top four sports news sites for daily articles
+### Run-notebook-scraper.ipynb to scrape top four sports news sites for daily articles
 results are saved in four csv files that mainly contain summary, entity, and keywords 
 
 summary of each article is obtained with Python beautiful soup 
