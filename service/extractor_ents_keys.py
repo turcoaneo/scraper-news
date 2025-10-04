@@ -12,7 +12,7 @@ def split_words(text: str) -> List[str]:
 
 
 class EntityKeywordExtractor:
-    def __init__(self, model_path: str):
+    def __init__(self, model_path: str = 'dumitrescustefan_token_output/checkpoint-200'):
         self.tokenizer = AutoTokenizer.from_pretrained(model_path)
         self.model = AutoModelForTokenClassification.from_pretrained(model_path)
         self.id2label = self.model.config.id2label

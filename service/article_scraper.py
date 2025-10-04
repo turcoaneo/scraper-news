@@ -1,22 +1,13 @@
 import re
-from collections import Counter
 from datetime import datetime, timezone
 
 import requests
 from bs4 import BeautifulSoup
 from dateutil import parser
 
-from service.claude_prompt_builder import ClaudePromptBuilder, load_training_data
-from service.util.named_entity import NamedEntity
-
-stopwords = {
-    "asta", "ăsta", "acesta", "această", "există", "care", "pentru", "este", "și", "din", "cu", "sunt",
-    "mai", "mult", "foarte", "fie", "cum", "dar", "nu", "în", "la", "de"
-}
-
-
-def extract_named_entities(summary):
-    return NamedEntity().extract_ents(summary)
+from model.model_type import ModelType
+from service.claude_prompt_builder import load_training_data
+from service.util.entity_extraction_facade import EntityExtractorFacade
 
 
 class ArticleScraper:
@@ -26,28 +17,24 @@ class ArticleScraper:
         self.time_selector = time_selector
         self.soup = None
         self.valid = False
-        if path is not None:
+        if path is None:
             self.training_data = load_training_data("storage/training/example.json")
-
-    def extract_keywords_from_summary(self):
-        summary = self._extract_summary().lower()
-        words = re.findall(r'\b\w{5,}\b', summary)
-        filtered_words = [word for word in words if word not in stopwords]
-        word_counts = Counter(filtered_words)
-        most_common = [word for word, count in word_counts.most_common(10)]
-        return most_common
 
     def fetch(self):
         try:
-            response = requests.get(self.homepage_url, headers={"User-Agent": "Mozilla/5.0"})
+            response = self._request_homepage()
             if response.status_code == 200:
                 self.soup = BeautifulSoup(response.text, "html.parser")
                 self.valid = self.validate_article()
-        except Exception:
+            else:
+                print("Error, response code: " + str(response.status_code) + " for " + self.homepage_title)
+                self.valid = False
+        except Exception as e:
+            print("Error fetching" + self.homepage_title + ": " + str(e))
             self.valid = False
 
     def validate_article(self):
-        page_title_tag = self.soup.find("h1")
+        page_title_tag = self._extract_title()
         if not page_title_tag:
             return False
 
@@ -56,24 +43,18 @@ class ArticleScraper:
 
         return homepage_title[:30] in page_title or page_title[:30] in homepage_title
 
-    def extract_data(self, claude: bool = False):
+    def extract_data(self, model_type: ModelType = ModelType.BERT):
         if not self.valid or not self.soup:
             return None
 
         summary = self._extract_summary()
+        result = EntityExtractorFacade.extract_by_model(summary, model_type, self.training_data)
 
-        claude_response = None
-        if claude:
-            claude_prompt_builder = ClaudePromptBuilder(summary)
-            claude_response = claude_prompt_builder.extract_entities_and_keywords(self.training_data)
-
-        entities = claude_response["entities"] if claude else extract_named_entities(summary)
-        keywords_from_summary = claude_response["keywords"] if claude else self.extract_keywords_from_summary()
         return {
             "title": str(self.extract_title()),
             "timestamp": self.extract_timestamp_from_selector(self.time_selector),
-            "entities": ", ".join(entities),
-            "keywords": ", ".join(keywords_from_summary),
+            "entities": ", ".join(result["entities"]),
+            "keywords": ", ".join(result["keywords"]),
             "summary": str(summary),
             "url": str(self.homepage_url),
             "comments": str(self._extract_comments())
@@ -83,7 +64,7 @@ class ArticleScraper:
         if unwanted_tags is None:
             unwanted_tags = ["Exclusiv", "UPDATE", "Oficial", "FOTO", "VIDEO", "FOTO ȘI VIDEO", "EXCLUSIV / UPDATE"]
 
-        tag = self.soup.find("h1")
+        tag = self._extract_title()
         if not tag:
             return ""
 
@@ -101,11 +82,11 @@ class ArticleScraper:
         return title
 
     def extract_title_naive(self):
-        tag = self.soup.find("h1")
+        tag = self._extract_title()
         return tag.get_text(strip=True) if tag else ""
 
-    def extract_timestamp_from_selector(self, selector):
-        tag = self.soup.select_one(selector)
+    def extract_timestamp_from_selector(self, selector, return_both: bool = False):
+        tag = self._extract_time_selector(selector)
         if tag:
             text = tag.get_text(strip=True)
 
@@ -117,13 +98,23 @@ class ArticleScraper:
 
             if match:
                 try:
-                    dt = parser.parse(match.group(), dayfirst=True)
-                    return dt.astimezone(timezone.utc)
-                except Exception:
-                    pass
+                    local_dt = parser.parse(match.group(), dayfirst=True)
+                    utc_dt = local_dt.astimezone(timezone.utc)
+                    return (local_dt, utc_dt) if return_both else utc_dt
+                except Exception as e:
+                    print("Error parsing time: " + str(e))
 
-        # Fallback: current UTC time
-        return datetime.now(timezone.utc)
+        fallback = datetime.now(timezone.utc)
+        return (fallback, fallback) if return_both else fallback
+
+    def _request_homepage(self):
+        return requests.get(self.homepage_url, headers={"User-Agent": "Mozilla/5.0"})
+
+    def _extract_time_selector(self, selector):
+        return self.soup.select_one(selector)
+
+    def _extract_title(self):
+        return self.soup.find("h1")
 
     def _extract_summary(self):
         meta_desc = self.soup.find("meta", {"name": "description"})
@@ -132,15 +123,6 @@ class ArticleScraper:
 
         p_tag = self.soup.find("p")
         return p_tag.get_text(strip=True) if p_tag else ""
-
-    def _extract_keywords(self):
-        paragraphs = self.soup.find_all('p')
-        article_text = " ".join(p.get_text() for p in paragraphs)
-        words = re.findall(r'\b\w{5,}\b', article_text.lower())
-        filtered_words = [word for word in words if word not in stopwords]
-        word_counts = Counter(filtered_words)
-        most_common = [word for word, count in word_counts.most_common(20)]
-        return most_common
 
     def _extract_comments(self):
         comment_tag = self.soup.find("div", class_="comments-no")

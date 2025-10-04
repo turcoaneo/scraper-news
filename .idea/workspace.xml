@@ -4,14 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a7f942ad-3c95-41b0-b4b7-f43fce9ff07e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/service/gpt_prompt_builder.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/test_gpt_prompt_builder.py" afterDir="false" />
+    <list default="true" id="a7f942ad-3c95-41b0-b4b7-f43fce9ff07e" name="Changes" comment="Refactoring.">
+      <change afterPath="$PROJECT_DIR$/model/model_type.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/util/entity_extraction_facade.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/util/spacy_ents_keys.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/storage/training/example.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/test_spacy_ents_keys.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hugging_face_training_ents_keys.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/hugging_face_training_ents_keys.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run-notebook-scraper.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/run-notebook-scraper.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/article_scraper.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/article_scraper.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/extractor_ents_keys.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/extractor_ents_keys.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service/site_scraper.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/site_scraper.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/test_article_extract_data.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/test_article_scraper.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test_article_scraper.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/test_claude_prompt_builder.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test_claude_prompt_builder.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/test_extractor_ents_keys.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test_extractor_ents_keys.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/test_gpt_prompt_builder.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test_gpt_prompt_builder.py" afterDir="false" />
     </list>
     <list id="6508d4bf-b1d4-4e03-bff8-2d311d3ea368" name="Env" comment="">
+      <change afterPath="$PROJECT_DIR$/test/storage/prosport_dump.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/test_benchmark_models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -56,6 +69,12 @@
     "Python tests.Python tests for test_article_extract_data.TestArticleExtractor.test_extract_data_returns_expected_dict.executor": "Debug",
     "Python tests.Python tests for test_article_extract_data.TestArticleExtractor.test_extract_data_returns_none_if_invalid.executor": "Debug",
     "Python tests.Python tests for test_article_extract_data.TestArticleExtractor.test_simple.executor": "Run",
+    "Python tests.Python tests for test_article_scraper.TestArticleScraper.executor": "Run",
+    "Python tests.Python tests for test_article_scraper.TestArticleScraper.test_extract_data.executor": "Run",
+    "Python tests.Python tests for test_article_scraper.TestArticleScraper.test_extract_timestamp_from_selector_digisport.executor": "Debug",
+    "Python tests.Python tests for test_article_scraper.TestArticleScraper.test_extract_timestamp_from_selector_gsp.executor": "Run",
+    "Python tests.Python tests for test_article_scraper.TestArticleScraper.test_fetch_failure.executor": "Debug",
+    "Python tests.Python tests for test_article_scraper.TestArticleScraper.test_validate_article_false.executor": "Debug",
     "Python tests.Python tests for test_claude_prompt_builder.TestClaudePromptBuilder.executor": "Run",
     "Python tests.Python tests for test_claude_prompt_builder.TestClaudePromptBuilder.test_extract_entities_and_keywords.executor": "Run",
     "Python tests.Python tests for test_claude_prompt_builder.TestClaudePromptBuilder.test_send_prompt_to_claude.executor": "Debug",
@@ -66,8 +85,9 @@
     "Python tests.Python tests for test_extractor_ents_keys.test_empty_input.executor": "Run",
     "Python tests.Python tests for test_extractor_ents_keys.test_extraction_basic.executor": "Debug",
     "Python tests.Python tests for test_gpt_prompt_builder.TestGptPromptBuilder.executor": "Run",
-    "Python tests.Python tests for test_gpt_prompt_builder.TestGptPromptBuilder.test_extract_entities_and_keywords.executor": "Debug",
+    "Python tests.Python tests for test_gpt_prompt_builder.TestGptPromptBuilder.test_extract_entities_and_keywords.executor": "Run",
     "Python tests.Python tests for test_gpt_prompt_builder.TestGptPromptBuilder.test_load_training_data.executor": "Run",
+    "Python tests.Python tests for test_spacy_ents_keys.TestSpacyEntsKeys.executor": "Run",
     "Python tests.Python tests for test_span_utils.test_group_labeled_phrases_basic.executor": "Run",
     "Python tests.Python tests for test_span_utils.test_suppress_sub_spans.executor": "Run",
     "Python tests.Python tests in test_claude_prompt_builder.py.executor": "Run",
@@ -76,7 +96,7 @@
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/WORKSPACE/Python/scraper-news/test",
+    "last_opened_file_path": "D:/WORKSPACE/Python/scraper-news/test/storage",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
@@ -87,11 +107,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\WORKSPACE\Python\scraper-news\test\storage" />
+      <recent name="D:\WORKSPACE\Python\scraper-news\service\util" />
       <recent name="D:\WORKSPACE\Python\scraper-news\test" />
       <recent name="D:\WORKSPACE\Python\scraper-news\service" />
-      <recent name="D:\WORKSPACE\Python\scraper-news\service\util" />
       <recent name="D:\WORKSPACE\Python\scraper-news" />
-      <recent name="D:\WORKSPACE\Python\scraper-news\storage" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\WORKSPACE\Python\scraper-news\test\storage" />
@@ -101,7 +121,7 @@
       <recent name="D:\WORKSPACE\Python\scraper-news\service" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.Python tests for test_gpt_prompt_builder.TestGptPromptBuilder">
+  <component name="RunManager" selected="Python tests.Python tests for test_gpt_prompt_builder.TestGptPromptBuilder.test_extract_entities_and_keywords">
     <configuration default="true" type="DjangoTestsConfigurationType">
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -222,7 +242,7 @@
       <option name="docutils_open_in_browser" value="false" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for test_gpt_prompt_builder.TestGptPromptBuilder" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for test_article_scraper.TestArticleScraper.test_extract_data" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="scraper-news" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -234,7 +254,55 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_gpt_prompt_builder.TestGptPromptBuilder&quot;" />
+      <option name="_new_target" value="&quot;test_article_scraper.TestArticleScraper.test_extract_data&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for test_article_scraper.TestArticleScraper.test_extract_timestamp_from_selector_digisport" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="scraper-news" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_article_scraper.TestArticleScraper.test_extract_timestamp_from_selector_digisport&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for test_article_scraper.TestArticleScraper.test_fetch_failure" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="scraper-news" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_article_scraper.TestArticleScraper.test_fetch_failure&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for test_claude_prompt_builder.TestClaudePromptBuilder.test_extract_entities_and_keywords" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="scraper-news" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_claude_prompt_builder.TestClaudePromptBuilder.test_extract_entities_and_keywords&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
@@ -254,61 +322,13 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for test_gpt_prompt_builder.TestGptPromptBuilder.test_load_training_data" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
-      <module name="scraper-news" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_gpt_prompt_builder.TestGptPromptBuilder.test_load_training_data&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Python tests for test_span_utils.test_group_labeled_phrases_basic" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
-      <module name="scraper-news" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_span_utils.test_group_labeled_phrases_basic&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Python tests for test_span_utils.test_suppress_sub_spans" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
-      <module name="scraper-news" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_span_utils.test_suppress_sub_spans&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python tests.Python tests for test_gpt_prompt_builder.TestGptPromptBuilder" />
         <item itemvalue="Python tests.Python tests for test_gpt_prompt_builder.TestGptPromptBuilder.test_extract_entities_and_keywords" />
-        <item itemvalue="Python tests.Python tests for test_gpt_prompt_builder.TestGptPromptBuilder.test_load_training_data" />
-        <item itemvalue="Python tests.Python tests for test_span_utils.test_group_labeled_phrases_basic" />
-        <item itemvalue="Python tests.Python tests for test_span_utils.test_suppress_sub_spans" />
+        <item itemvalue="Python tests.Python tests for test_claude_prompt_builder.TestClaudePromptBuilder.test_extract_entities_and_keywords" />
+        <item itemvalue="Python tests.Python tests for test_article_scraper.TestArticleScraper.test_extract_data" />
+        <item itemvalue="Python tests.Python tests for test_article_scraper.TestArticleScraper.test_extract_timestamp_from_selector_digisport" />
+        <item itemvalue="Python tests.Python tests for test_article_scraper.TestArticleScraper.test_fetch_failure" />
       </list>
     </recent_temporary>
   </component>
@@ -338,7 +358,11 @@
       <workItem from="1759394016064" duration="1083000" />
       <workItem from="1759395118646" duration="1658000" />
       <workItem from="1759396803709" duration="12847000" />
-      <workItem from="1759414801807" duration="17188000" />
+      <workItem from="1759414801807" duration="29649000" />
+      <workItem from="1759577667949" duration="1014000" />
+      <workItem from="1759578704989" duration="819000" />
+      <workItem from="1759579545735" duration="968000" />
+      <workItem from="1759580536621" duration="1707000" />
     </task>
     <task id="LOCAL-00009" summary=" Hugging Face prep.">
       <option name="closed" value="true" />
@@ -372,7 +396,15 @@
       <option name="project" value="LOCAL" />
       <updated>1759506067170</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="GPT prompt builder.">
+      <option name="closed" value="true" />
+      <created>1759564156621</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1759564156621</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <option name="createBranch" value="false" />
     <option name="useBranch" value="true" />
     <servers />
@@ -392,7 +424,8 @@
     <MESSAGE value=" Hugging Face prep." />
     <MESSAGE value=" Hugging Face model." />
     <MESSAGE value="Readme." />
-    <option name="LAST_COMMIT_MESSAGE" value="Readme." />
+    <MESSAGE value="GPT prompt builder." />
+    <option name="LAST_COMMIT_MESSAGE" value="GPT prompt builder." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -427,6 +460,26 @@
           <line>53</line>
           <option name="timeStamp" value="128" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/test/test_article_scraper.py</url>
+          <line>29</line>
+          <option name="timeStamp" value="131" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/test/test_article_scraper.py</url>
+          <line>48</line>
+          <option name="timeStamp" value="133" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/test/test_article_scraper.py</url>
+          <line>95</line>
+          <option name="timeStamp" value="135" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/test/test_article_scraper.py</url>
+          <line>67</line>
+          <option name="timeStamp" value="139" />
+        </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="jupyter-line">
           <url>notebook://D:/WORKSPACE/Python/scraper-news/gpt_summary_from_csv.ipynb</url>
           <line>57</line>
@@ -443,6 +496,6 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/scraper_news$.coverage" NAME=" Coverage Results" MODIFIED="1759563760049" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/scraper_news$.coverage" NAME=" Coverage Results" MODIFIED="1759581824125" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
   </component>
 </project>

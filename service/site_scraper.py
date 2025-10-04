@@ -8,6 +8,7 @@ import requests
 from bs4 import BeautifulSoup
 
 from model.article import Article
+from model.model_type import ModelType
 from service.article_scraper import ArticleScraper
 
 
@@ -48,7 +49,7 @@ class SiteScraper:
     file_base: str = "storage"
 
     def __init__(self, name, base_url, traffic, time_selector, block_selector, link_selector, title_strategy,
-                 title_attribute=None, weight=0.0, filter_place_keys=None, claude=True):
+                 title_attribute=None, weight=0.0, filter_place_keys=None, model: ModelType = ModelType.BERT):
         self.name = name
         self.base_url = base_url
         self.traffic = traffic
@@ -59,7 +60,7 @@ class SiteScraper:
         self.link_selector = link_selector
         self.title_strategy = title_strategy
         self.title_attribute = title_attribute
-        self.claude = claude
+        self.model_type = model
 
         if filter_place_keys is None:
             self.filter_place_keys = {
@@ -180,7 +181,7 @@ class SiteScraper:
 
                 article_scraper = ArticleScraper(full_url, homepage_title, self.time_selector)
                 article_scraper.fetch()
-                article_data = article_scraper.extract_data(self.claude)
+                article_data = article_scraper.extract_data(self.model_type)
 
                 if article_data and article_data["timestamp"] >= cutoff:
                     self.articles.add(Article(self.name, article_data["timestamp"], article_data["title"],
