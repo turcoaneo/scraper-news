@@ -3,8 +3,11 @@ PyCharm as IDE
 
 ## Unit test
 ### From file - benchmark, output printed
-python -m unittest test/test_benchmark_models.py
-### All
+#### Windows
+pytest test/test_benchmark_models.py -s
+#### Bash
+pytest test\test_benchmark_models.py -s
+### All, except benchmark
 python -m unittest
 
 ## Install
