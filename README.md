@@ -15,6 +15,7 @@ python -m venv venv
 venv\Scripts\activate
 
 python.exe -m pip install --upgrade pip
+
 python -m pip install -r requirements.txt
 
 ## Install spacy
@@ -26,18 +27,25 @@ python -m spacy download ro_core_news_sm
 if not running this then change all site scrapers from run-notebook-scraper.ipynb to use one of the above
 
 xxx_scraper = SiteScraper(
-    ...
+
+    # some other stuff
+
     model=ModelType.CLAUDE / SPACY / GPT
 )
 
 ### run-notebook-scraper.ipynb to scrape top four sports news sites for daily articles
-results are saved in four csv files that mainly contain summary, entity, and keywords
-summary of each article is obtained with Python beautiful soup
-entities and keywords are yielded by self-trained model with bert, default approach
+results are saved in four csv files that mainly contain summary, entity, and keywords 
+
+summary of each article is obtained with Python beautiful soup 
+
+entities and keywords are yielded by self-trained model with bert, default approach 
+
 to use claude, gpt, or spaCy add custom model as parameter
 
 xxx_scraper = SiteScraper(
-    ...
+
+    # some other stuff
+
     model=ModelType.CLAUDE
 )
 

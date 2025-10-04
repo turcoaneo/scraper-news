@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a7f942ad-3c95-41b0-b4b7-f43fce9ff07e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run-notebook-scraper.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/run-notebook-scraper.ipynb" afterDir="false" />
-    </list>
+    <list default="true" id="a7f942ad-3c95-41b0-b4b7-f43fce9ff07e" name="Changes" comment="" />
     <list id="6508d4bf-b1d4-4e03-bff8-2d311d3ea368" name="Env" comment="">
       <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
     </list>
@@ -348,7 +344,7 @@
       <workItem from="1759577667949" duration="1014000" />
       <workItem from="1759578704989" duration="819000" />
       <workItem from="1759579545735" duration="968000" />
-      <workItem from="1759580536621" duration="7283000" />
+      <workItem from="1759580536621" duration="7623000" />
     </task>
     <task id="LOCAL-00009" summary=" Hugging Face prep.">
       <option name="closed" value="true" />
@@ -414,7 +410,23 @@
       <option name="project" value="LOCAL" />
       <updated>1759586723803</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Instructions.">
+      <option name="closed" value="true" />
+      <created>1759588188924</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1759588188924</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Instructions 2.">
+      <option name="closed" value="true" />
+      <created>1759588418388</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1759588418388</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <option name="createBranch" value="false" />
     <option name="useBranch" value="true" />
     <servers />
@@ -438,7 +450,9 @@
     <MESSAGE value="Refactoring." />
     <MESSAGE value="Benchmarking a bit." />
     <MESSAGE value="Benchmarking a bit. Refactoring." />
-    <option name="LAST_COMMIT_MESSAGE" value="Benchmarking a bit. Refactoring." />
+    <MESSAGE value="Instructions." />
+    <MESSAGE value="Instructions 2." />
+    <option name="LAST_COMMIT_MESSAGE" value="Instructions 2." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
