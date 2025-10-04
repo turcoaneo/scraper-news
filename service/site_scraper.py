@@ -9,7 +9,6 @@ from bs4 import BeautifulSoup
 
 from model.article import Article
 from service.article_scraper import ArticleScraper
-from service.claude_prompt_builder import load_training_data
 
 
 def sanitize_quotes(text):
