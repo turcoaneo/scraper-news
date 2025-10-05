@@ -1,8 +1,8 @@
 import json
+import os
 import unittest
 
 from service.csv2jsonl import CsvToJsonlConverter
-import os
 
 # Setup
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
