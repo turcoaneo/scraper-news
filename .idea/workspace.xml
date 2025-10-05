@@ -6,7 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="a7f942ad-3c95-41b0-b4b7-f43fce9ff07e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/storage/csv2jsonl_input.csv" beforeDir="false" afterPath="$PROJECT_DIR$/test/storage/csv2jsonl_input.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/test_csv2jsonl.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test_csv2jsonl.py" afterDir="false" />
     </list>
     <list id="6508d4bf-b1d4-4e03-bff8-2d311d3ea368" name="Env" comment="">
       <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
@@ -107,7 +108,7 @@
       <recent name="D:\WORKSPACE\Python\scraper-news\service" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.Python tests for test_benchmark_models.TestBenchmark.test_benchmark_models">
+  <component name="RunManager" selected="Python tests.Python tests for test_csv2jsonl.TestCsvToJsonlConverter">
     <configuration default="true" type="DjangoTestsConfigurationType">
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -228,22 +229,6 @@
       <option name="docutils_open_in_browser" value="false" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for test_article_scraper.TestArticleScraper.test_extract_data" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
-      <module name="scraper-news" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_article_scraper.TestArticleScraper.test_extract_data&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
     <configuration name="Python tests for test_benchmark_models.TestBenchmark.test_benchmark_models" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="scraper-news" />
       <option name="ENV_FILES" value="" />
@@ -292,6 +277,22 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
+    <configuration name="Python tests for test_csv2jsonl.TestCsvToJsonlConverter" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="scraper-news" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_csv2jsonl.TestCsvToJsonlConverter&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
     <configuration name="Python tests for test_gpt_prompt_builder.TestGptPromptBuilder.test_extract_entities_and_keywords" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="scraper-news" />
       <option name="ENV_FILES" value="" />
@@ -310,11 +311,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.Python tests for test_csv2jsonl.TestCsvToJsonlConverter" />
         <item itemvalue="Python tests.Python tests for test_benchmark_models.TestBenchmark.test_benchmark_models" />
         <item itemvalue="Python tests.Python tests for test_benchmark_models.test_benchmark_models" />
         <item itemvalue="Python tests.Python tests for test_gpt_prompt_builder.TestGptPromptBuilder.test_extract_entities_and_keywords" />
         <item itemvalue="Python tests.Python tests for test_claude_prompt_builder.TestClaudePromptBuilder.test_extract_entities_and_keywords" />
-        <item itemvalue="Python tests.Python tests for test_article_scraper.TestArticleScraper.test_extract_data" />
       </list>
     </recent_temporary>
   </component>
@@ -349,7 +350,7 @@
       <workItem from="1759578704989" duration="819000" />
       <workItem from="1759579545735" duration="968000" />
       <workItem from="1759580536621" duration="9750000" />
-      <workItem from="1759646194151" duration="1481000" />
+      <workItem from="1759646194151" duration="3726000" />
     </task>
     <task id="LOCAL-00009" summary=" Hugging Face prep.">
       <option name="closed" value="true" />
@@ -455,7 +456,23 @@
       <option name="project" value="LOCAL" />
       <updated>1759590533008</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="README.">
+      <option name="closed" value="true" />
+      <created>1759647696495</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1759647696495</updated>
+    </task>
+    <task id="LOCAL-00023" summary="README markdowns.">
+      <option name="closed" value="true" />
+      <created>1759649328851</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1759649328851</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <option name="createBranch" value="false" />
     <option name="useBranch" value="true" />
     <servers />
@@ -483,7 +500,9 @@
     <MESSAGE value="Instructions 3." />
     <MESSAGE value="Instructions." />
     <MESSAGE value="Fixes." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixes." />
+    <MESSAGE value="README." />
+    <MESSAGE value="README markdowns." />
+    <option name="LAST_COMMIT_MESSAGE" value="README markdowns." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

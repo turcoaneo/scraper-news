@@ -2,13 +2,17 @@ import json
 import unittest
 
 from service.csv2jsonl import CsvToJsonlConverter
+import os
+
+# Setup
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+input_path = os.path.join(BASE_DIR, "storage", "csv2jsonl_input.csv")
+output_path = os.path.join(BASE_DIR, "storage", "csv2jsonl_output.json")
 
 
 class TestCsvToJsonlConverter(unittest.TestCase):
+
     def test_conversion_creates_valid_jsonl(self):
-        # Setup
-        input_path = "storage/csv2jsonl_input.csv"
-        output_path = "storage/csv2jsonl_output.jsonl"
         with open(input_path, "w", encoding="utf-8") as f:
             f.write('"summary","entities","keywords"\n')
             f.write('"Summary12","Entity1,Entity2","Keyword1,Keyword2"\n')
@@ -33,9 +37,6 @@ class TestCsvToJsonlConverter(unittest.TestCase):
         # os.remove(output_path)
 
     def test_creates_valid_jsonl_diacritics(self):
-        # Setup
-        input_path = "storage/csv2jsonl_input.csv"
-        output_path = "storage/csv2jsonl_output.jsonl"
         with open(input_path, "w", encoding="utf-8") as f:
             f.write('"summary","entities","keywords"\n')
             f.write('"Școala și viața în România merg împreună pe 15 septembrie","text,1-0,text","1-2,text"\n')
@@ -59,9 +60,6 @@ class TestCsvToJsonlConverter(unittest.TestCase):
         # os.remove(output_path)
 
     def test_creates_valid_jsonl_NaN(self):
-        # Setup
-        input_path = "storage/csv2jsonl_input.csv"
-        output_path = "storage/csv2jsonl_output.jsonl"
         with open(input_path, "w", encoding="utf-8") as f:
             f.write('"summary","entities","keywords"\n')
             f.write('"Școala și viața","",""\n')
