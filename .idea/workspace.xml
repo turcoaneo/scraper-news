@@ -7,7 +7,6 @@
     <list default="true" id="a7f942ad-3c95-41b0-b4b7-f43fce9ff07e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/test_benchmark_models.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test_benchmark_models.py" afterDir="false" />
     </list>
     <list id="6508d4bf-b1d4-4e03-bff8-2d311d3ea368" name="Env" comment="">
       <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
@@ -48,50 +47,50 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python tests.Python tests for test_article_extract_data.TestArticleExtractor.executor": "Run",
-    "Python tests.Python tests for test_article_extract_data.TestArticleExtractor.test_extract_data_returns_expected_dict.executor": "Debug",
-    "Python tests.Python tests for test_article_extract_data.TestArticleExtractor.test_extract_data_returns_none_if_invalid.executor": "Debug",
-    "Python tests.Python tests for test_article_extract_data.TestArticleExtractor.test_simple.executor": "Run",
-    "Python tests.Python tests for test_article_scraper.TestArticleScraper.executor": "Run",
-    "Python tests.Python tests for test_article_scraper.TestArticleScraper.test_extract_data.executor": "Run",
-    "Python tests.Python tests for test_article_scraper.TestArticleScraper.test_extract_timestamp_from_selector_digisport.executor": "Debug",
-    "Python tests.Python tests for test_article_scraper.TestArticleScraper.test_extract_timestamp_from_selector_gsp.executor": "Run",
-    "Python tests.Python tests for test_article_scraper.TestArticleScraper.test_fetch_failure.executor": "Debug",
-    "Python tests.Python tests for test_article_scraper.TestArticleScraper.test_validate_article_false.executor": "Debug",
-    "Python tests.Python tests for test_benchmark_models.TestBenchmark.test_benchmark_models.executor": "Run",
-    "Python tests.Python tests for test_benchmark_models.test_benchmark_models.executor": "Run",
-    "Python tests.Python tests for test_claude_prompt_builder.TestClaudePromptBuilder.executor": "Run",
-    "Python tests.Python tests for test_claude_prompt_builder.TestClaudePromptBuilder.test_extract_entities_and_keywords.executor": "Run",
-    "Python tests.Python tests for test_claude_prompt_builder.TestClaudePromptBuilder.test_send_prompt_to_claude.executor": "Debug",
-    "Python tests.Python tests for test_csv2jsonl.TestCsvToJsonlConverter.executor": "Run",
-    "Python tests.Python tests for test_csv2jsonl.TestCsvToJsonlConverter.test_conversion_creates_valid_jsonl.executor": "Run",
-    "Python tests.Python tests for test_csv2jsonl.TestCsvToJsonlConverter.test_creates_valid_jsonl_NaN.executor": "Run",
-    "Python tests.Python tests for test_csv2jsonl.TestCsvToJsonlConverter.test_creates_valid_jsonl_from_float.executor": "Run",
-    "Python tests.Python tests for test_extractor_ents_keys.test_empty_input.executor": "Run",
-    "Python tests.Python tests for test_extractor_ents_keys.test_extraction_basic.executor": "Debug",
-    "Python tests.Python tests for test_gpt_prompt_builder.TestGptPromptBuilder.executor": "Run",
-    "Python tests.Python tests for test_gpt_prompt_builder.TestGptPromptBuilder.test_extract_entities_and_keywords.executor": "Run",
-    "Python tests.Python tests for test_gpt_prompt_builder.TestGptPromptBuilder.test_load_training_data.executor": "Run",
-    "Python tests.Python tests for test_spacy_ents_keys.TestSpacyEntsKeys.executor": "Run",
-    "Python tests.Python tests for test_span_utils.test_group_labeled_phrases_basic.executor": "Run",
-    "Python tests.Python tests for test_span_utils.test_suppress_sub_spans.executor": "Run",
-    "Python tests.Python tests in test_claude_prompt_builder.py.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/WORKSPACE/Python/scraper-news/test/storage",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "org.jetbrains.plugins.notebooks.jupyter.connections.configuration.JupyterServerConfigurable",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python tests.Python tests for test_article_extract_data.TestArticleExtractor.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_article_extract_data.TestArticleExtractor.test_extract_data_returns_expected_dict.executor&quot;: &quot;Debug&quot;,
+    &quot;Python tests.Python tests for test_article_extract_data.TestArticleExtractor.test_extract_data_returns_none_if_invalid.executor&quot;: &quot;Debug&quot;,
+    &quot;Python tests.Python tests for test_article_extract_data.TestArticleExtractor.test_simple.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_article_scraper.TestArticleScraper.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_article_scraper.TestArticleScraper.test_extract_data.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_article_scraper.TestArticleScraper.test_extract_timestamp_from_selector_digisport.executor&quot;: &quot;Debug&quot;,
+    &quot;Python tests.Python tests for test_article_scraper.TestArticleScraper.test_extract_timestamp_from_selector_gsp.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_article_scraper.TestArticleScraper.test_fetch_failure.executor&quot;: &quot;Debug&quot;,
+    &quot;Python tests.Python tests for test_article_scraper.TestArticleScraper.test_validate_article_false.executor&quot;: &quot;Debug&quot;,
+    &quot;Python tests.Python tests for test_benchmark_models.TestBenchmark.test_benchmark_models.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_benchmark_models.test_benchmark_models.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_claude_prompt_builder.TestClaudePromptBuilder.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_claude_prompt_builder.TestClaudePromptBuilder.test_extract_entities_and_keywords.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_claude_prompt_builder.TestClaudePromptBuilder.test_send_prompt_to_claude.executor&quot;: &quot;Debug&quot;,
+    &quot;Python tests.Python tests for test_csv2jsonl.TestCsvToJsonlConverter.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_csv2jsonl.TestCsvToJsonlConverter.test_conversion_creates_valid_jsonl.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_csv2jsonl.TestCsvToJsonlConverter.test_creates_valid_jsonl_NaN.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_csv2jsonl.TestCsvToJsonlConverter.test_creates_valid_jsonl_from_float.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_extractor_ents_keys.test_empty_input.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_extractor_ents_keys.test_extraction_basic.executor&quot;: &quot;Debug&quot;,
+    &quot;Python tests.Python tests for test_gpt_prompt_builder.TestGptPromptBuilder.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_gpt_prompt_builder.TestGptPromptBuilder.test_extract_entities_and_keywords.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_gpt_prompt_builder.TestGptPromptBuilder.test_load_training_data.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_spacy_ents_keys.TestSpacyEntsKeys.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_span_utils.test_group_labeled_phrases_basic.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_span_utils.test_suppress_sub_spans.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_claude_prompt_builder.py.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/WORKSPACE/Python/scraper-news/test/storage&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.notebooks.jupyter.connections.configuration.JupyterServerConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\WORKSPACE\Python\scraper-news\test\storage" />
@@ -349,7 +348,8 @@
       <workItem from="1759577667949" duration="1014000" />
       <workItem from="1759578704989" duration="819000" />
       <workItem from="1759579545735" duration="968000" />
-      <workItem from="1759580536621" duration="9546000" />
+      <workItem from="1759580536621" duration="9750000" />
+      <workItem from="1759646194151" duration="1481000" />
     </task>
     <task id="LOCAL-00009" summary=" Hugging Face prep.">
       <option name="closed" value="true" />
@@ -447,7 +447,15 @@
       <option name="project" value="LOCAL" />
       <updated>1759588780819</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Fixes.">
+      <option name="closed" value="true" />
+      <created>1759590533008</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1759590533008</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <option name="createBranch" value="false" />
     <option name="useBranch" value="true" />
     <servers />
@@ -474,7 +482,8 @@
     <MESSAGE value="Instructions 2." />
     <MESSAGE value="Instructions 3." />
     <MESSAGE value="Instructions." />
-    <option name="LAST_COMMIT_MESSAGE" value="Instructions." />
+    <MESSAGE value="Fixes." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixes." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
