@@ -1,64 +1,87 @@
-# Top news app
+# Top news app  
 PyCharm as IDE
 
+## Notes
+
+- Requires Python 3.11+ and internet access for model downloads  
+- Output files are typically saved in `storage/` or `output/` folders  
+- For benchmark tests, all paths are dynamically resolved using `os.path.join()` for cross-platform compatibility  
+- When terminal-specific commands are required, ticks are omitted to avoid misleading syntax highlighting  
+  - **Windows** refers to both Command Prompt and PowerShell  
+  - **Bash** refers to GitBash, WSL, or Unix-like shells
+- All ```bash``` commands work for Windows terminal as well.
+
 ## 1. Install
+```bash
 python -m venv venv
+```
 
-## 2. Activate virtual ENV - venv
-### Windows
+## 2. Activate virtual ENV - venv  
+### Windows  
 venv\Scripts\activate
+### Bash
+source venv/bin/activate
 
+```bash
 python.exe -m pip install --upgrade pip
-
 python -m pip install -r requirements.txt
+```
 
-## 3. Install spacy
+## 3. Install spaCy  
+```bash
 python -m spacy download ro_core_news_sm
+```
 
-## 4. Instructions
+## 4. Instructions  
 
-### 4.1 Run hugging_face_training_ents_keys.ipynb to use results from GPT-4 to train a model based on bert
-check for dumitrescustefan_token_output folder
+### 4.1 Run `hugging_face_training_ents_keys.ipynb` to train a BERT model using GPT-4 results  
+Check for `dumitrescustefan_token_output` folder.  
 
-if not running this then change all site scrapers from run-notebook-scraper.ipynb to use one of the above
-
+If not running this, scrapers will default to BERT. To override, change model type in `run-notebook-scraper.ipynb`:  
+```python
 xxx_scraper = SiteScraper(
-
-    # some other stuff
-
-    model=ModelType.CLAUDE / SPACY / GPT
+    # other parameters
+    model=ModelType.CLAUDE #/ SPACY / GPT
 )
+```
 
-### 4.2 Run-notebook-scraper.ipynb to scrape top four sports news sites for daily articles
-results are saved in four csv files that mainly contain summary, entity, and keywords 
+### 4.2 Run `run-notebook-scraper.ipynb` to scrape top four sports news sites  
+Results are saved in four CSV files containing summary, entities, and keywords.  
 
-summary of each article is obtained with Python beautiful soup 
+- Summary is extracted via BeautifulSoup  
+- Entities and keywords are extracted using the selected model (default: BERT)  
 
-entities and keywords are yielded by self-trained model with ModelType.BERT, default approach 
-
-to use claude, gpt, or spaCy add custom model as parameter
-
+To use Claude, GPT, or spaCy:  
+```python
 xxx_scraper = SiteScraper(
-
-    # some other stuff
-
+    # other parameters
     model=ModelType.CLAUDE
 )
+```
 
-### 4.3 Extra
-#### Run quote_all_csv to surround fields with quotes and save in a different file
-#### Run gpt_keys_ents_csv_summary.ipynb to use aggregated summaries to extract entities and keywords with GPT-4
+### 4.3 Extra  
+- Run `quote_all_csv.ipynb` to surround fields with quotes and save to a new file  
+- Run `gpt_keys_ents_csv_summary.ipynb` to extract entities and keywords from aggregated summaries using GPT-4  
 
-## 5. Test
-### 5.1 From file - benchmark of statical BERT vs GPT, CLAUDE, and SPACY, output printed, no metrics
-It tests against test/storage/prosport_dump.csv (statical BERT results) by randomly choosing two samples
+## 5. Test  
 
-For custom test file it needs BOTH 4.1 - dumitrescustefan_token_output folder - AND to generate 1-4 file(s) with 4.2!!
-Then replace test/storage/prosport_dump.csv with your file(s) or a merge of them
+### 5.1 Benchmark: Compare static BERT vs GPT, Claude, and spaCy  
+Tests against `test/storage/prosport_dump.csv` (contains BERT results) using two random samples.  
 
-#### Windows
+For a custom test file, you must run both:  
+- 4.1 to generate `dumitrescustefan_token_output`  
+- 4.2 to generate 1–4 CSV files  
+
+Then replace `test/storage/prosport_dump.csv` with your file or a merge of them.  
+
+#### Windows  
 pytest test/test_benchmark_models.py -s
-#### Bash
+
+#### Bash  
 pytest test\test_benchmark_models.py -s
-### 5.2 All, except benchmark
+
+### 5.2 Run all other tests  
+```bash
 python -m unittest
+```
+ 
