@@ -6,8 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="a7f942ad-3c95-41b0-b4b7-f43fce9ff07e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/storage/csv2jsonl_input.csv" beforeDir="false" afterPath="$PROJECT_DIR$/test/storage/csv2jsonl_input.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/test_csv2jsonl.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test_csv2jsonl.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gpt_keys_ents_csv_summary.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/gpt_keys_ents_csv_summary.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hugging_face_training_ents_keys.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/hugging_face_training_ents_keys.ipynb" afterDir="false" />
     </list>
     <list id="6508d4bf-b1d4-4e03-bff8-2d311d3ea368" name="Env" comment="">
       <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
@@ -350,7 +350,7 @@
       <workItem from="1759578704989" duration="819000" />
       <workItem from="1759579545735" duration="968000" />
       <workItem from="1759580536621" duration="9750000" />
-      <workItem from="1759646194151" duration="3726000" />
+      <workItem from="1759646194151" duration="5430000" />
     </task>
     <task id="LOCAL-00009" summary=" Hugging Face prep.">
       <option name="closed" value="true" />
@@ -472,7 +472,23 @@
       <option name="project" value="LOCAL" />
       <updated>1759649328851</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="OS path for test.">
+      <option name="closed" value="true" />
+      <created>1759649946038</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1759649946038</updated>
+    </task>
+    <task id="LOCAL-00025" summary="OS path for file.">
+      <option name="closed" value="true" />
+      <created>1759650488092</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1759650488092</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <option name="createBranch" value="false" />
     <option name="useBranch" value="true" />
     <servers />
@@ -502,7 +518,9 @@
     <MESSAGE value="Fixes." />
     <MESSAGE value="README." />
     <MESSAGE value="README markdowns." />
-    <option name="LAST_COMMIT_MESSAGE" value="README markdowns." />
+    <MESSAGE value="OS path for test." />
+    <MESSAGE value="OS path for file." />
+    <option name="LAST_COMMIT_MESSAGE" value="OS path for file." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -573,6 +591,6 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/scraper_news$.coverage" NAME=" Coverage Results" MODIFIED="1759589057962" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/scraper_news$.coverage" NAME=" Coverage Results" MODIFIED="1759649834134" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
   </component>
 </project>
