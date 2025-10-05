@@ -1,3 +1,4 @@
+import os
 import re
 from datetime import datetime, timezone
 
@@ -9,6 +10,9 @@ from model.model_type import ModelType
 from service.claude_prompt_builder import load_training_data
 from service.util.entity_extraction_facade import EntityExtractorFacade
 
+BASE_DIR = os.getcwd()  # Use __file__ if in a script
+EXAMPLE_PATH = os.path.join(BASE_DIR, "storage", "training", "example.json")
+
 
 class ArticleScraper:
     def __init__(self, homepage_url, homepage_title, time_selector, path: str = None):
@@ -18,7 +22,7 @@ class ArticleScraper:
         self.soup = None
         self.valid = False
         if path is None:
-            self.training_data = load_training_data("storage/training/example.json")
+            self.training_data = load_training_data(EXAMPLE_PATH)
 
     def fetch(self):
         try:

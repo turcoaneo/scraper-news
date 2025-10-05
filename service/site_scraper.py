@@ -74,6 +74,9 @@ class SiteScraper:
     def compute_weight(self, total_traffic):
         self.weight = self.traffic / total_traffic
 
+    def site_file_path(self):
+        return f"{self.file_base}/{self.name}_{datetime.now().strftime('%Y%m%d')}.csv"
+
     def short_print(self):
         print(f"\n📡 Site: {self.name} — {len(self.articles)} articles\n" + "-" * 60)
         for article in self.articles:
@@ -96,7 +99,7 @@ class SiteScraper:
             except FileExistsError:
                 # directory already exists
                 pass
-        filename = f"{self.file_base}/{self.name}_{datetime.now().strftime('%Y%m%d')}.csv"
+        filename = self.site_file_path()
         with open(filename, mode="w", encoding="utf-8", newline="") as file:
             columns = [
                 "site", "timestamp", "title", "entities", "keywords", "summary", "url", "comments"
@@ -122,7 +125,7 @@ class SiteScraper:
 
     # noinspection PyTypeChecker
     def load_recent_from_csv(self, minutes=180, filename_override=None):
-        filename = filename_override or f"{self.file_base}/{self.name}_{datetime.now().strftime('%Y%m%d')}.csv"
+        filename = filename_override or self.site_file_path()
         cutoff = datetime.now(timezone.utc) - timedelta(minutes=minutes)
 
         try:
