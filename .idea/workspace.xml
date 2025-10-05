@@ -5,9 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a7f942ad-3c95-41b0-b4b7-f43fce9ff07e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gpt_keys_ents_csv_summary.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/gpt_keys_ents_csv_summary.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hugging_face_training_ents_keys.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/hugging_face_training_ents_keys.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run-notebook-scraper.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/run-notebook-scraper.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/article_scraper.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/article_scraper.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/site_scraper.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/site_scraper.py" afterDir="false" />
     </list>
     <list id="6508d4bf-b1d4-4e03-bff8-2d311d3ea368" name="Env" comment="">
       <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
@@ -350,7 +350,7 @@
       <workItem from="1759578704989" duration="819000" />
       <workItem from="1759579545735" duration="968000" />
       <workItem from="1759580536621" duration="9750000" />
-      <workItem from="1759646194151" duration="5430000" />
+      <workItem from="1759646194151" duration="7579000" />
     </task>
     <task id="LOCAL-00009" summary=" Hugging Face prep.">
       <option name="closed" value="true" />
@@ -488,7 +488,15 @@
       <option name="project" value="LOCAL" />
       <updated>1759650488092</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="OS path for files.">
+      <option name="closed" value="true" />
+      <created>1759651662442</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1759651662442</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <option name="createBranch" value="false" />
     <option name="useBranch" value="true" />
     <servers />
@@ -520,7 +528,8 @@
     <MESSAGE value="README markdowns." />
     <MESSAGE value="OS path for test." />
     <MESSAGE value="OS path for file." />
-    <option name="LAST_COMMIT_MESSAGE" value="OS path for file." />
+    <MESSAGE value="OS path for files." />
+    <option name="LAST_COMMIT_MESSAGE" value="OS path for files." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

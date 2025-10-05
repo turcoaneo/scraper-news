@@ -3,7 +3,7 @@ PyCharm as IDE
 
 ## Notes
 
-- Requires Python 3.11+ and internet access for model downloads  
+- Requires Python 3.11+ and internet access for model downloads. Please update .env with your keys.   
 - Output files are typically saved in `storage/` or `output/` folders  
 - For benchmark tests, all paths are dynamically resolved using `os.path.join()` for cross-platform compatibility  
 - When terminal-specific commands are required, ticks are omitted to avoid misleading syntax highlighting  
