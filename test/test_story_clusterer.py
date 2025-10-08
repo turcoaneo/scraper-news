@@ -154,6 +154,74 @@ class TestStoryClusterer(unittest.TestCase):
         self.assertNotIn("C", features)
         self.assertNotIn("I", features)
 
+    def test_get_matched_clusters_realistic(self):
+        article1 = Article(
+            site="fanatik",
+            timestamp=self.now,
+            title="Ilie Dumitrescu a dat verdictul: cele 5 echipe din SuperLiga care prind 100% play-off-ul",
+            entities=["Ilie Dumitrescu", "SuperLiga"],
+            keywords=["play-off", "echipe", "SuperLiga", "verdict"],
+            url="https://www.fanatik.ro/ilie-dumitrescu-verdict-superliga"
+        )
+
+        article2 = Article(
+            site="gsp",
+            timestamp=self.now,
+            title="Ilie Dumitrescu a numit 5 echipe pentru play-off",
+            entities=["Ilie Dumitrescu", "FCSB", "Rapid"],
+            keywords=["play-off", "echipe", "Ilie Dumitrescu", "numit"],
+            url="https://www.gsp.ro/ilie-dumitrescu-play-off"
+        )
+
+        scraper1 = MockScraper("fanatik", 0.6, [article1])
+        scraper2 = MockScraper("gsp", 0.4, [article2])
+
+        clusterer = StoryClusterer([scraper1, scraper2], minutes=180)
+        clusterer.cluster_stories()
+        matched = clusterer.get_matched_clusters()
+
+        self.assertEqual(len(matched), 1)
+        cluster = matched[0]
+
+        # Score should be realistic
+        self.assertTrue(0.0 < cluster["score"] <= 1.0)
+
+        # Sites should be correct
+        self.assertIn("fanatik", cluster["sites"])
+        self.assertIn("gsp", cluster["sites"])
+
+        # Articles should be present and structured
+        self.assertEqual(len(cluster["articles"]), 2)
+
+        titles = [a["title"] for a in cluster["articles"]]
+        self.assertIn(article1.title, titles)
+        self.assertIn(article2.title, titles)
+
+        # Check keywords and entities per article
+        for a in cluster["articles"]:
+            self.assertIn("play-off", a["keywords"])
+            self.assertIn("Ilie Dumitrescu", a["entities"])
+            self.assertTrue(all(len(e) > 1 and isinstance(e, str) for e in a["entities"]))
+
+    def test_get_matched_clusters_negative(self):
+        # Only one site with articles, should be skipped
+        article = Article(
+            site="SoloSite",
+            timestamp=self.now,
+            title="Exclusive: SoloSite reports something",
+            entities=["Solo Entity"],
+            keywords=["exclusive", "report"],
+            url="https://solosite.com/exclusive"
+        )
+
+        single_site_scraper = MockScraper("SoloSite", 1.0, [article])
+        clusterer = StoryClusterer([single_site_scraper], minutes=180)
+        clusterer.cluster_stories()
+        matched = clusterer.get_matched_clusters()
+
+        # Should be skipped due to single source
+        self.assertEqual(len(matched), 0)
+
 
 if __name__ == "__main__":
     unittest.main()

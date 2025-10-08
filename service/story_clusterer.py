@@ -1,3 +1,6 @@
+from typing import List, Dict
+
+
 def _jaccard_similarity(set1, set2):
     intersection = set1 & set2
     union = set1 | set2
@@ -77,7 +80,8 @@ class StoryClusterer:
                           article_j.url, article_i.site, article_j.site)
                 if article_j.clustered or article_j.site in visited:
                     continue
-                is_clustered = _verify_cluster(article_i, article_j, cluster_id, clusters, self.threshold_title, "title")
+                is_clustered = _verify_cluster(article_i, article_j, cluster_id, clusters, self.threshold_title,
+                                               "title")
                 if not is_clustered:
                     is_clustered = _verify_cluster(article_i, article_j, cluster_id, clusters, self.threshold_features)
                 if is_clustered:
@@ -117,3 +121,41 @@ class StoryClusterer:
 
             print(f"\n🧠 Cluster #{i} — Score: {scored_cluster['score']} — Sites: {', '.join(sites)}")
             _display_cluster_info(articles_cluster)
+
+    def get_matched_clusters(self) -> List[Dict]:
+        result = []
+        for i, scored_cluster in enumerate(self.score_clusters(), 1):
+            articles_cluster = self.clusters[i - 1]
+            sites = {article.site for article in articles_cluster}
+            if len(sites) < 2:
+                print(f"[SKIP] Cluster #{i} has only one site: {sites}")
+                continue
+
+            articles = []
+            for article in articles_cluster:
+                entities = article.entities
+                if isinstance(entities, str):
+                    entities = [e.strip() for e in entities.split(",") if e.strip()]
+                elif not isinstance(entities, list):
+                    entities = []
+
+                keywords = article.keywords
+                if isinstance(keywords, str):
+                    keywords = [k.strip() for k in keywords.split(",") if k.strip()]
+                elif not isinstance(keywords, list):
+                    keywords = []
+
+                articles.append({
+                    "title": article.title,
+                    "url": article.url,
+                    "keywords": keywords,
+                    "entities": entities
+                })
+
+            result.append({
+                "score": scored_cluster["score"],
+                "sites": sorted(sites),
+                "articles": articles
+            })
+
+        return result
