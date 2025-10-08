@@ -1,5 +1,5 @@
 import re
-from typing import Dict, List
+from typing import List, Dict
 
 import torch
 from transformers import AutoTokenizer, AutoModelForTokenClassification
@@ -12,26 +12,50 @@ def split_words(text: str) -> List[str]:
 
 
 class EntityKeywordExtractor:
-    def __init__(self, model_path: str = 'dumitrescustefan_token_output/checkpoint-200'):
-        self.tokenizer = AutoTokenizer.from_pretrained(model_path)
-        self.model = AutoModelForTokenClassification.from_pretrained(model_path)
-        self.id2label = self.model.config.id2label
+    def __init__(
+            self,
+            model_path: str = None,
+            use_torchscript: bool = False,
+            tokenizer_path: str = None
+    ):
+        self.model_path = model_path
+        self.use_torchscript = use_torchscript
+        self.tokenizer_path = tokenizer_path or model_path
+
+        self.tokenizer = AutoTokenizer.from_pretrained(self.tokenizer_path)
+
+        if self.use_torchscript:
+            self.model = torch.jit.load(model_path)
+            self.id2label = {0: 'O', 1: 'B-ENT', 2: 'B-KW'}
+        elif model_path:
+            base_model = AutoModelForTokenClassification.from_pretrained(model_path)
+            self.model = base_model
+            self.id2label = base_model.config.id2label
+        else:
+            self.model = None
+            self.id2label = {0: 'O', 1: 'B-ENT', 2: 'B-KW'}
 
     def extract_with_roberta(self, text: str) -> Dict[str, List[str]]:
-        words = split_words(text)
+        if not text or not self.model:
+            return {"entities": [], "keywords": []}
+
+        words = re.findall(r"\w+|\S", text)
         encoding = self.tokenizer(
             words,
             is_split_into_words=True,
             return_tensors="pt",
             truncation=True
         )
-
         word_ids = encoding.word_ids(batch_index=0)
 
         with torch.no_grad():
-            outputs = self.model(**encoding)
+            if self.use_torchscript:
+                logits = self.model(encoding["input_ids"], encoding["attention_mask"])
+            else:
+                outputs = self.model(**encoding)
+                logits = outputs.logits
 
-        predictions = torch.argmax(outputs.logits, dim=-1)[0].tolist()
+        predictions = torch.argmax(logits, dim=-1)[0].tolist()
         labels = [self.id2label[p] for p in predictions]
 
         return SpanUtils.group_labeled_phrases(word_ids, labels, words)

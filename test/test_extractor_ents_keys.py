@@ -3,9 +3,13 @@ import pytest
 from service.extractor_ents_keys import EntityKeywordExtractor
 
 
-@pytest.fixture
-def extractor():
-    return EntityKeywordExtractor("../dumitrescustefan_token_output_old/checkpoint-200")
+@pytest.fixture(params=["classic", "torchscript"])
+def extractor(request):
+    if request.param == "classic":
+        return EntityKeywordExtractor("../dumitrescustefan_token_output/checkpoint-200")
+    else:
+        return EntityKeywordExtractor("../model.pt", use_torchscript=True,
+                                      tokenizer_path="../dumitrescustefan_token_output/checkpoint-200")
 
 
 def test_extraction_basic(extractor):
