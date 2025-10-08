@@ -2,6 +2,7 @@
 
 import os
 import time
+from functools import lru_cache
 from typing import List, Dict
 
 from model.model_type import ModelType
@@ -13,6 +14,13 @@ from service.util.spacy_ents_keys import SpacyEntsKeys
 
 class EntityExtractorFacade:
     @staticmethod
+    @lru_cache(maxsize=2)
+    def get_bert_extractor() -> EntityKeywordExtractor:
+        model_pt_path = os.path.join("..", "..", "model.pt")
+        tokenizer_path = os.path.join("..", "..", "dumitrescustefan_token_output", "checkpoint-200")
+        return EntityKeywordExtractor(model_pt_path, use_torchscript=True, tokenizer_path=tokenizer_path)
+
+    @staticmethod
     def extract_by_model(summary: str, model_type: ModelType, training_data: List[Dict]) -> Dict[str, List[str]]:
         start_time = time.time()
 
@@ -23,10 +31,7 @@ class EntityExtractorFacade:
             result = GptPromptBuilder(summary).extract_entities_and_keywords(training_data)
 
         elif model_type == ModelType.BERT:
-            model_pt_path = os.path.join("..", "..", "model.pt")
-            tokenizer_path = os.path.join("..", "..", "dumitrescustefan_token_output", "checkpoint-200")
-            extractor = EntityKeywordExtractor(model_pt_path, use_torchscript=True, tokenizer_path=tokenizer_path)
-            result = extractor.extract_with_roberta(summary)
+            result = EntityExtractorFacade.get_bert_extractor().extract_with_roberta(summary)
 
         elif model_type == ModelType.SPACY:
             result = SpacyEntsKeys.extract_spacy(summary)
