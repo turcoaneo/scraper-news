@@ -1,3 +1,5 @@
+import os
+
 import pytest
 
 from service.extractor_ents_keys import EntityKeywordExtractor
@@ -5,11 +7,17 @@ from service.extractor_ents_keys import EntityKeywordExtractor
 
 @pytest.fixture(params=["classic", "torchscript"])
 def extractor(request):
+    base_dir = os.path.join("..", "dumitrescustefan_token_output", "checkpoint-200")
+    model_pt_path = os.path.join("..", "model.pt")
+
     if request.param == "classic":
-        return EntityKeywordExtractor("../dumitrescustefan_token_output/checkpoint-200")
+        return EntityKeywordExtractor(base_dir)
     else:
-        return EntityKeywordExtractor("../model.pt", use_torchscript=True,
-                                      tokenizer_path="../dumitrescustefan_token_output/checkpoint-200")
+        return EntityKeywordExtractor(
+            model_pt_path,
+            use_torchscript=True,
+            tokenizer_path=base_dir
+        )
 
 
 def test_extraction_basic(extractor):
