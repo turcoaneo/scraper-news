@@ -1,10 +1,18 @@
+def _normalize_list(value):
+    if isinstance(value, str):
+        return [v.strip() for v in value.split(",") if v.strip()]
+    elif isinstance(value, list):
+        return [v.strip() for v in value if isinstance(v, str) and v.strip()]
+    return []
+
+
 class Article:
     def __init__(self, site, timestamp, title, entities, keywords, summary=None, url=None, comments=None):
         self.site = site
         self.timestamp = timestamp
         self.title = title
-        self.entities = entities
-        self.keywords = keywords
+        self.entities = _normalize_list(entities)
+        self.keywords = _normalize_list(keywords)
         self.summary = summary
         self.url = url
         self.comments = comments

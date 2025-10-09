@@ -4,10 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a7f942ad-3c95-41b0-b4b7-f43fce9ff07e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/util/entity_extraction_facade.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/util/entity_extraction_facade.py" afterDir="false" />
+    <list default="true" id="53257271-e7b8-4d79-880d-23a742d856a8" name=" Flask app." comment="">
+      <change afterPath="$PROJECT_DIR$/app/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/config/loader.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/config/sites_config.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/config/swagger.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/routes/cluster.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/run.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/storage/test_cluster_route.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/test_loader_sites_config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/article.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/article.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/story_clusterer.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/story_clusterer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/test_story_clusterer.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test_story_clusterer.py" afterDir="false" />
     </list>
+    <list id="a7f942ad-3c95-41b0-b4b7-f43fce9ff07e" name="Changes" comment="" />
     <list id="6508d4bf-b1d4-4e03-bff8-2d311d3ea368" name="Env" comment="">
       <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
     </list>
@@ -19,15 +30,26 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="Jupyter Notebook" />
+        <option value="Python Script" />
       </list>
+    </option>
+  </component>
+  <component name="FlaskConsoleOptions" custom-start-script="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))">
+    <envs>
+      <env key="FLASK_APP" value="app" />
+    </envs>
+    <option name="myCustomStartScript" value="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))" />
+    <option name="myEnvs">
+      <map>
+        <entry key="FLASK_APP" value="app" />
+      </map>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="claude" />
+        <entry key="$PROJECT_DIR$" value="flask-app" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -64,6 +86,7 @@
     "Python tests.Python tests for test_claude_prompt_builder.TestClaudePromptBuilder.executor": "Run",
     "Python tests.Python tests for test_claude_prompt_builder.TestClaudePromptBuilder.test_extract_entities_and_keywords.executor": "Run",
     "Python tests.Python tests for test_claude_prompt_builder.TestClaudePromptBuilder.test_send_prompt_to_claude.executor": "Debug",
+    "Python tests.Python tests for test_cluster_route.test_cluster_route.executor": "Run",
     "Python tests.Python tests for test_csv2jsonl.TestCsvToJsonlConverter.executor": "Run",
     "Python tests.Python tests for test_csv2jsonl.TestCsvToJsonlConverter.test_conversion_creates_valid_jsonl.executor": "Run",
     "Python tests.Python tests for test_csv2jsonl.TestCsvToJsonlConverter.test_creates_valid_jsonl_NaN.executor": "Run",
@@ -73,14 +96,21 @@
     "Python tests.Python tests for test_gpt_prompt_builder.TestGptPromptBuilder.executor": "Run",
     "Python tests.Python tests for test_gpt_prompt_builder.TestGptPromptBuilder.test_extract_entities_and_keywords.executor": "Run",
     "Python tests.Python tests for test_gpt_prompt_builder.TestGptPromptBuilder.test_load_training_data.executor": "Run",
+    "Python tests.Python tests for test_loader_sites_config.test_load_sites.executor": "Run",
+    "Python tests.Python tests for test_loader_sites_config.test_site_config_fields.executor": "Run",
     "Python tests.Python tests for test_spacy_ents_keys.TestSpacyEntsKeys.executor": "Run",
     "Python tests.Python tests for test_span_utils.test_group_labeled_phrases_basic.executor": "Run",
     "Python tests.Python tests for test_span_utils.test_suppress_sub_spans.executor": "Run",
+    "Python tests.Python tests for test_story_clusterer.TestStoryClusterer.executor": "Run",
+    "Python tests.Python tests for test_story_clusterer.TestStoryClusterer.test_get_matched_clusters_negative.executor": "Run",
+    "Python tests.Python tests for test_story_clusterer.TestStoryClusterer.test_get_matched_clusters_positive.executor": "Run",
+    "Python tests.Python tests for test_story_clusterer.TestStoryClusterer.test_get_matched_clusters_realistic.executor": "Debug",
     "Python tests.Python tests in test_claude_prompt_builder.py.executor": "Run",
     "Python tests.Python tests in test_extractor_ents_keys.py.executor": "Run",
+    "Python.run.executor": "Debug",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "flask-app",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "D:/WORKSPACE/Python/scraper-news/test/storage",
@@ -88,7 +118,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "org.jetbrains.plugins.notebooks.jupyter.connections.configuration.JupyterServerConfigurable",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -108,7 +138,7 @@
       <recent name="D:\WORKSPACE\Python\scraper-news\service" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.Python tests for test_benchmark_models.test_benchmark_models">
+  <component name="RunManager" selected="Python.run">
     <configuration default="true" type="DjangoTestsConfigurationType">
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -159,6 +189,29 @@
       <module name="" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="run" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="scraper-news" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/run.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -229,23 +282,23 @@
       <option name="docutils_open_in_browser" value="false" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for test_benchmark_models.TestBenchmark.test_benchmark_models" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for test_cluster_route.test_cluster_route" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="scraper-news" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test/storage" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_benchmark_models.TestBenchmark.test_benchmark_models&quot;" />
+      <option name="_new_target" value="&quot;test_cluster_route.test_cluster_route&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for test_benchmark_models.test_benchmark_models" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for test_story_clusterer.TestStoryClusterer.test_get_matched_clusters_negative" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="scraper-news" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -257,11 +310,11 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_benchmark_models.test_benchmark_models&quot;" />
+      <option name="_new_target" value="&quot;test_story_clusterer.TestStoryClusterer.test_get_matched_clusters_negative&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for test_csv2jsonl.TestCsvToJsonlConverter" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for test_story_clusterer.TestStoryClusterer.test_get_matched_clusters_realistic" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="scraper-news" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -273,49 +326,23 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_csv2jsonl.TestCsvToJsonlConverter&quot;" />
+      <option name="_new_target" value="&quot;test_story_clusterer.TestStoryClusterer.test_get_matched_clusters_realistic&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for test_gpt_prompt_builder.TestGptPromptBuilder.test_extract_entities_and_keywords" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
-      <module name="scraper-news" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_gpt_prompt_builder.TestGptPromptBuilder.test_extract_entities_and_keywords&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Python tests in test_extractor_ents_keys.py" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
-      <module name="scraper-news" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/test/test_extractor_ents_keys.py&quot;" />
-      <option name="_new_targetType" value="&quot;PATH&quot;" />
-      <method v="2" />
-    </configuration>
+    <list>
+      <item itemvalue="Python.run" />
+      <item itemvalue="Python tests.Python tests for test_cluster_route.test_cluster_route" />
+      <item itemvalue="Python tests.Python tests for test_story_clusterer.TestStoryClusterer.test_get_matched_clusters_negative" />
+      <item itemvalue="Python tests.Python tests for test_story_clusterer.TestStoryClusterer.test_get_matched_clusters_realistic" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python tests.Python tests for test_benchmark_models.test_benchmark_models" />
-        <item itemvalue="Python tests.Python tests in test_extractor_ents_keys.py" />
-        <item itemvalue="Python tests.Python tests for test_csv2jsonl.TestCsvToJsonlConverter" />
-        <item itemvalue="Python tests.Python tests for test_benchmark_models.TestBenchmark.test_benchmark_models" />
-        <item itemvalue="Python tests.Python tests for test_gpt_prompt_builder.TestGptPromptBuilder.test_extract_entities_and_keywords" />
+        <item itemvalue="Python tests.Python tests for test_story_clusterer.TestStoryClusterer.test_get_matched_clusters_realistic" />
+        <item itemvalue="Python tests.Python tests for test_story_clusterer.TestStoryClusterer.test_get_matched_clusters_negative" />
+        <item itemvalue="Python tests.Python tests for test_cluster_route.test_cluster_route" />
+        <item itemvalue="Python.run" />
+        <item itemvalue="Python.run" />
       </list>
     </recent_temporary>
   </component>
@@ -512,7 +539,25 @@
       <option name="project" value="LOCAL" />
       <updated>1759922692927</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="LRU cache.">
+      <option name="closed" value="true" />
+      <created>1759923382265</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1759923382265</updated>
+    </task>
+    <task active="true" id="LOCAL-00030" summary="Flask app.">
+      <branch name="flask-app" repository="D:\WORKSPACE\Python\scraper-news" />
+      <changelist id="53257271-e7b8-4d79-880d-23a742d856a8" name=" Flask app." comment="" />
+      <created>1759945223626</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1759945232191</updated>
+      <workItem from="1759945232980" duration="11000" />
+    </task>
+    <option name="localTasksCounter" value="31" />
     <option name="createBranch" value="false" />
     <option name="useBranch" value="true" />
     <servers />
@@ -521,7 +566,6 @@
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Workspace." />
     <MESSAGE value=" Refactoring" />
     <MESSAGE value=" Refactoring. Test and file base." />
     <MESSAGE value="Run." />
@@ -546,67 +590,11 @@
     <MESSAGE value="OS path for files." />
     <MESSAGE value="Commit and push." />
     <MESSAGE value="Refactoring." />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactoring." />
+    <MESSAGE value="LRU cache." />
+    <option name="LAST_COMMIT_MESSAGE" value="LRU cache." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/test_story_clusterer.py</url>
-          <line>149</line>
-          <option name="timeStamp" value="112" />
-        </line-breakpoint>
-        <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/test_story_clusterer.py</url>
-          <line>112</line>
-          <option name="timeStamp" value="115" />
-        </line-breakpoint>
-        <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/story_clusterer.py</url>
-          <line>107</line>
-          <option name="timeStamp" value="116" />
-        </line-breakpoint>
-        <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/story_clusterer.py</url>
-          <line>9</line>
-          <option name="timeStamp" value="117" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/service/csv2jsonl.py</url>
-          <line>13</line>
-          <option name="timeStamp" value="122" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/test/test_gpt_prompt_builder.py</url>
-          <line>53</line>
-          <option name="timeStamp" value="128" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/test/test_article_scraper.py</url>
-          <line>29</line>
-          <option name="timeStamp" value="131" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/test/test_article_scraper.py</url>
-          <line>48</line>
-          <option name="timeStamp" value="133" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/test/test_article_scraper.py</url>
-          <line>95</line>
-          <option name="timeStamp" value="135" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/test/test_article_scraper.py</url>
-          <line>67</line>
-          <option name="timeStamp" value="139" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="jupyter-line">
-          <url>notebook://D:/WORKSPACE/Python/scraper-news/gpt_summary_from_csv.ipynb</url>
-          <line>57</line>
-          <option name="timeStamp" value="120" />
-        </line-breakpoint>
-      </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
           <properties notifyOnTerminate="true" exception="BaseException">
@@ -617,6 +605,7 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/scraper_news$.coverage" NAME=" Coverage Results" MODIFIED="1759923280066" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/scraper_news$.coverage" NAME=" Coverage Results" MODIFIED="1759940898560" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/scraper_news$run.coverage" NAME="run Coverage Results" MODIFIED="1759940908630" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

@@ -16,3 +16,5 @@ evaluate
 scikit-learn
 torch>=2.0.0
 accelerate>=0.26.0
+flask
+flasgger
