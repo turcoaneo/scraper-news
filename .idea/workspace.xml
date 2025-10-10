@@ -4,20 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="53257271-e7b8-4d79-880d-23a742d856a8" name=" Flask app." comment="">
-      <change afterPath="$PROJECT_DIR$/app/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/config/loader.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/config/sites_config.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/config/swagger.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/routes/cluster.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/run.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/storage/test_cluster_route.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/test_loader_sites_config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/article.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/article.py" afterDir="false" />
+    <list default="true" id="ee5ce0c1-26e9-4539-a0ba-3ba9afbbf0ec" name=" Declension model training." comment="">
+      <change afterPath="$PROJECT_DIR$/lora_model.ipynb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/lora_extractor.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/util/declension_normalizer.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/duplets.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/duplets_dictionary.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/storage/bert_lora_dump.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hugging_face_training_ents_keys.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/hugging_face_training_ents_keys.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/model_type.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/model_type.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/story_clusterer.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/story_clusterer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/test_story_clusterer.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test_story_clusterer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/extractor_ents_keys.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/extractor_ents_keys.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/util/entity_extraction_facade.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/util/entity_extraction_facade.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/util/spacy_ents_keys.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/util/spacy_ents_keys.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/storage/prosport_dump.csv" beforeDir="false" afterPath="$PROJECT_DIR$/test/storage/prosport_dump.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/test_benchmark_models.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test_benchmark_models.py" afterDir="false" />
     </list>
+    <list id="53257271-e7b8-4d79-880d-23a742d856a8" name=" Flask app." comment="" />
     <list id="a7f942ad-3c95-41b0-b4b7-f43fce9ff07e" name="Changes" comment="" />
     <list id="6508d4bf-b1d4-4e03-bff8-2d311d3ea368" name="Env" comment="">
       <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
@@ -49,7 +53,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="flask-app" />
+        <entry key="$PROJECT_DIR$" value="declension" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -81,7 +85,9 @@
     "Python tests.Python tests for test_article_scraper.TestArticleScraper.test_extract_timestamp_from_selector_gsp.executor": "Run",
     "Python tests.Python tests for test_article_scraper.TestArticleScraper.test_fetch_failure.executor": "Debug",
     "Python tests.Python tests for test_article_scraper.TestArticleScraper.test_validate_article_false.executor": "Debug",
+    "Python tests.Python tests for test_benchmark_lora.test_bert_lora_benchmark.executor": "Run",
     "Python tests.Python tests for test_benchmark_models.TestBenchmark.test_benchmark_models.executor": "Run",
+    "Python tests.Python tests for test_benchmark_models.test_benchmark_lora.executor": "Debug",
     "Python tests.Python tests for test_benchmark_models.test_benchmark_models.executor": "Run",
     "Python tests.Python tests for test_claude_prompt_builder.TestClaudePromptBuilder.executor": "Run",
     "Python tests.Python tests for test_claude_prompt_builder.TestClaudePromptBuilder.test_extract_entities_and_keywords.executor": "Run",
@@ -110,10 +116,10 @@
     "Python.run.executor": "Debug",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "flask-app",
+    "git-widget-placeholder": "declension",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/WORKSPACE/Python/scraper-news/test/storage",
+    "last_opened_file_path": "D:/WORKSPACE/Python/scraper-news/storage",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
@@ -124,11 +130,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\WORKSPACE\Python\scraper-news\storage" />
       <recent name="D:\WORKSPACE\Python\scraper-news\test\storage" />
-      <recent name="D:\WORKSPACE\Python\scraper-news\service\util" />
       <recent name="D:\WORKSPACE\Python\scraper-news\test" />
+      <recent name="D:\WORKSPACE\Python\scraper-news\service\util" />
       <recent name="D:\WORKSPACE\Python\scraper-news\service" />
-      <recent name="D:\WORKSPACE\Python\scraper-news" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\WORKSPACE\Python\scraper-news\test\storage" />
@@ -138,7 +144,7 @@
       <recent name="D:\WORKSPACE\Python\scraper-news\service" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.run">
+  <component name="RunManager" selected="Python tests.Python tests for test_benchmark_models.test_benchmark_lora">
     <configuration default="true" type="DjangoTestsConfigurationType">
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -189,29 +195,6 @@
       <module name="" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="run" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="scraper-news" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/run.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -282,19 +265,51 @@
       <option name="docutils_open_in_browser" value="false" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for test_cluster_route.test_cluster_route" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for test_benchmark_lora.test_bert_lora_benchmark" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="scraper-news" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test/storage" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_cluster_route.test_cluster_route&quot;" />
+      <option name="_new_target" value="&quot;test_benchmark_lora.test_bert_lora_benchmark&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for test_benchmark_models.test_benchmark_lora" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="scraper-news" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_benchmark_models.test_benchmark_lora&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for test_benchmark_models.test_benchmark_models" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="scraper-news" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_benchmark_models.test_benchmark_models&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
@@ -331,18 +346,19 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.run" />
-      <item itemvalue="Python tests.Python tests for test_cluster_route.test_cluster_route" />
+      <item itemvalue="Python tests.Python tests for test_benchmark_lora.test_bert_lora_benchmark" />
+      <item itemvalue="Python tests.Python tests for test_benchmark_models.test_benchmark_lora" />
+      <item itemvalue="Python tests.Python tests for test_benchmark_models.test_benchmark_models" />
       <item itemvalue="Python tests.Python tests for test_story_clusterer.TestStoryClusterer.test_get_matched_clusters_negative" />
       <item itemvalue="Python tests.Python tests for test_story_clusterer.TestStoryClusterer.test_get_matched_clusters_realistic" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.Python tests for test_benchmark_models.test_benchmark_lora" />
+        <item itemvalue="Python tests.Python tests for test_benchmark_models.test_benchmark_models" />
+        <item itemvalue="Python tests.Python tests for test_benchmark_lora.test_bert_lora_benchmark" />
         <item itemvalue="Python tests.Python tests for test_story_clusterer.TestStoryClusterer.test_get_matched_clusters_realistic" />
         <item itemvalue="Python tests.Python tests for test_story_clusterer.TestStoryClusterer.test_get_matched_clusters_negative" />
-        <item itemvalue="Python tests.Python tests for test_cluster_route.test_cluster_route" />
-        <item itemvalue="Python.run" />
-        <item itemvalue="Python.run" />
       </list>
     </recent_temporary>
   </component>
@@ -355,7 +371,7 @@
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
-    <task active="true" id="Default" summary="Default task">
+    <task id="Default" summary="Default task">
       <branch name="refactor" repository="D:\WORKSPACE\Python\scraper-news" original="true" />
       <branch name="claude" repository="D:\WORKSPACE\Python\scraper-news" original="true" />
       <changelist id="a7f942ad-3c95-41b0-b4b7-f43fce9ff07e" name="Changes" comment="" />
@@ -547,7 +563,7 @@
       <option name="project" value="LOCAL" />
       <updated>1759923382265</updated>
     </task>
-    <task active="true" id="LOCAL-00030" summary="Flask app.">
+    <task id="LOCAL-00030" summary="Flask app.">
       <branch name="flask-app" repository="D:\WORKSPACE\Python\scraper-news" />
       <changelist id="53257271-e7b8-4d79-880d-23a742d856a8" name=" Flask app." comment="" />
       <created>1759945223626</created>
@@ -557,7 +573,18 @@
       <updated>1759945232191</updated>
       <workItem from="1759945232980" duration="11000" />
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task active="true" id="LOCAL-00031" summary="Declension model training.">
+      <branch name="declension" repository="D:\WORKSPACE\Python\scraper-news" />
+      <changelist id="ee5ce0c1-26e9-4539-a0ba-3ba9afbbf0ec" name=" Declension model training." comment="" />
+      <created>1759989271624</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1759989277872</updated>
+      <workItem from="1759989278202" duration="2624000" />
+      <workItem from="1759991965445" duration="34766000" />
+    </task>
+    <option name="localTasksCounter" value="32" />
     <option name="createBranch" value="false" />
     <option name="useBranch" value="true" />
     <servers />
@@ -605,7 +632,7 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/scraper_news$.coverage" NAME=" Coverage Results" MODIFIED="1759940898560" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/scraper_news$.coverage" NAME=" Coverage Results" MODIFIED="1760086231452" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/scraper_news$run.coverage" NAME="run Coverage Results" MODIFIED="1759940908630" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

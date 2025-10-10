@@ -1,14 +1,10 @@
-import re
 from typing import List, Dict
 
 import torch
 from transformers import AutoTokenizer, AutoModelForTokenClassification
 
+from service.util.spacy_ents_keys import SpacyEntsKeys
 from service.util.span_utils import SpanUtils
-
-
-def split_words(text: str) -> List[str]:
-    return re.findall(r"\w+|\S", text)
 
 
 class EntityKeywordExtractor:
@@ -39,14 +35,7 @@ class EntityKeywordExtractor:
         if not text or not self.model:
             return {"entities": [], "keywords": []}
 
-        words = re.findall(r"\w+|\S", text)
-        encoding = self.tokenizer(
-            words,
-            is_split_into_words=True,
-            return_tensors="pt",
-            truncation=True
-        )
-        word_ids = encoding.word_ids(batch_index=0)
+        encoding, word_ids, words = SpacyEntsKeys.get_words_ids_encoding(text, self.tokenizer)
 
         with torch.no_grad():
             if self.use_torchscript:
