@@ -34,7 +34,7 @@ python -m spacy download ro_core_news_sm
 
 ## 4. Instructions  
 
-### 4.1 Run `hugging_face_training_ents_keys.ipynb` to train a BERT model using GPT-4 results  
+### 4.1 Run `notebooks/hugging_face_training_ents_keys.ipynb` to train a BERT model using GPT-4 results  
 Check for `dumitrescustefan_token_output` folder.  
 
 If not running this, scrapers will default to BERT. To override, change model type in `run-notebook-scraper.ipynb`:  
@@ -45,7 +45,7 @@ xxx_scraper = SiteScraper(
 )
 ```
 
-### 4.2 Run `run-notebook-scraper.ipynb` to scrape top four sports news sites  
+### 4.2 Run `notebooks/run-notebook-scraper.ipynb` to scrape top four sports news sites  
 Results are saved in four CSV files containing summary, entities, and keywords.  
 
 - Summary is extracted via BeautifulSoup  
@@ -60,8 +60,10 @@ xxx_scraper = SiteScraper(
 ```
 
 ### 4.3 Extra  
-- Run `quote_all_csv.ipynb` to surround fields with quotes and save to a new file  
-- Run `gpt_keys_ents_csv_summary.ipynb` to extract entities and keywords from aggregated summaries using GPT-4  
+- Run `notebooks/quote_all_csv.ipynb` to surround fields with quotes and save to a new file  
+- Run `notebooks/gpt_keys_ents_csv_summary.ipynb` to extract entities and keywords from aggregated summaries using GPT-4
+- Run `notebooks/t5_declension.ipynb` to train a model for declension (e.g., sportivulului -> sportiv, Stelei -> Steaua)
+- Run `notebooks/t5_retrain.ipynb` to re-train the model for declension (not really working)
 
 ## 5. Test  
 
