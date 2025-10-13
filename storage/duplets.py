@@ -165,3 +165,49 @@ duplets += [
     ("Handbalistelor României li s-a cerut victoria", "Handbaliste din România cărora li s-a cerut victoria"),
     ("Fotbalistelor României li s-a cerut victoria", "Unor fotbaliste din România li s-a cerut victoria"),
 ]
+
+
+def normalize(text):
+    # Lexical exceptions
+    known = {
+        "Stelei": "Steaua",
+        "Unirii": "Unirea",
+        "Rapidului": "Rapid",
+        # ... add more
+    }
+    if text in known:
+        return known[text]
+
+    # Morphological rules
+    if text.endswith("ului"):
+        return text[:-4]
+    if text.endswith("ei"):
+        return text[:-2] + "a"
+    if text.endswith("ilor"):
+        return text[:-4]
+
+    # Fallback to T5
+    # return t5_normalize(text)
+    return text
+
+
+test_cases = [
+    "copilului",             # → copil
+    "mamei",                 # → mama
+    "mamelor",               # → mame
+    "fratelui",              # → frate
+    "sportivilor",           # → sportivi
+    "echipelor locale",      # → echipe locale
+    "manelei",               # → manea
+    "acadelei",              # → acadea
+    "Stelei București",      # → Steaua București
+    "Stelei",                # → Steaua
+    "Unirii",                # → Unirea
+    "Sibiului",              # → Sibiu
+    "jucătoarei",            # → jucătoare
+    "fotbalistelor tinere",  # → fotbaliste tinere
+    "rugbiștilor francezi",  # → rugbiști francezi
+    "cetățeanului",          # → cetățean
+    "comisiilor",            # → comisii
+    "prefecților",           # → prefecți
+]

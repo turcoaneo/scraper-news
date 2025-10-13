@@ -1,0 +1,210 @@
+normalize: naționalei	naționala
+normalize: jucătoarei	jucătoare
+normalize: jucătorului	jucător
+normalize: sportivului	sportiv
+normalize: fotbalistei	fotbalistă
+normalize: rugbistului	rugbist
+normalize: handbalistei	handbalistă
+normalize: României	România
+normalize: echipei	echipa
+normalize: patinatoarei	patinatoare
+normalize: copilului	copil
+normalize: mamei	mama
+normalize: mamelor	mame
+normalize: copiii atenți	copii atenți
+normalize: copiilor tineri	copii tineri
+normalize: copilului monegasc	copil monegasc
+normalize: tatălui sud-african	tatăl sud-african
+normalize: taților sportivi	tați sportivi
+normalize: mamei engleze	mama engleze
+normalize: mamelor engleze	mame engleze
+normalize: jucătorilor	jucători
+normalize: sportivilor	sportivi
+normalize: fotbalistelor	fotbaliste
+normalize: handbalistelor	handbaliste
+normalize: rugbistelor	rugbiste
+normalize: echipelor	echipe
+normalize: patinatoarelor	patinatoare
+normalize: naționalelor	naționale
+normalize: Românilor	Români
+normalize: fotbaliștilor	fotbaliști
+normalize: fotbalistului	fotbalist
+normalize: handbaliștilor	handbaliști
+normalize: handbalistului	handbalist
+normalize: spectatorilor	spectatori
+normalize: spectatorului	spectator
+normalize: oamenilor	oameni
+normalize: omului	om
+normalize: chriei	chirie
+normalize: copilului	copil
+normalize: mamei	mama
+normalize: mamelor	mame
+normalize: copiii atenți	copii atenți
+normalize: copiilor tineri	copii tineri
+normalize: copilului monegasc	copil monegasc
+normalize: tatălui sud-african	tatăl sud-african
+normalize: taților sportivi	tați sportivi
+normalize: mamei engleze	mama engleze
+normalize: mamelor engleze	mame engleze
+normalize: cetățeanului	cetățean
+normalize: cetățenilor	cetățeni
+normalize: drapelului	drapel
+normalize: steagului	steag
+normalize: fanionului	fanion
+normalize: drapelelor	drapele
+normalize: fanioanelor	fanioane
+normalize: antrenorului	antrenor
+normalize: antrenorilor	antrenori
+normalize: copilului	copil
+normalize: mamei	mama
+normalize: mamelor	mame
+normalize: copiii atenți	copii atenți
+normalize: copiilor tineri	copii tineri
+normalize: copilului monegasc	copil monegasc
+normalize: tatălui sud-african	tatăl sud-african
+normalize: taților sportivi	tați sportivi
+normalize: mamei engleze	mama engleze
+normalize: mamelor engleze	mame engleze
+normalize: echipei naționale	echipa națională
+normalize: sportivilor români	sportivi români
+normalize: fotbalistelor tinere	fotbaliste tinere
+normalize: jucătorului străin	jucător străin
+normalize: handbalistei experimentate	handbalistă experimentată
+normalize: rugbistului francez	rugbist francez
+normalize: echipelor locale	echipe locale
+normalize: patinatoarei talentate	patinatoare talentată
+normalize: jucătoarei maghiare	jucătoare maghiară
+normalize: naționalei feminine	naționala feminină
+normalize: Unirii	Unirea
+normalize: SCM-ului	SCM
+normalize: CSM-ului	CSM
+normalize: Stelei	Steaua
+normalize: Rapidului	Rapid
+normalize: Dinamo-ului	Dinamo
+normalize: CFR-ului	CFR
+normalize: Universității	Universitatea
+normalize: Sportului	Sportul
+normalize: Progresului	Progresul
+normalize: Timișoarei	Timișoara
+normalize: Clujului	Cluj
+normalize: Craiovei	Craiova
+normalize: Bucureștiului	București
+normalize: Sloboziei	Slobozia
+normalize: Buzăului	Buzău
+normalize: provinciei	provincie
+normalize: județului	județ
+normalize: ligilor	ligi
+normalize: ligii	liga
+normalize: Superligii	Superliga
+normalize: Bistriței	Bistrița
+normalize: Iașului	Iași
+normalize: Aradului	Arad
+normalize: Clinceniului	Clinceni
+normalize: Metaloglobusului	Metaloglobus
+normalize: Sibiului	Sibiu
+normalize: federației	federație
+normalize: comisiei	comisie
+normalize: comisiilor	comisii
+normalize: acadeaua	acadea
+normalize: acadelei	acadea
+normalize: andreaua	andrea
+normalize: andrelei	andrea
+normalize: maneaua	manea
+normalize: manelei	manea
+normalize: stelei	stea
+normalize: Stelei București	Steaua București
+normalize: Stelei	Steaua București
+normalize: Stelei	Steaua
+normalize: copilului	copil
+normalize: fratelui	frate
+normalize: fraților	frați
+normalize: tatălui	tată
+normalize: taților	tați
+normalize: bunicului	bunic
+normalize: unchiului	unchi
+normalize: nașului	naș
+normalize: cetățeanului	cetățean
+normalize: cetățenilor	cetățeni
+normalize: fetei	fată
+normalize: mamei	mama
+normalize: mamelor	mame
+normalize: sorei	sora
+normalize: sorei	sora
+normalize: surorei	surora
+normalize: nașei	nașa
+normalize: fiii	fii
+normalize: copiii	copii
+normalize: fiilor	fii
+normalize: copiilor	copii
+normalize: copilului	copil
+normalize: mamei	mama
+normalize: mamelor	mame
+normalize: comisiei	comisia
+normalize: comisarului	comisar
+normalize: comisarilor	comisari
+normalize: sportivilor	sportivi
+normalize: echipelor	echipe
+normalize: comisiilor	comisii
+normalize: arbitrului	arbitru
+normalize: arbitrilor	arbitri
+normalize: asistentului	asistent
+normalize: asistenților	asistenți
+normalize: copilului	copil
+normalize: mamei	mama
+normalize: mamelor	mame
+normalize: tenismenului	tenismen
+normalize: tenisului	tenis
+normalize: poloului	polo
+normalize: cricketului	cricket
+normalize: snookerului	snooker
+normalize: voleiului	volei
+normalize: voleibaliștilor	voleibaliști
+normalize: cicliștilor	cicliști
+normalize: ciclistului	ciclist
+normalize: copilului	copil
+normalize: mamei	mama
+normalize: mamelor	mame
+normalize: prefectului	prefect
+normalize: prefecților	prefecți
+normalize: deputatului	deputat
+normalize: deputaților	deputați
+normalize: senatorului	senator
+normalize: senatorilor	senatori
+normalize: președintelui	președinte
+normalize: președinților	președinți
+normalize: fotbaliștilor tineri	fotbaliști tineri
+normalize: echipelor locale	echipe locale
+normalize: rugbiștilor francezi	rugbiști francezi
+normalize: poloiștilor finlandezi	poloiști finlandezi
+normalize: bashetbalistelor străine	bashetbaliste străine
+normalize: canotorilor chinezi	canotori chinezi
+normalize: canotoarelor olimpice	canotoare olimpice
+normalize: firmelor de stat	firme de stat
+normalize: echipelor primăriei	echipele primăriei
+normalize: echipei primăriei	echipa primăriei
+normalize: mamei forbalistului	mama forbalistului
+normalize: copiii atenți	copii atenți
+normalize: copiilor tineri	copii tineri
+normalize: copilului monegasc	copil monegasc
+normalize: tatălui sud-african	tatăl sud-african
+normalize: taților sportivi	tați sportivi
+normalize: mamei engleze	mama engleze
+normalize: mamelor engleze	mame engleze
+normalize: suedezelor	suedeze
+normalize: japonezelor	japoneze
+normalize: chinezilor	chinezi
+normalize: englezei	engleză
+normalize: finlandezei	finlandeză
+normalize: englezoaicei	englezoaica
+normalize: englezoaicelor	englezoaice
+normalize: sud-africanilor	sud-africani
+normalize: sud-africanelor	sud-africane
+normalize: copilului	copil
+normalize: mamei	mama
+normalize: mamelor	mame
+normalize: femeii	femeia
+normalize: doamnei	doamna
+normalize: profesoarei	profesoara
+normalize: profesoarelor	profesoare
+normalize: prietenei	prietena
+normalize: prietenului	prieten
