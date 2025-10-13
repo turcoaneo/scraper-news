@@ -3,7 +3,8 @@ from enum import Enum
 
 
 class ModelType(Enum):
-    SPACY = "spacy"
     CLAUDE = "claude"
     GPT = "gpt"
+    SPACY = "spacy"
     BERT = "bert"
+    BERT_LORA = "bert_lora"
