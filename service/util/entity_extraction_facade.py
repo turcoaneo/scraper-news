@@ -1,7 +1,6 @@
 # entity_extraction_facade.py
 
 import os
-import re
 import time
 from functools import lru_cache
 from typing import List, Dict
@@ -19,7 +18,7 @@ class EntityExtractorFacade:
     @staticmethod
     @lru_cache(maxsize=2)
     def get_lora_extractor() -> LoraEntityKeywordExtractor:
-        base_model_path = os.path.abspath(os.path.join( "..", "dumitrescustefan_token_output", "checkpoint-200"))
+        base_model_path = os.path.abspath(os.path.join("..", "dumitrescustefan_token_output", "checkpoint-200"))
         lora_path = os.path.abspath(os.path.join("..", "declension_lora"))
         return LoraEntityKeywordExtractor(base_model_path, lora_path)
 
@@ -41,7 +40,12 @@ class EntityExtractorFacade:
             result = GptPromptBuilder(summary).extract_entities_and_keywords(training_data)
 
         elif model_type == ModelType.BERT:
-            result = EntityExtractorFacade.get_bert_extractor().extract_with_roberta(summary)
+            raw_result = EntityExtractorFacade.get_bert_extractor().extract_with_roberta(summary)
+            from service.util.declension_util import DeclensionUtil
+            result = {
+                "entities": [DeclensionUtil.normalize(ent) for ent in raw_result.get("entities", [])],
+                "keywords": [DeclensionUtil.normalize(kw) for kw in raw_result.get("keywords", [])]
+            }
 
         elif model_type == ModelType.BERT_LORA:
             result = EntityExtractorFacade.get_lora_extractor().extract(summary)

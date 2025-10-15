@@ -63,7 +63,8 @@ xxx_scraper = SiteScraper(
 - Run `notebooks/quote_all_csv.ipynb` to surround fields with quotes and save to a new file  
 - Run `notebooks/gpt_keys_ents_csv_summary.ipynb` to extract entities and keywords from aggregated summaries using GPT-4
 - Run `notebooks/t5_declension.ipynb` to train a model for declension (e.g., sportivulului -> sportiv, Stelei -> Steaua)
-- Run `notebooks/t5_retrain.ipynb` to re-train the model for declension (not really working)
+- Run `notebooks/t5_retrain.ipynb` to re-train / fine-tune the model for declension (not really working as expected)
+- Run `notebooks/lora_extractor.ipynb` to improve the model for declension with LoRA (not really working as expected)
 
 ## 5. Test  
 

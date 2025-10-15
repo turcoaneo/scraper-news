@@ -1,6 +1,7 @@
 import csv
 import os
 from datetime import datetime, timedelta, timezone
+from pathlib import Path
 from typing import Literal, Optional
 from urllib.parse import urljoin
 
@@ -10,6 +11,7 @@ from bs4 import BeautifulSoup
 from model.article import Article
 from model.model_type import ModelType
 from service.article_scraper import ArticleScraper
+from service.util.root_dir_util import get_project_root
 
 
 def sanitize_quotes(text):
@@ -46,7 +48,7 @@ def is_filtered(article, filter_place_keys):
 class SiteScraper:
     title_strategy: Literal["text", "attribute"]
     title_attribute: Optional[str] = None  # e.g., "title"
-    file_base: str = "storage"
+    file_base: Path = os.path.abspath(os.path.join(get_project_root(), "storage"))
 
     def __init__(self, name, base_url, traffic, time_selector, block_selector, link_selector, title_strategy,
                  title_attribute=None, weight=0.0, filter_place_keys=None, model: ModelType = ModelType.BERT):

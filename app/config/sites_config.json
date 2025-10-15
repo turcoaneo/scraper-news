@@ -8,7 +8,7 @@
     "link_selector": "a.article-link, h3 a.widget-latest-list-item-link",
     "title_strategy": "attribute",
     "title_attribute": "title",
-    "model": "SPACY"
+    "model": "BERT"
   },
   {
     "name": "fanatik",
@@ -19,7 +19,7 @@
     "link_selector": "h3 a",
     "title_strategy": "text",
     "title_attribute": null,
-    "model": "GPT"
+    "model": "BERT"
   },
   {
     "name": "prosport",
@@ -30,7 +30,7 @@
     "link_selector": "a",
     "title_strategy": "text",
     "title_attribute": null,
-    "model": "CLAUDE"
+    "model": "BERT"
   },
   {
     "name": "gsp",
