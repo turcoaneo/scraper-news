@@ -34,6 +34,7 @@ class TestGptPromptBuilder(unittest.TestCase):
         self.assertIn("keywords", prompt.lower())
         self.assertIn("Rapid București", prompt)
 
+    @unittest.skip("Saving OpenAI credits")
     def test_extract_entities_and_keywords(self):
         if not os.getenv("OPENAI_API_KEY"):
             self.skipTest("OPENAI_API_KEY not set")

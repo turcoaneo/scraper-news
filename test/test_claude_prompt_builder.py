@@ -31,7 +31,7 @@ class TestClaudePromptBuilder(unittest.TestCase):
         data = load_training_data(tmp_path)
         self.assertEqual(data[0]["summary"], self.sample_data[0]["summary"])
 
-    @unittest.skip
+    @unittest.skip("No more Anthropic credits")
     def test_extract_entities_and_keywords(self):
         if not os.getenv("ANTHROPIC_API_KEY"):
             self.skipTest("ANTHROPIC_API_KEY not set")

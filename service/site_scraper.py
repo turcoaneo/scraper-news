@@ -76,8 +76,9 @@ class SiteScraper:
     def compute_weight(self, total_traffic):
         self.weight = self.traffic / total_traffic
 
-    def site_file_path(self):
-        return f"{self.file_base}/{self.name}_{datetime.now().strftime('%Y%m%d')}.csv"
+    def site_file_path(self) -> Path:
+        filename = f"{self.name}_{datetime.now().strftime('%Y%m%d')}.csv"
+        return Path(self.file_base).joinpath(filename)
 
     def short_print(self):
         print(f"\n📡 Site: {self.name} — {len(self.articles)} articles\n" + "-" * 60)
