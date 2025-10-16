@@ -1,23 +1,25 @@
-import os
+# app/routes/cluster.py
 
-from flask import Blueprint, jsonify
+from fastapi import APIRouter
+from fastapi.responses import JSONResponse
+from service.cluster_service import ClusterService
 
-from app.config.loader import load_sites_from_config
-from service.story_clusterer import StoryClusterer
-
-cluster_bp = Blueprint("cluster", __name__)
+router = APIRouter()
 
 
-@cluster_bp.route("/cluster", methods=["GET"])
-def cluster_news():
-    # Get absolute path to project root
-    base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    config_path = os.path.join(base_dir, "config", "sites_config.json")
+@router.get("/cluster")
+async def cluster_news():
+    result = ClusterService.cluster_news()
+    return JSONResponse(content=result)
 
-    sites = load_sites_from_config(config_path)
-    total_traffic = sum(site.traffic for site in sites)
-    for site in sites:
-        site.compute_weight(total_traffic)
-    clusterer = StoryClusterer(sites, 360, 0.3, 0.2)
-    clusterer.cluster_stories()
-    return jsonify(clusterer.get_matched_clusters())
+
+@router.delete("/delete-old-csvs")
+async def delete_old_csvs():
+    deleted = ClusterService.delete_old_csvs()
+    return JSONResponse(content={"deleted_files": deleted})
+
+
+@router.post("/scrape-sites")
+async def scrape_sites_async():
+    ClusterService.scrape_sites_async()
+    return JSONResponse(content={"status": "Scraping started in background"})

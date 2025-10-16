@@ -10,6 +10,7 @@ from service.claude_prompt_builder import ClaudePromptBuilder
 from service.extractor_ents_keys import EntityKeywordExtractor
 from service.gpt_prompt_builder import GptPromptBuilder
 from service.lora_extractor import LoraEntityKeywordExtractor
+from service.util.root_dir_util import get_project_root
 from service.util.spacy_ents_keys import SpacyEntsKeys
 
 
@@ -18,15 +19,17 @@ class EntityExtractorFacade:
     @staticmethod
     @lru_cache(maxsize=2)
     def get_lora_extractor() -> LoraEntityKeywordExtractor:
-        base_model_path = os.path.abspath(os.path.join("..", "dumitrescustefan_token_output", "checkpoint-200"))
-        lora_path = os.path.abspath(os.path.join("..", "declension_lora"))
+        base_model_path = os.path.abspath(
+            os.path.join(get_project_root(), "dumitrescustefan_token_output", "checkpoint-200"))
+        lora_path = os.path.abspath(os.path.join(get_project_root(), "declension_lora"))
         return LoraEntityKeywordExtractor(base_model_path, lora_path)
 
     @staticmethod
     @lru_cache(maxsize=2)
     def get_bert_extractor() -> EntityKeywordExtractor:
-        model_pt_path = os.path.abspath(os.path.join("..", "model.pt"))
-        tokenizer_path = os.path.abspath(os.path.join("..", "dumitrescustefan_token_output", "checkpoint-200"))
+        model_pt_path = os.path.abspath(os.path.join(get_project_root(), "model.pt"))
+        tokenizer_path = os.path.abspath(
+            os.path.join(get_project_root(), "dumitrescustefan_token_output", "checkpoint-200"))
         return EntityKeywordExtractor(model_pt_path, use_torchscript=True, tokenizer_path=tokenizer_path)
 
     @staticmethod

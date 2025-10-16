@@ -5,11 +5,11 @@ import random
 from typing import List, Dict
 
 from service.article_scraper import EntityExtractorFacade, ModelType
+from service.util.root_dir_util import get_project_root
 
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-# CSV_PATH = os.path.join(BASE_DIR, "storage", "prosport_dump.csv")
-CSV_PATH = os.path.join(BASE_DIR, "storage", "bert_lora_dump.csv")
-JSON_PATH = os.path.join(BASE_DIR, "storage", "training", "example.json")
+BASE_DIR = get_project_root()
+CSV_PATH = os.path.join(BASE_DIR, "test", "storage", "bert_lora_dump.csv")
+JSON_PATH = os.path.join(BASE_DIR, "test", "storage", "training", "example.json")
 
 
 class BenchmarkRunner:

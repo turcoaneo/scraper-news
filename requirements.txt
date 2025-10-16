@@ -20,3 +20,5 @@ flask
 flasgger
 peft
 sentencepiece
+fastapi
+uvicorn

@@ -3,12 +3,13 @@ import os
 import pytest
 
 from service.extractor_ents_keys import EntityKeywordExtractor
+from service.util.root_dir_util import get_project_root
 
 
 @pytest.fixture(params=["classic", "torchscript"])
 def extractor(request):
-    base_dir = os.path.join("..", "dumitrescustefan_token_output", "checkpoint-200")
-    model_pt_path = os.path.join("..", "model.pt")
+    base_dir = os.path.join(get_project_root(), "dumitrescustefan_token_output", "checkpoint-200")
+    model_pt_path = os.path.join(get_project_root(), "model.pt")
 
     if request.param == "classic":
         return EntityKeywordExtractor(base_dir)

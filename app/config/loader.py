@@ -1,11 +1,15 @@
 import json
+from pathlib import Path
 from typing import List
 
 from model.model_type import ModelType  # Assuming you have this Enum
 from service.site_scraper import SiteScraper
 
 
-def load_sites_from_config(config_path: str) -> List[SiteScraper]:
+def load_sites_from_config(config_path: str = None) -> List[SiteScraper]:
+    if config_path is None:
+        config_path = Path(__file__).parent / "sites_config.json"
+
     with open(config_path, "r", encoding="utf-8") as f:
         config = json.load(f)
 

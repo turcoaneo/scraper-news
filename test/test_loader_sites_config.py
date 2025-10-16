@@ -4,10 +4,10 @@ from app.config.loader import load_sites_from_config
 
 
 def test_site_config_fields():
-    base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    config_path = os.path.join(base_dir, "app", "config", "sites_config.json")
-
-    sites = load_sites_from_config(config_path)
+    # base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    # config_path = os.path.join(base_dir, "app", "config", "sites_config.json")
+    # sites = load_sites_from_config(config_path)
+    sites = load_sites_from_config()
     assert len(sites) == 4
 
     expected_fields = {
