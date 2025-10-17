@@ -4,7 +4,7 @@ from functools import lru_cache
 
 from transformers import T5Tokenizer, T5ForConditionalGeneration
 
-from service.util.root_dir_util import get_project_root
+from service.util.path_util import PROJECT_ROOT
 
 
 class DeclensionUtil:
@@ -12,7 +12,7 @@ class DeclensionUtil:
     @staticmethod
     @lru_cache(maxsize=1)
     def get_model_and_tokenizer():
-        model_path = os.path.abspath(os.path.join(get_project_root(), "t5_decorator_model"))
+        model_path = os.path.abspath(os.path.join(PROJECT_ROOT, "t5_decorator_model"))
         tokenizer = T5Tokenizer.from_pretrained(model_path)
         model = T5ForConditionalGeneration.from_pretrained(model_path)
         model.eval()

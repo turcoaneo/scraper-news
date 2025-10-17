@@ -7,11 +7,11 @@ from bs4 import BeautifulSoup
 from dateutil import parser
 
 from model.model_type import ModelType
-from service.util.root_dir_util import get_project_root
+from service.util.path_util import PROJECT_ROOT
 from service.claude_prompt_builder import load_training_data
 from service.util.entity_extraction_facade import EntityExtractorFacade
 
-BASE_DIR = get_project_root()
+BASE_DIR = PROJECT_ROOT
 EXAMPLE_PATH = os.path.join(BASE_DIR, "storage", "training", "example.json")
 
 

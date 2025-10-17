@@ -5,9 +5,9 @@ import random
 from typing import List, Dict
 
 from service.article_scraper import EntityExtractorFacade, ModelType
-from service.util.root_dir_util import get_project_root
+from service.util.path_util import PROJECT_ROOT
 
-BASE_DIR = get_project_root()
+BASE_DIR = PROJECT_ROOT
 CSV_PATH = os.path.join(BASE_DIR, "test", "storage", "bert_lora_dump.csv")
 JSON_PATH = os.path.join(BASE_DIR, "test", "storage", "training", "example.json")
 

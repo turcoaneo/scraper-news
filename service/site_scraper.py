@@ -11,7 +11,7 @@ from bs4 import BeautifulSoup
 from model.article import Article
 from model.model_type import ModelType
 from service.article_scraper import ArticleScraper
-from service.util.root_dir_util import get_project_root
+from service.util.path_util import PROJECT_ROOT
 
 
 def sanitize_quotes(text):
@@ -48,7 +48,7 @@ def is_filtered(article, filter_place_keys):
 class SiteScraper:
     title_strategy: Literal["text", "attribute"]
     title_attribute: Optional[str] = None  # e.g., "title"
-    file_base: Path = os.path.abspath(os.path.join(get_project_root(), "storage"))
+    file_base: Path = os.path.abspath(os.path.join(PROJECT_ROOT, "storage"))
 
     def __init__(self, name, base_url, traffic, time_selector, block_selector, link_selector, title_strategy,
                  title_attribute=None, weight=0.0, filter_place_keys=None, model: ModelType = ModelType.BERT):

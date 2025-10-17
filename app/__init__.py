@@ -15,6 +15,7 @@ def create_app() -> FastAPI:
     # Swagger UI customization (optional)
     @app.get("/docs", include_in_schema=False)
     async def custom_swagger_ui():
+        # noinspection PyUnresolvedReferences
         return get_swagger_ui_html(openapi_url=app.openapi_url, title="Custom Swagger UI")
 
     from app.routes.cluster import router as cluster_router
