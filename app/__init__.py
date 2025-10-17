@@ -1,7 +1,12 @@
 # app/__init__.py
+import os
 
+from dotenv import load_dotenv
 from fastapi import FastAPI
 from fastapi.openapi.docs import get_swagger_ui_html
+from fastapi.middleware.cors import CORSMiddleware
+
+load_dotenv()
 
 
 def create_app() -> FastAPI:
@@ -11,6 +16,16 @@ def create_app() -> FastAPI:
         redoc_url="/redoc",  # enables ReDoc at /redoc
         openapi_url="/openapi.json"
     )
+
+    # Enable CORS for local development
+    if os.environ.get("APP_ENV") == "local":
+        app.add_middleware(
+            CORSMiddleware,
+            allow_origins=["http://localhost:5173"],  # Vue dev server
+            allow_credentials=True,
+            allow_methods=["*"],
+            allow_headers=["*"],
+        )
 
     # Swagger UI customization (optional)
     @app.get("/docs", include_in_schema=False)
