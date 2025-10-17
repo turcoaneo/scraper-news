@@ -20,5 +20,5 @@ flask
 flasgger
 peft
 sentencepiece
-fastapi
+fastapi[all]
 uvicorn

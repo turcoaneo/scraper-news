@@ -4,21 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="53257271-e7b8-4d79-880d-23a742d856a8" name=" Flask app." comment="Refactoring and unit tests.">
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations/FastAPI.xml" afterDir="false" />
+    <list default="true" id="53257271-e7b8-4d79-880d-23a742d856a8" name=" Flask app." comment="Refactoring path.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notebooks/gpt_keys_ents_csv_summary.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/notebooks/gpt_keys_ents_csv_summary.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notebooks/hugging_face_training_ents_keys.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/notebooks/hugging_face_training_ents_keys.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notebooks/quote_all_csv.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/notebooks/quote_all_csv.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notebooks/t5_declension.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/notebooks/t5_declension.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/article_scraper.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/article_scraper.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/site_scraper.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/site_scraper.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/util/declension_util.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/util/declension_util.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/util/entity_extraction_facade.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/util/entity_extraction_facade.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/util/root_dir_util.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/util/path_util.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/test_benchmark_models.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test_benchmark_models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/test_extractor_ents_keys.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test_extractor_ents_keys.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <list id="a7f942ad-3c95-41b0-b4b7-f43fce9ff07e" name="Changes" comment="" />
     <list id="6508d4bf-b1d4-4e03-bff8-2d311d3ea368" name="Env" comment="">
@@ -74,80 +63,80 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python tests.Python tests for test_article_extract_data.TestArticleExtractor.executor": "Run",
-    "Python tests.Python tests for test_article_extract_data.TestArticleExtractor.test_extract_data_returns_expected_dict.executor": "Debug",
-    "Python tests.Python tests for test_article_extract_data.TestArticleExtractor.test_extract_data_returns_none_if_invalid.executor": "Debug",
-    "Python tests.Python tests for test_article_extract_data.TestArticleExtractor.test_simple.executor": "Run",
-    "Python tests.Python tests for test_article_scraper.TestArticleScraper.executor": "Run",
-    "Python tests.Python tests for test_article_scraper.TestArticleScraper.test_extract_data.executor": "Run",
-    "Python tests.Python tests for test_article_scraper.TestArticleScraper.test_extract_timestamp_from_selector_digisport.executor": "Debug",
-    "Python tests.Python tests for test_article_scraper.TestArticleScraper.test_extract_timestamp_from_selector_gsp.executor": "Run",
-    "Python tests.Python tests for test_article_scraper.TestArticleScraper.test_fetch_failure.executor": "Debug",
-    "Python tests.Python tests for test_article_scraper.TestArticleScraper.test_validate_article_false.executor": "Debug",
-    "Python tests.Python tests for test_benchmark_lora.test_bert_lora_benchmark.executor": "Run",
-    "Python tests.Python tests for test_benchmark_models.TestBenchmark.test_benchmark_models.executor": "Run",
-    "Python tests.Python tests for test_benchmark_models.test_benchmark_lora.executor": "Debug",
-    "Python tests.Python tests for test_benchmark_models.test_benchmark_models.executor": "Run",
-    "Python tests.Python tests for test_claude_prompt_builder.TestClaudePromptBuilder.executor": "Run",
-    "Python tests.Python tests for test_claude_prompt_builder.TestClaudePromptBuilder.test_extract_entities_and_keywords.executor": "Run",
-    "Python tests.Python tests for test_claude_prompt_builder.TestClaudePromptBuilder.test_send_prompt_to_claude.executor": "Debug",
-    "Python tests.Python tests for test_cluster_route.test_cluster_route.executor": "Run",
-    "Python tests.Python tests for test_cluster_routes.TestClusterRoutes.executor": "Run",
-    "Python tests.Python tests for test_cluster_routes.TestClusterRoutes.test_scrape_sites_async.executor": "Run",
-    "Python tests.Python tests for test_cluster_service.TestClusterService.executor": "Run",
-    "Python tests.Python tests for test_cluster_service.TestClusterService.test_cluster_news.executor": "Run",
-    "Python tests.Python tests for test_cluster_service.TestClusterService.test_delete_old_csvs.executor": "Run",
-    "Python tests.Python tests for test_cluster_service.TestClusterService.test_scrape_sites_async.executor": "Run",
-    "Python tests.Python tests for test_cluster_service.test_cluster_news.executor": "Run",
-    "Python tests.Python tests for test_cluster_service.test_delete_old_csvs.executor": "Run",
-    "Python tests.Python tests for test_cluster_service.test_scrape_sites_async.executor": "Run",
-    "Python tests.Python tests for test_csv2jsonl.TestCsvToJsonlConverter.executor": "Run",
-    "Python tests.Python tests for test_csv2jsonl.TestCsvToJsonlConverter.test_conversion_creates_valid_jsonl.executor": "Run",
-    "Python tests.Python tests for test_csv2jsonl.TestCsvToJsonlConverter.test_creates_valid_jsonl_NaN.executor": "Run",
-    "Python tests.Python tests for test_csv2jsonl.TestCsvToJsonlConverter.test_creates_valid_jsonl_from_float.executor": "Run",
-    "Python tests.Python tests for test_declension_util.TestDeclensionUtil.executor": "Run",
-    "Python tests.Python tests for test_declension_util.TestDeclensionUtil.test_basic_declension.executor": "Debug",
-    "Python tests.Python tests for test_declension_util.TestDeclensionUtil.test_no_transformation.executor": "Debug",
-    "Python tests.Python tests for test_delete_csv.TestDeleteOldCSVs.executor": "Run",
-    "Python tests.Python tests for test_extractor_ents_keys.test_empty_input.executor": "Run",
-    "Python tests.Python tests for test_extractor_ents_keys.test_extraction_basic.executor": "Debug",
-    "Python tests.Python tests for test_gpt_prompt_builder.TestGptPromptBuilder.executor": "Run",
-    "Python tests.Python tests for test_gpt_prompt_builder.TestGptPromptBuilder.test_extract_entities_and_keywords.executor": "Run",
-    "Python tests.Python tests for test_gpt_prompt_builder.TestGptPromptBuilder.test_load_training_data.executor": "Run",
-    "Python tests.Python tests for test_loader_sites_config.test_load_sites.executor": "Run",
-    "Python tests.Python tests for test_loader_sites_config.test_site_config_fields.executor": "Run",
-    "Python tests.Python tests for test_scrape_sites_async.TestScrapeSitesAsync.executor": "Run",
-    "Python tests.Python tests for test_site_scraper.TestSiteScraper.executor": "Run",
-    "Python tests.Python tests for test_spacy_ents_keys.TestSpacyEntsKeys.executor": "Run",
-    "Python tests.Python tests for test_span_utils.test_group_labeled_phrases_basic.executor": "Run",
-    "Python tests.Python tests for test_span_utils.test_suppress_sub_spans.executor": "Run",
-    "Python tests.Python tests for test_story_clusterer.TestStoryClusterer.executor": "Run",
-    "Python tests.Python tests for test_story_clusterer.TestStoryClusterer.test_get_matched_clusters_negative.executor": "Run",
-    "Python tests.Python tests for test_story_clusterer.TestStoryClusterer.test_get_matched_clusters_positive.executor": "Run",
-    "Python tests.Python tests for test_story_clusterer.TestStoryClusterer.test_get_matched_clusters_realistic.executor": "Debug",
-    "Python tests.Python tests in test_benchmark_models.py.executor": "Run",
-    "Python tests.Python tests in test_claude_prompt_builder.py.executor": "Run",
-    "Python tests.Python tests in test_cluster_service.py.executor": "Run",
-    "Python tests.Python tests in test_extractor_ents_keys.py.executor": "Run",
-    "Python.FastAPI.executor": "Debug",
-    "Python.run.executor": "Debug",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/WORKSPACE/Python/scraper-news/venv/Scripts/uvicorn.exe",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "reference.idesettings.debugger.python",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python tests.Python tests for test_article_extract_data.TestArticleExtractor.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_article_extract_data.TestArticleExtractor.test_extract_data_returns_expected_dict.executor&quot;: &quot;Debug&quot;,
+    &quot;Python tests.Python tests for test_article_extract_data.TestArticleExtractor.test_extract_data_returns_none_if_invalid.executor&quot;: &quot;Debug&quot;,
+    &quot;Python tests.Python tests for test_article_extract_data.TestArticleExtractor.test_simple.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_article_scraper.TestArticleScraper.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_article_scraper.TestArticleScraper.test_extract_data.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_article_scraper.TestArticleScraper.test_extract_timestamp_from_selector_digisport.executor&quot;: &quot;Debug&quot;,
+    &quot;Python tests.Python tests for test_article_scraper.TestArticleScraper.test_extract_timestamp_from_selector_gsp.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_article_scraper.TestArticleScraper.test_fetch_failure.executor&quot;: &quot;Debug&quot;,
+    &quot;Python tests.Python tests for test_article_scraper.TestArticleScraper.test_validate_article_false.executor&quot;: &quot;Debug&quot;,
+    &quot;Python tests.Python tests for test_benchmark_lora.test_bert_lora_benchmark.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_benchmark_models.TestBenchmark.test_benchmark_models.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_benchmark_models.test_benchmark_lora.executor&quot;: &quot;Debug&quot;,
+    &quot;Python tests.Python tests for test_benchmark_models.test_benchmark_models.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_claude_prompt_builder.TestClaudePromptBuilder.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_claude_prompt_builder.TestClaudePromptBuilder.test_extract_entities_and_keywords.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_claude_prompt_builder.TestClaudePromptBuilder.test_send_prompt_to_claude.executor&quot;: &quot;Debug&quot;,
+    &quot;Python tests.Python tests for test_cluster_route.test_cluster_route.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_cluster_routes.TestClusterRoutes.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_cluster_routes.TestClusterRoutes.test_scrape_sites_async.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_cluster_service.TestClusterService.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_cluster_service.TestClusterService.test_cluster_news.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_cluster_service.TestClusterService.test_delete_old_csvs.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_cluster_service.TestClusterService.test_scrape_sites_async.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_cluster_service.test_cluster_news.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_cluster_service.test_delete_old_csvs.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_cluster_service.test_scrape_sites_async.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_csv2jsonl.TestCsvToJsonlConverter.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_csv2jsonl.TestCsvToJsonlConverter.test_conversion_creates_valid_jsonl.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_csv2jsonl.TestCsvToJsonlConverter.test_creates_valid_jsonl_NaN.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_csv2jsonl.TestCsvToJsonlConverter.test_creates_valid_jsonl_from_float.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_declension_util.TestDeclensionUtil.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_declension_util.TestDeclensionUtil.test_basic_declension.executor&quot;: &quot;Debug&quot;,
+    &quot;Python tests.Python tests for test_declension_util.TestDeclensionUtil.test_no_transformation.executor&quot;: &quot;Debug&quot;,
+    &quot;Python tests.Python tests for test_delete_csv.TestDeleteOldCSVs.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_extractor_ents_keys.test_empty_input.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_extractor_ents_keys.test_extraction_basic.executor&quot;: &quot;Debug&quot;,
+    &quot;Python tests.Python tests for test_gpt_prompt_builder.TestGptPromptBuilder.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_gpt_prompt_builder.TestGptPromptBuilder.test_extract_entities_and_keywords.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_gpt_prompt_builder.TestGptPromptBuilder.test_load_training_data.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_loader_sites_config.test_load_sites.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_loader_sites_config.test_site_config_fields.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_scrape_sites_async.TestScrapeSitesAsync.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_site_scraper.TestSiteScraper.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_spacy_ents_keys.TestSpacyEntsKeys.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_span_utils.test_group_labeled_phrases_basic.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_span_utils.test_suppress_sub_spans.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_story_clusterer.TestStoryClusterer.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_story_clusterer.TestStoryClusterer.test_get_matched_clusters_negative.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_story_clusterer.TestStoryClusterer.test_get_matched_clusters_positive.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_story_clusterer.TestStoryClusterer.test_get_matched_clusters_realistic.executor&quot;: &quot;Debug&quot;,
+    &quot;Python tests.Python tests in test_benchmark_models.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_claude_prompt_builder.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_cluster_service.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_extractor_ents_keys.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python.FastAPI.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.run.executor&quot;: &quot;Debug&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/WORKSPACE/Python/scraper-news/venv/Scripts/uvicorn.exe&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.idesettings.debugger.python&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\WORKSPACE\Python\scraper-news\storage" />
@@ -501,7 +490,8 @@
       <workItem from="1760539274291" duration="197000" />
       <workItem from="1760594711659" duration="14594000" />
       <workItem from="1760612954401" duration="10184000" />
-      <workItem from="1760686708300" duration="6570000" />
+      <workItem from="1760686708300" duration="8260000" />
+      <workItem from="1760705838161" duration="607000" />
     </task>
     <task id="LOCAL-00031" summary="Declension model training.">
       <branch name="declension" repository="D:\WORKSPACE\Python\scraper-news" />
@@ -557,7 +547,23 @@
       <option name="project" value="LOCAL" />
       <updated>1760633981634</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="Refactoring path.">
+      <option name="closed" value="true" />
+      <created>1760700212725</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1760700212725</updated>
+    </task>
+    <task id="LOCAL-00038" summary="Cors.">
+      <option name="closed" value="true" />
+      <created>1760702101086</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1760702101086</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <option name="createBranch" value="false" />
     <option name="useBranch" value="true" />
     <servers />
@@ -566,8 +572,6 @@
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value=" Claude. Entities and keywords." />
-    <MESSAGE value=" Hugging Face prep." />
     <MESSAGE value=" Hugging Face model." />
     <MESSAGE value="Readme." />
     <MESSAGE value="GPT prompt builder." />
@@ -591,7 +595,9 @@
     <MESSAGE value=" Flask app." />
     <MESSAGE value=" Flask app. Refactoring plus declension model." />
     <MESSAGE value="Refactoring and unit tests." />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactoring and unit tests." />
+    <MESSAGE value="Refactoring path." />
+    <MESSAGE value="Cors." />
+    <option name="LAST_COMMIT_MESSAGE" value="Cors." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -663,7 +669,7 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/scraper_news$.coverage" NAME=" Coverage Results" MODIFIED="1760633342768" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
-    <SUITE FILE_PATH="coverage/scraper_news$FastAPI.coverage" NAME="FastAPI Coverage Results" MODIFIED="1760689963410" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="D:\WORKSPACE\Python\scraper-news" />
+    <SUITE FILE_PATH="coverage/scraper_news$FastAPI.coverage" NAME="FastAPI Coverage Results" MODIFIED="1760701178349" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="D:\WORKSPACE\Python\scraper-news" />
     <SUITE FILE_PATH="coverage/scraper_news$run.coverage" NAME="run Coverage Results" MODIFIED="1760539226178" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
