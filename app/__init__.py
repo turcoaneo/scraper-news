@@ -19,6 +19,7 @@ def create_app() -> FastAPI:
 
     # Enable CORS for local development
     if os.environ.get("APP_ENV") == "local":
+        # noinspection PyTypeChecker
         app.add_middleware(
             CORSMiddleware,
             allow_origins=["http://localhost:5173"],  # Vue dev server
