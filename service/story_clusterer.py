@@ -1,5 +1,7 @@
 from typing import List, Dict
 
+from service.util.summary_util import merge_summaries
+
 
 def _jaccard_similarity(set1, set2):
     intersection = set1 & set2
@@ -132,6 +134,7 @@ class StoryClusterer:
                 continue
 
             articles = []
+            summaries = []
             for article in articles_cluster:
                 entities = article.entities
                 if isinstance(entities, str):
@@ -152,8 +155,11 @@ class StoryClusterer:
                     "entities": entities
                 })
 
+                summaries.append(article.summary)
+
             result.append({
                 "score": scored_cluster["score"],
+                "summary": merge_summaries(summaries),
                 "sites": sorted(sites),
                 "articles": articles
             })

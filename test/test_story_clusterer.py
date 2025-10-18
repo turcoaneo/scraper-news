@@ -159,6 +159,7 @@ class TestStoryClusterer(unittest.TestCase):
             site="fanatik",
             timestamp=self.now,
             title="Ilie Dumitrescu a dat verdictul: cele 5 echipe din SuperLiga care prind 100% play-off-ul",
+            summary="Ilie Dumitrescu a dat verdictul: cele 5 echipe din SuperLiga care prind 100% play-off-ul",
             entities=["Ilie Dumitrescu", "SuperLiga"],
             keywords=["play-off", "echipe", "SuperLiga", "verdict"],
             url="https://www.fanatik.ro/ilie-dumitrescu-verdict-superliga"
@@ -168,6 +169,7 @@ class TestStoryClusterer(unittest.TestCase):
             site="gsp",
             timestamp=self.now,
             title="Ilie Dumitrescu a numit 5 echipe pentru play-off",
+            summary="Ilie Dumitrescu a numit 5 echipe pentru play-off",
             entities=["Ilie Dumitrescu", "FCSB", "Rapid"],
             keywords=["play-off", "echipe", "Ilie Dumitrescu", "numit"],
             url="https://www.gsp.ro/ilie-dumitrescu-play-off"
