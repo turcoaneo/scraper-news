@@ -4,13 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="53257271-e7b8-4d79-880d-23a742d856a8" name=" Flask app." comment="Declension and multi-threading.">
-      <change afterPath="$PROJECT_DIR$/service/util/timing_util.py" afterDir="false" />
+    <list default="true" id="53257271-e7b8-4d79-880d-23a742d856a8" name=" Flask app." comment="Retraining declension model plus decorator.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notebooks/t5_declension.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/notebooks/t5_declension.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cron_jobs/scraper_job.py" beforeDir="false" afterPath="$PROJECT_DIR$/cron_jobs/scraper_job.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service/util/scraper_runner.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/util/scraper_runner.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/duplets_dictionary.py" beforeDir="false" afterPath="$PROJECT_DIR$/storage/duplets_dictionary.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/t5_duplets.txt" beforeDir="false" afterPath="$PROJECT_DIR$/storage/t5_duplets.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/util/timing_util.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/util/timing_util.py" afterDir="false" />
     </list>
     <list id="a7f942ad-3c95-41b0-b4b7-f43fce9ff07e" name="Changes" comment="" />
     <list id="6508d4bf-b1d4-4e03-bff8-2d311d3ea368" name="Env" comment="">
@@ -611,7 +609,7 @@
       <workItem from="1760594711659" duration="14594000" />
       <workItem from="1760612954401" duration="10184000" />
       <workItem from="1760686708300" duration="8260000" />
-      <workItem from="1760705838161" duration="74248000" />
+      <workItem from="1760705838161" duration="78057000" />
     </task>
     <task id="LOCAL-00031" summary="Declension model training.">
       <branch name="declension" repository="D:\WORKSPACE\Python\scraper-news" />
@@ -715,7 +713,15 @@
       <option name="project" value="LOCAL" />
       <updated>1761048674859</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="Retraining declension model plus decorator.">
+      <option name="closed" value="true" />
+      <created>1761061756719</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1761061756719</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <option name="createBranch" value="false" />
     <option name="useBranch" value="true" />
     <servers />
@@ -724,7 +730,6 @@
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Benchmarking a bit. Refactoring." />
     <MESSAGE value="Instructions 2." />
     <MESSAGE value="Instructions 3." />
     <MESSAGE value="Instructions." />
@@ -749,7 +754,8 @@
     <MESSAGE value="Summaries merging." />
     <MESSAGE value="Cron plus PyCharm config." />
     <MESSAGE value="Declension and multi-threading." />
-    <option name="LAST_COMMIT_MESSAGE" value="Declension and multi-threading." />
+    <MESSAGE value="Retraining declension model plus decorator." />
+    <option name="LAST_COMMIT_MESSAGE" value="Retraining declension model plus decorator." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -835,7 +841,7 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/scraper_news$scraper_job.coverage" NAME="SCRAPER JOB Coverage Results" MODIFIED="1761060961589" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cron_jobs" />
+    <SUITE FILE_PATH="coverage/scraper_news$scraper_job.coverage" NAME="SCRAPER JOB Coverage Results" MODIFIED="1761066675431" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cron_jobs" />
     <SUITE FILE_PATH="coverage/scraper_news$.coverage" NAME=" Coverage Results" MODIFIED="1761041463921" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/scraper_news$Scraper_Cron.coverage" NAME="Scraper Cron Coverage Results" MODIFIED="1760774637564" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="D:\WORKSPACE\Python\scraper-news" />
     <SUITE FILE_PATH="coverage/scraper_news$main.coverage" NAME="Main - FastAPI and Scraper Cron Coverage Results" MODIFIED="1760774789944" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />

@@ -7,7 +7,7 @@ from app.config.loader import load_sites_from_config
 from model.model_type import ModelType
 from service.util.declension_util import DeclensionUtil
 from service.util.path_util import PROJECT_ROOT
-from service.util.timing_util import elapsed_time
+from service.util.timing_util import elapsed_time, log_thread_id
 
 
 def get_model_and_tokenizer():
@@ -20,18 +20,19 @@ def get_model_and_tokenizer():
 
 @elapsed_time("run_scraper")
 def run_scraper(minutes=360):
+    print(f"Running {log_thread_id(threading.get_ident(), 'scraper')}")
     sites = load_sites_from_config()
     total_traffic = sum(site.traffic for site in sites)
 
     @elapsed_time("process_site")
     def process_site(site):
-        print(f"Scraping {site.name}")
+        print(f"Scraping {log_thread_id(threading.get_ident(), site.name)}")
         site.compute_weight(total_traffic)
         site.scrape_recent_articles(minutes)
 
     @elapsed_time("save_site")
     def save_site(site):
-        print(f"Saving CSV for {site.name}")
+        print(f"Saving CSV for {log_thread_id(threading.get_ident(), site.name)}")
         site.save_to_csv(use_temp=True)
 
     # Phase 1: Scraping (parallel)
