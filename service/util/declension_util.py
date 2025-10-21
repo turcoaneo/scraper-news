@@ -1,26 +1,36 @@
 # service/util/declension_util.py
-import os
-from functools import lru_cache
-
-from transformers import T5Tokenizer, T5ForConditionalGeneration
-
-from service.util.path_util import PROJECT_ROOT
+import torch
 
 
 class DeclensionUtil:
 
     @staticmethod
-    @lru_cache(maxsize=1)
-    def get_model_and_tokenizer():
-        model_path = os.path.abspath(os.path.join(PROJECT_ROOT, "t5_decorator_model"))
-        tokenizer = T5Tokenizer.from_pretrained(model_path)
-        model = T5ForConditionalGeneration.from_pretrained(model_path)
-        model.eval()
-        return tokenizer, model
+    def predict(model, sp, text):
+        # Encode input text to token IDs
+        input_ids = torch.tensor(sp.encode(text, out_type=int)).unsqueeze(0)
+
+        # Get max positional index from model
+        max_pos = model.positional.num_embeddings
+
+        # Warn and truncate if input is too long
+        if input_ids.size(1) > max_pos:
+            print(f"[Warning] Truncating input: {text[:50]}... → {input_ids.size(1)} tokens > max {max_pos}")
+            input_ids = input_ids[:, :max_pos]
+
+        # Move to model's device
+        input_ids = input_ids.to(next(model.parameters()).device)
+
+        # Run inference
+        with torch.no_grad():
+            logits = model(input_ids)
+            output_ids = torch.argmax(logits, dim=-1)
+
+        # Decode output token IDs to text
+        return sp.decode(output_ids[0].tolist())
 
     @staticmethod
-    def normalize(text: str) -> str:
-        tokenizer, model = DeclensionUtil.get_model_and_tokenizer()
+    def normalize(text: str, model_and_tokenizer) -> str:
+        tokenizer, model = model_and_tokenizer
         input_text = f"normalize: {text}"
         input_ids = tokenizer.encode(input_text, return_tensors="pt")
         output_ids = model.generate(

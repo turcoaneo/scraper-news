@@ -28,7 +28,6 @@ def load_sites_from_config(config_path: str = None) -> List[SiteScraper]:
             model=model_type
         )
         site.compute_weight(entry["traffic"])
-        site.load_recent_from_csv()
         sites.append(site)
 
     return sites

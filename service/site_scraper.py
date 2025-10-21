@@ -11,38 +11,12 @@ from bs4 import BeautifulSoup
 from model.article import Article
 from model.model_type import ModelType
 from service.article_scraper import ArticleScraper
+from service.util.csv_util import save_articles_to_csv
 from service.util.path_util import PROJECT_ROOT
 
 
 def sanitize_quotes(text):
     return text.replace("„", '"').replace("”", '"') if text else text
-
-
-def is_filtered(article, filter_place_keys):
-    including = set(word.lower() for word in filter_place_keys.get("including", []))
-    excluding = set(word.lower() for word in filter_place_keys.get("excluding", []))
-    places = filter_place_keys.get("place", [])
-
-    # Gather text from specified places
-    text_blob = []
-    for place in places:
-        value = getattr(article, place, "")
-        if isinstance(value, list):
-            text_blob.extend(value)
-        elif isinstance(value, str):
-            text_blob.append(value)
-
-    combined_text = " ".join(text_blob).lower()
-
-    # Exclude if any exclusion keyword is found
-    if any(word in combined_text for word in excluding):
-        return True
-
-    # Include only if at least one inclusion keyword is found
-    if including and not any(word in combined_text for word in including):
-        return True
-
-    return False
 
 
 class SiteScraper:
@@ -76,10 +50,6 @@ class SiteScraper:
     def compute_weight(self, total_traffic):
         self.weight = self.traffic / total_traffic
 
-    def site_file_path(self) -> Path:
-        filename = f"{self.name}_{datetime.now().strftime('%Y%m%d')}.csv"
-        return Path(self.file_base).joinpath(filename)
-
     def short_print(self):
         print(f"\n📡 Site: {self.name} — {len(self.articles)} articles\n" + "-" * 60)
         for article in self.articles:
@@ -95,36 +65,21 @@ class SiteScraper:
             print(f"🕒 Published: {readable_time}")
             print("-" * 60)
 
-    def save_to_csv(self):
-        if not os.path.exists(self.file_base):
-            try:
-                os.makedirs(self.file_base)
-            except FileExistsError:
-                # directory already exists
-                pass
-        filename = self.site_file_path()
-        with open(filename, mode="w", encoding="utf-8", newline="") as file:
-            columns = [
-                "site", "timestamp", "title", "entities", "keywords", "summary", "url", "comments"
-            ]
-            writer = csv.DictWriter(file, fieldnames=columns, quoting=csv.QUOTE_ALL)
+    def site_file_path(self) -> Path:
+        filename = f"{self.name}_{datetime.now().strftime('%Y%m%d')}.csv"
+        return Path(self.file_base).joinpath(filename)
 
-            writer.writeheader()
-            for article in self.articles:
-                # Skip external links
-                if self.base_url not in article.url or is_filtered(article, self.filter_place_keys):
-                    continue
-                title = article.title
-                writer.writerow({
-                    "site": article.site,
-                    "timestamp": article.timestamp.isoformat(),
-                    "title": title,
-                    "entities": article.entities,
-                    "keywords": article.keywords,
-                    "summary": article.summary,
-                    "url": article.url,
-                    "comments": article.comments
-                })
+    from service.util.csv_util import save_articles_to_csv
+
+    def save_to_csv(self, use_temp: bool = False):
+        save_articles_to_csv(
+            site_name=self.name,
+            base_url=self.base_url,
+            articles=self.articles,
+            filter_keys=self.filter_place_keys,
+            base_path=self.file_base,
+            use_temp=use_temp
+        )
 
     # noinspection PyTypeChecker
     def load_recent_from_csv(self, minutes=180, filename_override=None):

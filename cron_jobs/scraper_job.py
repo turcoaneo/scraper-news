@@ -9,7 +9,7 @@ def run_job():
     run_scraper()
 
 
-def start_scraper_loop(interval_seconds: int = 120):
+def start_scraper_loop(interval_seconds: int = 1200):
     def loop():
         while True:
             run_job()

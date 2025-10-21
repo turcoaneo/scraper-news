@@ -20,6 +20,8 @@ class ClusterService:
     @staticmethod
     def cluster_news():
         sites = load_sites_from_config()
+        for site in sites:
+            site.load_recent_from_csv()
         total_traffic = sum(site.traffic for site in sites)
         for site in sites:
             site.compute_weight(total_traffic)

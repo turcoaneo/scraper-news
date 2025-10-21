@@ -13,14 +13,14 @@ duplets = [
 
 duplets += [
     ("copilului", "copil"),
-    ("mamei", "mama"),
+    ("mamei", "mamă"),
     ("mamelor", "mame"),
     ("copiii atenți", "copii atenți"),
     ("copiilor tineri", "copii tineri"),
     ("copilului monegasc", "copil monegasc"),
     ("tatălui sud-african", "tatăl sud-african"),
     ("taților sportivi", "tați sportivi"),
-    ("mamei engleze", "mama engleze"),
+    ("mamei engleze", "mamă engleze"),
     ("mamelor engleze", "mame engleze"),
 ]
 
@@ -50,14 +50,14 @@ duplets += [
 
 duplets += [
     ("copilului", "copil"),
-    ("mamei", "mama"),
+    ("mamei", "mamă"),
     ("mamelor", "mame"),
     ("copiii atenți", "copii atenți"),
     ("copiilor tineri", "copii tineri"),
     ("copilului monegasc", "copil monegasc"),
     ("tatălui sud-african", "tatăl sud-african"),
     ("taților sportivi", "tați sportivi"),
-    ("mamei engleze", "mama engleze"),
+    ("mamei engleze", "mamă engleze"),
     ("mamelor engleze", "mame engleze"),
 ]
 
@@ -75,14 +75,14 @@ duplets += [
 
 duplets += [
     ("copilului", "copil"),
-    ("mamei", "mama"),
+    ("mamei", "mamă"),
     ("mamelor", "mame"),
     ("copiii atenți", "copii atenți"),
     ("copiilor tineri", "copii tineri"),
     ("copilului monegasc", "copil monegasc"),
     ("tatălui sud-african", "tatăl sud-african"),
     ("taților sportivi", "tați sportivi"),
-    ("mamei engleze", "mama engleze"),
+    ("mamei engleze", "mamă engleze"),
     ("mamelor engleze", "mame engleze"),
 ]
 
@@ -166,7 +166,7 @@ new_duplets = [
 
 new_duplets += [
     ("fetei", "fată"),
-    ("mamei", "mama"),
+    ("mamei", "mamă"),
     ("mamelor", "mame"),
     ("sorei", "sora"),
     ("sorei", "sora"),
@@ -180,7 +180,7 @@ new_duplets += [
 
 new_duplets += [
     ("copilului", "copil"),
-    ("mamei", "mama"),
+    ("mamei", "mamă"),
     ("mamelor", "mame"),
 ]
 
@@ -199,7 +199,7 @@ new_duplets += [
 
 new_duplets += [
     ("copilului", "copil"),
-    ("mamei", "mama"),
+    ("mamei", "mamă"),
     ("mamelor", "mame"),
 ]
 
@@ -217,7 +217,7 @@ new_duplets += [
 
 new_duplets += [
     ("copilului", "copil"),
-    ("mamei", "mama"),
+    ("mamei", "mamă"),
     ("mamelor", "mame"),
     ("prefectului", "prefect"),
     ("prefecților", "prefecți"),
@@ -240,7 +240,7 @@ new_duplets += [
     ("firmelor de stat", "firme de stat"),
     ("echipelor primăriei", "echipele primăriei"),
     ("echipei primăriei", "echipa primăriei"),
-    ("mamei forbalistului", "mama forbalistului"),
+    ("mamei forbalistului", "mamă forbalistului"),
 ]
 
 new_duplets += [
@@ -249,7 +249,7 @@ new_duplets += [
     ("copilului monegasc", "copil monegasc"),
     ("tatălui sud-african", "tatăl sud-african"),
     ("taților sportivi", "tați sportivi"),
-    ("mamei engleze", "mama engleze"),
+    ("mamei engleze", "mamă engleze"),
     ("mamelor engleze", "mame engleze"),
 ]
 
@@ -267,7 +267,7 @@ new_duplets += [
 
 new_duplets += [
     ("copilului", "copil"),
-    ("mamei", "mama"),
+    ("mamei", "mamă"),
     ("mamelor", "mame"),
     ("femeii", "femeia"),
     ("doamnei", "doamna"),
@@ -277,10 +277,50 @@ new_duplets += [
     ("prietenului", "prieten"),
 ]
 
+new_duplets += [
+    ("Sorana", "Sorana"),
+    ("Sorana Cîrstea", "Sorana Cîrstea"),
+    ("Soranei Cîrstea", "Sorana Cîrstea"),
+    ("Soranei", "Sorana"),
+    ("Jacquelinei", "Jacqueline"),
+    ("Jacqueline", "Jacqueline"),
+    ("Jacqueline Cristian", "Jacqueline Cristian"),
+    ("Jacquelinei Cristian", "Jacqueline Cristian"),
+    ("acadelei", "acadea"),
+    ("acadeua roz", "acadea roz"),
+]
+
+new_duplets += [
+    ("Mediașului", "Mediaș"),
+    ("Filiașului", "Filiași"),
+    ("Filiașilor", "Filiași"),
+    ("Iașului", "Iași"),
+    ("Iașilor", "Iași"),
+    ("Sebeșului", "Sebeș"),
+    ("Maramureșului", "Maramureș"),
+    ("Mureșului", "Mureș"),
+    ("Tg. Mureș", "Târgul Mureș"),
+    ("Tg. Jiu", "Târgul Jiu"),
+    ("Tg. Jiului", "Târgul Jiu"),
+]
+
+new_duplets += [
+    ("Târgul Jiu", "Târgul Jiu"),
+    ("Târgului Mureș", "Târgul Mureș"),
+    ("Târgul Mureș", "Târgul Mureș"),
+    ("Tîrgul Jiu", "Târgul Jiu"),
+    ("Tîrgului Jiu", "Târgul Jiu"),
+    ("Tîrgul Mureș", "Târgul Mureș"),
+    ("tîrgul", "târg"),
+    ("târgul", "târg"),
+    ("tîrgul", "târg"),
+    ("tîrgului", "târg"),
+]
+
 test_cases = [
     ("copilului", "copil"),
     ("copiii", "copii"),
-    ("mamei", "mama"),
+    ("mamei", "mamă"),
     ("mamelor", "mame"),
     ("fratelui", "frate"),
     ("sportivilor", "sportivi"),
@@ -297,6 +337,12 @@ test_cases = [
     ("cetățeanului", "cetățean"),
     ("comisiilor", "comisii"),
     ("prefecților", "prefecți"),
+    ("Sebeșului", "Sebeș"),
+    ("Soranei", "Sorana"),
+    ("Sorana Cîrstea", "Sorana Cîrstea"),
+    ("Gigi Becali", "Gigi Becali"),
+    ("Soranei Cîrstea", "Sorana Cîrstea"),
+    ("Iuliu Mureșan", "Iuliu Mureșan"),
 ]
 
 

@@ -1,7 +1,7 @@
 import unittest
 
 from model.article import Article
-from service.site_scraper import is_filtered
+from service.util.csv_util import is_filtered
 
 
 class TestArticleFilter(unittest.TestCase):
