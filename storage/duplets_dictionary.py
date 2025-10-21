@@ -182,6 +182,40 @@ new_duplets += [
     ("copilului", "copil"),
     ("mamei", "mamă"),
     ("mamelor", "mame"),
+    ("bănățenei", "bănățeană"),
+    ("bănățean", "bănățean"),
+    ("bănățeană", "bănățeană"),
+    ("craiovean", "craiovean"),
+    ("craiovenei", "craioveană"),
+    ("craioveană", "craioveană"),
+    ("craiovenilor", "craioveni"),
+]
+
+new_duplets += [
+    ("prahovencei", "prahoveană"),
+    ("prahoveancă", "prahoveană"),
+    ("bucureștean", "bucureștean"),
+    ("bucureșteană", "bucureșteană"),
+    ("bucureșteancă", "bucureșteană"),
+    ("bucureștenei", "bucureșteană"),
+    ("bucureștencei", "bucureșteană"),
+    ("bucureștencelor", "bucureștene"),
+    ("bucureșteanului", "bucureștean"),
+    ("bucureștenilor", "bucureșteni"),
+]
+
+new_duplets += [
+    ("prahovencelor", "prahovene"),
+    ("bănățeancă", "bănățeană"),
+    ("bănățence", "bănățene"),
+    ("bucureștence", "bucureștene"),
+    ("craiovenelor", "craiovene"),
+    ("craiovencelor", "craiovene"),
+    ("craioveancă", "craioveană"),
+    ("gălățeancă", "gălățeană"),
+    ("gălățence", "gălățene"),
+    ("gălățencelor", "gălățene"),
+    ("gălățenelor", "gălățene"),
 ]
 
 new_duplets += [
@@ -343,6 +377,9 @@ test_cases = [
     ("Gigi Becali", "Gigi Becali"),
     ("Soranei Cîrstea", "Sorana Cîrstea"),
     ("Iuliu Mureșan", "Iuliu Mureșan"),
+    ("prahovean", "prahovean"),
+    ("prahoveancă", "prahoveană"),
+    ("piteștean", "piteștean"),
 ]
 
 

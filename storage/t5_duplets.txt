@@ -9,14 +9,14 @@ normalize: României	România
 normalize: echipei	echipa
 normalize: patinatoarei	patinatoare
 normalize: copilului	copil
-normalize: mamei	mama
+normalize: mamei	mamă
 normalize: mamelor	mame
 normalize: copiii atenți	copii atenți
 normalize: copiilor tineri	copii tineri
 normalize: copilului monegasc	copil monegasc
 normalize: tatălui sud-african	tatăl sud-african
 normalize: taților sportivi	tați sportivi
-normalize: mamei engleze	mama engleze
+normalize: mamei engleze	mamă engleze
 normalize: mamelor engleze	mame engleze
 normalize: jucătorilor	jucători
 normalize: sportivilor	sportivi
@@ -37,14 +37,14 @@ normalize: oamenilor	oameni
 normalize: omului	om
 normalize: chriei	chirie
 normalize: copilului	copil
-normalize: mamei	mama
+normalize: mamei	mamă
 normalize: mamelor	mame
 normalize: copiii atenți	copii atenți
 normalize: copiilor tineri	copii tineri
 normalize: copilului monegasc	copil monegasc
 normalize: tatălui sud-african	tatăl sud-african
 normalize: taților sportivi	tați sportivi
-normalize: mamei engleze	mama engleze
+normalize: mamei engleze	mamă engleze
 normalize: mamelor engleze	mame engleze
 normalize: cetățeanului	cetățean
 normalize: cetățenilor	cetățeni
@@ -56,14 +56,14 @@ normalize: fanioanelor	fanioane
 normalize: antrenorului	antrenor
 normalize: antrenorilor	antrenori
 normalize: copilului	copil
-normalize: mamei	mama
+normalize: mamei	mamă
 normalize: mamelor	mame
 normalize: copiii atenți	copii atenți
 normalize: copiilor tineri	copii tineri
 normalize: copilului monegasc	copil monegasc
 normalize: tatălui sud-african	tatăl sud-african
 normalize: taților sportivi	tați sportivi
-normalize: mamei engleze	mama engleze
+normalize: mamei engleze	mamă engleze
 normalize: mamelor engleze	mame engleze
 normalize: echipei naționale	echipa națională
 normalize: sportivilor români	sportivi români
@@ -126,7 +126,7 @@ normalize: nașului	naș
 normalize: cetățeanului	cetățean
 normalize: cetățenilor	cetățeni
 normalize: fetei	fată
-normalize: mamei	mama
+normalize: mamei	mamă
 normalize: mamelor	mame
 normalize: sorei	sora
 normalize: sorei	sora
@@ -137,8 +137,36 @@ normalize: copiii	copii
 normalize: fiilor	fii
 normalize: copiilor	copii
 normalize: copilului	copil
-normalize: mamei	mama
+normalize: mamei	mamă
 normalize: mamelor	mame
+normalize: bănățenei	bănățeană
+normalize: bănățean	bănățean
+normalize: bănățeană	bănățeană
+normalize: craiovean	craiovean
+normalize: craiovenei	craioveană
+normalize: craioveană	craioveană
+normalize: craiovenilor	craioveni
+normalize: prahovencei	prahoveană
+normalize: prahoveancă	prahoveană
+normalize: bucureștean	bucureștean
+normalize: bucureșteană	bucureșteană
+normalize: bucureșteancă	bucureșteană
+normalize: bucureștenei	bucureșteană
+normalize: bucureștencei	bucureșteană
+normalize: bucureștencelor	bucureștene
+normalize: bucureșteanului	bucureștean
+normalize: bucureștenilor	bucureșteni
+normalize: prahovencelor	prahovene
+normalize: bănățeancă	bănățeană
+normalize: bănățence	bănățene
+normalize: bucureștence	bucureștene
+normalize: craiovenelor	craiovene
+normalize: craiovencelor	craiovene
+normalize: craioveancă	craioveană
+normalize: gălățeancă	gălățeană
+normalize: gălățence	gălățene
+normalize: gălățencelor	gălățene
+normalize: gălățenelor	gălățene
 normalize: comisiei	comisia
 normalize: comisarului	comisar
 normalize: comisarilor	comisari
@@ -150,7 +178,7 @@ normalize: arbitrilor	arbitri
 normalize: asistentului	asistent
 normalize: asistenților	asistenți
 normalize: copilului	copil
-normalize: mamei	mama
+normalize: mamei	mamă
 normalize: mamelor	mame
 normalize: tenismenului	tenismen
 normalize: tenisului	tenis
@@ -162,7 +190,7 @@ normalize: voleibaliștilor	voleibaliști
 normalize: cicliștilor	cicliști
 normalize: ciclistului	ciclist
 normalize: copilului	copil
-normalize: mamei	mama
+normalize: mamei	mamă
 normalize: mamelor	mame
 normalize: prefectului	prefect
 normalize: prefecților	prefecți
@@ -182,13 +210,13 @@ normalize: canotoarelor olimpice	canotoare olimpice
 normalize: firmelor de stat	firme de stat
 normalize: echipelor primăriei	echipele primăriei
 normalize: echipei primăriei	echipa primăriei
-normalize: mamei forbalistului	mama forbalistului
+normalize: mamei forbalistului	mamă forbalistului
 normalize: copiii atenți	copii atenți
 normalize: copiilor tineri	copii tineri
 normalize: copilului monegasc	copil monegasc
 normalize: tatălui sud-african	tatăl sud-african
 normalize: taților sportivi	tați sportivi
-normalize: mamei engleze	mama engleze
+normalize: mamei engleze	mamă engleze
 normalize: mamelor engleze	mame engleze
 normalize: suedezelor	suedeze
 normalize: japonezelor	japoneze
@@ -200,7 +228,7 @@ normalize: englezoaicelor	englezoaice
 normalize: sud-africanilor	sud-africani
 normalize: sud-africanelor	sud-africane
 normalize: copilului	copil
-normalize: mamei	mama
+normalize: mamei	mamă
 normalize: mamelor	mame
 normalize: femeii	femeia
 normalize: doamnei	doamna
@@ -208,3 +236,34 @@ normalize: profesoarei	profesoara
 normalize: profesoarelor	profesoare
 normalize: prietenei	prietena
 normalize: prietenului	prieten
+normalize: Sorana	Sorana
+normalize: Sorana Cîrstea	Sorana Cîrstea
+normalize: Soranei Cîrstea	Sorana Cîrstea
+normalize: Soranei	Sorana
+normalize: Jacquelinei	Jacqueline
+normalize: Jacqueline	Jacqueline
+normalize: Jacqueline Cristian	Jacqueline Cristian
+normalize: Jacquelinei Cristian	Jacqueline Cristian
+normalize: acadelei	acadea
+normalize: acadeua roz	acadea roz
+normalize: Mediașului	Mediaș
+normalize: Filiașului	Filiași
+normalize: Filiașilor	Filiași
+normalize: Iașului	Iași
+normalize: Iașilor	Iași
+normalize: Sebeșului	Sebeș
+normalize: Maramureșului	Maramureș
+normalize: Mureșului	Mureș
+normalize: Tg. Mureș	Târgul Mureș
+normalize: Tg. Jiu	Târgul Jiu
+normalize: Tg. Jiului	Târgul Jiu
+normalize: Târgul Jiu	Târgul Jiu
+normalize: Târgului Mureș	Târgul Mureș
+normalize: Târgul Mureș	Târgul Mureș
+normalize: Tîrgul Jiu	Târgul Jiu
+normalize: Tîrgului Jiu	Târgul Jiu
+normalize: Tîrgul Mureș	Târgul Mureș
+normalize: tîrgul	târg
+normalize: târgul	târg
+normalize: tîrgul	târg
+normalize: tîrgului	târg
