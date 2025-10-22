@@ -1,6 +1,9 @@
 import threading
 import time
 from functools import wraps
+from service.util.logger_util import get_logger
+
+logger = get_logger()
 
 
 def log_thread_id(thread_id, name=None):
@@ -16,11 +19,11 @@ def elapsed_time(label=None):
         def wrapper(*args, **kwargs):
             thread_id = threading.get_ident()
             name = label or func.__name__
-            print(f"[{name} | {log_thread_id(thread_id)}] started")
+            logger.info(f"[{name} | {log_thread_id(thread_id)}] started")
             start = time.time()
             result = func(*args, **kwargs)
             duration = time.time() - start
-            print(f"[{name} | {log_thread_id(thread_id)}] completed in {duration:.3f}s")
+            logger.info(f"[{name} | {log_thread_id(thread_id)}] completed in {duration:.3f}s")
             return result
 
         return wrapper

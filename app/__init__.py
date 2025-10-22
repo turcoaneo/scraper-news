@@ -1,12 +1,14 @@
 # app/__init__.py
-import os
 
-from dotenv import load_dotenv
+
 from fastapi import FastAPI
-from fastapi.openapi.docs import get_swagger_ui_html
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.openapi.docs import get_swagger_ui_html
 
-load_dotenv()
+from app.utils.env_vars import APP_ENV
+from service.util.logger_util import get_logger
+
+logger = get_logger("fastapi")
 
 
 def create_app() -> FastAPI:
@@ -18,7 +20,9 @@ def create_app() -> FastAPI:
     )
 
     # Enable CORS for local development
-    if os.environ.get("APP_ENV") == "local":
+    if APP_ENV == "local":
+        logger.info("Starting FastAPI in local mode")
+
         # noinspection PyTypeChecker
         app.add_middleware(
             CORSMiddleware,

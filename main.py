@@ -7,7 +7,7 @@ app = create_app()
 
 if __name__ == "__main__":
     # Optional: start scraper loop alongside FastAPI
-    start_scraper_loop(interval_seconds=6)
+    start_scraper_loop(interval_sec=6, is_looped=False)
 
     import uvicorn
 

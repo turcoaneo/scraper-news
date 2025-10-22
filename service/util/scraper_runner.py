@@ -6,8 +6,11 @@ from transformers import T5Tokenizer, T5ForConditionalGeneration
 from app.config.loader import load_sites_from_config
 from model.model_type import ModelType
 from service.util.declension_util import DeclensionUtil
+from service.util.logger_util import get_logger
 from service.util.path_util import PROJECT_ROOT
 from service.util.timing_util import elapsed_time, log_thread_id
+
+logger = get_logger()
 
 
 def get_model_and_tokenizer():
@@ -20,19 +23,19 @@ def get_model_and_tokenizer():
 
 @elapsed_time("run_scraper")
 def run_scraper(minutes=360):
-    print(f"Running {log_thread_id(threading.get_ident(), 'scraper')}")
+    logger.info(f"Running {log_thread_id(threading.get_ident(), 'scraper')}")
     sites = load_sites_from_config()
     total_traffic = sum(site.traffic for site in sites)
 
     @elapsed_time("process_site")
     def process_site(site):
-        print(f"Scraping {log_thread_id(threading.get_ident(), site.name)}")
+        logger.info(f"Scraping {log_thread_id(threading.get_ident(), site.name)}")
         site.compute_weight(total_traffic)
         site.scrape_recent_articles(minutes)
 
     @elapsed_time("save_site")
     def save_site(site):
-        print(f"Saving CSV for {log_thread_id(threading.get_ident(), site.name)}")
+        logger.info(f"Saving CSV for {log_thread_id(threading.get_ident(), site.name)}")
         site.save_to_csv(use_temp=True)
 
     # Phase 1: Scraping (parallel)
@@ -53,7 +56,7 @@ def run_scraper(minutes=360):
                         article.keywords = [DeclensionUtil.normalize(kw, (tokenizer, model)) for kw in
                                             article.keywords]
                 except Exception as e:
-                    print(f"[Declension Error] {site.name}: {e}")
+                    logger.info(f"[Declension Error] {site.name}: {e}")
 
             process_declension()
 
