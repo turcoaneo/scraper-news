@@ -149,6 +149,7 @@ class StoryClusterer:
                     keywords = []
 
                 articles.append({
+                    "site": article.site,
                     "title": article.title,
                     "url": article.url,
                     "keywords": keywords,

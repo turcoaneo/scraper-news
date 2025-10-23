@@ -4,15 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="53257271-e7b8-4d79-880d-23a742d856a8" name="Fast API." comment="Fast API.">
-      <change afterPath="$PROJECT_DIR$/app/utils/env_vars.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/util/logger_util.py" afterDir="false" />
+    <list default="true" id="53257271-e7b8-4d79-880d-23a742d856a8" name="Fast API." comment="Fast API. Logger.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cron_jobs/scraper_job.py" beforeDir="false" afterPath="$PROJECT_DIR$/cron_jobs/scraper_job.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/util/scraper_runner.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/util/scraper_runner.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/util/timing_util.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/util/timing_util.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/story_clusterer.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/story_clusterer.py" afterDir="false" />
     </list>
     <list id="a7f942ad-3c95-41b0-b4b7-f43fce9ff07e" name="Changes" comment="" />
     <list id="6508d4bf-b1d4-4e03-bff8-2d311d3ea368" name="Env" comment="">
@@ -68,98 +63,98 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python tests.Python tests for test_article_extract_data.TestArticleExtractor.executor": "Run",
-    "Python tests.Python tests for test_article_extract_data.TestArticleExtractor.test_extract_data_returns_expected_dict.executor": "Debug",
-    "Python tests.Python tests for test_article_extract_data.TestArticleExtractor.test_extract_data_returns_none_if_invalid.executor": "Debug",
-    "Python tests.Python tests for test_article_extract_data.TestArticleExtractor.test_simple.executor": "Run",
-    "Python tests.Python tests for test_article_filter.TestArticleFilter.executor": "Run",
-    "Python tests.Python tests for test_article_scraper.TestArticleScraper.executor": "Run",
-    "Python tests.Python tests for test_article_scraper.TestArticleScraper.test_extract_data.executor": "Run",
-    "Python tests.Python tests for test_article_scraper.TestArticleScraper.test_extract_timestamp_from_selector_digisport.executor": "Debug",
-    "Python tests.Python tests for test_article_scraper.TestArticleScraper.test_extract_timestamp_from_selector_gsp.executor": "Run",
-    "Python tests.Python tests for test_article_scraper.TestArticleScraper.test_fetch_failure.executor": "Debug",
-    "Python tests.Python tests for test_article_scraper.TestArticleScraper.test_validate_article_false.executor": "Debug",
-    "Python tests.Python tests for test_benchmark_lora.test_bert_lora_benchmark.executor": "Run",
-    "Python tests.Python tests for test_benchmark_models.TestBenchmark.test_benchmark_models.executor": "Run",
-    "Python tests.Python tests for test_benchmark_models.test_benchmark_lora.executor": "Debug",
-    "Python tests.Python tests for test_benchmark_models.test_benchmark_models.executor": "Run",
-    "Python tests.Python tests for test_claude_prompt_builder.TestClaudePromptBuilder.executor": "Run",
-    "Python tests.Python tests for test_claude_prompt_builder.TestClaudePromptBuilder.test_extract_entities_and_keywords.executor": "Run",
-    "Python tests.Python tests for test_claude_prompt_builder.TestClaudePromptBuilder.test_send_prompt_to_claude.executor": "Debug",
-    "Python tests.Python tests for test_cluster_route.test_cluster_route.executor": "Run",
-    "Python tests.Python tests for test_cluster_routes.TestClusterRoutes.executor": "Run",
-    "Python tests.Python tests for test_cluster_routes.TestClusterRoutes.test_scrape_sites_async.executor": "Run",
-    "Python tests.Python tests for test_cluster_service.TestClusterService.executor": "Run",
-    "Python tests.Python tests for test_cluster_service.TestClusterService.test_cluster_news.executor": "Run",
-    "Python tests.Python tests for test_cluster_service.TestClusterService.test_delete_old_csvs.executor": "Run",
-    "Python tests.Python tests for test_cluster_service.TestClusterService.test_scrape_sites_async.executor": "Run",
-    "Python tests.Python tests for test_cluster_service.test_cluster_news.executor": "Run",
-    "Python tests.Python tests for test_cluster_service.test_delete_old_csvs.executor": "Run",
-    "Python tests.Python tests for test_cluster_service.test_scrape_sites_async.executor": "Run",
-    "Python tests.Python tests for test_csv2jsonl.TestCsvToJsonlConverter.executor": "Run",
-    "Python tests.Python tests for test_csv2jsonl.TestCsvToJsonlConverter.test_conversion_creates_valid_jsonl.executor": "Run",
-    "Python tests.Python tests for test_csv2jsonl.TestCsvToJsonlConverter.test_creates_valid_jsonl_NaN.executor": "Run",
-    "Python tests.Python tests for test_csv2jsonl.TestCsvToJsonlConverter.test_creates_valid_jsonl_from_float.executor": "Run",
-    "Python tests.Python tests for test_csv_util.TestCsvUtil.executor": "Run",
-    "Python tests.Python tests for test_csv_util.TestCsvUtil.test_save_articles_to_csv_atomic.executor": "Run",
-    "Python tests.Python tests for test_csv_util.TestCsvUtil.test_save_articles_to_csv_temp_only.executor": "Run",
-    "Python tests.Python tests for test_declension_util.TestDeclensionUtil.executor": "Run",
-    "Python tests.Python tests for test_declension_util.TestDeclensionUtil.test_basic_declension.executor": "Run",
-    "Python tests.Python tests for test_declension_util.TestDeclensionUtil.test_long_input_truncation.executor": "Debug",
-    "Python tests.Python tests for test_declension_util.TestDeclensionUtil.test_mixed_case_and_punctuation.executor": "Run",
-    "Python tests.Python tests for test_declension_util.TestDeclensionUtil.test_multithreaded_normalize.executor": "Run",
-    "Python tests.Python tests for test_declension_util.TestDeclensionUtil.test_multithreaded_prediction.executor": "Debug",
-    "Python tests.Python tests for test_declension_util.TestDeclensionUtil.test_no_transformation.executor": "Run",
-    "Python tests.Python tests for test_declension_util.TestDeclensionUtil.test_phrase_level.executor": "Run",
-    "Python tests.Python tests for test_delete_csv.TestDeleteOldCSVs.executor": "Run",
-    "Python tests.Python tests for test_extractor_ents_keys.test_empty_input.executor": "Run",
-    "Python tests.Python tests for test_extractor_ents_keys.test_extraction_basic.executor": "Debug",
-    "Python tests.Python tests for test_gpt_prompt_builder.TestGptPromptBuilder.executor": "Run",
-    "Python tests.Python tests for test_gpt_prompt_builder.TestGptPromptBuilder.test_extract_entities_and_keywords.executor": "Run",
-    "Python tests.Python tests for test_gpt_prompt_builder.TestGptPromptBuilder.test_load_training_data.executor": "Run",
-    "Python tests.Python tests for test_loader_sites_config.test_load_sites.executor": "Run",
-    "Python tests.Python tests for test_loader_sites_config.test_site_config_fields.executor": "Run",
-    "Python tests.Python tests for test_scrape_sites_async.TestScrapeSitesAsync.executor": "Run",
-    "Python tests.Python tests for test_site_scraper.TestSiteScraper.executor": "Run",
-    "Python tests.Python tests for test_spacy_ents_keys.TestSpacyEntsKeys.executor": "Run",
-    "Python tests.Python tests for test_span_utils.test_group_labeled_phrases_basic.executor": "Run",
-    "Python tests.Python tests for test_span_utils.test_suppress_sub_spans.executor": "Run",
-    "Python tests.Python tests for test_story_clusterer.TestStoryClusterer.executor": "Run",
-    "Python tests.Python tests for test_story_clusterer.TestStoryClusterer.test_get_matched_clusters_negative.executor": "Run",
-    "Python tests.Python tests for test_story_clusterer.TestStoryClusterer.test_get_matched_clusters_positive.executor": "Run",
-    "Python tests.Python tests for test_story_clusterer.TestStoryClusterer.test_get_matched_clusters_realistic.executor": "Debug",
-    "Python tests.Python tests for test_summary_util.TestSummaryUtil.test_merge_summaries_basic.executor": "Run",
-    "Python tests.Python tests for test_summary_util.TestSummaryUtil.test_merge_summaries_missing_final_punctuation.executor": "Debug",
-    "Python tests.Python tests for test_summary_util.TestSummaryUtil.test_merge_summaries_with_ellipsis_delimiters.executor": "Run",
-    "Python tests.Python tests in test_benchmark_models.py.executor": "Run",
-    "Python tests.Python tests in test_claude_prompt_builder.py.executor": "Run",
-    "Python tests.Python tests in test_cluster_service.py.executor": "Run",
-    "Python tests.Python tests in test_extractor_ents_keys.py.executor": "Run",
-    "Python.FastAPI.executor": "Run",
-    "Python.Main - FastAPI and Cron.executor": "Debug",
-    "Python.Main - FastAPI and Scraper Cron.executor": "Run",
-    "Python.SCRAPER JOB.executor": "Run",
-    "Python.Scraper Cron.executor": "Run",
-    "Python.main.executor": "Run",
-    "Python.run.executor": "Debug",
-    "Python.scraper_job.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/WORKSPACE/Python/scraper-news/cron_jobs/scraper_job.py",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "reference.idesettings.debugger.python",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python tests.Python tests for test_article_extract_data.TestArticleExtractor.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_article_extract_data.TestArticleExtractor.test_extract_data_returns_expected_dict.executor&quot;: &quot;Debug&quot;,
+    &quot;Python tests.Python tests for test_article_extract_data.TestArticleExtractor.test_extract_data_returns_none_if_invalid.executor&quot;: &quot;Debug&quot;,
+    &quot;Python tests.Python tests for test_article_extract_data.TestArticleExtractor.test_simple.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_article_filter.TestArticleFilter.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_article_scraper.TestArticleScraper.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_article_scraper.TestArticleScraper.test_extract_data.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_article_scraper.TestArticleScraper.test_extract_timestamp_from_selector_digisport.executor&quot;: &quot;Debug&quot;,
+    &quot;Python tests.Python tests for test_article_scraper.TestArticleScraper.test_extract_timestamp_from_selector_gsp.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_article_scraper.TestArticleScraper.test_fetch_failure.executor&quot;: &quot;Debug&quot;,
+    &quot;Python tests.Python tests for test_article_scraper.TestArticleScraper.test_validate_article_false.executor&quot;: &quot;Debug&quot;,
+    &quot;Python tests.Python tests for test_benchmark_lora.test_bert_lora_benchmark.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_benchmark_models.TestBenchmark.test_benchmark_models.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_benchmark_models.test_benchmark_lora.executor&quot;: &quot;Debug&quot;,
+    &quot;Python tests.Python tests for test_benchmark_models.test_benchmark_models.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_claude_prompt_builder.TestClaudePromptBuilder.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_claude_prompt_builder.TestClaudePromptBuilder.test_extract_entities_and_keywords.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_claude_prompt_builder.TestClaudePromptBuilder.test_send_prompt_to_claude.executor&quot;: &quot;Debug&quot;,
+    &quot;Python tests.Python tests for test_cluster_route.test_cluster_route.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_cluster_routes.TestClusterRoutes.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_cluster_routes.TestClusterRoutes.test_scrape_sites_async.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_cluster_service.TestClusterService.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_cluster_service.TestClusterService.test_cluster_news.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_cluster_service.TestClusterService.test_delete_old_csvs.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_cluster_service.TestClusterService.test_scrape_sites_async.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_cluster_service.test_cluster_news.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_cluster_service.test_delete_old_csvs.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_cluster_service.test_scrape_sites_async.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_csv2jsonl.TestCsvToJsonlConverter.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_csv2jsonl.TestCsvToJsonlConverter.test_conversion_creates_valid_jsonl.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_csv2jsonl.TestCsvToJsonlConverter.test_creates_valid_jsonl_NaN.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_csv2jsonl.TestCsvToJsonlConverter.test_creates_valid_jsonl_from_float.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_csv_util.TestCsvUtil.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_csv_util.TestCsvUtil.test_save_articles_to_csv_atomic.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_csv_util.TestCsvUtil.test_save_articles_to_csv_temp_only.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_declension_util.TestDeclensionUtil.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_declension_util.TestDeclensionUtil.test_basic_declension.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_declension_util.TestDeclensionUtil.test_long_input_truncation.executor&quot;: &quot;Debug&quot;,
+    &quot;Python tests.Python tests for test_declension_util.TestDeclensionUtil.test_mixed_case_and_punctuation.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_declension_util.TestDeclensionUtil.test_multithreaded_normalize.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_declension_util.TestDeclensionUtil.test_multithreaded_prediction.executor&quot;: &quot;Debug&quot;,
+    &quot;Python tests.Python tests for test_declension_util.TestDeclensionUtil.test_no_transformation.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_declension_util.TestDeclensionUtil.test_phrase_level.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_delete_csv.TestDeleteOldCSVs.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_extractor_ents_keys.test_empty_input.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_extractor_ents_keys.test_extraction_basic.executor&quot;: &quot;Debug&quot;,
+    &quot;Python tests.Python tests for test_gpt_prompt_builder.TestGptPromptBuilder.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_gpt_prompt_builder.TestGptPromptBuilder.test_extract_entities_and_keywords.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_gpt_prompt_builder.TestGptPromptBuilder.test_load_training_data.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_loader_sites_config.test_load_sites.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_loader_sites_config.test_site_config_fields.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_scrape_sites_async.TestScrapeSitesAsync.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_site_scraper.TestSiteScraper.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_spacy_ents_keys.TestSpacyEntsKeys.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_span_utils.test_group_labeled_phrases_basic.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_span_utils.test_suppress_sub_spans.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_story_clusterer.TestStoryClusterer.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_story_clusterer.TestStoryClusterer.test_get_matched_clusters_negative.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_story_clusterer.TestStoryClusterer.test_get_matched_clusters_positive.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_story_clusterer.TestStoryClusterer.test_get_matched_clusters_realistic.executor&quot;: &quot;Debug&quot;,
+    &quot;Python tests.Python tests for test_summary_util.TestSummaryUtil.test_merge_summaries_basic.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_summary_util.TestSummaryUtil.test_merge_summaries_missing_final_punctuation.executor&quot;: &quot;Debug&quot;,
+    &quot;Python tests.Python tests for test_summary_util.TestSummaryUtil.test_merge_summaries_with_ellipsis_delimiters.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_benchmark_models.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_claude_prompt_builder.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_cluster_service.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_extractor_ents_keys.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python.FastAPI.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Main - FastAPI and Cron.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.Main - FastAPI and Scraper Cron.executor&quot;: &quot;Run&quot;,
+    &quot;Python.SCRAPER JOB.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Scraper Cron.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.run.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.scraper_job.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/WORKSPACE/Python/scraper-news/cron_jobs/scraper_job.py&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.idesettings.debugger.python&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\WORKSPACE\Python\scraper-news\storage" />
@@ -297,105 +292,11 @@
       <option name="docutils_open_in_browser" value="false" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for test_declension_util.TestDeclensionUtil" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
-      <module name="scraper-news" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_declension_util.TestDeclensionUtil&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Python tests for test_declension_util.TestDeclensionUtil.test_basic_declension" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
-      <module name="scraper-news" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_declension_util.TestDeclensionUtil.test_basic_declension&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Python tests for test_declension_util.TestDeclensionUtil.test_long_input_truncation" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
-      <module name="scraper-news" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_declension_util.TestDeclensionUtil.test_long_input_truncation&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Python tests for test_declension_util.TestDeclensionUtil.test_mixed_case_and_punctuation" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
-      <module name="scraper-news" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_declension_util.TestDeclensionUtil.test_mixed_case_and_punctuation&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Python tests for test_declension_util.TestDeclensionUtil.test_multithreaded_normalize" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
-      <module name="scraper-news" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_declension_util.TestDeclensionUtil.test_multithreaded_normalize&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
     <list>
       <item itemvalue="Python.FastAPI" />
       <item itemvalue="Python.SCRAPER JOB" />
       <item itemvalue="Python.Main - FastAPI and Scraper Cron" />
-      <item itemvalue="Python tests.Python tests for test_declension_util.TestDeclensionUtil" />
-      <item itemvalue="Python tests.Python tests for test_declension_util.TestDeclensionUtil.test_basic_declension" />
-      <item itemvalue="Python tests.Python tests for test_declension_util.TestDeclensionUtil.test_long_input_truncation" />
-      <item itemvalue="Python tests.Python tests for test_declension_util.TestDeclensionUtil.test_mixed_case_and_punctuation" />
-      <item itemvalue="Python tests.Python tests for test_declension_util.TestDeclensionUtil.test_multithreaded_normalize" />
     </list>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Python tests.Python tests for test_declension_util.TestDeclensionUtil.test_basic_declension" />
-        <item itemvalue="Python tests.Python tests for test_declension_util.TestDeclensionUtil.test_mixed_case_and_punctuation" />
-        <item itemvalue="Python tests.Python tests for test_declension_util.TestDeclensionUtil" />
-        <item itemvalue="Python tests.Python tests for test_declension_util.TestDeclensionUtil.test_multithreaded_normalize" />
-        <item itemvalue="Python tests.Python tests for test_declension_util.TestDeclensionUtil.test_long_input_truncation" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -613,7 +514,8 @@
       <workItem from="1760594711659" duration="14594000" />
       <workItem from="1760612954401" duration="10184000" />
       <workItem from="1760686708300" duration="8260000" />
-      <workItem from="1760705838161" duration="87769000" />
+      <workItem from="1760705838161" duration="89310000" />
+      <workItem from="1761205671322" duration="7957000" />
     </task>
     <task id="LOCAL-00031" summary="Declension model training.">
       <branch name="declension" repository="D:\WORKSPACE\Python\scraper-news" />
@@ -741,7 +643,15 @@
       <option name="project" value="LOCAL" />
       <updated>1761067323526</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="Fast API. Logger.">
+      <option name="closed" value="true" />
+      <created>1761144487254</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1761144487254</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <option name="createBranch" value="false" />
     <option name="useBranch" value="true" />
     <servers />
@@ -750,8 +660,6 @@
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Instructions." />
-    <MESSAGE value="Fixes." />
     <MESSAGE value="README." />
     <MESSAGE value="README markdowns." />
     <MESSAGE value="OS path for test." />
@@ -775,7 +683,9 @@
     <MESSAGE value="Retraining declension model plus decorator." />
     <MESSAGE value="Better logging." />
     <MESSAGE value="Better logging 2." />
-    <option name="LAST_COMMIT_MESSAGE" value="Better logging 2." />
+    <MESSAGE value="Fast API." />
+    <MESSAGE value="Fast API. Logger." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fast API. Logger." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -832,7 +742,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/service/story_clusterer.py</url>
-          <line>161</line>
+          <line>162</line>
           <option name="timeStamp" value="143" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -865,7 +775,8 @@
     <SUITE FILE_PATH="coverage/scraper_news$.coverage" NAME=" Coverage Results" MODIFIED="1761041463921" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/scraper_news$Scraper_Cron.coverage" NAME="Scraper Cron Coverage Results" MODIFIED="1760774637564" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="D:\WORKSPACE\Python\scraper-news" />
     <SUITE FILE_PATH="coverage/scraper_news$main.coverage" NAME="Main - FastAPI and Scraper Cron Coverage Results" MODIFIED="1760774789944" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/scraper_news$FastAPI.coverage" NAME="FastAPI Coverage Results" MODIFIED="1761128210367" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="D:\WORKSPACE\Python\scraper-news" />
+    <SUITE FILE_PATH="coverage/scraper_news$FastAPI.coverage" NAME="FastAPI Coverage Results" MODIFIED="1761245844695" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="D:\WORKSPACE\Python\scraper-news" />
     <SUITE FILE_PATH="coverage/scraper_news$run.coverage" NAME="run Coverage Results" MODIFIED="1760539226178" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/scraper_news$SCRAPER_JOB.coverage" NAME="SCRAPER JOB Coverage Results" MODIFIED="1761232942356" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cron_jobs" />
   </component>
 </project>
