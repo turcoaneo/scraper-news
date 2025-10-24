@@ -6,7 +6,8 @@ from service.util.scraper_runner import run_scraper
 
 
 def run_job():
-    run_scraper()
+    article_time_cutoff = int(SCRAPER_CONFIG["article_time_cutoff"])
+    run_scraper(article_time_cutoff)
 
 
 def start_scraper_loop(interval_sec: int = 1200, is_looped: bool = True):

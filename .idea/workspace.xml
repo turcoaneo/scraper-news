@@ -5,9 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="53257271-e7b8-4d79-880d-23a742d856a8" name="Fast API." comment="Fast API. Logger.">
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/story_clusterer.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/story_clusterer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/utils/env_vars.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/utils/env_vars.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cron_jobs/scraper_job.py" beforeDir="false" afterPath="$PROJECT_DIR$/cron_jobs/scraper_job.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/util/scraper_runner.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/util/scraper_runner.py" afterDir="false" />
     </list>
     <list id="a7f942ad-3c95-41b0-b4b7-f43fce9ff07e" name="Changes" comment="" />
     <list id="6508d4bf-b1d4-4e03-bff8-2d311d3ea368" name="Env" comment="">
@@ -48,6 +50,14 @@
   <component name="KubernetesApiProvider">{
   &quot;isMigrated&quot;: true
 }</component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/.env">
+      <ranges>
+        <range start1="1" end1="6" start2="1" end2="6" changelist="6508d4bf-b1d4-4e03-bff8-2d311d3ea368" />
+        <range start1="13" end1="13" start2="13" end2="14" changelist="53257271-e7b8-4d79-880d-23a742d856a8" />
+      </ranges>
+    </file>
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -171,7 +181,7 @@
       <recent name="D:\WORKSPACE\Python\scraper-news\test\storage" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.FastAPI">
+  <component name="RunManager" selected="Python.Main - FastAPI and Scraper Cron">
     <configuration default="true" type="DjangoTestsConfigurationType">
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -515,7 +525,7 @@
       <workItem from="1760612954401" duration="10184000" />
       <workItem from="1760686708300" duration="8260000" />
       <workItem from="1760705838161" duration="89310000" />
-      <workItem from="1761205671322" duration="7957000" />
+      <workItem from="1761205671322" duration="10727000" />
     </task>
     <task id="LOCAL-00031" summary="Declension model training.">
       <branch name="declension" repository="D:\WORKSPACE\Python\scraper-news" />
@@ -651,7 +661,15 @@
       <option name="project" value="LOCAL" />
       <updated>1761144487254</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="Fast API. Logger.">
+      <option name="closed" value="true" />
+      <created>1761246023730</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1761246023730</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <option name="createBranch" value="false" />
     <option name="useBranch" value="true" />
     <servers />
@@ -778,5 +796,6 @@
     <SUITE FILE_PATH="coverage/scraper_news$FastAPI.coverage" NAME="FastAPI Coverage Results" MODIFIED="1761245844695" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="D:\WORKSPACE\Python\scraper-news" />
     <SUITE FILE_PATH="coverage/scraper_news$run.coverage" NAME="run Coverage Results" MODIFIED="1760539226178" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/scraper_news$SCRAPER_JOB.coverage" NAME="SCRAPER JOB Coverage Results" MODIFIED="1761232942356" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cron_jobs" />
+    <SUITE FILE_PATH="coverage/scraper_news$Main___FastAPI_and_Scraper_Cron.coverage" NAME="Main - FastAPI and Scraper Cron Coverage Results" MODIFIED="1761286466278" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

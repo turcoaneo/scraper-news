@@ -22,7 +22,7 @@ def get_model_and_tokenizer():
 
 
 @elapsed_time("run_scraper")
-def run_scraper(minutes=360):
+def run_scraper(minutes=1440):
     logger.info(f"Running {log_thread_id(threading.get_ident(), 'scraper')}")
     sites = load_sites_from_config()
     total_traffic = sum(site.traffic for site in sites)
