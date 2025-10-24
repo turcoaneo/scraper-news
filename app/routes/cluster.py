@@ -2,6 +2,8 @@
 
 from fastapi import APIRouter
 from fastapi.responses import JSONResponse
+
+from service.cluster_buffer_service import ClusterBufferService
 from service.cluster_service import ClusterService
 from service.scraper_service import ScraperService
 
@@ -11,6 +13,12 @@ router = APIRouter()
 @router.get("/cluster")
 async def cluster_news():
     result = ClusterService.cluster_news()
+    return JSONResponse(content=result)
+
+
+@router.get("/cluster-cached")
+async def cluster_cached_news():
+    result = ClusterBufferService.get_cached_clusters()
     return JSONResponse(content=result)
 
 

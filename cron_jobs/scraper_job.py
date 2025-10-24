@@ -11,6 +11,10 @@ def run_job():
 
 
 def start_scraper_loop(interval_sec: int = 1200, is_looped: bool = True):
+    from service.util.logger_util import get_logger
+    logger = get_logger()
+    logger.info(f"Starting scraper - looped: {is_looped}")
+
     def loop_cron_job():
         while True:
             run_job()
@@ -23,6 +27,7 @@ def start_scraper_loop(interval_sec: int = 1200, is_looped: bool = True):
 
 if __name__ == "__main__":
     from distutils.util import strtobool
+
     looped = bool(strtobool(SCRAPER_CONFIG["looped"]))
     interval_seconds = int(SCRAPER_CONFIG["interval"])
     sleeping_time = int(SCRAPER_CONFIG["sleep_time"])

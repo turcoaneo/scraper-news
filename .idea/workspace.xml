@@ -4,13 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="53257271-e7b8-4d79-880d-23a742d856a8" name="Fast API." comment="Fast API. Logger.">
-      <change afterPath="$PROJECT_DIR$/service/scraper_service.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/test_scraper_service.py" afterDir="false" />
+    <list default="true" id="53257271-e7b8-4d79-880d-23a742d856a8" name="Fast API." comment="Refactoring services.">
+      <change afterPath="$PROJECT_DIR$/service/cluster_buffer_service.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/test_cluster_buffer_service.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/config/loader.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/loader.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/routes/cluster.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/cluster.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cron_jobs/scraper_job.py" beforeDir="false" afterPath="$PROJECT_DIR$/cron_jobs/scraper_job.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service/cluster_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/cluster_service.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/util/csv_util.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/util/csv_util.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/util/scraper_runner.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/util/scraper_runner.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/test_cluster_routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test_cluster_routes.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/test_cluster_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test_cluster_service.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/test_declension_util.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test_declension_util.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/test_site_scraper.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test_site_scraper.py" afterDir="false" />
     </list>
     <list id="a7f942ad-3c95-41b0-b4b7-f43fce9ff07e" name="Changes" comment="" />
     <list id="6508d4bf-b1d4-4e03-bff8-2d311d3ea368" name="Env" comment="">
@@ -47,6 +55,11 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JsbtTreeLayoutManager">
+    <layout place="tools.popupGrunt">
+      <scroll-view-position x="0" y="0" />
+    </layout>
   </component>
   <component name="KubernetesApiProvider">{
   &quot;isMigrated&quot;: true
@@ -86,12 +99,17 @@
     "Python tests.Python tests for test_claude_prompt_builder.TestClaudePromptBuilder.executor": "Run",
     "Python tests.Python tests for test_claude_prompt_builder.TestClaudePromptBuilder.test_extract_entities_and_keywords.executor": "Run",
     "Python tests.Python tests for test_claude_prompt_builder.TestClaudePromptBuilder.test_send_prompt_to_claude.executor": "Debug",
+    "Python tests.Python tests for test_cluster_buffer_service.TestClusterBufferService.executor": "Run",
+    "Python tests.Python tests for test_cluster_buffer_service.TestClusterBufferService.test_get_cached_clusters_missing_file.executor": "Debug",
+    "Python tests.Python tests for test_cluster_buffer_service.TestClusterBufferService.test_get_cached_clusters_success.executor": "Debug",
     "Python tests.Python tests for test_cluster_route.test_cluster_route.executor": "Run",
     "Python tests.Python tests for test_cluster_routes.TestClusterRoutes.executor": "Run",
     "Python tests.Python tests for test_cluster_routes.TestClusterRoutes.test_scrape_sites_async.executor": "Run",
     "Python tests.Python tests for test_cluster_service.TestClusterService.executor": "Run",
     "Python tests.Python tests for test_cluster_service.TestClusterService.test_cluster_news.executor": "Run",
     "Python tests.Python tests for test_cluster_service.TestClusterService.test_delete_old_csvs.executor": "Run",
+    "Python tests.Python tests for test_cluster_service.TestClusterService.test_save_cluster_buffer_failure.executor": "Debug",
+    "Python tests.Python tests for test_cluster_service.TestClusterService.test_save_cluster_buffer_success.executor": "Debug",
     "Python tests.Python tests for test_cluster_service.TestClusterService.test_scrape_sites_async.executor": "Run",
     "Python tests.Python tests for test_cluster_service.test_cluster_news.executor": "Run",
     "Python tests.Python tests for test_cluster_service.test_delete_old_csvs.executor": "Run",
@@ -101,7 +119,8 @@
     "Python tests.Python tests for test_csv2jsonl.TestCsvToJsonlConverter.test_creates_valid_jsonl_NaN.executor": "Run",
     "Python tests.Python tests for test_csv2jsonl.TestCsvToJsonlConverter.test_creates_valid_jsonl_from_float.executor": "Run",
     "Python tests.Python tests for test_csv_util.TestCsvUtil.executor": "Run",
-    "Python tests.Python tests for test_csv_util.TestCsvUtil.test_save_articles_to_csv_atomic.executor": "Run",
+    "Python tests.Python tests for test_csv_util.TestCsvUtil.test_save_articles_to_csv_atomic.executor": "Debug",
+    "Python tests.Python tests for test_csv_util.TestCsvUtil.test_save_articles_to_csv_final.executor": "Debug",
     "Python tests.Python tests for test_csv_util.TestCsvUtil.test_save_articles_to_csv_temp_only.executor": "Run",
     "Python tests.Python tests for test_declension_util.TestDeclensionUtil.executor": "Run",
     "Python tests.Python tests for test_declension_util.TestDeclensionUtil.test_basic_declension.executor": "Run",
@@ -122,6 +141,8 @@
     "Python tests.Python tests for test_scrape_sites_async.TestScrapeSitesAsync.executor": "Run",
     "Python tests.Python tests for test_scraper_service.TestScraperService.test_scrape_sites_async.executor": "Run",
     "Python tests.Python tests for test_site_scraper.TestSiteScraper.executor": "Run",
+    "Python tests.Python tests for test_site_scraper.TestSiteScraper.test_is_filtered_exclusion.executor": "Run",
+    "Python tests.Python tests for test_site_scraper.TestSiteScraper.test_save_to_csv_creates_file.executor": "Debug",
     "Python tests.Python tests for test_spacy_ents_keys.TestSpacyEntsKeys.executor": "Run",
     "Python tests.Python tests for test_span_utils.test_group_labeled_phrases_basic.executor": "Run",
     "Python tests.Python tests for test_span_utils.test_suppress_sub_spans.executor": "Run",
@@ -136,6 +157,7 @@
     "Python tests.Python tests in test_claude_prompt_builder.py.executor": "Run",
     "Python tests.Python tests in test_cluster_service.py.executor": "Run",
     "Python tests.Python tests in test_extractor_ents_keys.py.executor": "Run",
+    "Python tests.Python tests in test_site_scraper.py.executor": "Run",
     "Python.FastAPI.executor": "Run",
     "Python.Main - FastAPI and Cron.executor": "Debug",
     "Python.Main - FastAPI and Scraper Cron.executor": "Run",
@@ -296,7 +318,7 @@
       <option name="docutils_open_in_browser" value="false" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for test_cluster_service.TestClusterService" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for test_csv_util.TestCsvUtil" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="scraper-news" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -308,11 +330,11 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_cluster_service.TestClusterService&quot;" />
+      <option name="_new_target" value="&quot;test_csv_util.TestCsvUtil&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for test_scraper_service.TestScraperService.test_scrape_sites_async" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for test_csv_util.TestCsvUtil.test_save_articles_to_csv_atomic" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="scraper-news" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -324,21 +346,75 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_scraper_service.TestScraperService.test_scrape_sites_async&quot;" />
+      <option name="_new_target" value="&quot;test_csv_util.TestCsvUtil.test_save_articles_to_csv_atomic&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for test_csv_util.TestCsvUtil.test_save_articles_to_csv_final" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="scraper-news" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_csv_util.TestCsvUtil.test_save_articles_to_csv_final&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for test_site_scraper.TestSiteScraper.test_is_filtered_exclusion" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="scraper-news" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_site_scraper.TestSiteScraper.test_is_filtered_exclusion&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests in test_site_scraper.py" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="scraper-news" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/test/test_site_scraper.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
     <list>
       <item itemvalue="Python.FastAPI" />
       <item itemvalue="Python.SCRAPER JOB" />
       <item itemvalue="Python.Main - FastAPI and Scraper Cron" />
-      <item itemvalue="Python tests.Python tests for test_cluster_service.TestClusterService" />
-      <item itemvalue="Python tests.Python tests for test_scraper_service.TestScraperService.test_scrape_sites_async" />
+      <item itemvalue="Python tests.Python tests for test_csv_util.TestCsvUtil" />
+      <item itemvalue="Python tests.Python tests for test_csv_util.TestCsvUtil.test_save_articles_to_csv_atomic" />
+      <item itemvalue="Python tests.Python tests for test_csv_util.TestCsvUtil.test_save_articles_to_csv_final" />
+      <item itemvalue="Python tests.Python tests for test_site_scraper.TestSiteScraper.test_is_filtered_exclusion" />
+      <item itemvalue="Python tests.Python tests in test_site_scraper.py" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python tests.Python tests for test_cluster_service.TestClusterService" />
-        <item itemvalue="Python tests.Python tests for test_scraper_service.TestScraperService.test_scrape_sites_async" />
+        <item itemvalue="Python tests.Python tests for test_site_scraper.TestSiteScraper.test_is_filtered_exclusion" />
+        <item itemvalue="Python tests.Python tests in test_site_scraper.py" />
+        <item itemvalue="Python tests.Python tests for test_csv_util.TestCsvUtil" />
+        <item itemvalue="Python tests.Python tests for test_csv_util.TestCsvUtil.test_save_articles_to_csv_final" />
+        <item itemvalue="Python tests.Python tests for test_csv_util.TestCsvUtil.test_save_articles_to_csv_atomic" />
       </list>
     </recent_temporary>
   </component>
@@ -703,7 +779,15 @@
       <option name="project" value="LOCAL" />
       <updated>1761246023730</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="Refactoring services.">
+      <option name="closed" value="true" />
+      <created>1761298805848</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1761298805848</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <option name="createBranch" value="false" />
     <option name="useBranch" value="true" />
     <servers />
@@ -712,7 +796,6 @@
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="README." />
     <MESSAGE value="README markdowns." />
     <MESSAGE value="OS path for test." />
     <MESSAGE value="OS path for file." />
@@ -737,82 +820,11 @@
     <MESSAGE value="Better logging 2." />
     <MESSAGE value="Fast API." />
     <MESSAGE value="Fast API. Logger." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fast API. Logger." />
+    <MESSAGE value="Refactoring services." />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactoring services." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/test_story_clusterer.py</url>
-          <line>149</line>
-          <option name="timeStamp" value="112" />
-        </line-breakpoint>
-        <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/test_story_clusterer.py</url>
-          <line>112</line>
-          <option name="timeStamp" value="115" />
-        </line-breakpoint>
-        <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/story_clusterer.py</url>
-          <line>107</line>
-          <option name="timeStamp" value="116" />
-        </line-breakpoint>
-        <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/story_clusterer.py</url>
-          <line>9</line>
-          <option name="timeStamp" value="117" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/service/csv2jsonl.py</url>
-          <line>13</line>
-          <option name="timeStamp" value="122" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/test/test_gpt_prompt_builder.py</url>
-          <line>54</line>
-          <option name="timeStamp" value="128" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/test/test_article_scraper.py</url>
-          <line>29</line>
-          <option name="timeStamp" value="131" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/test/test_article_scraper.py</url>
-          <line>48</line>
-          <option name="timeStamp" value="133" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/test/test_article_scraper.py</url>
-          <line>95</line>
-          <option name="timeStamp" value="135" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/test/test_article_scraper.py</url>
-          <line>67</line>
-          <option name="timeStamp" value="139" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/service/story_clusterer.py</url>
-          <line>162</line>
-          <option name="timeStamp" value="143" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/service/util/summary_util.py</url>
-          <line>8</line>
-          <option name="timeStamp" value="144" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="jupyter-line">
-          <url>notebook://D:/WORKSPACE/Python/scraper-news/gpt_summary_from_csv.ipynb</url>
-          <line>57</line>
-          <option name="timeStamp" value="120" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="jupyter-line">
-          <url>notebook://D:/WORKSPACE/Python/scraper-news/notebooks/thread_safe_declension.ipynb</url>
-          <line>58</line>
-          <option name="timeStamp" value="146" />
-        </line-breakpoint>
-      </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
           <properties notifyOnTerminate="true" exception="BaseException">
@@ -824,12 +836,12 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/scraper_news$scraper_job.coverage" NAME="SCRAPER JOB Coverage Results" MODIFIED="1761118909149" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cron_jobs" />
-    <SUITE FILE_PATH="coverage/scraper_news$.coverage" NAME=" Coverage Results" MODIFIED="1761296020765" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/scraper_news$.coverage" NAME=" Coverage Results" MODIFIED="1761315431371" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/scraper_news$Scraper_Cron.coverage" NAME="Scraper Cron Coverage Results" MODIFIED="1760774637564" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="D:\WORKSPACE\Python\scraper-news" />
     <SUITE FILE_PATH="coverage/scraper_news$main.coverage" NAME="Main - FastAPI and Scraper Cron Coverage Results" MODIFIED="1760774789944" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/scraper_news$FastAPI.coverage" NAME="FastAPI Coverage Results" MODIFIED="1761245844695" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="D:\WORKSPACE\Python\scraper-news" />
     <SUITE FILE_PATH="coverage/scraper_news$run.coverage" NAME="run Coverage Results" MODIFIED="1760539226178" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/scraper_news$SCRAPER_JOB.coverage" NAME="SCRAPER JOB Coverage Results" MODIFIED="1761232942356" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cron_jobs" />
-    <SUITE FILE_PATH="coverage/scraper_news$Main___FastAPI_and_Scraper_Cron.coverage" NAME="Main - FastAPI and Scraper Cron Coverage Results" MODIFIED="1761296092689" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/scraper_news$Main___FastAPI_and_Scraper_Cron.coverage" NAME="Main - FastAPI and Scraper Cron Coverage Results" MODIFIED="1761317191778" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

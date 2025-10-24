@@ -18,6 +18,7 @@ def save_articles_to_csv(site_name: str, base_url: str, articles: set, filter_ke
         os.makedirs(base_path, exist_ok=True)
 
     temp_path = get_site_file_path(site_name, base_path, use_temp=True)
+    final_path = get_site_file_path(site_name, base_path, use_temp=False)
 
     with open(temp_path, mode="w", encoding="utf-8", newline="") as file:
         columns = ["site", "timestamp", "title", "entities", "keywords", "summary", "url", "comments"]
@@ -38,9 +39,7 @@ def save_articles_to_csv(site_name: str, base_url: str, articles: set, filter_ke
                 "comments": article.comments
             })
 
-    if use_temp:
-        final_path = get_site_file_path(site_name, base_path, use_temp=False)
-        os.replace(temp_path, final_path)  # Atomic move
+    os.replace(temp_path, final_path)  # Always move to final
 
 
 def is_filtered(article, filter_place_keys):

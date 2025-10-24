@@ -1,13 +1,14 @@
 # service/cluster_service.py
-
+import json
 import os
-import threading
 from datetime import datetime
 from pathlib import Path
 
 from app.config.loader import load_sites_from_config
 from service.story_clusterer import StoryClusterer
-from service.util.scraper_runner import run_scraper
+from service.util.logger_util import get_logger
+
+logger = get_logger()
 
 
 class ClusterService:
@@ -18,14 +19,17 @@ class ClusterService:
         return Path(base_dir) / "storage"
 
     @staticmethod
-    def cluster_news():
-        sites = load_sites_from_config()
-        for site in sites:
-            site.load_recent_from_csv()
+    def cluster_news(sites=None, minutes=1440):
+        if sites is None:
+            sites = load_sites_from_config()
+            for site in sites:
+                site.load_recent_from_csv()
+
         total_traffic = sum(site.traffic for site in sites)
         for site in sites:
             site.compute_weight(total_traffic)
-        clusterer = StoryClusterer(sites, 360, 0.3, 0.2)
+
+        clusterer = StoryClusterer(sites, minutes, 0.3, 0.2)
         clusterer.cluster_stories()
         return clusterer.get_matched_clusters()
 
@@ -39,3 +43,25 @@ class ClusterService:
                 file.unlink()
                 deleted.append(file.name)
         return deleted
+
+    @staticmethod
+    def save_cluster_buffer(sites, minutes=1440):
+        try:
+            clusters = ClusterService.cluster_news(sites, minutes)
+            jbf_data = {
+                "timestamp": datetime.utcnow().isoformat(),
+                "clusters": clusters
+            }
+
+            jbf_path = ClusterService.get_csv_buffer_result_path()
+            with open(jbf_path, "w", encoding="utf-8") as f:
+                json.dump(jbf_data, f, ensure_ascii=False, indent=2)
+            logger.info(f"Saved JBF to {jbf_path}")
+            return jbf_path
+        except Exception as e:
+            logger.error(f"Failed to save JBF: {e}")
+            return None
+
+    @staticmethod
+    def get_csv_buffer_result_path():
+        return ClusterService.get_storage_path() / "buffer.json"

@@ -30,7 +30,7 @@ class TestClusterRoutes(unittest.TestCase):
         self.assertEqual(response.json()["deleted_files"], ["mocked_file.csv"])
         mock_delete_csvs.assert_called_once()
 
-    @patch("service.cluster_service.ClusterService.scrape_sites_async")
+    @patch("service.scraper_service.ScraperService.scrape_sites_async")
     def test_scrape_sites_async(self, mock_scrape):
         response = self.client.post("/scrape-sites")
         self.assertEqual(response.status_code, 200)
