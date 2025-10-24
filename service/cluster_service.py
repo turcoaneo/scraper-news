@@ -39,9 +39,3 @@ class ClusterService:
                 file.unlink()
                 deleted.append(file.name)
         return deleted
-
-    @staticmethod
-    def scrape_sites_async() -> threading.Thread:
-        thread = threading.Thread(target=run_scraper)
-        thread.start()
-        return thread

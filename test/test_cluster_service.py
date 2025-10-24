@@ -42,19 +42,6 @@ class TestClusterService(unittest.TestCase):
         mock_file_old.unlink.assert_called_once()
         mock_file_today.unlink.assert_not_called()
 
-    @patch("threading.Thread")
-    def test_scrape_sites_async(self, mock_thread_cls):
-        from service.cluster_service import ClusterService
-
-        mock_thread = MagicMock()
-        mock_thread_cls.return_value = mock_thread
-
-        thread = ClusterService.scrape_sites_async()
-
-        mock_thread_cls.assert_called_once()
-        mock_thread.start.assert_called_once()
-        self.assertEqual(thread, mock_thread)
-
 
 if __name__ == "__main__":
     unittest.main()

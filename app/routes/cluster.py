@@ -3,6 +3,7 @@
 from fastapi import APIRouter
 from fastapi.responses import JSONResponse
 from service.cluster_service import ClusterService
+from service.scraper_service import ScraperService
 
 router = APIRouter()
 
@@ -21,5 +22,5 @@ async def delete_old_csvs():
 
 @router.post("/scrape-sites")
 async def scrape_sites_async():
-    ClusterService.scrape_sites_async()
+    ScraperService.scrape_sites_async()
     return JSONResponse(content={"status": "Scraping started in background"})
