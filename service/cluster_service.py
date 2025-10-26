@@ -3,6 +3,7 @@ import json
 import os
 from datetime import datetime
 from pathlib import Path
+from zoneinfo import ZoneInfo
 
 from app.config.loader import load_sites_from_config
 from service.story_clusterer import StoryClusterer
@@ -48,8 +49,9 @@ class ClusterService:
     def save_cluster_buffer(sites, minutes=1440):
         try:
             clusters = ClusterService.cluster_news(sites, minutes)
+            ro_timestamp = datetime.now(ZoneInfo("Europe/Bucharest")).isoformat()
             jbf_data = {
-                "timestamp": datetime.utcnow().isoformat(),
+                "timestamp": ro_timestamp,
                 "clusters": clusters
             }
 
