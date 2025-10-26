@@ -6,6 +6,7 @@ from pathlib import Path
 from zoneinfo import ZoneInfo
 
 from app.config.loader import load_sites_from_config
+from service.site_scraper import SiteScraper
 from service.story_clusterer import StoryClusterer
 from service.util.logger_util import get_logger
 
@@ -15,20 +16,9 @@ logger = get_logger()
 class ClusterService:
 
     @staticmethod
-    def get_storage_path() -> Path:
-        base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-        return Path(base_dir) / "storage"
-
-    @staticmethod
     def cluster_news(sites=None, minutes=1440):
         if sites is None:
-            sites = load_sites_from_config()
-            for site in sites:
-                site.load_recent_from_csv()
-
-        total_traffic = sum(site.traffic for site in sites)
-        for site in sites:
-            site.compute_weight(total_traffic)
+            sites = ClusterService.load_sites()
 
         clusterer = StoryClusterer(sites, minutes, 0.3, 0.2)
         clusterer.cluster_stories()
@@ -67,3 +57,17 @@ class ClusterService:
     @staticmethod
     def get_csv_buffer_result_path():
         return ClusterService.get_storage_path() / "buffer.json"
+
+    @staticmethod
+    def load_sites() -> list[SiteScraper]:
+        sites = load_sites_from_config()
+        total_traffic = sum(site.traffic for site in sites)
+        for site in sites:
+            site.compute_weight(total_traffic)
+            site.load_recent_from_csv()
+        return sites
+
+    @staticmethod
+    def get_storage_path() -> Path:
+        base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+        return Path(base_dir) / "storage"

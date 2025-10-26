@@ -1,3 +1,5 @@
+# service/util/scraper_runner.py
+
 import os
 import threading
 
@@ -27,11 +29,12 @@ def run_scraper(minutes=1440):
     logger.info(f"Running {log_thread_id(threading.get_ident(), 'scraper')}")
     sites = load_sites_from_config()
     total_traffic = sum(site.traffic for site in sites)
+    for site in sites:
+        site.compute_weight(total_traffic)
 
     @elapsed_time("process_site")
     def process_site(site):
         logger.info(f"Scraping {log_thread_id(threading.get_ident(), site.name)}")
-        site.compute_weight(total_traffic)
         site.scrape_recent_articles(minutes)
 
     @elapsed_time("save_site")
@@ -52,10 +55,13 @@ def run_scraper(minutes=1440):
             def process_declension():
                 try:
                     for article in site.articles:
-                        article.entities = [DeclensionUtil.normalize(ent, (tokenizer, model)) for ent in article.entities]
-                        article.keywords = [DeclensionUtil.normalize(kw, (tokenizer, model)) for kw in article.keywords]
+                        article.entities = [DeclensionUtil.normalize(ent, (tokenizer, model)) for ent in
+                                            article.entities]
+                        article.keywords = [DeclensionUtil.normalize(kw, (tokenizer, model)) for kw in
+                                            article.keywords]
                 except Exception as e:
                     logger.info(f"[Declension Error] {site.name}: {e}")
+
             process_declension()
 
     # Phase 3: Saving (parallel)
