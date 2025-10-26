@@ -39,11 +39,8 @@ class SiteScraper:
         self.model_type = model
 
         if filter_place_keys is None:
-            self.filter_place_keys = {
-                "place": ["url", "summary", "keywords", "title"],
-                "including": [],
-                "excluding": ["video", "Becali"],
-            }
+            from app.utils.env_vars import FILTER_PLACE_KEYS
+            self.filter_place_keys = FILTER_PLACE_KEYS
         else:
             self.filter_place_keys = filter_place_keys
 
@@ -68,8 +65,6 @@ class SiteScraper:
     def site_file_path(self) -> Path:
         filename = f"{self.name}_{datetime.now().strftime('%Y%m%d')}.csv"
         return Path(self.file_base).joinpath(filename)
-
-    from service.util.csv_util import save_articles_to_csv
 
     def save_to_csv(self, use_temp: bool = False):
         save_articles_to_csv(

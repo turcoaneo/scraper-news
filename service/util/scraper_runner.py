@@ -12,6 +12,8 @@ from service.util.declension_util import DeclensionUtil
 from service.util.logger_util import get_logger
 from service.util.path_util import PROJECT_ROOT
 from service.util.timing_util import elapsed_time, log_thread_id
+from service.util.delta_checker import DeltaChecker
+from service.util.buffer_util import update_buffer_timestamp
 
 logger = get_logger()
 
@@ -46,6 +48,11 @@ def run_scraper(minutes=1440):
     threads = [threading.Thread(target=process_site, args=(site,)) for site in sites]
     for t in threads: t.start()
     for t in threads: t.join()
+
+    if not DeltaChecker.any_site_has_delta(sites):
+        logger.info("[Scraper] No deltas detected. Skipping declension, saving, clustering.")
+        update_buffer_timestamp()
+        return
 
     # Phase 2: Declension (single-threaded, safe)
     tokenizer, model = get_model_and_tokenizer()
