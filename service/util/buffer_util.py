@@ -51,3 +51,15 @@ def read_delta_timestamp():
     except Exception as e:
         logger.error(f"[Buffer] Failed to read delta timestamp: {e}")
         return None
+
+
+def delete_delta_file_if_exists():
+    path = get_delta_path()
+    try:
+        if path.exists():
+            path.unlink()
+            logger.info(f"[Buffer] Deleted delta file at {path}")
+        else:
+            logger.debug(f"[Buffer] No delta file to delete at {path}")
+    except Exception as e:
+        logger.error(f"[Buffer] Failed to delete delta file: {e}")

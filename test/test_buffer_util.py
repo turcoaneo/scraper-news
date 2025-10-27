@@ -68,3 +68,18 @@ class TestBufferUtil(unittest.TestCase):
         with patch("pathlib.Path.exists", return_value=False):
             result = buffer_util.read_delta_timestamp()
             self.assertIsNone(result)
+
+    @patch("service.util.buffer_util.get_delta_path")
+    def test_delete_delta_file_if_exists(self, mock_get_path):
+        mock_path = Path("delta_run.json")
+        mock_get_path.return_value = mock_path
+
+        with patch("pathlib.Path.exists", return_value=True), \
+             patch("pathlib.Path.unlink") as mock_unlink:
+            buffer_util.delete_delta_file_if_exists()
+            mock_unlink.assert_called_once_with()
+
+        with patch("pathlib.Path.exists", return_value=False), \
+             patch("pathlib.Path.unlink") as mock_unlink:
+            buffer_util.delete_delta_file_if_exists()
+            mock_unlink.assert_not_called()

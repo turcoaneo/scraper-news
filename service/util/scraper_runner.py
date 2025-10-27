@@ -13,7 +13,7 @@ from service.util.logger_util import get_logger
 from service.util.path_util import PROJECT_ROOT
 from service.util.timing_util import elapsed_time, log_thread_id
 from service.util.delta_checker import DeltaChecker
-from service.util.buffer_util import update_buffer_timestamp
+from service.util.buffer_util import update_buffer_timestamp, delete_delta_file_if_exists
 
 logger = get_logger()
 
@@ -78,3 +78,6 @@ def run_scraper(minutes=1440):
 
     # Phase 4: Clustering and buffer creation
     ClusterService.save_cluster_buffer(sites, minutes)
+
+    # Phase 5: Delete delta file
+    delete_delta_file_if_exists()
