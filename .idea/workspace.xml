@@ -4,18 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="53257271-e7b8-4d79-880d-23a742d856a8" name="Fast API." comment="FIx hour and Cron interval.">
-      <change afterPath="$PROJECT_DIR$/service/util/buffer_util.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/util/delta_checker.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/storage/digisport_dump.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/test_buffer_util.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/test_delta_checker.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/test_delta_checker_file.py" afterDir="false" />
+    <list default="true" id="53257271-e7b8-4d79-880d-23a742d856a8" name="Fast API." comment="Optimizing scraper with deltas.">
       <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/utils/env_vars.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/utils/env_vars.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/site_scraper.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/site_scraper.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/util/scraper_runner.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/util/scraper_runner.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/cluster_buffer_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/cluster_buffer_service.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/util/buffer_util.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/util/buffer_util.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/test_buffer_util.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test_buffer_util.py" afterDir="false" />
     </list>
     <list id="a7f942ad-3c95-41b0-b4b7-f43fce9ff07e" name="Changes" comment="" />
     <list id="6508d4bf-b1d4-4e03-bff8-2d311d3ea368" name="Env" comment="">
@@ -65,7 +59,7 @@
     <file path="$PROJECT_DIR$/.env">
       <ranges>
         <range start1="1" end1="6" start2="1" end2="6" changelist="6508d4bf-b1d4-4e03-bff8-2d311d3ea368" />
-        <range start1="14" end1="14" start2="14" end2="18" changelist="53257271-e7b8-4d79-880d-23a742d856a8" />
+        <range start1="16" end1="17" start2="16" end2="17" changelist="53257271-e7b8-4d79-880d-23a742d856a8" />
       </ranges>
     </file>
   </component>
@@ -167,6 +161,7 @@
     "Python tests.Python tests for test_summary_util.TestSummaryUtil.test_merge_summaries_missing_final_punctuation.executor": "Debug",
     "Python tests.Python tests for test_summary_util.TestSummaryUtil.test_merge_summaries_with_ellipsis_delimiters.executor": "Run",
     "Python tests.Python tests in test_benchmark_models.py.executor": "Run",
+    "Python tests.Python tests in test_buffer_util.py.executor": "Run",
     "Python tests.Python tests in test_claude_prompt_builder.py.executor": "Run",
     "Python tests.Python tests in test_cluster_service.py.executor": "Run",
     "Python tests.Python tests in test_extractor_ents_keys.py.executor": "Run",
@@ -331,105 +326,11 @@
       <option name="docutils_open_in_browser" value="false" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for test_delta_checker_file.TestDeltaChecker" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
-      <module name="scraper-news" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_delta_checker_file.TestDeltaChecker&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Python tests for test_delta_checker_file.TestDeltaChecker.test_new_article_detected" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
-      <module name="scraper-news" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_delta_checker_file.TestDeltaChecker.test_new_article_detected&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Python tests for test_delta_checker_file.TestDeltaChecker.test_no_delta_exact_match" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
-      <module name="scraper-news" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_delta_checker_file.TestDeltaChecker.test_no_delta_exact_match&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Python tests for test_site_scraper.TestSiteScraper" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
-      <module name="scraper-news" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_site_scraper.TestSiteScraper&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Python tests for test_site_scraper.TestSiteScraper.test_some_test" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
-      <module name="scraper-news" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_site_scraper.TestSiteScraper.test_some_test&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
     <list>
       <item itemvalue="Python.FastAPI" />
       <item itemvalue="Python.SCRAPER JOB" />
       <item itemvalue="Python.Main - FastAPI and Scraper Cron" />
-      <item itemvalue="Python tests.Python tests for test_delta_checker_file.TestDeltaChecker.test_new_article_detected" />
-      <item itemvalue="Python tests.Python tests for test_site_scraper.TestSiteScraper" />
-      <item itemvalue="Python tests.Python tests for test_site_scraper.TestSiteScraper.test_some_test" />
-      <item itemvalue="Python tests.Python tests for test_delta_checker_file.TestDeltaChecker" />
-      <item itemvalue="Python tests.Python tests for test_delta_checker_file.TestDeltaChecker.test_no_delta_exact_match" />
     </list>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Python tests.Python tests for test_delta_checker_file.TestDeltaChecker" />
-        <item itemvalue="Python tests.Python tests for test_delta_checker_file.TestDeltaChecker.test_new_article_detected" />
-        <item itemvalue="Python tests.Python tests for test_site_scraper.TestSiteScraper.test_some_test" />
-        <item itemvalue="Python tests.Python tests for test_site_scraper.TestSiteScraper" />
-        <item itemvalue="Python tests.Python tests for test_delta_checker_file.TestDeltaChecker.test_no_delta_exact_match" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -649,7 +550,7 @@
       <workItem from="1760686708300" duration="8260000" />
       <workItem from="1760705838161" duration="89310000" />
       <workItem from="1761205671322" duration="10727000" />
-      <workItem from="1761472962783" duration="15332000" />
+      <workItem from="1761472962783" duration="20073000" />
     </task>
     <task id="LOCAL-00031" summary="Declension model training.">
       <branch name="declension" repository="D:\WORKSPACE\Python\scraper-news" />
@@ -825,7 +726,15 @@
       <option name="project" value="LOCAL" />
       <updated>1761468994550</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="Optimizing scraper with deltas.">
+      <option name="closed" value="true" />
+      <created>1761490856841</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1761490856841</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <option name="createBranch" value="false" />
     <option name="useBranch" value="true" />
     <servers />
@@ -834,7 +743,6 @@
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="OS path for files." />
     <MESSAGE value="Commit and push." />
     <MESSAGE value="Refactoring." />
     <MESSAGE value="LRU cache." />
@@ -857,9 +765,10 @@
     <MESSAGE value="Fast API. Logger." />
     <MESSAGE value="Refactoring services." />
     <MESSAGE value="Cached clustering plus test fixes." />
-    <MESSAGE value="FIx hour and Cron interval." />
     <MESSAGE value="Fix scores." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix scores." />
+    <MESSAGE value="FIx hour and Cron interval." />
+    <MESSAGE value="Optimizing scraper with deltas." />
+    <option name="LAST_COMMIT_MESSAGE" value="Optimizing scraper with deltas." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -891,12 +800,12 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/scraper_news$scraper_job.coverage" NAME="SCRAPER JOB Coverage Results" MODIFIED="1761118909149" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cron_jobs" />
-    <SUITE FILE_PATH="coverage/scraper_news$.coverage" NAME=" Coverage Results" MODIFIED="1761487280866" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/scraper_news$.coverage" NAME=" Coverage Results" MODIFIED="1761491626167" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/scraper_news$Scraper_Cron.coverage" NAME="Scraper Cron Coverage Results" MODIFIED="1760774637564" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="D:\WORKSPACE\Python\scraper-news" />
     <SUITE FILE_PATH="coverage/scraper_news$main.coverage" NAME="Main - FastAPI and Scraper Cron Coverage Results" MODIFIED="1760774789944" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/scraper_news$FastAPI.coverage" NAME="FastAPI Coverage Results" MODIFIED="1761465458341" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="D:\WORKSPACE\Python\scraper-news" />
     <SUITE FILE_PATH="coverage/scraper_news$run.coverage" NAME="run Coverage Results" MODIFIED="1760539226178" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/scraper_news$SCRAPER_JOB.coverage" NAME="SCRAPER JOB Coverage Results" MODIFIED="1761232942356" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cron_jobs" />
-    <SUITE FILE_PATH="coverage/scraper_news$Main___FastAPI_and_Scraper_Cron.coverage" NAME="Main - FastAPI and Scraper Cron Coverage Results" MODIFIED="1761488469516" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/scraper_news$Main___FastAPI_and_Scraper_Cron.coverage" NAME="Main - FastAPI and Scraper Cron Coverage Results" MODIFIED="1761547480538" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

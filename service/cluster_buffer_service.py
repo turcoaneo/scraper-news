@@ -1,6 +1,7 @@
 import json
 from pathlib import Path
 
+from service.util.buffer_util import read_delta_timestamp
 from service.util.logger_util import get_logger
 
 logger = get_logger()
@@ -29,6 +30,9 @@ class ClusterBufferService:
                 logger.warning("Buffer file is malformed")
                 return {"error": "Buffer malformed"}
 
+            delta_ts = read_delta_timestamp()
+            if delta_ts:
+                data["delta"] = delta_ts
             return data
 
         except Exception as e:

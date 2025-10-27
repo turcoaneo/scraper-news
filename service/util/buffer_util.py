@@ -24,3 +24,30 @@ def update_buffer_timestamp():
         logger.info(f"[Buffer] Timestamp updated in {path}")
     except Exception as e:
         logger.error(f"[Buffer] Failed to update timestamp: {e}")
+
+
+def get_delta_path():
+    return ClusterService.get_csv_buffer_result_path().parent / "delta_run.json"
+
+
+def update_delta_timestamp():
+    path = get_delta_path()
+    try:
+        with open(path, "w", encoding="utf-8") as f:
+            json.dump({"delta": datetime.now().isoformat()}, f, ensure_ascii=False, indent=2)
+        logger.info(f"[Buffer] Delta timestamp updated in {path}")
+    except Exception as e:
+        logger.error(f"[Buffer] Failed to update delta timestamp: {e}")
+
+
+def read_delta_timestamp():
+    path = get_delta_path()
+    if not path.exists():
+        return None
+    try:
+        with open(path, "r", encoding="utf-8") as f:
+            data = json.load(f)
+        return data.get("delta")
+    except Exception as e:
+        logger.error(f"[Buffer] Failed to read delta timestamp: {e}")
+        return None
