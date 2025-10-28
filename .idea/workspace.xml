@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="53257271-e7b8-4d79-880d-23a742d856a8" name="Fast API." comment="Delete delta file.">
+    <list default="true" id="53257271-e7b8-4d79-880d-23a742d856a8" name="Fast API." comment="Score fix.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/story_clusterer.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/story_clusterer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/test_story_clusterer.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test_story_clusterer.py" afterDir="false" />
     </list>
     <list id="a7f942ad-3c95-41b0-b4b7-f43fce9ff07e" name="Changes" comment="" />
     <list id="6508d4bf-b1d4-4e03-bff8-2d311d3ea368" name="Env" comment="">
@@ -321,8 +319,8 @@
     </configuration>
     <list>
       <item itemvalue="Python.FastAPI" />
-      <item itemvalue="Python.Main - FastAPI and Scraper Cron" />
       <item itemvalue="Python.SCRAPER JOB" />
+      <item itemvalue="Python.Main - FastAPI and Scraper Cron" />
     </list>
   </component>
   <component name="SharedIndexes">
@@ -544,6 +542,7 @@
       <workItem from="1760705838161" duration="89310000" />
       <workItem from="1761205671322" duration="10727000" />
       <workItem from="1761472962783" duration="33999000" />
+      <workItem from="1761636601268" duration="385000" />
     </task>
     <task id="LOCAL-00031" summary="Declension model training.">
       <branch name="declension" repository="D:\WORKSPACE\Python\scraper-news" />
@@ -743,7 +742,15 @@
       <option name="project" value="LOCAL" />
       <updated>1761559211767</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="Score fix.">
+      <option name="closed" value="true" />
+      <created>1761636657820</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1761636657820</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <option name="createBranch" value="false" />
     <option name="useBranch" value="true" />
     <servers />
@@ -752,7 +759,6 @@
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="LRU cache." />
     <MESSAGE value=" Declension model training." />
     <MESSAGE value=" Declension model training. LoRA." />
     <MESSAGE value=" Declension model training. Train versus retrain - fine tuning." />
@@ -777,7 +783,8 @@
     <MESSAGE value="Optimizing scraper with deltas." />
     <MESSAGE value="Optimizing scraper with deltas, refactored." />
     <MESSAGE value="Delete delta file." />
-    <option name="LAST_COMMIT_MESSAGE" value="Delete delta file." />
+    <MESSAGE value="Score fix." />
+    <option name="LAST_COMMIT_MESSAGE" value="Score fix." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
