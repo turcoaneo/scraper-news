@@ -176,7 +176,7 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.idesettings.debugger.python&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -319,8 +319,8 @@
     </configuration>
     <list>
       <item itemvalue="Python.FastAPI" />
-      <item itemvalue="Python.SCRAPER JOB" />
       <item itemvalue="Python.Main - FastAPI and Scraper Cron" />
+      <item itemvalue="Python.SCRAPER JOB" />
     </list>
   </component>
   <component name="SharedIndexes">
@@ -542,7 +542,9 @@
       <workItem from="1760705838161" duration="89310000" />
       <workItem from="1761205671322" duration="10727000" />
       <workItem from="1761472962783" duration="33999000" />
-      <workItem from="1761636601268" duration="385000" />
+      <workItem from="1761636601268" duration="588000" />
+      <workItem from="1761637205647" duration="84000" />
+      <workItem from="1761637303813" duration="304000" />
     </task>
     <task id="LOCAL-00031" summary="Declension model training.">
       <branch name="declension" repository="D:\WORKSPACE\Python\scraper-news" />
@@ -750,7 +752,15 @@
       <option name="project" value="LOCAL" />
       <updated>1761636657820</updated>
     </task>
-    <option name="localTasksCounter" value="56" />
+    <task id="LOCAL-00056" summary="Score fix.">
+      <option name="closed" value="true" />
+      <created>1761636997633</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1761636997633</updated>
+    </task>
+    <option name="localTasksCounter" value="57" />
     <option name="createBranch" value="false" />
     <option name="useBranch" value="true" />
     <servers />
