@@ -95,17 +95,18 @@ class StoryClusterer:
         self.print_score_by_cluster()
 
     def score_clusters(self):
+        # Build a lookup map from site name to weight
+        site_weights = {scraper.name: scraper.weight for scraper in self.site_scrapers}
+
         scored = []
         for key, articles in self.clusters.items():
-            score = sum(
-                next(scraper.weight for scraper in self.site_scrapers if scraper.name == article.site)
-                for article in articles
-            )
+            score = sum(site_weights.get(article.site, 0.0) for article in articles)
             scored.append({
                 "score": round(score, 3),
                 "cluster": key,
                 "articles": articles
             })
+
         return sorted(scored, key=lambda x: x["score"], reverse=True)
 
     def print_score_by_cluster(self):

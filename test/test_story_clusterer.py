@@ -95,7 +95,8 @@ class TestStoryClusterer(unittest.TestCase):
         ]
 
         self.scraper1 = MockScraper("SiteA", 0.6, self.articles_site1)
-        self.scraper2 = MockScraper("SiteB", 0.4, self.articles_site2)
+        self.scraper2 = MockScraper("SiteB", 0.2, self.articles_site2)
+        self.scraper3 = MockScraper("SiteC", 0.2, [])
 
         self.clusterer = StoryClusterer([self.scraper1, self.scraper2], 180, 0.4, 0.5)
         self.clusterer.cluster_stories()
@@ -113,7 +114,7 @@ class TestStoryClusterer(unittest.TestCase):
         self.assertEqual(len(scored), 1)
         scores = [cluster["score"] for cluster in scored]
         self.assertTrue(all(isinstance(score, float) for score in scores))
-        self.assertAlmostEqual(scores[0], 1.0, places=2)  # 0.6 + 0.4 for Chivu cluster
+        self.assertAlmostEqual(scores[0], 0.8, places=2)  # 0.6 + 0.4 for Chivu cluster
 
     def test_entity_string_bug(self):
         buggy_article = Article(
