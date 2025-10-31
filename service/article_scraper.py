@@ -1,18 +1,19 @@
 import os
-import re
-from datetime import datetime, timezone
 
 import requests
 from bs4 import BeautifulSoup
-from dateutil import parser
 
 from model.model_type import ModelType
-from service.util.path_util import PROJECT_ROOT
 from service.claude_prompt_builder import load_training_data
+from service.util import article_timestamp_util as ts_util
 from service.util.entity_extraction_facade import EntityExtractorFacade
+from service.util.logger_util import get_logger
+from service.util.path_util import PROJECT_ROOT
 
 BASE_DIR = PROJECT_ROOT
 EXAMPLE_PATH = os.path.join(BASE_DIR, "storage", "training", "example.json")
+
+logger = get_logger()
 
 
 class ArticleScraper:
@@ -91,32 +92,10 @@ class ArticleScraper:
         return tag.get_text(strip=True) if tag else ""
 
     def extract_timestamp_from_selector(self, selector, return_both: bool = False):
-        tag = self._extract_time_selector(selector)
-        if tag:
-            text = tag.get_text(strip=True)
-
-            # Match Digisport-style: 19.08.2025, 16:04
-            match = re.search(r"\d{2}\.\d{2}\.\d{4},\s*\d{2}:\d{2}", text)
-            if not match:
-                # Match GSP-style: 19 august 2025, 16:15
-                match = re.search(r"\d{2}\s+\w+\s+\d{4},\s*\d{2}:\d{2}", text)
-
-            if match:
-                try:
-                    local_dt = parser.parse(match.group(), dayfirst=True)
-                    utc_dt = local_dt.astimezone(timezone.utc)
-                    return (local_dt, utc_dt) if return_both else utc_dt
-                except Exception as e:
-                    print("Error parsing time: " + str(e))
-
-        fallback = datetime.now(timezone.utc)
-        return (fallback, fallback) if return_both else fallback
+        return ts_util.extract_timestamp_from_selector(self.soup, selector, return_both)
 
     def _request_homepage(self):
         return requests.get(self.homepage_url, headers={"User-Agent": "Mozilla/5.0"})
-
-    def _extract_time_selector(self, selector):
-        return self.soup.select_one(selector)
 
     def _extract_title(self):
         return self.soup.find("h1")

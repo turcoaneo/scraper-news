@@ -1,5 +1,16 @@
 [
   {
+    "name": "gsp",
+    "base_url": "https://www.gsp.ro",
+    "traffic": 3.6,
+    "time_selector": "p.data-autor",
+    "block_selector": "div.news-item",
+    "link_selector": "h2 a",
+    "title_strategy": "text",
+    "title_attribute": null,
+    "model": "BERT"
+  },
+  {
     "name": "digisport",
     "base_url": "https://www.digisport.ro",
     "traffic": 3.3,
@@ -14,7 +25,7 @@
     "name": "fanatik",
     "base_url": "https://www.fanatik.ro",
     "traffic": 2.9,
-    "time_selector": "span.date",
+    "time_selector": "div.date_published",
     "block_selector": "div.article",
     "link_selector": "h3 a",
     "title_strategy": "text",
@@ -25,20 +36,9 @@
     "name": "prosport",
     "base_url": "https://www.prosport.ro",
     "traffic": 3.1,
-    "time_selector": "span.date",
+    "time_selector": "div.display-flex.gap-5",
     "block_selector": "h2.article__title",
     "link_selector": "a",
-    "title_strategy": "text",
-    "title_attribute": null,
-    "model": "BERT"
-  },
-  {
-    "name": "gsp",
-    "base_url": "https://www.gsp.ro",
-    "traffic": 3.6,
-    "time_selector": "p.data-author",
-    "block_selector": "div.news-item",
-    "link_selector": "h2 a",
     "title_strategy": "text",
     "title_attribute": null,
     "model": "BERT"

@@ -87,4 +87,9 @@ pytest test\test_benchmark_models.py -s
 ```bash
 python -m unittest
 ```
+
+## 6.Delete py-cache  
+```bash
+find . -name "__pycache__" -exec rm -r {} +
+```
  

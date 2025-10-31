@@ -1,5 +1,3 @@
-# service/util/delta_checker.py
-
 import csv
 from datetime import datetime
 from pathlib import Path
@@ -15,40 +13,57 @@ logger = get_logger()
 class DeltaChecker:
 
     @staticmethod
-    def has_delta(site: SiteScraper, csv_path=None) -> bool:
+    def get_site_deltas(site: SiteScraper, csv_path=None) -> tuple:
         if csv_path is None:
             today_str = datetime.now().strftime('%Y%m%d')
             filename = f"{site.name}_{today_str}.csv"
             csv_path = Path(PROJECT_ROOT) / "storage" / filename
 
-        if not csv_path.exists():
-            logger.info(f"[DeltaChecker] No previous CSV for {site.name}, assuming delta.")
-            return True
+        previous_articles = {}
+        if csv_path.exists():
+            with open(csv_path, encoding="utf-8") as f:
+                reader: csv.DictReader = csv.DictReader(f)
+                for row in reader:
+                    key = row["url"]
+                    row["timestamp"] = datetime.fromisoformat(row["timestamp"])
+                    previous_articles[key] = row
 
-        seen = set()
-        with open(csv_path, encoding="utf-8") as f:
-            reader = csv.DictReader(f)
-            rows = list(reader)  # read everything while file is open
+        current_articles = {
+            article.url: article
+            for article in site.articles
+            if
+            not is_filtered(article, site.filter_place_keys) and not DeltaChecker.is_foreign_article(article, site.name)
+        }
 
-        seen = set((row["timestamp"], row["url"]) for row in rows)
+        new = []
+        updated = []
+        removed = []
 
-        from app.utils.env_vars import FILTER_PLACE_KEYS
-        for article in site.articles:
-            if is_filtered(article, FILTER_PLACE_KEYS) or DeltaChecker.is_foreign_article(article, site.name):
-                continue
-            key = (article.timestamp.isoformat(), article.url)
-            if key not in seen:
-                logger.info(f"[DeltaChecker] Key not found: {key} vs seen keys: {list(seen)[:5]}")
-                logger.info(f"[DeltaChecker] New article for {site.name}: {article.title} - {article.timestamp}")
-                return True
+        def timestamps_equal(t1, t2):
+            return t1.replace(microsecond=0, tzinfo=None) == t2.replace(microsecond=0, tzinfo=None)
 
-            # Now safe to check title changes
-            for row in rows:
-                if row["url"] == article.url and row["title"] != article.title:
-                    logger.info(f"[DeltaChecker] Title changed for {site.name}: {article.title}")
-                    return True
+        for url, article in current_articles.items():
+            if url not in previous_articles:
+                new.append(article)
+            else:
+                prev = previous_articles[url]
+                if prev["title"] != article.title or not timestamps_equal(prev["timestamp"], article.timestamp):
+                    logger.info(f"""[DeltaChecker] Update for {article.url}: \
+                    {prev['title']} vs {article.title} \
+                    {prev['timestamp']} vs {article.timestamp}""")
+                    updated.append(article)
 
-        return False
+        for url in previous_articles:
+            if url not in current_articles:
+                removed.append(previous_articles[url])  # raw dict row
+
+        logger.info(f"[DeltaChecker] {site.name} → New: {len(new)}, Updated: {len(updated)}, Removed: {len(removed)}")
+        current_articles_map = {
+            "new": new,
+            "updated": updated,
+            "removed": removed
+        }
+        return previous_articles, current_articles_map
 
     @staticmethod
     def is_foreign_article(article, site_name):
@@ -57,8 +72,8 @@ class DeltaChecker:
         return site_name not in domain
 
     @staticmethod
-    def any_site_has_delta(sites: list[SiteScraper]) -> bool:
-        for site in sites:
-            if DeltaChecker.has_delta(site):
-                return True
-        return False
+    def get_all_deltas(sites: list[SiteScraper]) -> dict:
+        return {
+            site.name: DeltaChecker.get_site_deltas(site)
+            for site in sites
+        }

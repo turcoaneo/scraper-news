@@ -27,7 +27,6 @@ class TestDeltaChecker(unittest.TestCase):
         )
         self.site.site_file_path = lambda: self.csv_path
 
-        # Base article from CSV
         self.base_article = Article(
             site="digisport",
             timestamp=datetime.fromisoformat("2025-10-26T06:13:00+00:00"),
@@ -40,8 +39,8 @@ class TestDeltaChecker(unittest.TestCase):
         )
 
     def test_no_delta_exact_match(self):
-        self.site.articles = {self.base_article}
-        self.site.articles.add(
+        self.site.articles = {
+            self.base_article,
             Article(
                 site="digisport",
                 timestamp=datetime.fromisoformat("2025-10-26T06:21:00+00:00"),
@@ -52,9 +51,11 @@ class TestDeltaChecker(unittest.TestCase):
                 url="https://www.digisport.ro/fotbal/serie-a/cristi-chivu-asa-cum-rar-a-fost-vazut-a-inceput-sa-strige-in-conferinta-si-a-urmat-ceva-complet-neasteptat-dupa-1-3-cu-napoli-3885963",
                 comments=0
             )
-        )
-        result = DeltaChecker.has_delta(self.site, self.csv_path)
-        self.assertFalse(result)
+        }
+        result = DeltaChecker.get_site_deltas(self.site, self.csv_path)
+        self.assertEqual(len(result[1]["new"]), 0)
+        self.assertEqual(len(result[1]["updated"]), 0)
+        self.assertEqual(len(result[1]["removed"]), 0)
 
     def test_new_article_detected(self):
         new_article = Article(
@@ -68,8 +69,9 @@ class TestDeltaChecker(unittest.TestCase):
             comments=0
         )
         self.site.articles = {self.base_article, new_article}
-        result = DeltaChecker.has_delta(self.site, self.csv_path)
-        self.assertTrue(result)
+        result = DeltaChecker.get_site_deltas(self.site, self.csv_path)
+        self.assertEqual(len(result[1]["new"]), 1)
+        self.assertEqual(result[1]["new"][0].url, new_article.url)
 
     def test_title_changed_detected(self):
         changed_title = Article(
@@ -83,8 +85,9 @@ class TestDeltaChecker(unittest.TestCase):
             comments=self.base_article.comments
         )
         self.site.articles = {changed_title}
-        result = DeltaChecker.has_delta(self.site, self.csv_path)
-        self.assertTrue(result)
+        result = DeltaChecker.get_site_deltas(self.site, self.csv_path)
+        self.assertEqual(len(result[1]["updated"]), 1)
+        self.assertEqual(result[1]["updated"][0].url, self.base_article.url)
 
     def test_url_changed_detected(self):
         changed_url = Article(
@@ -98,13 +101,14 @@ class TestDeltaChecker(unittest.TestCase):
             comments=self.base_article.comments
         )
         self.site.articles = {changed_url}
-        result = DeltaChecker.has_delta(self.site, self.csv_path)
-        self.assertTrue(result)
+        result = DeltaChecker.get_site_deltas(self.site, self.csv_path)
+        self.assertEqual(len(result[1]["new"]), 1)
+        self.assertEqual(result[1]["new"][0].url, changed_url.url)
 
     def test_timestamp_changed_detected(self):
         changed_time = Article(
             site=self.base_article.site,
-            timestamp=datetime.fromisoformat("2025-10-26T06:14:00+00:00"),  # 1 min later
+            timestamp=datetime.fromisoformat("2025-10-26T06:14:00+00:00"),
             title=self.base_article.title,
             entities=self.base_article.entities,
             keywords=self.base_article.keywords,
@@ -113,5 +117,6 @@ class TestDeltaChecker(unittest.TestCase):
             comments=self.base_article.comments
         )
         self.site.articles = {changed_time}
-        result = DeltaChecker.has_delta(self.site, self.csv_path)
-        self.assertTrue(result)
+        result = DeltaChecker.get_site_deltas(self.site, self.csv_path)
+        self.assertEqual(len(result[1]["updated"]), 1)
+        self.assertEqual(result[1]["updated"][0].url, self.base_article.url)

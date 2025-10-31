@@ -1,5 +1,5 @@
 # app/__init__.py
-
+import logging
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
@@ -21,6 +21,7 @@ def create_app() -> FastAPI:
 
     # Enable CORS for local development
     if APP_ENV == "local":
+        logger.setLevel(logging.DEBUG)
         logger.info("Starting FastAPI in local mode")
 
         # noinspection PyTypeChecker

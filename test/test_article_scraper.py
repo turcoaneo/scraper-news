@@ -59,26 +59,6 @@ class TestArticleScraper(unittest.TestCase):
         title = self.scraper.extract_title()
         self.assertEqual(title, "Rapid București câștigă dramatic")
 
-    def test_extract_timestamp_from_selector_digisport(self):
-        mock_tag = MagicMock()
-        mock_tag.get_text.return_value = "19.08.2025, 16:04"
-        self.scraper._extract_time_selector = MagicMock(return_value=mock_tag)
-
-        ts = self.scraper.extract_timestamp_from_selector("time", True)
-        self.assertEqual(ts[0].year, 2025)
-        self.assertEqual(ts[0].month, 8)
-        self.assertEqual(ts[0].hour, 16)
-
-    def test_extract_timestamp_from_selector_gsp(self):
-        mock_tag = MagicMock()
-        mock_tag.get_text.return_value = "19 august 2025, 16:15"
-        self.scraper._extract_time_selector = MagicMock(return_value=mock_tag)
-
-        ts = self.scraper.extract_timestamp_from_selector("time")
-        self.assertEqual(ts.year, 2025)
-        self.assertEqual(ts.month, 8)
-        self.assertEqual(ts.hour, 13)
-
     @patch("service.article_scraper.ArticleScraper._request_homepage")
     def test_fetch_success(self, mock_request):
         mock_response = MagicMock()
@@ -100,18 +80,12 @@ class TestArticleScraper(unittest.TestCase):
         self.scraper.fetch()
         self.assertFalse(self.scraper.valid)
 
-
-if __name__ == "__main__":
-    unittest.main()
-
-
     def test_digisport_title(self):
         html = '<h1><span class="tag">Exclusiv</span> Daniel Pancu nu are dubii</h1>'
         scraper = ArticleScraper("url", "title", "")
         scraper.soup = BeautifulSoup(html, "html.parser")
         self.assertEqual(scraper.extract_title_naive(), "ExclusivDaniel Pancu nu are dubii")
         self.assertEqual(scraper.extract_title(), "Daniel Pancu nu are dubii")
-
 
     def test_gsp_title_with_multiple_tags(self):
         html = '''
@@ -124,7 +98,6 @@ if __name__ == "__main__":
         scraper.soup = BeautifulSoup(html, "html.parser")
         self.assertEqual(scraper.extract_title(), "„Colosseumul” României e gata în proporție de 70%")
 
-
     def test_title_without_span(self):
         html = '<h1>Un meci spectaculos în Liga 1</h1>'
         scraper = ArticleScraper("url", "title", "")
@@ -132,12 +105,12 @@ if __name__ == "__main__":
         self.assertEqual(scraper.extract_title_naive(), "Un meci spectaculos în Liga 1")
         self.assertEqual(scraper.extract_title(), "Un meci spectaculos în Liga 1")
 
-
     def test_custom_unwanted_tags(self):
         html = '<h1><span class="tag">Blah Blah</span> Titlu important</h1>'
         scraper = ArticleScraper("url", "title", "")
         scraper.soup = BeautifulSoup(html, "html.parser")
         self.assertEqual(scraper.extract_title(unwanted_tags=["Blah Blah"]), "Titlu important")
+
 
 if __name__ == "__main__":
     unittest.main()
