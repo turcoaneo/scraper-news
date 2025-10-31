@@ -4,21 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="53257271-e7b8-4d79-880d-23a742d856a8" name="Fast API." comment="Test.">
-      <change afterPath="$PROJECT_DIR$/service/util/article_timestamp_util.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/test_article_timestamp_util.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/config/sites_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/sites_config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/article_scraper.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/article_scraper.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/util/delta_checker.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/util/delta_checker.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/util/scraper_runner.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/util/scraper_runner.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/test_article_scraper.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test_article_scraper.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/test_delta_checker.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test_delta_checker.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/test_delta_checker_file.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test_delta_checker_file.py" afterDir="false" />
-    </list>
+    <list default="true" id="53257271-e7b8-4d79-880d-23a742d856a8" name="Fast API." comment="Fix timestamps." />
     <list id="a7f942ad-3c95-41b0-b4b7-f43fce9ff07e" name="Changes" comment="" />
     <list id="6508d4bf-b1d4-4e03-bff8-2d311d3ea368" name="Env" comment="">
       <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
@@ -63,14 +49,6 @@
   <component name="KubernetesApiProvider">{
   &quot;isMigrated&quot;: true
 }</component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/.env">
-      <ranges>
-        <range start1="1" end1="6" start2="1" end2="6" changelist="6508d4bf-b1d4-4e03-bff8-2d311d3ea368" />
-        <range start1="10" end1="11" start2="10" end2="11" changelist="53257271-e7b8-4d79-880d-23a742d856a8" />
-      </ranges>
-    </file>
-  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -235,7 +213,7 @@
       <recent name="D:\WORKSPACE\Python\scraper-news\test\storage" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.SCRAPER JOB">
+  <component name="RunManager" selected="Python.Main - FastAPI and Scraper Cron">
     <configuration default="true" type="DjangoTestsConfigurationType">
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -356,33 +334,11 @@
       <option name="docutils_open_in_browser" value="false" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for test_article_timestamp_util.TestArticleTimestampUtil.test_gsp_data_autor_original" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
-      <module name="scraper-news" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_article_timestamp_util.TestArticleTimestampUtil.test_gsp_data_autor_original&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
     <list>
       <item itemvalue="Python.FastAPI" />
       <item itemvalue="Python.Main - FastAPI and Scraper Cron" />
       <item itemvalue="Python.SCRAPER JOB" />
-      <item itemvalue="Python tests.Python tests for test_article_timestamp_util.TestArticleTimestampUtil.test_gsp_data_autor_original" />
     </list>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Python tests.Python tests for test_article_timestamp_util.TestArticleTimestampUtil.test_gsp_data_autor_original" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -418,14 +374,6 @@
       <workItem from="1759646194151" duration="7579000" />
       <workItem from="1760366001094" duration="546000" />
       <workItem from="1760518672259" duration="7430000" />
-    </task>
-    <task id="LOCAL-00009" summary=" Hugging Face prep.">
-      <option name="closed" value="true" />
-      <created>1759392425467</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1759392425467</updated>
     </task>
     <task id="LOCAL-00010" summary=" Hugging Face model.">
       <option name="closed" value="true" />
@@ -607,7 +555,7 @@
       <workItem from="1761637205647" duration="84000" />
       <workItem from="1761637303813" duration="304000" />
       <workItem from="1761637621695" duration="19154000" />
-      <workItem from="1761728141647" duration="46232000" />
+      <workItem from="1761728141647" duration="46297000" />
     </task>
     <task id="LOCAL-00031" summary="Declension model training.">
       <branch name="declension" repository="D:\WORKSPACE\Python\scraper-news" />
@@ -831,7 +779,15 @@
       <option name="project" value="LOCAL" />
       <updated>1761637695333</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="Fix timestamps.">
+      <option name="closed" value="true" />
+      <created>1761894522423</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1761894522424</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <option name="createBranch" value="false" />
     <option name="useBranch" value="true" />
     <servers />
@@ -840,7 +796,6 @@
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value=" Declension model training. LoRA." />
     <MESSAGE value=" Declension model training. Train versus retrain - fine tuning." />
     <MESSAGE value=" Flask app." />
     <MESSAGE value=" Flask app. Refactoring plus declension model." />
@@ -865,7 +820,8 @@
     <MESSAGE value="Delete delta file." />
     <MESSAGE value="Score fix." />
     <MESSAGE value="Test." />
-    <option name="LAST_COMMIT_MESSAGE" value="Test." />
+    <MESSAGE value="Fix timestamps." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix timestamps." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
