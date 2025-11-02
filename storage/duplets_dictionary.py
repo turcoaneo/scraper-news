@@ -147,8 +147,8 @@ duplets += [
     ("manelei", "manea"),
     ("stelei", "stea"),
     ("Stelei București", "Steaua București"),
-    ("Stelei", "Steaua București"),
-    ("Stelei", "Steaua"),
+    ("Stelei Roșii", "Steaua Roșie"),
+    ("Stelei Roșii Belgrad", "Steaua Roșie Belgrad"),
 ]
 
 new_duplets = [
@@ -194,6 +194,7 @@ new_duplets += [
 new_duplets += [
     ("prahovencei", "prahoveană"),
     ("prahoveancă", "prahoveană"),
+    ("prahovean", "prahovean"),
     ("bucureștean", "bucureștean"),
     ("bucureșteană", "bucureșteană"),
     ("bucureșteancă", "bucureșteană"),
@@ -231,11 +232,6 @@ new_duplets += [
     ("asistenților", "asistenți"),
 ]
 
-new_duplets += [
-    ("copilului", "copil"),
-    ("mamei", "mamă"),
-    ("mamelor", "mame"),
-]
 
 new_duplets += [
     ("tenismenului", "tenismen"),
@@ -312,6 +308,58 @@ new_duplets += [
 ]
 
 new_duplets += [
+    ("copilului", "copil"),
+    ("mamei", "mamă"),
+    ("mamelor", "mame"),
+    ("Iuliu", "Iuliu"),
+    ("Iuliu Mureșan", "Iuliu Mureșan"),
+    ("Șimon", "Șimon"),
+    ("Țoiu", "Țoiu"),
+    ("Dan Șucu", "Dan Șucu"),
+    ("Vasile Șiman", "Vasile Șiman"),
+    ("Țopescu", "Țopescu"),
+]
+
+new_duplets += [
+    ("Ștefan Șuleap", "Ștefan Șuleap"),
+    ("Șuleap", "Șuleap"),
+    ("Șiman", "Șiman"),
+    ("Șucu", "Șucu"),
+    ("Dan Șucu", "Dan Șucu"),
+    ("Vasile Șiman", "Vasile Șiman"),
+    ("Marian Copilu", "Marian Copilu"),
+    ("Țânțaru", "Țânțaru"),
+    ("Țînțaru", "Țînțaru"),
+    ("Țîgăneșteanu", "Țîgăneșteanu"),
+]
+
+new_duplets += [
+    ("știr", "știr"),
+    ("știre", "știre"),
+    ("știrii", "știre"),
+    ("știrilor", "știri"),
+    ("șipot", "șipot"),
+    ("șipotului", "șipot"),
+    ("șenilă", "șenilă"),
+    ("șenilei", "șenilă"),
+    ("Țoiu", "Țoiu"),
+    ("Ștefan", "Ștefan"),
+]
+
+new_duplets += [
+    ("Șelaru", "Șelaru"),
+    ("Narcis Șelaru", "Narcis Șelaru"),
+    ("Șimon", "Șimon"),
+    ("Lidia Șimon", "Lidia Șimon"),
+    ("Lidiei Șimon", "Lidia Șimon"),
+    ("Oana Țoiu", "Oana Țoiu"),
+    ("Oanei Țoiu", "Oana Țoiu"),
+    ("Țopescu", "Țopescu"),
+    ("Cristina Țopescu", "Cristina Țopescu"),
+    ("Cristinei Țopescu", "Cristina Țopescu"),
+]
+
+new_duplets += [
     ("Sorana", "Sorana"),
     ("Sorana Cîrstea", "Sorana Cîrstea"),
     ("Soranei Cîrstea", "Sorana Cîrstea"),
@@ -380,6 +428,10 @@ test_cases = [
     ("prahovean", "prahovean"),
     ("prahoveancă", "prahoveană"),
     ("piteștean", "piteștean"),
+    ("Dan Șucu", "Dan Șucu"),
+    ("Vasile Șiman", "Vasile Șiman"),
+    ("Șiman", "Șiman"),
+    ("Șimon", "Șimon"),
 ]
 
 
