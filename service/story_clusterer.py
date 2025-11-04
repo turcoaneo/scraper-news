@@ -110,13 +110,15 @@ class StoryClusterer:
         return sorted(scored, key=lambda x: x["score"], reverse=True)
 
     def print_score_by_cluster(self):
-        for i, cluster in enumerate(self.score_clusters(), 1):
+        clusters = self.score_clusters()
+        for i, cluster in enumerate(clusters, 1):
             print(f"\n🧠 Cluster #{i} — Score: {cluster['score']}")
 
     def print_matched_clusters(self):
         print("\n🔍 Matched Clusters Across Multiple Sites")
         print("=" * 60)
-        for i, scored_cluster in enumerate(self.score_clusters(), 1):
+        clusters = self.score_clusters()
+        for i, scored_cluster in enumerate(clusters, 1):
             articles_cluster = self.clusters[i - 1]
             sites = {article.site for article in articles_cluster}
             if len(sites) < 2:
@@ -127,7 +129,8 @@ class StoryClusterer:
 
     def get_matched_clusters(self) -> List[Dict]:
         result = []
-        for i, scored_cluster in enumerate(self.score_clusters(), 1):
+        clusters = self.score_clusters()
+        for i, scored_cluster in enumerate(clusters, 1):
             articles_cluster = self.clusters[i - 1]
             sites = {article.site for article in articles_cluster}
             if len(sites) < 2:

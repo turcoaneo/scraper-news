@@ -33,8 +33,12 @@ def run_scraper(minutes=1440):
     logger.info(f"Running {log_thread_id(threading.get_ident(), 'scraper')}")
     sites = load_sites_from_config()
     total_traffic = sum(site.traffic for site in sites)
+    checked_traffic = 0
     for site in sites:
         site.compute_weight(total_traffic)
+        logger.debug(f"{site.name}: {site.weight} / {total_traffic}")
+        checked_traffic += site.weight
+    logger.debug(f"Total: {checked_traffic}")
 
     @elapsed_time("process_site")
     def process_site(site):
