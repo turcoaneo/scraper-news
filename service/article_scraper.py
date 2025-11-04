@@ -6,6 +6,7 @@ from bs4 import BeautifulSoup
 from model.model_type import ModelType
 from service.claude_prompt_builder import load_training_data
 from service.util import article_timestamp_util as ts_util
+from service.util.csv_util import fix_romanian_diacritics
 from service.util.entity_extraction_facade import EntityExtractorFacade
 from service.util.logger_util import get_logger
 from service.util.path_util import PROJECT_ROOT
@@ -103,10 +104,11 @@ class ArticleScraper:
     def _extract_summary(self):
         meta_desc = self.soup.find("meta", {"name": "description"})
         if meta_desc and meta_desc.has_attr("content"):
-            return meta_desc["content"]
+            return fix_romanian_diacritics(meta_desc["content"])
 
         p_tag = self.soup.find("p")
-        return p_tag.get_text(strip=True) if p_tag else ""
+        summary = p_tag.get_text(strip=True) if p_tag else ""
+        return fix_romanian_diacritics(summary)
 
     def _extract_comments(self):
         comment_tag = self.soup.find("div", class_="comments-no")

@@ -5,7 +5,7 @@ from datetime import datetime
 from pathlib import Path
 
 import service.util.csv_util
-from service.util.csv_util import get_site_file_path, save_articles_to_csv
+from service.util.csv_util import get_site_file_path, save_articles_to_csv, fix_romanian_diacritics
 
 
 class DummyArticle:
@@ -30,6 +30,7 @@ service.util.csv_util.is_filtered = dummy_is_filtered
 
 
 class TestCsvUtil(unittest.TestCase):
+
     def setUp(self):
         self.temp_dir = Path(tempfile.mkdtemp())
         self.site_name = "TestSite"
@@ -40,7 +41,7 @@ class TestCsvUtil(unittest.TestCase):
                 site=self.site_name,
                 timestamp=datetime.now(),
                 title="Test Title",
-                entities="Entity1",
+                entities=["Entity1"],
                 keywords="Keyword1",
                 summary="Summary text",
                 url="https://testsite.com/article/1",
@@ -84,6 +85,29 @@ class TestCsvUtil(unittest.TestCase):
             content = f.read()
             self.assertIn("Test Title", content)
             self.assertIn("Entity1", content)
+
+    def test_fix_lowercase_diacritics(self):
+        input_text = "şcoală şi ţară"
+        expected = "școală și țară"
+        self.assertEqual(fix_romanian_diacritics(input_text), expected)
+
+    def test_fix_uppercase_diacritics(self):
+        input_text = "Ştefan Ţiriac"
+        expected = "Ștefan Țiriac"
+        self.assertEqual(fix_romanian_diacritics(input_text), expected)
+
+    def test_mixed_case_and_context(self):
+        input_text = "Ştirile din ţară sunt importante"
+        expected = "Știrile din țară sunt importante"
+        self.assertEqual(fix_romanian_diacritics(input_text), expected)
+
+    def test_no_diacritics(self):
+        input_text = "Mureșan și Pașcanu"
+        expected = "Mureșan și Pașcanu"
+        self.assertEqual(fix_romanian_diacritics(input_text), expected)
+
+    def test_edge_case_empty_string(self):
+        self.assertEqual(fix_romanian_diacritics(""), "")
 
 
 if __name__ == "__main__":

@@ -4,6 +4,7 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Literal, Optional
 from urllib.parse import urljoin
+from urllib.parse import urlparse
 
 import requests
 from bs4 import BeautifulSoup
@@ -12,7 +13,10 @@ from model.article import Article
 from model.model_type import ModelType
 from service.article_scraper import ArticleScraper
 from service.util.csv_util import save_articles_to_csv
+from service.util.logger_util import get_logger
 from service.util.path_util import PROJECT_ROOT
+
+logger = get_logger()
 
 
 def sanitize_quotes(text):
@@ -127,6 +131,11 @@ class SiteScraper:
                     full_url = urljoin(self.base_url, relative_url)
                 else:
                     full_url = relative_url
+
+                hostname = urlparse(full_url).hostname or ""
+                if self.name.lower() not in hostname.lower():
+                    logger.debug(f"{relative_url} not of {self.name}")
+                    continue
 
                 if self.title_strategy == "text":
                     homepage_title = link_tag.get_text(strip=True)

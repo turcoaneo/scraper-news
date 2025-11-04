@@ -17,12 +17,13 @@ def save_articles_to_csv(site_name: str, base_url: str, articles: set, filter_ke
     if not os.path.exists(base_path):
         os.makedirs(base_path, exist_ok=True)
 
-    temp_path = get_site_file_path(site_name, base_path, use_temp=True)
+    temp_path = get_site_file_path(site_name, base_path, use_temp=use_temp)
     final_path = get_site_file_path(site_name, base_path, use_temp=False)
 
     with open(temp_path, mode="w", encoding="utf-8", newline="") as file:
         columns = ["site", "timestamp", "title", "entities", "keywords", "summary", "url", "comments"]
-        writer = csv.DictWriter(file, fieldnames=columns, quoting=csv.QUOTE_ALL)
+        writer = csv.DictWriter(file, fieldnames=columns, quoting=csv.QUOTE_MINIMAL)
+        # writer = csv.DictWriter(file, fieldnames=columns)
         writer.writeheader()
 
         for article in articles:
@@ -32,8 +33,8 @@ def save_articles_to_csv(site_name: str, base_url: str, articles: set, filter_ke
                 "site": article.site,
                 "timestamp": article.timestamp.isoformat(),
                 "title": article.title,
-                "entities": article.entities,
-                "keywords": article.keywords,
+                "entities": ", ".join(article.entities),
+                "keywords": ", ".join(article.keywords),
                 "summary": article.summary,
                 "url": article.url,
                 "comments": article.comments
@@ -67,3 +68,12 @@ def is_filtered(article, filter_place_keys):
         return True
 
     return False
+
+
+def fix_romanian_diacritics(text):
+    return (
+        text.replace("ş", "ș")
+        .replace("Ş", "Ș")
+        .replace("ţ", "ț")
+        .replace("Ţ", "Ț")
+    )

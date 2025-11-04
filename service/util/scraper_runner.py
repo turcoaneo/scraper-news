@@ -46,6 +46,34 @@ def run_scraper(minutes=1440):
         logger.info(f"Saving CSV for {log_thread_id(threading.get_ident(), site.name)}")
         site.save_to_csv(use_temp=True)
 
+    def merge_articles(p_deltas: dict, previous_map: dict[str, Article]) -> list[Article]:
+
+        # Remove deleted
+        for removed in p_deltas["removed"]:
+            previous_map.pop(removed["url"], None)  # removed is a dict row
+
+        # Replace updated
+        for updated in p_deltas["updated"]:
+            previous_map[updated.url] = updated
+
+        # Add new
+        for new in p_deltas["new"]:
+            previous_map[new.url] = new
+
+        return list(previous_map.values())
+
+    def dict_to_article(row: dict, p_site_name: str) -> Article:
+        return Article(
+            site=p_site_name,
+            timestamp=row["timestamp"],
+            title=row["title"],
+            entities=row.get("entities", ""),
+            keywords=row.get("keywords", ""),
+            summary=row.get("summary", ""),
+            url=row["url"],
+            comments=int(row.get("comments", 0))
+        )
+
     # Phase 1: Scraping (parallel)
     threads = [threading.Thread(target=process_site, args=(site,)) for site in sites]
     for t in threads: t.start()
@@ -56,12 +84,12 @@ def run_scraper(minutes=1440):
     is_skipped_for_all: bool = True
     for site_name, prev_and_curr_tuple in site_deltas.items():
         curr_articles = prev_and_curr_tuple[1]
-        if curr_articles["new"] + curr_articles["updated"] != 0:
-            logger.info(f"[Scraper] Deltas detected for {site_name}")
+        if len(curr_articles["new"]) + len(curr_articles["updated"]) != 0:
+            logger.info(f"[Scraper] Deltas already detected: {site_name}. Break loop and continue with next phase.")
             is_skipped_for_all = False
             break
     if is_skipped_for_all:
-        logger.info("[Scraper] No deltas detected. Skipping declension, saving, clustering.")
+        logger.info("[Scraper] No deltas detected. Skipping declension, saving, and clustering.")
         update_buffer_timestamp()
         return
 
@@ -84,39 +112,10 @@ def run_scraper(minutes=1440):
                                             article.keywords]
                 except Exception as e:
                     logger.info(f"[Declension Error] {site.name}: {e}")
-
             process_declension()
 
     # Phase 3: Merging old and deltas
     for site in sites:
-        def merge_articles(p_deltas: dict, previous_map: dict[str, Article]) -> list[Article]:
-
-            # Remove deleted
-            for removed in p_deltas["removed"]:
-                previous_map.pop(removed["url"], None)  # removed is a dict row
-
-            # Replace updated
-            for updated in p_deltas["updated"]:
-                previous_map[updated.url] = updated
-
-            # Add new
-            for new in p_deltas["new"]:
-                previous_map[new.url] = new
-
-            return list(previous_map.values())
-
-        def dict_to_article(row: dict, p_site_name: str) -> Article:
-            return Article(
-                site=p_site_name,
-                timestamp=row["timestamp"],
-                title=row["title"],
-                entities=row.get("entities", ""),
-                keywords=row.get("keywords", ""),
-                summary=row.get("summary", ""),
-                url=row["url"],
-                comments=int(row.get("comments", 0))
-            )
-
         site_delta_tuple_result = site_deltas[site.name]
         deltas = site_delta_tuple_result[1]
         raw_previous = site_delta_tuple_result[0] or {}

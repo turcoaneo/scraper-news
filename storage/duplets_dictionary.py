@@ -308,11 +308,78 @@ new_duplets += [
 ]
 
 new_duplets += [
+    ("Șo", "Șo"),
+    ("Șoc", "Șoc"),
+    ("Și", "Și"),
+    ("Șic", "Șic"),
+    ("Șa", "Șa"),
+    ("Ți", "Ți"),
+    ("Țoc", "Țoc"),
+    ("Țel", "Țel"),
+    ("Țol", "Țol"),
+    ("Țup", "Țup"),
+    ]
+
+new_duplets += [
+    ("Șucu", "Șucu"),
+    ("Șucului", "Șucu"),
+    ("Șimanului", "Șiman"),
+    ("Șimonului", "Șimon"),
+    ("Șimonilor", "Șimonii"),
+    ("Țiriacilor", "Țiriacii"),
+    ("Țopeștilor", "Țopeștii"),
+    ("Țăranului", "Țăran"),
+    ("Țăran", "Țăran"),
+    ("Țăranu", "Țăranu"),
+]
+
+new_duplets += [
+    ("Andrei Țăranu", "Andrei Țăranu"),
+    ("Andrei Țăranu a participat la emisiunea de la Digi 24", "Andrei Țăranu a participat la emisiunea de la Digi 24"),
+    ("Țepelin a fost invitatul emisiunii", "Țepelin a fost invitatul emisiunii"),
+    ("Simonei Țăranu", "Simona Țăranu"),
+    ("Simona Țăranu", "Simona Țăranu"),
+    ("Ștefan Ștefănescu", "Ștefan Ștefănescu"),
+    ("Ștefănescu a prezentat știrile", "Ștefănescu a prezentat știrile"),
+    ("Simona Țăranu a prezentat știrile", "Simona Țăranu a prezentat știrile"),
+    ("Simona Țăranu a discutat cu Andrei Țăranu despre parlament",
+     "Simona Țăranu a discutat cu Andrei Țăranu despre parlament"),
+    ]
+
+new_duplets += [
+    ("Țăranilor", "Țăranii"),
+    ("țăranilor", "țărani"),
+    ("șucului", "șuc"),
+    ("șocului", "șoc"),
+    ("Țoiului", "Țoi"),
+    ("țoiului", "țoi"),
+    ("Ștefăneștilor", "Ștefăneștii"),
+    ("Țigăneștenilor", "Țigăneștenii"),
+    ("Țonea", "Țonea"),
+    ("Țoneștilor", "Țoneștii"),
+]
+
+
+new_duplets += [
+    ("Ștefănești", "Ștefănești"),
+    ("Ștefănescu", "Ștefănescu"),
+    ("Ștucan", "Ștucan"),
+    ("Țiriac", "Țiriac"),
+    ("Ion Țiriac", "Ion Țiriac"),
+    ("Ion Ion Țiriac", "Ion Ion Țiriac"),
+    ("Țiriacii", "Țiriacii"),
+    ("Șendrea", "Șendrea"),
+    ("Șova", "Șova"),
+    ("Țepelin", "Țepelin"),
+]
+
+new_duplets += [
     ("copilului", "copil"),
     ("mamei", "mamă"),
     ("mamelor", "mame"),
     ("Iuliu", "Iuliu"),
     ("Iuliu Mureșan", "Iuliu Mureșan"),
+    ("Mureșan", "Mureșan"),
     ("Șimon", "Șimon"),
     ("Țoiu", "Țoiu"),
     ("Dan Șucu", "Dan Șucu"),
@@ -363,6 +430,7 @@ new_duplets += [
     ("Sorana", "Sorana"),
     ("Sorana Cîrstea", "Sorana Cîrstea"),
     ("Soranei Cîrstea", "Sorana Cîrstea"),
+    ("Cîrstea", "Cîrstea"),
     ("Soranei", "Sorana"),
     ("Jacquelinei", "Jacqueline"),
     ("Jacqueline", "Jacqueline"),
@@ -424,14 +492,29 @@ test_cases = [
     ("Sorana Cîrstea", "Sorana Cîrstea"),
     ("Gigi Becali", "Gigi Becali"),
     ("Soranei Cîrstea", "Sorana Cîrstea"),
-    ("Iuliu Mureșan", "Iuliu Mureșan"),
     ("prahovean", "prahovean"),
     ("prahoveancă", "prahoveană"),
     ("piteștean", "piteștean"),
+    ("Iuliu Mureșan", "Iuliu Mureșan"),
+    ("Stan Pățitu", "Stan Pățitu"),
+    ("Pușu Pașcanu", "Pușu Pașcanu"),
+    ("Stirii", "Stire"),
+    ("știrii", "știre"),
+    ("Știrilor", "Știri"),
+    ("știrilor", "știri"),
     ("Dan Șucu", "Dan Șucu"),
     ("Vasile Șiman", "Vasile Șiman"),
     ("Șiman", "Șiman"),
     ("Șimon", "Șimon"),
+    ("Alexandru Țiriac", "Alexandru Țiriac"),
+    ("Ștefan Țopescu", "Ștefan Țopescu"),
+    ("Andrei Țăranu", "Andrei Țăranu"),
+    ("Țiblea", "Țiblea"),
+    ("Țuguiatu", "Țuguiatu"),
+    ("Vf. Țuguiatu", "Vf. Țuguiatu"),
+    ("Șubă", "Șubă"),
+    ("Mihai Șubă", "Mihai Șubă"),
+    ("Bogdan Țapu", "Bogdan Țapu"),
 ]
 
 

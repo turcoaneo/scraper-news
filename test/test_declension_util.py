@@ -49,6 +49,27 @@ class TestDeclensionUtil(unittest.TestCase):
         for i in range(len(inputs)):
             self.assertEqual(results[i], expected[i])
 
+    def test_fallback_declension(self):
+        duplets = [
+            ("Șucului", "Șucu"),
+            ("Țiriacului", "Țiriac"),
+            ("Ștefăneștii", "Ștefănești"),
+            ("Țăranului", "Țăranu"),
+            ("Soranei Cîrstea", "Sorana Cîrstea"),
+        ]
+
+        self.assertEqual(DeclensionUtil.fallback_declension("Șucului", duplets), "Șucu")
+        self.assertEqual(DeclensionUtil.fallback_declension("Țiriacului", duplets), "Țiriac")
+        self.assertEqual(DeclensionUtil.fallback_declension("Ștefăneștii", duplets), "Ștefănești")
+        self.assertEqual(DeclensionUtil.fallback_declension("Țăranului", duplets), "Țăranu")
+        self.assertEqual(DeclensionUtil.fallback_declension("Soranei Cîrstea", duplets), "Soranei Cîrstea")
+
+        # Should not transform if not starting with Ș or Ț
+        self.assertEqual(DeclensionUtil.fallback_declension("copilului", duplets), "copilului")
+
+        # Should fallback to original if no match
+        self.assertEqual(DeclensionUtil.fallback_declension("Șimonului", duplets), "Șimonului")
+
 
 if __name__ == "__main__":
     unittest.main()

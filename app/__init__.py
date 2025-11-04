@@ -21,7 +21,6 @@ def create_app() -> FastAPI:
 
     # Enable CORS for local development
     if APP_ENV == "local":
-        logger.setLevel(logging.DEBUG)
         logger.info("Starting FastAPI in local mode")
 
         # noinspection PyTypeChecker

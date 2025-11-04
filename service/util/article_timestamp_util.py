@@ -35,7 +35,7 @@ def extract_time_tag(soup: BeautifulSoup, selector: str) -> Tag | None:
 
 def get_fallback_date(selector: str, return_both: bool = False):
     fallback = datetime.now(timezone.utc)
-    logger.warning(f"[Timestamp] Fallback used for selector: {selector}")
+    logger.debug(f"[Timestamp] Fallback used for selector: {selector}")
     return (fallback, fallback) if return_both else fallback
 
 
@@ -63,6 +63,11 @@ def get_local_utc_date(match: re.Match, return_both: bool = False):
 def extract_timestamp_from_selector(soup: BeautifulSoup, selector: str, return_both: bool = False):
     tag = extract_time_tag(soup, selector)
     if not tag:
+        link_tag = soup.find("a", class_="read-more-link") or soup.find("a", title="Mergi la articol")
+        href = None
+        if link_tag and link_tag.has_attr("href"):
+            href = link_tag["href"]
+        logger.debug(f"No valid timestamp found in selector: {selector} for {href}")
         return get_fallback_date(selector, return_both)
 
     # noinspection PyArgumentList

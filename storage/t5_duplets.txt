@@ -113,8 +113,8 @@ normalize: maneaua	manea
 normalize: manelei	manea
 normalize: stelei	stea
 normalize: Stelei București	Steaua București
-normalize: Stelei	Steaua București
-normalize: Stelei	Steaua
+normalize: Stelei Roșii	Steaua Roșie
+normalize: Stelei Roșii Belgrad	Steaua Roșie Belgrad
 normalize: copilului	copil
 normalize: fratelui	frate
 normalize: fraților	frați
@@ -148,6 +148,7 @@ normalize: craioveană	craioveană
 normalize: craiovenilor	craioveni
 normalize: prahovencei	prahoveană
 normalize: prahoveancă	prahoveană
+normalize: prahovean	prahovean
 normalize: bucureștean	bucureștean
 normalize: bucureșteană	bucureșteană
 normalize: bucureșteancă	bucureșteană
@@ -177,9 +178,6 @@ normalize: arbitrului	arbitru
 normalize: arbitrilor	arbitri
 normalize: asistentului	asistent
 normalize: asistenților	asistenți
-normalize: copilului	copil
-normalize: mamei	mamă
-normalize: mamelor	mame
 normalize: tenismenului	tenismen
 normalize: tenisului	tenis
 normalize: poloului	polo
@@ -236,9 +234,100 @@ normalize: profesoarei	profesoara
 normalize: profesoarelor	profesoare
 normalize: prietenei	prietena
 normalize: prietenului	prieten
+normalize: Șo	Șo
+normalize: Șoc	Șoc
+normalize: Și	Și
+normalize: Șic	Șic
+normalize: Șa	Șa
+normalize: Ți	Ți
+normalize: Țoc	Țoc
+normalize: Țel	Țel
+normalize: Țol	Țol
+normalize: Țup	Țup
+normalize: Șucu	Șucu
+normalize: Șucului	Șucu
+normalize: Șimanului	Șiman
+normalize: Șimonului	Șimon
+normalize: Șimonilor	Șimonii
+normalize: Țiriacilor	Țiriacii
+normalize: Țopeștilor	Țopeștii
+normalize: Țăranului	Țăran
+normalize: Țăran	Țăran
+normalize: Țăranu	Țăranu
+normalize: Andrei Țăranu	Andrei Țăranu
+normalize: Andrei Țăranu a participat la emisiunea de la Digi 24	Andrei Țăranu a participat la emisiunea de la Digi 24
+normalize: Țepelin a fost invitatul emisiunii	Țepelin a fost invitatul emisiunii
+normalize: Simonei Țăranu	Simona Țăranu
+normalize: Simona Țăranu	Simona Țăranu
+normalize: Ștefan Ștefănescu	Ștefan Ștefănescu
+normalize: Ștefănescu a prezentat știrile	Ștefănescu a prezentat știrile
+normalize: Simona Țăranu a prezentat știrile	Simona Țăranu a prezentat știrile
+normalize: Simona Țăranu a discutat cu Andrei Țăranu despre parlament	Simona Țăranu a discutat cu Andrei Țăranu despre parlament
+normalize: Țăranilor	Țăranii
+normalize: țăranilor	țărani
+normalize: șucului	șuc
+normalize: șocului	șoc
+normalize: Țoiului	Țoi
+normalize: țoiului	țoi
+normalize: Ștefăneștilor	Ștefăneștii
+normalize: Țigăneștenilor	Țigăneștenii
+normalize: Țonea	Țonea
+normalize: Țoneștilor	Țoneștii
+normalize: Ștefănești	Ștefănești
+normalize: Ștefănescu	Ștefănescu
+normalize: Ștucan	Ștucan
+normalize: Țiriac	Țiriac
+normalize: Ion Țiriac	Ion Țiriac
+normalize: Ion Ion Țiriac	Ion Ion Țiriac
+normalize: Țiriacii	Țiriacii
+normalize: Șendrea	Șendrea
+normalize: Șova	Șova
+normalize: Țepelin	Țepelin
+normalize: copilului	copil
+normalize: mamei	mamă
+normalize: mamelor	mame
+normalize: Iuliu	Iuliu
+normalize: Iuliu Mureșan	Iuliu Mureșan
+normalize: Mureșan	Mureșan
+normalize: Șimon	Șimon
+normalize: Țoiu	Țoiu
+normalize: Dan Șucu	Dan Șucu
+normalize: Vasile Șiman	Vasile Șiman
+normalize: Țopescu	Țopescu
+normalize: Ștefan Șuleap	Ștefan Șuleap
+normalize: Șuleap	Șuleap
+normalize: Șiman	Șiman
+normalize: Șucu	Șucu
+normalize: Dan Șucu	Dan Șucu
+normalize: Vasile Șiman	Vasile Șiman
+normalize: Marian Copilu	Marian Copilu
+normalize: Țânțaru	Țânțaru
+normalize: Țînțaru	Țînțaru
+normalize: Țîgăneșteanu	Țîgăneșteanu
+normalize: știr	știr
+normalize: știre	știre
+normalize: știrii	știre
+normalize: știrilor	știri
+normalize: șipot	șipot
+normalize: șipotului	șipot
+normalize: șenilă	șenilă
+normalize: șenilei	șenilă
+normalize: Țoiu	Țoiu
+normalize: Ștefan	Ștefan
+normalize: Șelaru	Șelaru
+normalize: Narcis Șelaru	Narcis Șelaru
+normalize: Șimon	Șimon
+normalize: Lidia Șimon	Lidia Șimon
+normalize: Lidiei Șimon	Lidia Șimon
+normalize: Oana Țoiu	Oana Țoiu
+normalize: Oanei Țoiu	Oana Țoiu
+normalize: Țopescu	Țopescu
+normalize: Cristina Țopescu	Cristina Țopescu
+normalize: Cristinei Țopescu	Cristina Țopescu
 normalize: Sorana	Sorana
 normalize: Sorana Cîrstea	Sorana Cîrstea
 normalize: Soranei Cîrstea	Sorana Cîrstea
+normalize: Cîrstea	Cîrstea
 normalize: Soranei	Sorana
 normalize: Jacquelinei	Jacqueline
 normalize: Jacqueline	Jacqueline

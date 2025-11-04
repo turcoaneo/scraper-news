@@ -23,3 +23,5 @@ sentencepiece
 fastapi[all]
 uvicorn
 numpy
+protobuf
+hf_xet
