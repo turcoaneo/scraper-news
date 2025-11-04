@@ -12,6 +12,7 @@ def clean_list(raw):
 
 
 APP_ENV = os.environ.get("APP_ENV", "local")
+LOGGING_DEBUG_LEVEL = clean_list(os.environ.get("LOGGING_DEBUG_LEVEL", "local, dev"))
 
 SCRAPER_CONFIG = {
     "looped": os.environ.get("SCRAPER_JOB_LOOPED", "False"),

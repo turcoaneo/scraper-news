@@ -3,7 +3,7 @@
 import logging
 import sys
 
-from app.utils.env_vars import APP_ENV
+from app.utils.env_vars import APP_ENV, LOGGING_DEBUG_LEVEL
 
 
 def get_logger(name="app"):
@@ -11,7 +11,7 @@ def get_logger(name="app"):
 
     # Set level based on environment
     app_env = APP_ENV.lower()
-    level = logging.DEBUG if app_env == "local" else logging.INFO
+    level = logging.DEBUG if app_env in LOGGING_DEBUG_LEVEL else logging.INFO
     logger.setLevel(level)
 
     if not logger.handlers:
