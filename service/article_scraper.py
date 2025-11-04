@@ -8,13 +8,10 @@ from service.claude_prompt_builder import load_training_data
 from service.util import article_timestamp_util as ts_util
 from service.util.csv_util import fix_romanian_diacritics
 from service.util.entity_extraction_facade import EntityExtractorFacade
-from service.util.logger_util import get_logger
 from service.util.path_util import PROJECT_ROOT
 
 BASE_DIR = PROJECT_ROOT
 EXAMPLE_PATH = os.path.join(BASE_DIR, "storage", "training", "example.json")
-
-logger = get_logger()
 
 
 class ArticleScraper:

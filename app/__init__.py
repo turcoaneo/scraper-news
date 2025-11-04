@@ -1,17 +1,16 @@
 # app/__init__.py
-import logging
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.openapi.docs import get_swagger_ui_html
 
 from app.utils.env_vars import APP_ENV
-from service.util.logger_util import get_logger
-
-logger = get_logger("fastapi")
 
 
 def create_app() -> FastAPI:
+    from service.util.logger_util import get_logger
+    logger = get_logger("fastapi")
+
     app = FastAPI(
         title="Sports Scraper API",
         docs_url="/docs",  # enables Swagger UI at /docs
