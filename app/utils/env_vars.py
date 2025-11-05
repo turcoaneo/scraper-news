@@ -2,27 +2,30 @@
 
 import os
 
-from dotenv import load_dotenv
-
-load_dotenv()
+from dotenv import dotenv_values
 
 
 def clean_list(raw):
     return [x.strip() for x in raw.split(",") if x.strip()]
 
 
+# Load base + environment-specific config
 APP_ENV = os.environ.get("APP_ENV", "local")
-LOGGING_DEBUG_LEVEL = clean_list(os.environ.get("LOGGING_DEBUG_LEVEL", "local, dev"))
+base_env = dotenv_values(".env")
+env_specific = dotenv_values(f".env.{APP_ENV}")
+merged = {**base_env, **env_specific, **os.environ}  # system vars override all
+
+LOG_LEVEL = os.environ.get("LOG_LEVEL", "warning")
 
 SCRAPER_CONFIG = {
-    "looped": os.environ.get("SCRAPER_JOB_LOOPED", "False"),
-    "sleep_time": int(os.environ.get("SCRAPER_SLEEPING_TIME", 400)),
-    "interval": int(os.environ.get("SCRAPER_INTERVAL_SECONDS", 5)),
-    "article_time_cutoff": int(os.environ.get("SCRAPER_ARTICLE_TIME_CUTOFF", 1440)),
+    "looped": merged.get("SCRAPER_JOB_LOOPED", "False") == "True",
+    "sleep_time": int(merged.get("SCRAPER_SLEEPING_TIME", 400)),
+    "interval": int(merged.get("SCRAPER_INTERVAL_SECONDS", 5)),
+    "article_time_cutoff": int(merged.get("SCRAPER_ARTICLE_TIME_CUTOFF", 1440)),
 }
 
 FILTER_PLACE_KEYS = {
-    "place": clean_list(os.environ.get("FILTER_PLACES", "")),
-    "including": clean_list(os.environ.get("FILTER_INCLUDING", "")),
-    "excluding": clean_list(os.environ.get("FILTER_EXCLUDING", "")),
+    "place": clean_list(merged.get("FILTER_PLACES", "")),
+    "including": clean_list(merged.get("FILTER_INCLUDING", "")),
+    "excluding": clean_list(merged.get("FILTER_EXCLUDING", "")),
 }
