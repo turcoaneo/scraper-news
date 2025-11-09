@@ -15,7 +15,7 @@ base_env = dotenv_values(".env")
 env_specific = dotenv_values(f".env.{APP_ENV}")
 merged = {**base_env, **env_specific, **os.environ}  # system vars override all
 
-LOG_LEVEL = os.environ.get("LOG_LEVEL", "warning")
+LOG_LEVEL = merged.get("LOG_LEVEL", "warning")
 
 SCRAPER_CONFIG = {
     "looped": merged.get("SCRAPER_JOB_LOOPED", "False") == "True",
