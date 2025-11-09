@@ -15,7 +15,9 @@ def create_app() -> FastAPI:
         title="Sports Scraper API",
         docs_url="/docs",  # enables Swagger UI at /docs
         redoc_url="/redoc",  # enables ReDoc at /redoc
-        openapi_url="/openapi.json"
+        openapi_url="/openapi.json",
+        # static_folder="/static",
+        # template_folder='templates'
     )
 
     # Enable CORS for local development
@@ -36,6 +38,18 @@ def create_app() -> FastAPI:
     async def custom_swagger_ui():
         # noinspection PyUnresolvedReferences
         return get_swagger_ui_html(openapi_url=app.openapi_url, title="Custom Swagger UI")
+
+    from fastapi.templating import Jinja2Templates
+    from fastapi import Request
+
+    templates = Jinja2Templates(directory="templates")
+
+    from fastapi.staticfiles import StaticFiles
+    app.mount("/static", StaticFiles(directory="static"), name="static")
+
+    @app.get("/", include_in_schema=False)
+    async def index(request: Request):
+        return templates.TemplateResponse("index.html", {"request": request})
 
     from app.routes.cluster import router as cluster_router
     app.include_router(cluster_router)
