@@ -15,6 +15,9 @@ PyCharm as IDE
 ```bash
 python -m venv venv
 ```
+```bash
+py -3.13 -m venv venv
+```
 
 ## 2. Activate virtual ENV - venv  
 ### Windows  

@@ -1,11 +1,13 @@
 jupyter
+notebook
+ipykernel
 praw
 bs4
 requests
 snscrape
 pandas
 python-dateutil
-spacy
+spacy>=3.8.5
 pytest
 python-dotenv
 anthropic
