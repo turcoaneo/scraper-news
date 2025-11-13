@@ -102,15 +102,33 @@ find . -name "__pycache__" -exec rm -r {} +
  
 ## Docker
 ### Build
+```bash
 docker build -t scraper-news
 docker build -t scraper-news --no-cache .
+```
 
 ### Run docker
+```bash
 docker run --name scraper-news-container --env-file .env.uat -p 8000:8000 scraper-news
 docker run --name scraper-news-container --env-file .env.docker -p 8000:8000 scraper-news
 docker logs scraper-news-container
+```
 
 ### Clear unused stuff
+```bash
 docker system prune -a --volumes
 docker system df
 docker builder prune -a --force
+```
+
+## Zip in Git Bash
+```bash
+zip -s 90m bert_model.zip bert_model.pt
+zip -s 90m -r t5_decorator_model.zip t5_decorator_model
+```
+
+## Unzip
+```bash
+cat bert_model.z* bert_model.zip > tmp.zip
+unzip tmp.zip
+```
