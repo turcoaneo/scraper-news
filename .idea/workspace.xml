@@ -5,13 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="22401e38-3721-4fd8-b77a-f843b1aa4640" name=" Deployment." comment="">
-      <change afterPath="$PROJECT_DIR$/static/assets/AboutView-CGZSaLA0.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/index-B9uqcHvi.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/index-FS2vtFnr.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/favicon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/favicon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/t5_decorator_model.z01" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/t5_decorator_model.z02" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/t5_decorator_model.zip" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <list id="a7f942ad-3c95-41b0-b4b7-f43fce9ff07e" name="Changes" comment="" />
@@ -444,6 +440,7 @@
       <option name="project" value="LOCAL" />
       <updated>1763016190413</updated>
       <workItem from="1763016191004" duration="70000" />
+      <workItem from="1763018064502" duration="1188000" />
     </task>
     <option name="localTasksCounter" value="68" />
     <option name="createBranch" value="false" />
