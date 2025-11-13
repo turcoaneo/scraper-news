@@ -5,12 +5,9 @@ from functools import lru_cache
 from typing import List, Dict
 
 from model.model_type import ModelType
-from service.claude_prompt_builder import ClaudePromptBuilder
 from service.extractor_ents_keys import EntityKeywordExtractor
-from service.gpt_prompt_builder import GptPromptBuilder
 from service.lora_extractor import LoraEntityKeywordExtractor
 from service.util.path_util import PROJECT_ROOT, BERT_MODEL_PATH, BERT_MODEL_PT_PATH
-from service.util.spacy_ents_keys import SpacyEntsKeys
 
 
 class EntityExtractorFacade:
@@ -37,9 +34,11 @@ class EntityExtractorFacade:
     @staticmethod
     def extract_by_model(summary: str, model_type: ModelType, training_data: List[Dict]) -> Dict[str, List[str]]:
         if model_type == ModelType.CLAUDE:
+            from service.claude_prompt_builder import ClaudePromptBuilder
             result = ClaudePromptBuilder(summary).extract_entities_and_keywords(training_data)
 
         elif model_type == ModelType.GPT:
+            from service.gpt_prompt_builder import GptPromptBuilder
             result = GptPromptBuilder(summary).extract_entities_and_keywords(training_data)
 
         elif model_type == ModelType.BERT:
@@ -49,6 +48,7 @@ class EntityExtractorFacade:
             result = EntityExtractorFacade.get_lora_extractor().extract(summary)
 
         elif model_type == ModelType.SPACY:
+            from service.util.spacy_ents_keys import SpacyEntsKeys
             result = SpacyEntsKeys.extract_spacy(summary)
 
         else:

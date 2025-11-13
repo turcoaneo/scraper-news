@@ -3,8 +3,8 @@ import os
 import requests
 from bs4 import BeautifulSoup
 
+from app.utils.env_vars import APP_ENV
 from model.model_type import ModelType
-from service.claude_prompt_builder import load_training_data
 from service.util import article_timestamp_util as ts_util
 from service.util.csv_util import fix_romanian_diacritics
 from service.util.entity_extraction_facade import EntityExtractorFacade
@@ -21,7 +21,8 @@ class ArticleScraper:
         self.time_selector = time_selector
         self.soup = None
         self.valid = False
-        if path is None:
+        if path is None and APP_ENV == "local" or APP_ENV == "test":
+            from service.claude_prompt_builder import load_training_data
             self.training_data = load_training_data(EXAMPLE_PATH)
 
     def fetch(self):
@@ -52,7 +53,17 @@ class ArticleScraper:
             return None
 
         summary = self._extract_summary()
-        result = EntityExtractorFacade.extract_by_model(summary, model_type, self.training_data)
+        result = {
+            "entities": [],
+            "keywords": []
+        }
+        try:
+            if APP_ENV == "local" or APP_ENV == "test":
+                result = EntityExtractorFacade.extract_by_model(summary, model_type, self.training_data)
+            else:
+                result = EntityExtractorFacade.get_bert_extractor_cached().extract_with_roberta(summary)
+        except Exception as e:
+            print("EntityExtractorFacade error" + self.homepage_title + ": " + str(e))
 
         return {
             "title": str(self.extract_title()),

@@ -7,7 +7,7 @@ from app.utils import env_vars
 
 class TestEnvVars(unittest.TestCase):
     def test_app_env(self):
-        self.assertIn(env_vars.APP_ENV, ["local", "docker", "uat"])
+        self.assertIn(env_vars.APP_ENV, ["local", "docker", "uat", "test"])
 
     def test_logging_debug_level(self):
         self.assertIsInstance(env_vars.LOG_LEVEL, str)

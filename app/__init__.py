@@ -21,8 +21,8 @@ def create_app() -> FastAPI:
     )
 
     # Enable CORS for local development
-    if APP_ENV == "local":
-        logger.info("Starting FastAPI in local mode")
+    if APP_ENV in ["local", "docker"]:
+        logger.info(f"Starting FastAPI in {APP_ENV} mode")
 
         # noinspection PyTypeChecker
         app.add_middleware(
@@ -32,6 +32,8 @@ def create_app() -> FastAPI:
             allow_methods=["*"],
             allow_headers=["*"],
         )
+    else:
+        logger.info("Starting in AWS mode")
 
     # Swagger UI customization (optional)
     @app.get("/docs", include_in_schema=False)

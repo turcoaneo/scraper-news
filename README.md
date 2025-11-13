@@ -40,11 +40,13 @@ python -m spacy download ro_core_news_sm
 ### 4.1 Run `notebooks/hugging_face_training_ents_keys.ipynb` to train a BERT model using GPT-4 results  
 Check for `dumitrescustefan_token_output` folder.  
 
-If not running this, scrapers will default to BERT. To override, change model type in `run-notebook-scraper.ipynb`:  
+If not running this, scrapers will default to BERT. To override, change model type in `run-notebook-scraper.ipynb`:
+
 ```python
+# noinspection PyUnresolvedReferences
 xxx_scraper = SiteScraper(
-    # other parameters
-    model=ModelType.CLAUDE #/ SPACY / GPT
+  # other parameters
+  model=ModelType.CLAUDE  # / SPACY / GPT
 )
 ```
 
@@ -54,11 +56,13 @@ Results are saved in four CSV files containing summary, entities, and keywords.
 - Summary is extracted via BeautifulSoup  
 - Entities and keywords are extracted using the selected model (default: BERT)  
 
-To use Claude, GPT, or spaCy:  
+To use Claude, GPT, or spaCy:
+
 ```python
+# noinspection PyUnresolvedReferences
 xxx_scraper = SiteScraper(
-    # other parameters
-    model=ModelType.CLAUDE
+  # other parameters
+  model=ModelType.CLAUDE
 )
 ```
 
@@ -96,3 +100,17 @@ python -m unittest
 find . -name "__pycache__" -exec rm -r {} +
 ```
  
+## Docker
+### Build
+docker build -t scraper-news
+docker build -t scraper-news --no-cache .
+
+### Run docker
+docker run --name scraper-news-container --env-file .env.uat -p 8000:8000 scraper-news
+docker run --name scraper-news-container --env-file .env.docker -p 8000:8000 scraper-news
+docker logs scraper-news-container
+
+### Clear unused stuff
+docker system prune -a --volumes
+docker system df
+docker builder prune -a --force

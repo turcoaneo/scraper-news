@@ -26,9 +26,7 @@ def start_scraper_loop(interval_sec: int = 1200, is_looped: bool = True):
 
 
 if __name__ == "__main__":
-    from distutils.util import strtobool
-
-    looped = bool(strtobool(SCRAPER_CONFIG["looped"]))
+    looped = SCRAPER_CONFIG["looped"]
     interval_seconds = int(SCRAPER_CONFIG["interval"])
     sleeping_time = int(SCRAPER_CONFIG["sleep_time"])
 

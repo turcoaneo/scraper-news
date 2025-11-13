@@ -1,0 +1,16 @@
+notebooks/
+storage/
+!storage/duplets_dictionary.py
+!storage/training/example.json
+dumitrescustefan_token_output
+!dumitrescustefan_token_output/checkpoint-200-small
+*.pyc
+__pycache__/
+*.env.*
+!.env
+!.env.docker
+!.env.uat
+.requirements.txt
+.requirements_docker.txt
+node_modules/
+dist/

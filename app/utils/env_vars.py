@@ -10,7 +10,7 @@ def clean_list(raw):
 
 
 # Load base + environment-specific config
-APP_ENV = os.environ.get("APP_ENV", "local")
+APP_ENV = os.environ.get("APP_ENV", "test")
 base_env = dotenv_values(".env")
 env_specific = dotenv_values(f".env.{APP_ENV}")
 merged = {**base_env, **env_specific, **os.environ}  # system vars override all
