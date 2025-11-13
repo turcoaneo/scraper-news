@@ -4,27 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="22401e38-3721-4fd8-b77a-f843b1aa4640" name=" Deployment." comment=" Deployment. T5 upload to GitHub.">
-      <change afterPath="$PROJECT_DIR$/declension_lora/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/declension_lora/adapter_config.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/declension_lora/adapter_model.safetensors" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/declension_lora/special_tokens_map.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/declension_lora/tokenizer.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/declension_lora/tokenizer_config.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/declension_lora/vocab.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dumitrescustefan_token_output/checkpoint-200-small/config.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dumitrescustefan_token_output/checkpoint-200-small/rng_state.pth" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dumitrescustefan_token_output/checkpoint-200-small/scheduler.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dumitrescustefan_token_output/checkpoint-200-small/special_tokens_map.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dumitrescustefan_token_output/checkpoint-200-small/tokenizer.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dumitrescustefan_token_output/checkpoint-200-small/tokenizer_config.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dumitrescustefan_token_output/checkpoint-200-small/trainer_state.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dumitrescustefan_token_output/checkpoint-200-small/training_args.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dumitrescustefan_token_output/checkpoint-200-small/vocab.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dockerignore" beforeDir="false" afterPath="$PROJECT_DIR$/.dockerignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-    </list>
+    <list default="true" id="22401e38-3721-4fd8-b77a-f843b1aa4640" name=" Deployment." comment=" Deployment. Lora and Bert checkpoint." />
     <list id="a7f942ad-3c95-41b0-b4b7-f43fce9ff07e" name="Changes" comment="" />
     <list id="6508d4bf-b1d4-4e03-bff8-2d311d3ea368" name="Env" comment="" />
     <list id="53257271-e7b8-4d79-880d-23a742d856a8" name="Fast API." comment="Docker - local test." />
@@ -455,7 +435,7 @@
       <option name="project" value="LOCAL" />
       <updated>1763016190413</updated>
       <workItem from="1763016191004" duration="70000" />
-      <workItem from="1763018064502" duration="1971000" />
+      <workItem from="1763018064502" duration="2321000" />
     </task>
     <task id="LOCAL-00068" summary=" Deployment. T5 upload to GitHub.">
       <option name="closed" value="true" />
@@ -473,7 +453,15 @@
       <option name="project" value="LOCAL" />
       <updated>1763020362230</updated>
     </task>
-    <option name="localTasksCounter" value="70" />
+    <task id="LOCAL-00070" summary=" Deployment. Lora and Bert checkpoint.">
+      <option name="closed" value="true" />
+      <created>1763020919956</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1763020919956</updated>
+    </task>
+    <option name="localTasksCounter" value="71" />
     <option name="createBranch" value="false" />
     <option name="useBranch" value="true" />
     <servers />
@@ -482,7 +470,6 @@
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Retraining declension model plus decorator." />
     <MESSAGE value="Better logging." />
     <MESSAGE value="Better logging 2." />
     <MESSAGE value="Fast API." />
@@ -505,9 +492,10 @@
     <MESSAGE value="Config." />
     <MESSAGE value="Docker - local test." />
     <MESSAGE value=" Deployment." />
-    <MESSAGE value=" Deployment. T5 upload to GitHub." />
     <MESSAGE value=" Deployment. Bert upload to GitHub." />
-    <option name="LAST_COMMIT_MESSAGE" value=" Deployment. Bert upload to GitHub." />
+    <MESSAGE value=" Deployment. T5 upload to GitHub." />
+    <MESSAGE value=" Deployment. Lora and Bert checkpoint." />
+    <option name="LAST_COMMIT_MESSAGE" value=" Deployment. Lora and Bert checkpoint." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

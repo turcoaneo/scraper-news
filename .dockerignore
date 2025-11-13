@@ -1,7 +1,7 @@
 notebooks/
 storage/
-!t_5_model*
-!bert*
+t_5_model*
+bert*
 !storage/duplets_dictionary.py
 !storage/training/example.json
 dumitrescustefan_token_output
