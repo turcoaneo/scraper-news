@@ -4,26 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="53257271-e7b8-4d79-880d-23a742d856a8" name="Fast API." comment="Config.">
-      <change afterPath="$PROJECT_DIR$/.dockerignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build_backend.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/requirements_docker.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/FastAPI.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/FastAPI.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/Main___FastAPI_and_Scraper_Cron.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/Main___FastAPI_and_Scraper_Cron.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/SCRAPER_JOB.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/SCRAPER_JOB.xml" afterDir="false" />
+    <list default="true" id="22401e38-3721-4fd8-b77a-f843b1aa4640" name=" Deployment." comment="">
+      <change afterPath="$PROJECT_DIR$/static/assets/AboutView-CGZSaLA0.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/index-B9uqcHvi.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/index-FS2vtFnr.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/favicon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/favicon.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/utils/env_vars.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/utils/env_vars.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cron_jobs/scraper_job.py" beforeDir="false" afterPath="$PROJECT_DIR$/cron_jobs/scraper_job.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/article_scraper.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/article_scraper.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/util/entity_extraction_facade.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/util/entity_extraction_facade.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/test_env_vars.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test_env_vars.py" afterDir="false" />
     </list>
     <list id="a7f942ad-3c95-41b0-b4b7-f43fce9ff07e" name="Changes" comment="" />
     <list id="6508d4bf-b1d4-4e03-bff8-2d311d3ea368" name="Env" comment="" />
+    <list id="53257271-e7b8-4d79-880d-23a742d856a8" name="Fast API." comment="Docker - local test." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -51,7 +44,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="refactor" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -398,118 +391,15 @@
       <workItem from="1760366001094" duration="546000" />
       <workItem from="1760518672259" duration="7430000" />
     </task>
-    <task id="LOCAL-00017" summary="Instructions.">
-      <option name="closed" value="true" />
-      <created>1759588188924</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1759588188924</updated>
-    </task>
-    <task id="LOCAL-00018" summary="Instructions 2.">
-      <option name="closed" value="true" />
-      <created>1759588418388</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1759588418388</updated>
-    </task>
-    <task id="LOCAL-00019" summary="Instructions 3.">
-      <option name="closed" value="true" />
-      <created>1759588690322</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1759588690322</updated>
-    </task>
-    <task id="LOCAL-00020" summary="Instructions.">
-      <option name="closed" value="true" />
-      <created>1759588780819</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1759588780819</updated>
-    </task>
-    <task id="LOCAL-00021" summary="Fixes.">
-      <option name="closed" value="true" />
-      <created>1759590533008</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1759590533008</updated>
-    </task>
-    <task id="LOCAL-00022" summary="README.">
-      <option name="closed" value="true" />
-      <created>1759647696495</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1759647696495</updated>
-    </task>
-    <task id="LOCAL-00023" summary="README markdowns.">
-      <option name="closed" value="true" />
-      <created>1759649328851</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1759649328851</updated>
-    </task>
-    <task id="LOCAL-00024" summary="OS path for test.">
-      <option name="closed" value="true" />
-      <created>1759649946038</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1759649946038</updated>
-    </task>
-    <task id="LOCAL-00025" summary="OS path for file.">
-      <option name="closed" value="true" />
-      <created>1759650488092</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1759650488092</updated>
-    </task>
-    <task id="LOCAL-00026" summary="OS path for files.">
-      <option name="closed" value="true" />
-      <created>1759651662442</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1759651662442</updated>
-    </task>
-    <task id="LOCAL-00027" summary="Commit and push.">
-      <option name="closed" value="true" />
-      <created>1759827717674</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1759827717674</updated>
-    </task>
-    <task id="LOCAL-00028" summary="Refactoring.">
-      <option name="closed" value="true" />
-      <created>1759922692927</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1759922692927</updated>
-    </task>
-    <task id="LOCAL-00029" summary="LRU cache.">
-      <option name="closed" value="true" />
-      <created>1759923382265</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1759923382265</updated>
-    </task>
-    <task active="true" id="LOCAL-00030" summary="Flask app.">
+    <task id="LOCAL-00030" summary="Flask app.">
       <branch name="flask-app" repository="D:\WORKSPACE\Python\scraper-news" />
+      <branch name="main" repository="D:\DEV\scraper-news" original="true" />
       <changelist id="53257271-e7b8-4d79-880d-23a742d856a8" name=" Flask app." comment="" />
       <created>1759945223626</created>
       <option name="number" value="00030" />
       <option name="presentableId" value="LOCAL-00030" />
       <option name="project" value="LOCAL" />
-      <updated>1760539273737</updated>
+      <updated>1763016190413</updated>
       <workItem from="1759945232980" duration="11000" />
       <workItem from="1760539274291" duration="197000" />
       <workItem from="1760594711659" duration="14594000" />
@@ -543,295 +433,19 @@
       <workItem from="1762863333647" duration="90000" />
       <workItem from="1762863432149" duration="1084000" />
       <workItem from="1762864550977" duration="27921000" />
-      <workItem from="1763012191514" duration="699000" />
+      <workItem from="1763012191514" duration="1809000" />
     </task>
-    <task id="LOCAL-00031" summary="Declension model training.">
-      <branch name="declension" repository="D:\WORKSPACE\Python\scraper-news" />
-      <created>1759989271624</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
+    <task active="true" id="LOCAL-00067" summary="Deployment.">
+      <branch name="main" repository="D:\DEV\scraper-news" />
+      <changelist id="22401e38-3721-4fd8-b77a-f843b1aa4640" name=" Deployment." comment="" />
+      <created>1763016185575</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
       <option name="project" value="LOCAL" />
-      <updated>1759989277872</updated>
-      <workItem from="1759989278202" duration="2624000" />
-      <workItem from="1759991965445" duration="36554000" />
-      <workItem from="1760097063754" duration="20718000" />
-      <workItem from="1760252727390" duration="4147000" />
-      <workItem from="1760342482970" duration="98000" />
-      <workItem from="1760358426495" duration="1913000" />
+      <updated>1763016190413</updated>
+      <workItem from="1763016191004" duration="70000" />
     </task>
-    <task id="LOCAL-00032" summary=" Declension model training. LoRA.">
-      <option name="closed" value="true" />
-      <created>1760095030270</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1760095030270</updated>
-    </task>
-    <task id="LOCAL-00033" summary=" Declension model training. Train versus retrain - fine tuning.">
-      <option name="closed" value="true" />
-      <created>1760358493256</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1760358493257</updated>
-    </task>
-    <task id="LOCAL-00034" summary=" Flask app. Refactoring plus declension model.">
-      <option name="closed" value="true" />
-      <created>1760539328873</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1760539328873</updated>
-    </task>
-    <task id="LOCAL-00035" summary="Refactoring and unit tests.">
-      <option name="closed" value="true" />
-      <created>1760596620842</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1760596620842</updated>
-    </task>
-    <task id="LOCAL-00036" summary="Refactoring and unit tests.">
-      <option name="closed" value="true" />
-      <created>1760633981633</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1760633981634</updated>
-    </task>
-    <task id="LOCAL-00037" summary="Refactoring path.">
-      <option name="closed" value="true" />
-      <created>1760700212725</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1760700212725</updated>
-    </task>
-    <task id="LOCAL-00038" summary="Cors.">
-      <option name="closed" value="true" />
-      <created>1760702101086</created>
-      <option name="number" value="00038" />
-      <option name="presentableId" value="LOCAL-00038" />
-      <option name="project" value="LOCAL" />
-      <updated>1760702101086</updated>
-    </task>
-    <task id="LOCAL-00039" summary="Cors">
-      <option name="closed" value="true" />
-      <created>1760708472720</created>
-      <option name="number" value="00039" />
-      <option name="presentableId" value="LOCAL-00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1760708472720</updated>
-    </task>
-    <task id="LOCAL-00040" summary="Summaries merging.">
-      <option name="closed" value="true" />
-      <created>1760772796009</created>
-      <option name="number" value="00040" />
-      <option name="presentableId" value="LOCAL-00040" />
-      <option name="project" value="LOCAL" />
-      <updated>1760772796009</updated>
-    </task>
-    <task id="LOCAL-00041" summary="Cron plus PyCharm config.">
-      <option name="closed" value="true" />
-      <created>1760778785419</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1760778785419</updated>
-    </task>
-    <task id="LOCAL-00042" summary="Declension and multi-threading.">
-      <option name="closed" value="true" />
-      <created>1761048674859</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1761048674859</updated>
-    </task>
-    <task id="LOCAL-00043" summary="Retraining declension model plus decorator.">
-      <option name="closed" value="true" />
-      <created>1761061756719</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1761061756719</updated>
-    </task>
-    <task id="LOCAL-00044" summary="Better logging.">
-      <option name="closed" value="true" />
-      <created>1761067280774</created>
-      <option name="number" value="00044" />
-      <option name="presentableId" value="LOCAL-00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1761067280774</updated>
-    </task>
-    <task id="LOCAL-00045" summary="Better logging 2.">
-      <option name="closed" value="true" />
-      <created>1761067323526</created>
-      <option name="number" value="00045" />
-      <option name="presentableId" value="LOCAL-00045" />
-      <option name="project" value="LOCAL" />
-      <updated>1761067323526</updated>
-    </task>
-    <task id="LOCAL-00046" summary="Fast API. Logger.">
-      <option name="closed" value="true" />
-      <created>1761144487254</created>
-      <option name="number" value="00046" />
-      <option name="presentableId" value="LOCAL-00046" />
-      <option name="project" value="LOCAL" />
-      <updated>1761144487254</updated>
-    </task>
-    <task id="LOCAL-00047" summary="Fast API. Logger.">
-      <option name="closed" value="true" />
-      <created>1761246023730</created>
-      <option name="number" value="00047" />
-      <option name="presentableId" value="LOCAL-00047" />
-      <option name="project" value="LOCAL" />
-      <updated>1761246023730</updated>
-    </task>
-    <task id="LOCAL-00048" summary="Refactoring services.">
-      <option name="closed" value="true" />
-      <created>1761298805848</created>
-      <option name="number" value="00048" />
-      <option name="presentableId" value="LOCAL-00048" />
-      <option name="project" value="LOCAL" />
-      <updated>1761298805848</updated>
-    </task>
-    <task id="LOCAL-00049" summary="Cached clustering plus test fixes.">
-      <option name="closed" value="true" />
-      <created>1761321180009</created>
-      <option name="number" value="00049" />
-      <option name="presentableId" value="LOCAL-00049" />
-      <option name="project" value="LOCAL" />
-      <updated>1761321180009</updated>
-    </task>
-    <task id="LOCAL-00050" summary="FIx hour and Cron interval.">
-      <option name="closed" value="true" />
-      <created>1761463975827</created>
-      <option name="number" value="00050" />
-      <option name="presentableId" value="LOCAL-00050" />
-      <option name="project" value="LOCAL" />
-      <updated>1761463975827</updated>
-    </task>
-    <task id="LOCAL-00051" summary="Fix scores.">
-      <option name="closed" value="true" />
-      <created>1761468994550</created>
-      <option name="number" value="00051" />
-      <option name="presentableId" value="LOCAL-00051" />
-      <option name="project" value="LOCAL" />
-      <updated>1761468994550</updated>
-    </task>
-    <task id="LOCAL-00052" summary="Optimizing scraper with deltas.">
-      <option name="closed" value="true" />
-      <created>1761490856841</created>
-      <option name="number" value="00052" />
-      <option name="presentableId" value="LOCAL-00052" />
-      <option name="project" value="LOCAL" />
-      <updated>1761490856841</updated>
-    </task>
-    <task id="LOCAL-00053" summary="Optimizing scraper with deltas, refactored.">
-      <option name="closed" value="true" />
-      <created>1761554260065</created>
-      <option name="number" value="00053" />
-      <option name="presentableId" value="LOCAL-00053" />
-      <option name="project" value="LOCAL" />
-      <updated>1761554260065</updated>
-    </task>
-    <task id="LOCAL-00054" summary="Delete delta file.">
-      <option name="closed" value="true" />
-      <created>1761559211767</created>
-      <option name="number" value="00054" />
-      <option name="presentableId" value="LOCAL-00054" />
-      <option name="project" value="LOCAL" />
-      <updated>1761559211767</updated>
-    </task>
-    <task id="LOCAL-00055" summary="Score fix.">
-      <option name="closed" value="true" />
-      <created>1761636657820</created>
-      <option name="number" value="00055" />
-      <option name="presentableId" value="LOCAL-00055" />
-      <option name="project" value="LOCAL" />
-      <updated>1761636657820</updated>
-    </task>
-    <task id="LOCAL-00056" summary="Score fix.">
-      <option name="closed" value="true" />
-      <created>1761636997633</created>
-      <option name="number" value="00056" />
-      <option name="presentableId" value="LOCAL-00056" />
-      <option name="project" value="LOCAL" />
-      <updated>1761636997633</updated>
-    </task>
-    <task id="LOCAL-00057" summary="Test.">
-      <option name="closed" value="true" />
-      <created>1761637695333</created>
-      <option name="number" value="00057" />
-      <option name="presentableId" value="LOCAL-00057" />
-      <option name="project" value="LOCAL" />
-      <updated>1761637695333</updated>
-    </task>
-    <task id="LOCAL-00058" summary="Fix timestamps.">
-      <option name="closed" value="true" />
-      <created>1761894522423</created>
-      <option name="number" value="00058" />
-      <option name="presentableId" value="LOCAL-00058" />
-      <option name="project" value="LOCAL" />
-      <updated>1761894522424</updated>
-    </task>
-    <task id="LOCAL-00059" summary="Fix timestamps.">
-      <option name="closed" value="true" />
-      <created>1761894596164</created>
-      <option name="number" value="00059" />
-      <option name="presentableId" value="LOCAL-00059" />
-      <option name="project" value="LOCAL" />
-      <updated>1761894596165</updated>
-    </task>
-    <task id="LOCAL-00060" summary="New duplets.">
-      <option name="closed" value="true" />
-      <created>1762072008208</created>
-      <option name="number" value="00060" />
-      <option name="presentableId" value="LOCAL-00060" />
-      <option name="project" value="LOCAL" />
-      <updated>1762072008209</updated>
-    </task>
-    <task id="LOCAL-00061" summary="Fix diacritics - start with entities.">
-      <option name="closed" value="true" />
-      <created>1762242864879</created>
-      <option name="number" value="00061" />
-      <option name="presentableId" value="LOCAL-00061" />
-      <option name="project" value="LOCAL" />
-      <updated>1762242864880</updated>
-    </task>
-    <task id="LOCAL-00062" summary="Fix logger import for tests.">
-      <option name="closed" value="true" />
-      <created>1762244716623</created>
-      <option name="number" value="00062" />
-      <option name="presentableId" value="LOCAL-00062" />
-      <option name="project" value="LOCAL" />
-      <updated>1762244716623</updated>
-    </task>
-    <task id="LOCAL-00063" summary="Improving debugging level for logging.">
-      <option name="closed" value="true" />
-      <created>1762257391171</created>
-      <option name="number" value="00063" />
-      <option name="presentableId" value="LOCAL-00063" />
-      <option name="project" value="LOCAL" />
-      <updated>1762257391171</updated>
-    </task>
-    <task id="LOCAL-00064" summary="Score fix, again...">
-      <option name="closed" value="true" />
-      <created>1762265710679</created>
-      <option name="number" value="00064" />
-      <option name="presentableId" value="LOCAL-00064" />
-      <option name="project" value="LOCAL" />
-      <updated>1762265710680</updated>
-    </task>
-    <task id="LOCAL-00065" summary="Config.">
-      <option name="closed" value="true" />
-      <created>1762705499063</created>
-      <option name="number" value="00065" />
-      <option name="presentableId" value="LOCAL-00065" />
-      <option name="project" value="LOCAL" />
-      <updated>1762705499063</updated>
-    </task>
-    <option name="localTasksCounter" value="66" />
+    <option name="localTasksCounter" value="68" />
     <option name="createBranch" value="false" />
     <option name="useBranch" value="true" />
     <servers />
@@ -840,7 +454,6 @@
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Cors" />
     <MESSAGE value="Summaries merging." />
     <MESSAGE value="Cron plus PyCharm config." />
     <MESSAGE value="Declension and multi-threading." />
@@ -865,73 +478,11 @@
     <MESSAGE value="Improving debugging level for logging." />
     <MESSAGE value="Score fix, again..." />
     <MESSAGE value="Config." />
-    <option name="LAST_COMMIT_MESSAGE" value="Config." />
+    <MESSAGE value="Docker - local test." />
+    <option name="LAST_COMMIT_MESSAGE" value="Docker - local test." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/test/test_story_clusterer.py</url>
-          <line>115</line>
-          <option name="timeStamp" value="175" />
-        </line-breakpoint>
-        <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/service/util/scraper_runner.py</url>
-          <line>134</line>
-          <option name="timeStamp" value="190" />
-        </line-breakpoint>
-        <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/service/util/scraper_runner.py</url>
-          <line>122</line>
-          <option name="timeStamp" value="191" />
-        </line-breakpoint>
-        <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/test/test_delta_checker.py</url>
-          <line>67</line>
-          <option name="timeStamp" value="213" />
-        </line-breakpoint>
-        <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/service/util/delta_checker.py</url>
-          <line>76</line>
-          <option name="timeStamp" value="215" />
-        </line-breakpoint>
-        <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/service/util/article_timestamp_util.py</url>
-          <line>91</line>
-          <option name="timeStamp" value="223" />
-        </line-breakpoint>
-        <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/test/test_article_timestamp_util.py</url>
-          <line>76</line>
-          <option name="timeStamp" value="234" />
-        </line-breakpoint>
-        <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/service/util/declension_util.py</url>
-          <line>9</line>
-          <option name="timeStamp" value="241" />
-        </line-breakpoint>
-        <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/service/cluster_service.py</url>
-          <line>23</line>
-          <option name="timeStamp" value="248" />
-        </line-breakpoint>
-        <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/service/story_clusterer.py</url>
-          <line>98</line>
-          <option name="timeStamp" value="249" />
-        </line-breakpoint>
-        <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/service/story_clusterer.py</url>
-          <line>132</line>
-          <option name="timeStamp" value="251" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/app/utils/env_vars.py</url>
-          <line>12</line>
-          <option name="temporary" value="true" />
-          <option name="timeStamp" value="255" />
-        </line-breakpoint>
-      </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
           <properties notifyOnTerminate="true" exception="BaseException">
