@@ -1,11 +1,12 @@
 # service/util/scraper_runner.py
 
-import os
 import threading
+from functools import lru_cache
 
 from transformers import T5Tokenizer, T5ForConditionalGeneration
 
 from app.config.loader import load_sites_from_config
+from app.utils.env_vars import HF_TOKEN
 from model.article import Article
 from model.model_type import ModelType
 from service.cluster_service import ClusterService
@@ -13,23 +14,26 @@ from service.util.buffer_util import update_buffer_timestamp, delete_delta_file_
 from service.util.declension_util import DeclensionUtil
 from service.util.delta_checker import DeltaChecker
 from service.util.logger_util import get_logger
-from service.util.path_util import PROJECT_ROOT
+from service.util.path_util import PROJECT_ROOT, T5_MODEL_PATH
 from service.util.timing_util import elapsed_time, log_thread_id
 
 logger = get_logger()
 
 
+@lru_cache(maxsize=1)
 def get_model_and_tokenizer():
-    model_path = os.path.join(PROJECT_ROOT, "t5_decorator_model")
-    tokenizer = T5Tokenizer.from_pretrained(model_path)
-    model = T5ForConditionalGeneration.from_pretrained(model_path)
+    model_path = T5_MODEL_PATH
+    hf_token = HF_TOKEN
+
+    tokenizer = T5Tokenizer.from_pretrained(model_path, token=hf_token)
+    model = T5ForConditionalGeneration.from_pretrained(model_path, token=hf_token)
     model.eval()
     return tokenizer, model
 
 
 @elapsed_time("run_scraper")
 def run_scraper(minutes=1440):
-    logger.info("*"*100)
+    logger.info("*" * 100)
     logger.info(f"Running {log_thread_id(threading.get_ident(), 'scraper')}")
     sites = load_sites_from_config()
     total_traffic = sum(site.traffic for site in sites)

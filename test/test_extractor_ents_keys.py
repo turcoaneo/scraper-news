@@ -4,7 +4,7 @@ from service.extractor_ents_keys import EntityKeywordExtractor
 from service.util.path_util import BERT_MODEL_PATH, BERT_MODEL_PT_PATH
 
 
-@pytest.fixture(params=["classic", "torchscript"])
+@pytest.fixture(params=["classic", "torch_script"])
 def extractor(request):
     base_dir = BERT_MODEL_PATH
     model_pt_path = BERT_MODEL_PT_PATH

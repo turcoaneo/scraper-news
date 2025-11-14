@@ -5,8 +5,9 @@ import unittest
 import torch
 from transformers import T5Tokenizer, T5ForConditionalGeneration
 
+from app.utils.env_vars import LLM_ROOT
 from service.util.declension_util import DeclensionUtil
-from service.util.path_util import get_project_root
+from service.util.path_util import get_project_root, T5_MODEL_PATH
 
 
 class TestDeclensionUtil(unittest.TestCase):
@@ -14,7 +15,7 @@ class TestDeclensionUtil(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         # T5 model
-        model_path = os.path.join(get_project_root(), "t5_decorator_model")
+        model_path = T5_MODEL_PATH
         tokenizer = T5Tokenizer.from_pretrained(model_path)
         model = T5ForConditionalGeneration.from_pretrained(model_path)
         model.eval()
