@@ -4,16 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="22401e38-3721-4fd8-b77a-f843b1aa4640" name=" Deployment." comment=" Deployment. Deleting.">
-      <change afterPath="$PROJECT_DIR$/notebooks/hf_model_uploader.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/hf_uploader.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/test_hf_uploader.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dockerignore" beforeDir="false" afterPath="$PROJECT_DIR$/.dockerignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/extractor_ents_keys.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/extractor_ents_keys.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/util/entity_extraction_facade.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/util/entity_extraction_facade.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/test_extractor_ents_keys.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test_extractor_ents_keys.py" afterDir="false" />
+    <list default="true" id="22401e38-3721-4fd8-b77a-f843b1aa4640" name=" Deployment." comment=" Deployment. Fix.">
+      <change beforePath="$PROJECT_DIR$/dumitrescustefan_token_output/checkpoint-200-small/config.json" beforeDir="false" afterPath="$PROJECT_DIR$/checkpoint-200-small/config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dumitrescustefan_token_output/checkpoint-200-small/rng_state.pth" beforeDir="false" afterPath="$PROJECT_DIR$/checkpoint-200-small/rng_state.pth" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dumitrescustefan_token_output/checkpoint-200-small/scheduler.pt" beforeDir="false" afterPath="$PROJECT_DIR$/checkpoint-200-small/scheduler.pt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dumitrescustefan_token_output/checkpoint-200-small/special_tokens_map.json" beforeDir="false" afterPath="$PROJECT_DIR$/checkpoint-200-small/special_tokens_map.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dumitrescustefan_token_output/checkpoint-200-small/tokenizer.json" beforeDir="false" afterPath="$PROJECT_DIR$/checkpoint-200-small/tokenizer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dumitrescustefan_token_output/checkpoint-200-small/tokenizer_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/checkpoint-200-small/tokenizer_config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dumitrescustefan_token_output/checkpoint-200-small/trainer_state.json" beforeDir="false" afterPath="$PROJECT_DIR$/checkpoint-200-small/trainer_state.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dumitrescustefan_token_output/checkpoint-200-small/training_args.bin" beforeDir="false" afterPath="$PROJECT_DIR$/checkpoint-200-small/training_args.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dumitrescustefan_token_output/checkpoint-200-small/vocab.txt" beforeDir="false" afterPath="$PROJECT_DIR$/checkpoint-200-small/vocab.txt" afterDir="false" />
     </list>
     <list id="a7f942ad-3c95-41b0-b4b7-f43fce9ff07e" name="Changes" comment="" />
     <list id="6508d4bf-b1d4-4e03-bff8-2d311d3ea368" name="Env" comment="">
@@ -511,7 +511,7 @@
       <workItem from="1763018064502" duration="4468000" />
       <workItem from="1763024179369" duration="1133000" />
       <workItem from="1763025596526" duration="2490000" />
-      <workItem from="1763028453566" duration="18771000" />
+      <workItem from="1763028453566" duration="19096000" />
     </task>
     <task id="LOCAL-00068" summary=" Deployment. T5 upload to GitHub.">
       <option name="closed" value="true" />
@@ -553,7 +553,23 @@
       <option name="project" value="LOCAL" />
       <updated>1763039253179</updated>
     </task>
-    <option name="localTasksCounter" value="73" />
+    <task id="LOCAL-00073" summary=" Deployment. HF models.">
+      <option name="closed" value="true" />
+      <created>1763113246223</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1763113246223</updated>
+    </task>
+    <task id="LOCAL-00074" summary=" Deployment. Fix.">
+      <option name="closed" value="true" />
+      <created>1763113322210</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1763113322210</updated>
+    </task>
+    <option name="localTasksCounter" value="75" />
     <option name="createBranch" value="false" />
     <option name="useBranch" value="true" />
     <servers />
@@ -562,8 +578,6 @@
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fast API." />
-    <MESSAGE value="Fast API. Logger." />
     <MESSAGE value="Refactoring services." />
     <MESSAGE value="Cached clustering plus test fixes." />
     <MESSAGE value="Fix scores." />
@@ -587,7 +601,9 @@
     <MESSAGE value=" Deployment. Lora and Bert checkpoint." />
     <MESSAGE value=" Deployment. Ignore models." />
     <MESSAGE value=" Deployment. Deleting." />
-    <option name="LAST_COMMIT_MESSAGE" value=" Deployment. Deleting." />
+    <MESSAGE value=" Deployment. HF models." />
+    <MESSAGE value=" Deployment. Fix." />
+    <option name="LAST_COMMIT_MESSAGE" value=" Deployment. Fix." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
