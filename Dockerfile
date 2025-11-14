@@ -6,7 +6,7 @@ COPY . ./
 
 COPY requirements_docker.txt ./requirements.txt
 
-RUN mv /dumitrescustefan_token_output/checkpoint-200-small /dumitrescustefan_token_output/checkpoint-200
+RUN python -m pip install -r requirements.txt
 
 EXPOSE 8000
 CMD ["python", "main.py"]
