@@ -2,12 +2,9 @@ notebooks/
 storage/
 bert_model.pt
 t5_decorator_model
-!t5_decorator_model.zip
-!t5_decorator_model.z*
 !storage/duplets_dictionary.py
 !storage/training/example.json
 dumitrescustefan_token_output
-!dumitrescustefan_token_output/checkpoint-200-small
 *.pyc
 __pycache__/
 *.env.*

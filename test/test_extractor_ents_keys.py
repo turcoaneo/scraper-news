@@ -14,7 +14,7 @@ def extractor(request):
     else:
         return EntityKeywordExtractor(
             model_pt_path,
-            use_torchscript=True,
+            use_torch_script=True,
             tokenizer_path=base_dir
         )
 

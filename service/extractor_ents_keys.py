@@ -11,16 +11,16 @@ class EntityKeywordExtractor:
     def __init__(
             self,
             model_path: str = None,
-            use_torchscript: bool = False,
+            use_torch_script: bool = False,
             tokenizer_path: str = None
     ):
         self.model_path = model_path
-        self.use_torchscript = use_torchscript
+        self.use_torch_script = use_torch_script
         self.tokenizer_path = tokenizer_path or model_path
 
         self.tokenizer = AutoTokenizer.from_pretrained(self.tokenizer_path)
 
-        if self.use_torchscript:
+        if self.use_torch_script:
             self.model = torch.jit.load(model_path)
             self.id2label = {0: 'O', 1: 'B-ENT', 2: 'B-KW'}
         elif model_path:
@@ -38,7 +38,7 @@ class EntityKeywordExtractor:
         encoding, word_ids, words = SpacyEntsKeys.get_words_ids_encoding(text, self.tokenizer)
 
         with torch.no_grad():
-            if self.use_torchscript:
+            if self.use_torch_script:
                 logits = self.model(encoding["input_ids"], encoding["attention_mask"])
             else:
                 outputs = self.model(**encoding)

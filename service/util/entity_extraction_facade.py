@@ -24,7 +24,7 @@ class EntityExtractorFacade:
     def get_bert_extractor_cached() -> EntityKeywordExtractor:
         model_pt_path = BERT_MODEL_PT_PATH
         tokenizer_path = BERT_MODEL_PATH
-        return EntityKeywordExtractor(model_pt_path, use_torchscript=True, tokenizer_path=tokenizer_path)
+        return EntityKeywordExtractor(model_pt_path, use_torch_script=True, tokenizer_path=tokenizer_path)
 
     @staticmethod
     def get_bert_extractor() -> EntityKeywordExtractor:
