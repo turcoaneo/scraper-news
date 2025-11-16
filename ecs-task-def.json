@@ -24,9 +24,7 @@
         },
         "secretOptions": []
       },
-      "environment": [
-        { "name": "APP_ENV", "value": "docker" }
-      ]
+      "environment": []
     }
   ],
   "executionRoleArn": "arn:aws:iam::509399624827:role/ecsTaskExecutionRole",
@@ -37,6 +35,5 @@
   "runtimePlatform": {
     "cpuArchitecture": "X86_64",
     "operatingSystemFamily": "LINUX"
-  },
-  "enableFaultInjection": false
+  }
 }

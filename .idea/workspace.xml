@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="22401e38-3721-4fd8-b77a-f843b1aa4640" name=" Deployment." comment=" Deployment. Docker and HF models.">
-      <change afterPath="$PROJECT_DIR$/.github/workflows/deploy.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ecs-task-def.json" afterDir="false" />
+    <list default="true" id="22401e38-3721-4fd8-b77a-f843b1aa4640" name=" Deployment." comment=" Deployment. GitHub Action.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <list id="a7f942ad-3c95-41b0-b4b7-f43fce9ff07e" name="Changes" comment="" />
@@ -470,7 +468,7 @@
       <workItem from="1763024179369" duration="1133000" />
       <workItem from="1763025596526" duration="2490000" />
       <workItem from="1763028453566" duration="32559000" />
-      <workItem from="1763284540492" duration="923000" />
+      <workItem from="1763284540492" duration="3094000" />
     </task>
     <task id="LOCAL-00068" summary=" Deployment. T5 upload to GitHub.">
       <option name="closed" value="true" />
@@ -544,7 +542,23 @@
       <option name="project" value="LOCAL" />
       <updated>1763148425985</updated>
     </task>
-    <option name="localTasksCounter" value="77" />
+    <task id="LOCAL-00077" summary=" Deployment. GitHub Action.">
+      <option name="closed" value="true" />
+      <created>1763285483822</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1763285483822</updated>
+    </task>
+    <task id="LOCAL-00078" summary=" Deployment. GitHub Action. Non-automatic.">
+      <option name="closed" value="true" />
+      <created>1763286352455</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1763286352455</updated>
+    </task>
+    <option name="localTasksCounter" value="79" />
     <option name="createBranch" value="false" />
     <option name="useBranch" value="true" />
     <servers />
@@ -553,8 +567,6 @@
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fix scores." />
-    <MESSAGE value="FIx hour and Cron interval." />
     <MESSAGE value="Optimizing scraper with deltas." />
     <MESSAGE value="Optimizing scraper with deltas, refactored." />
     <MESSAGE value="Delete delta file." />
@@ -578,7 +590,9 @@
     <MESSAGE value=" Deployment. Fix." />
     <MESSAGE value=" Deployment. Move to root." />
     <MESSAGE value=" Deployment. Docker and HF models." />
-    <option name="LAST_COMMIT_MESSAGE" value=" Deployment. Docker and HF models." />
+    <MESSAGE value=" Deployment. GitHub Action." />
+    <MESSAGE value=" Deployment. GitHub Action. Non-automatic." />
+    <option name="LAST_COMMIT_MESSAGE" value=" Deployment. GitHub Action. Non-automatic." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
