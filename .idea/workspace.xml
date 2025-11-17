@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="22401e38-3721-4fd8-b77a-f843b1aa4640" name=" Deployment." comment=" Deployment. GitHub Action.Refactoring.">
+    <list default="true" id="22401e38-3721-4fd8-b77a-f843b1aa4640" name=" Deployment." comment=" Deployment. GitHub Action. Removing env.">
+      <change beforePath="$PROJECT_DIR$/.github/workflows/deploy.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/deploy.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecs-task-def.json" beforeDir="false" afterPath="$PROJECT_DIR$/ecs-task-def.json" afterDir="false" />
     </list>
     <list id="a7f942ad-3c95-41b0-b4b7-f43fce9ff07e" name="Changes" comment="" />
     <list id="6508d4bf-b1d4-4e03-bff8-2d311d3ea368" name="Env" comment="">
@@ -524,7 +524,7 @@
       <workItem from="1763025596526" duration="2490000" />
       <workItem from="1763028453566" duration="32559000" />
       <workItem from="1763284540492" duration="3905000" />
-      <workItem from="1763365666464" duration="4507000" />
+      <workItem from="1763365666464" duration="5402000" />
     </task>
     <task id="LOCAL-00068" summary=" Deployment. T5 upload to GitHub.">
       <option name="closed" value="true" />
@@ -638,7 +638,15 @@
       <option name="project" value="LOCAL" />
       <updated>1763369048581</updated>
     </task>
-    <option name="localTasksCounter" value="82" />
+    <task id="LOCAL-00082" summary=" Deployment. GitHub Action. Removing env.">
+      <option name="closed" value="true" />
+      <created>1763370210260</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1763370210260</updated>
+    </task>
+    <option name="localTasksCounter" value="83" />
     <option name="createBranch" value="false" />
     <option name="useBranch" value="true" />
     <servers />
@@ -647,7 +655,6 @@
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Score fix." />
     <MESSAGE value="Test." />
     <MESSAGE value="New duplets." />
     <MESSAGE value="Fix timestamps." />
@@ -672,7 +679,8 @@
     <MESSAGE value=" Deployment. GitHub Action. Verify ENV." />
     <MESSAGE value=" Deployment. GitHub Action.Fix." />
     <MESSAGE value=" Deployment. GitHub Action.Refactoring." />
-    <option name="LAST_COMMIT_MESSAGE" value=" Deployment. GitHub Action.Refactoring." />
+    <MESSAGE value=" Deployment. GitHub Action. Removing env." />
+    <option name="LAST_COMMIT_MESSAGE" value=" Deployment. GitHub Action. Removing env." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
