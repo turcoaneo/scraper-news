@@ -46,6 +46,7 @@ jobs:
       uses: aws-actions/amazon-ecs-render-task-definition@v1
       with:
 #        task-definition: ecs-task-def.json
+        task-definition-family: task-scraper
         container-name: ${{ env.CONTAINER_NAME }}
         image: ${{ steps.login-ecr.outputs.registry }}/${{ env.ECR_REPOSITORY }}:latest
 
