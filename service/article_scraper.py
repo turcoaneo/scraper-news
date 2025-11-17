@@ -8,10 +8,13 @@ from model.model_type import ModelType
 from service.util import article_timestamp_util as ts_util
 from service.util.csv_util import fix_romanian_diacritics
 from service.util.entity_extraction_facade import EntityExtractorFacade
+from service.util.logger_util import get_logger
 from service.util.path_util import PROJECT_ROOT
 
 BASE_DIR = PROJECT_ROOT
 EXAMPLE_PATH = os.path.join(BASE_DIR, "storage", "training", "example.json")
+
+logger = get_logger()
 
 
 class ArticleScraper:
@@ -22,6 +25,7 @@ class ArticleScraper:
         self.soup = None
         self.valid = False
         if path is None and APP_ENV == "local" or APP_ENV == "test":
+            logger.info(f"Loading Claude training data for ENV: {APP_ENV}")
             from service.claude_prompt_builder import load_training_data
             self.training_data = load_training_data(EXAMPLE_PATH)
 
@@ -32,10 +36,10 @@ class ArticleScraper:
                 self.soup = BeautifulSoup(response.text, "html.parser")
                 self.valid = self.validate_article()
             else:
-                print("Error, response code: " + str(response.status_code) + " for " + self.homepage_title)
+                logger.error(f"Error, response code: {str(response.status_code)}  for {self.homepage_title}")
                 self.valid = False
         except Exception as e:
-            print("Error fetching" + self.homepage_title + ": " + str(e))
+            logger.error(f"Error fetching {self.homepage_title}", str(e))
             self.valid = False
 
     def validate_article(self):
@@ -63,7 +67,7 @@ class ArticleScraper:
             else:
                 result = EntityExtractorFacade.get_bert_extractor_cached().extract_with_roberta(summary)
         except Exception as e:
-            print("EntityExtractorFacade error" + self.homepage_title + ": " + str(e))
+            logger.error("EntityExtractorFacade error for {self.homepage_title}", str(e))
 
         return {
             "title": str(self.extract_title()),
