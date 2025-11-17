@@ -32,3 +32,8 @@ async def delete_old_csvs():
 async def scrape_sites_async():
     ScraperService.scrape_sites_async()
     return JSONResponse(content={"status": "Scraping started in background"})
+
+
+@router.get("/health")
+async def health_check():
+    return JSONResponse(content={"status": "ok"})
