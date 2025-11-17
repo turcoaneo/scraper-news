@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="22401e38-3721-4fd8-b77a-f843b1aa4640" name=" Deployment." comment=" Deployment. GitHub Action. Monitoring max." />
+    <list default="true" id="22401e38-3721-4fd8-b77a-f843b1aa4640" name=" Deployment." comment=" Deployment. GitHub Action. Monitoring max, fix." />
     <list id="a7f942ad-3c95-41b0-b4b7-f43fce9ff07e" name="Changes" comment="" />
     <list id="6508d4bf-b1d4-4e03-bff8-2d311d3ea368" name="Env" comment="">
       <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
@@ -445,7 +445,7 @@
       <workItem from="1763025596526" duration="2490000" />
       <workItem from="1763028453566" duration="32559000" />
       <workItem from="1763284540492" duration="3905000" />
-      <workItem from="1763365666464" duration="9856000" />
+      <workItem from="1763365666464" duration="10594000" />
     </task>
     <task id="LOCAL-00068" summary=" Deployment. T5 upload to GitHub.">
       <option name="closed" value="true" />
@@ -607,7 +607,15 @@
       <option name="project" value="LOCAL" />
       <updated>1763403796847</updated>
     </task>
-    <option name="localTasksCounter" value="88" />
+    <task id="LOCAL-00088" summary=" Deployment. GitHub Action. Monitoring max, fix.">
+      <option name="closed" value="true" />
+      <created>1763403973286</created>
+      <option name="number" value="00088" />
+      <option name="presentableId" value="LOCAL-00088" />
+      <option name="project" value="LOCAL" />
+      <updated>1763403973286</updated>
+    </task>
+    <option name="localTasksCounter" value="89" />
     <option name="createBranch" value="false" />
     <option name="useBranch" value="true" />
     <servers />
@@ -616,7 +624,6 @@
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fix logger import for tests." />
     <MESSAGE value="Improving debugging level for logging." />
     <MESSAGE value="Score fix, again..." />
     <MESSAGE value="Config." />
@@ -641,7 +648,8 @@
     <MESSAGE value=" Deployment. GitHub Action. Adding new def type." />
     <MESSAGE value=" Deployment. GitHub Action. Monitoring." />
     <MESSAGE value=" Deployment. GitHub Action. Monitoring max." />
-    <option name="LAST_COMMIT_MESSAGE" value=" Deployment. GitHub Action. Monitoring max." />
+    <MESSAGE value=" Deployment. GitHub Action. Monitoring max, fix." />
+    <option name="LAST_COMMIT_MESSAGE" value=" Deployment. GitHub Action. Monitoring max, fix." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
