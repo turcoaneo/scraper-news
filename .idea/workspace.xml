@@ -4,13 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="22401e38-3721-4fd8-b77a-f843b1aa4640" name=" Deployment." comment=" Deployment. GitHub Action. Adding new def type.">
-      <change afterPath="$PROJECT_DIR$/service/monitor_resources.py" afterDir="false" />
+    <list default="true" id="22401e38-3721-4fd8-b77a-f843b1aa4640" name=" Deployment." comment=" Deployment. GitHub Action. Monitoring.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements_docker.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements_docker.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/article_scraper.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/article_scraper.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/monitor_resources.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/monitor_resources.py" afterDir="false" />
     </list>
     <list id="a7f942ad-3c95-41b0-b4b7-f43fce9ff07e" name="Changes" comment="" />
     <list id="6508d4bf-b1d4-4e03-bff8-2d311d3ea368" name="Env" comment="">
@@ -452,7 +448,7 @@
       <workItem from="1763025596526" duration="2490000" />
       <workItem from="1763028453566" duration="32559000" />
       <workItem from="1763284540492" duration="3905000" />
-      <workItem from="1763365666464" duration="7656000" />
+      <workItem from="1763365666464" duration="9254000" />
     </task>
     <task id="LOCAL-00068" summary=" Deployment. T5 upload to GitHub.">
       <option name="closed" value="true" />
@@ -590,7 +586,15 @@
       <option name="project" value="LOCAL" />
       <updated>1763371586518</updated>
     </task>
-    <option name="localTasksCounter" value="85" />
+    <task id="LOCAL-00085" summary=" Deployment. GitHub Action. Monitoring.">
+      <option name="closed" value="true" />
+      <created>1763385562999</created>
+      <option name="number" value="00085" />
+      <option name="presentableId" value="LOCAL-00085" />
+      <option name="project" value="LOCAL" />
+      <updated>1763385562999</updated>
+    </task>
+    <option name="localTasksCounter" value="86" />
     <option name="createBranch" value="false" />
     <option name="useBranch" value="true" />
     <servers />
@@ -599,7 +603,6 @@
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fix timestamps." />
     <MESSAGE value="Fix diacritics - start with entities." />
     <MESSAGE value="Fix logger import for tests." />
     <MESSAGE value="Improving debugging level for logging." />
@@ -624,7 +627,8 @@
     <MESSAGE value=" Deployment. GitHub Action. Removing env." />
     <MESSAGE value=" Deployment. GitHub Action. Removing def." />
     <MESSAGE value=" Deployment. GitHub Action. Adding new def type." />
-    <option name="LAST_COMMIT_MESSAGE" value=" Deployment. GitHub Action. Adding new def type." />
+    <MESSAGE value=" Deployment. GitHub Action. Monitoring." />
+    <option name="LAST_COMMIT_MESSAGE" value=" Deployment. GitHub Action. Monitoring." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
