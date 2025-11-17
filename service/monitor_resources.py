@@ -14,7 +14,7 @@ def monitor_resources(interval=10):
     while True:
         mem_mb = process.memory_info().rss / 1024 ** 2
         cpu_percent = process.cpu_percent(interval=1)
-        is_logged = False;
+        is_logged = False
         if mem_mb > mem_max:
             mem_max = mem_mb
             is_logged = True

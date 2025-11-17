@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="22401e38-3721-4fd8-b77a-f843b1aa4640" name=" Deployment." comment=" Deployment. GitHub Action. Monitoring max.">
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-    </list>
+    <list default="true" id="22401e38-3721-4fd8-b77a-f843b1aa4640" name=" Deployment." comment=" Deployment. GitHub Action. Monitoring max." />
     <list id="a7f942ad-3c95-41b0-b4b7-f43fce9ff07e" name="Changes" comment="" />
     <list id="6508d4bf-b1d4-4e03-bff8-2d311d3ea368" name="Env" comment="">
       <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
@@ -447,7 +445,7 @@
       <workItem from="1763025596526" duration="2490000" />
       <workItem from="1763028453566" duration="32559000" />
       <workItem from="1763284540492" duration="3905000" />
-      <workItem from="1763365666464" duration="9556000" />
+      <workItem from="1763365666464" duration="9856000" />
     </task>
     <task id="LOCAL-00068" summary=" Deployment. T5 upload to GitHub.">
       <option name="closed" value="true" />
@@ -601,7 +599,15 @@
       <option name="project" value="LOCAL" />
       <updated>1763403208881</updated>
     </task>
-    <option name="localTasksCounter" value="87" />
+    <task id="LOCAL-00087" summary=" Deployment. GitHub Action. Monitoring max.">
+      <option name="closed" value="true" />
+      <created>1763403796847</created>
+      <option name="number" value="00087" />
+      <option name="presentableId" value="LOCAL-00087" />
+      <option name="project" value="LOCAL" />
+      <updated>1763403796847</updated>
+    </task>
+    <option name="localTasksCounter" value="88" />
     <option name="createBranch" value="false" />
     <option name="useBranch" value="true" />
     <servers />
