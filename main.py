@@ -16,6 +16,6 @@ if __name__ == "__main__":
 
     import uvicorn
 
-    port = 80 if APP_ENV in ["uat", "prod"] else 8000
+    exposed_port = 80 if APP_ENV in ["uat", "prod"] else 8000
 
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    uvicorn.run(app, host="0.0.0.0", port=exposed_port)
