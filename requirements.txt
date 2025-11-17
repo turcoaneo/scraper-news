@@ -27,3 +27,4 @@ uvicorn
 numpy
 protobuf
 hf_xet
+psutil

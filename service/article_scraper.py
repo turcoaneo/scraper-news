@@ -25,7 +25,7 @@ class ArticleScraper:
         self.soup = None
         self.valid = False
         if path is None and APP_ENV == "local" or APP_ENV == "test":
-            logger.info(f"Loading Claude training data for ENV: {APP_ENV}")
+            # logger.info(f"Loading Claude training data for ENV: {APP_ENV}")
             from service.claude_prompt_builder import load_training_data
             self.training_data = load_training_data(EXAMPLE_PATH)
 
