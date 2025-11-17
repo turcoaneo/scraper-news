@@ -23,8 +23,7 @@
           "awslogs-stream-prefix": "ecs"
         },
         "secretOptions": []
-      },
-      "environment": []
+      }
     }
   ],
   "executionRoleArn": "arn:aws:iam::509399624827:role/ecsTaskExecutionRole",
