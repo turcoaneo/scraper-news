@@ -11,7 +11,7 @@ if __name__ == "__main__":
     start_scraper_loop(interval_sec=150, is_looped=True)
 
     # Monitor resources
-    monitor_resources(30)
+    monitor_resources()
 
     import uvicorn
 

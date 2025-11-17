@@ -14,11 +14,18 @@ def monitor_resources(interval=10):
     while True:
         mem_mb = process.memory_info().rss / 1024 ** 2
         cpu_percent = process.cpu_percent(interval=1)
-        if mem_mb > mem_max: mem_max = mem_mb
-        if cpu_percent > cpu_max: cpu_max = cpu_percent
-        logger.warning(f"[RESOURCE] Memory: {mem_mb:.2f}/{mem_max:.2f} (MB) | CPU: {cpu_percent:.2f}/{cpu_max:.2f}(%)")
+        is_logged = False;
+        if mem_mb > mem_max:
+            mem_max = mem_mb
+            is_logged = True
+        if cpu_percent > cpu_max:
+            cpu_max = cpu_percent
+            is_logged = True
+        if is_logged:
+            logger.warning(
+                f"[RESOURCE] Memory: {mem_mb:.2f}/{mem_max:.2f} (MB) | CPU: {cpu_percent:.2f}/{cpu_max:.2f}(%)")
         time.sleep(interval - 1)  # subtract the 1s used by cpu_percent
-        if mem_mb > 3500:
+        if mem_mb > 5500:
             logger.warning("Warning: Memory usage approaching ECS limit!")
 
 
