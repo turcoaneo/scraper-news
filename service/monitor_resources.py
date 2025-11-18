@@ -30,4 +30,5 @@ def monitor_resources(interval=10):
 
 
 # Start the monitor in the background
-threading.Thread(target=lambda: time.sleep(5) or monitor_resources(10), daemon=True).start()
+def start_monitor_daemon():
+    threading.Thread(target=lambda: time.sleep(5) or monitor_resources(10), daemon=True).start()

@@ -3,7 +3,7 @@
 from app import create_app
 from app.utils.env_vars import APP_ENV
 from cron_jobs.scraper_job import start_scraper_loop
-from service.monitor_resources import monitor_resources
+from service.monitor_resources import start_monitor_daemon
 from service.util.logger_util import get_logger
 
 app = create_app()
@@ -17,7 +17,7 @@ if __name__ == "__main__":
     start_scraper_loop(interval_sec=150, is_looped=True)
 
     # Monitor resources
-    monitor_resources()
+    start_monitor_daemon()
 
     import uvicorn
 

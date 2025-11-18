@@ -111,6 +111,7 @@ docker build -t scraper-news --no-cache .
 ```bash
 docker run --name scraper-news-container --env-file .env.uat -p 8000:8000 scraper-news
 docker run --name scraper-news-container --env-file .env.docker -p 8000:8000 scraper-news
+docker run --name scraper-news-container --env APP_ENV=docker --env-file .env.docker -p 8000:8000 scraper-news
 docker logs scraper-news-container
 ```
 
