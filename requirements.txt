@@ -28,3 +28,5 @@ numpy
 protobuf
 hf_xet
 psutil
+boto3
+botocore
