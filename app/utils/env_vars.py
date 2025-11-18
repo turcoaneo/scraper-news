@@ -13,11 +13,15 @@ def clean_list(raw):
 base_env = dotenv_values(".env")
 env_specific = dotenv_values(f".env.{os.environ.get('APP_ENV', 'test')}")
 merged = {**base_env, **env_specific, **os.environ}
-APP_ENV = merged.get("APP_ENV", "uat")
+APP_ENV = merged.get("APP_ENV", "test")
 
 LOG_LEVEL = merged.get("LOG_LEVEL", "warning")
 LLM_ROOT = merged.get("LLM_ROOT", "local")
 HF_TOKEN = merged.get("HF_TOKEN", None)
+
+
+S3_BUCKET = merged.get("S3_BUCKET", "scraper-storage-uat")
+S3_PREFIX = merged.get("S3_PREFIX", "storage")
 
 SCRAPER_CONFIG = {
     "looped": merged.get("SCRAPER_JOB_LOOPED", "False") == "True",

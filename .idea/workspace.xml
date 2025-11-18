@@ -4,15 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="22401e38-3721-4fd8-b77a-f843b1aa4640" name=" Deployment." comment=" Deployment. Fixing URL.">
-      <change afterPath="$PROJECT_DIR$/service/s3_storage.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/.env.test" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/test_s3_storage.py" afterDir="false" />
+    <list default="true" id="22401e38-3721-4fd8-b77a-f843b1aa4640" name=" Deployment." comment=" Deployment. S3 storage.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements_docker.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements_docker.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/cluster_buffer_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/cluster_buffer_service.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/cluster_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/cluster_service.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/utils/env_vars.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/utils/env_vars.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/util/csv_util.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/util/csv_util.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/util/delta_checker.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/util/delta_checker.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/assets/AboutView-BC0VcmfA.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/assets/index-C3ISUUk0.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/test_csv_util.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test_csv_util.py" afterDir="false" />
     </list>
     <list id="a7f942ad-3c95-41b0-b4b7-f43fce9ff07e" name="Changes" comment="" />
     <list id="6508d4bf-b1d4-4e03-bff8-2d311d3ea368" name="Env" comment="">
@@ -110,7 +110,7 @@
     "Python tests.Python tests for test_claude_prompt_builder.TestClaudePromptBuilder.test_extract_entities_and_keywords.executor": "Run",
     "Python tests.Python tests for test_claude_prompt_builder.TestClaudePromptBuilder.test_send_prompt_to_claude.executor": "Debug",
     "Python tests.Python tests for test_cluster_buffer_service.TestClusterBufferService.executor": "Run",
-    "Python tests.Python tests for test_cluster_buffer_service.TestClusterBufferService.test_get_cached_clusters_missing_file.executor": "Debug",
+    "Python tests.Python tests for test_cluster_buffer_service.TestClusterBufferService.test_get_cached_clusters_missing_file.executor": "Run",
     "Python tests.Python tests for test_cluster_buffer_service.TestClusterBufferService.test_get_cached_clusters_success.executor": "Debug",
     "Python tests.Python tests for test_cluster_route.test_cluster_route.executor": "Run",
     "Python tests.Python tests for test_cluster_routes.TestClusterRoutes.executor": "Run",
@@ -119,7 +119,7 @@
     "Python tests.Python tests for test_cluster_service.TestClusterService.test_cluster_news.executor": "Run",
     "Python tests.Python tests for test_cluster_service.TestClusterService.test_delete_old_csvs.executor": "Run",
     "Python tests.Python tests for test_cluster_service.TestClusterService.test_save_cluster_buffer_failure.executor": "Debug",
-    "Python tests.Python tests for test_cluster_service.TestClusterService.test_save_cluster_buffer_success.executor": "Debug",
+    "Python tests.Python tests for test_cluster_service.TestClusterService.test_save_cluster_buffer_success.executor": "Run",
     "Python tests.Python tests for test_cluster_service.TestClusterService.test_scrape_sites_async.executor": "Run",
     "Python tests.Python tests for test_cluster_service.test_cluster_news.executor": "Run",
     "Python tests.Python tests for test_cluster_service.test_delete_old_csvs.executor": "Run",
@@ -357,105 +357,11 @@
       <option name="docutils_open_in_browser" value="false" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for test_cluster_buffer_service.TestClusterBufferService" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
-      <module name="scraper-news" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_cluster_buffer_service.TestClusterBufferService&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Python tests for test_cluster_buffer_service.TestClusterBufferService.test_get_cached_clusters_missing_file" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
-      <module name="scraper-news" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_cluster_buffer_service.TestClusterBufferService.test_get_cached_clusters_missing_file&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Python tests for test_cluster_service.TestClusterService" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
-      <module name="scraper-news" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_cluster_service.TestClusterService&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Python tests for test_s3_storage.TestS3Storage" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
-      <module name="scraper-news" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_s3_storage.TestS3Storage&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Python tests for test_s3_storage.TestS3Storage.test_exists" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
-      <module name="scraper-news" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_s3_storage.TestS3Storage.test_exists&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
     <list>
       <item itemvalue="Python.FastAPI" />
       <item itemvalue="Python.Main - FastAPI and Scraper Cron" />
       <item itemvalue="Python.SCRAPER JOB" />
-      <item itemvalue="Python tests.Python tests for test_cluster_buffer_service.TestClusterBufferService" />
-      <item itemvalue="Python tests.Python tests for test_cluster_buffer_service.TestClusterBufferService.test_get_cached_clusters_missing_file" />
-      <item itemvalue="Python tests.Python tests for test_cluster_service.TestClusterService" />
-      <item itemvalue="Python tests.Python tests for test_s3_storage.TestS3Storage" />
-      <item itemvalue="Python tests.Python tests for test_s3_storage.TestS3Storage.test_exists" />
     </list>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Python tests.Python tests for test_cluster_service.TestClusterService" />
-        <item itemvalue="Python tests.Python tests for test_cluster_buffer_service.TestClusterBufferService" />
-        <item itemvalue="Python tests.Python tests for test_cluster_buffer_service.TestClusterBufferService.test_get_cached_clusters_missing_file" />
-        <item itemvalue="Python tests.Python tests for test_s3_storage.TestS3Storage.test_exists" />
-        <item itemvalue="Python tests.Python tests for test_s3_storage.TestS3Storage" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -552,7 +458,7 @@
       <workItem from="1763284540492" duration="3905000" />
       <workItem from="1763365666464" duration="16402000" />
       <workItem from="1763447097517" duration="4592000" />
-      <workItem from="1763460637451" duration="9251000" />
+      <workItem from="1763460637451" duration="16046000" />
     </task>
     <task id="LOCAL-00068" summary=" Deployment. T5 upload to GitHub.">
       <option name="closed" value="true" />
@@ -778,7 +684,15 @@
       <option name="project" value="LOCAL" />
       <updated>1763463456297</updated>
     </task>
-    <option name="localTasksCounter" value="96" />
+    <task id="LOCAL-00096" summary=" Deployment. S3 storage.">
+      <option name="closed" value="true" />
+      <created>1763482613757</created>
+      <option name="number" value="00096" />
+      <option name="presentableId" value="LOCAL-00096" />
+      <option name="project" value="LOCAL" />
+      <updated>1763482613757</updated>
+    </task>
+    <option name="localTasksCounter" value="97" />
     <option name="createBranch" value="false" />
     <option name="useBranch" value="true" />
     <servers />
@@ -787,7 +701,6 @@
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value=" Deployment. T5 upload to GitHub." />
     <MESSAGE value=" Deployment. Lora and Bert checkpoint." />
     <MESSAGE value=" Deployment. Ignore models." />
     <MESSAGE value=" Deployment. Deleting." />
@@ -812,7 +725,8 @@
     <MESSAGE value=" Deployment. Fixing port." />
     <MESSAGE value=" Deployment. Fixing monitoring daemon." />
     <MESSAGE value=" Deployment. Fixing URL." />
-    <option name="LAST_COMMIT_MESSAGE" value=" Deployment. Fixing URL." />
+    <MESSAGE value=" Deployment. S3 storage." />
+    <option name="LAST_COMMIT_MESSAGE" value=" Deployment. S3 storage." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -835,7 +749,7 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/scraper_news$scraper_job.coverage" NAME="SCRAPER JOB Coverage Results" MODIFIED="1761118909149" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cron_jobs" />
     <SUITE FILE_PATH="coverage/scraper_news$article_timestamp_util.coverage" NAME="article_timestamp_util Coverage Results" MODIFIED="1761824298098" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/service/util" />
-    <SUITE FILE_PATH="coverage/scraper_news$.coverage" NAME=" Coverage Results" MODIFIED="1763471807459" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/scraper_news$.coverage" NAME=" Coverage Results" MODIFIED="1763491200876" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/scraper_news$Scraper_Cron.coverage" NAME="Scraper Cron Coverage Results" MODIFIED="1760774637564" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="D:\WORKSPACE\Python\scraper-news" />
     <SUITE FILE_PATH="coverage/scraper_news$main.coverage" NAME="Main - FastAPI and Scraper Cron Coverage Results" MODIFIED="1760774789944" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/scraper_news$python__m_spacy_download_ro_core_news_sm.coverage" NAME="python -m spacy download ro_core_news_sm Coverage Results" MODIFIED="1762675507625" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />

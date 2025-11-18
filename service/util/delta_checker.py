@@ -1,7 +1,11 @@
 import csv
+import io
 from datetime import datetime
 from pathlib import Path
 
+import boto3
+
+from app.utils.env_vars import APP_ENV, S3_PREFIX, S3_BUCKET
 from service.site_scraper import SiteScraper
 from service.util.csv_util import is_filtered
 from service.util.logger_util import get_logger
@@ -14,30 +18,40 @@ class DeltaChecker:
 
     @staticmethod
     def get_site_deltas(site: SiteScraper, csv_path=None) -> tuple:
-        if csv_path is None:
-            today_str = datetime.now().strftime('%Y%m%d')
-            filename = f"{site.name}_{today_str}.csv"
-            csv_path = Path(PROJECT_ROOT) / "storage" / filename
+        today_str = datetime.now().strftime('%Y%m%d')
+        filename = f"{site.name}_{today_str}.csv"
 
         previous_articles = {}
-        if csv_path.exists():
-            with open(csv_path, encoding="utf-8") as f:
-                reader: csv.DictReader = csv.DictReader(f)
+
+        if APP_ENV == "UAT":
+            s3 = boto3.client("s3")
+            s3_key = f"{S3_PREFIX}/{filename}"
+            try:
+                response = s3.get_object(Bucket=S3_BUCKET, Key=s3_key)
+                content = response["Body"].read().decode("utf-8")
+                reader: csv.DictReader = csv.DictReader(io.StringIO(content))
                 for row in reader:
-                    key = row["url"]
                     row["timestamp"] = datetime.fromisoformat(row["timestamp"])
-                    previous_articles[key] = row
+                    previous_articles[row["url"]] = row
+            except s3.exceptions.NoSuchKey:
+                pass
+        else:
+            if csv_path is None:
+                csv_path = Path(PROJECT_ROOT) / S3_PREFIX / filename
+            if csv_path.exists():
+                with open(csv_path, encoding="utf-8") as f:
+                    reader = csv.DictReader(f)
+                    for row in reader:
+                        row["timestamp"] = datetime.fromisoformat(row["timestamp"])
+                        previous_articles[row["url"]] = row
 
         current_articles = {
             article.url: article
-            for article in site.articles
-            if
+            for article in site.articles if
             not is_filtered(article, site.filter_place_keys) and not DeltaChecker.is_foreign_article(article, site.name)
         }
 
-        new = []
-        updated = []
-        removed = []
+        new, updated, removed = [], [], []
 
         def timestamps_equal(t1, t2):
             return t1.replace(microsecond=0, tzinfo=None) == t2.replace(microsecond=0, tzinfo=None)
@@ -48,22 +62,13 @@ class DeltaChecker:
             else:
                 prev = previous_articles[url]
                 if prev["title"] != article.title or not timestamps_equal(prev["timestamp"], article.timestamp):
-                    logger.info(f"""[DeltaChecker] Update for {article.url}: \
-                    {prev['title']} vs {article.title} \
-                    {prev['timestamp']} vs {article.timestamp}""")
                     updated.append(article)
 
         for url in previous_articles:
             if url not in current_articles:
-                removed.append(previous_articles[url])  # raw dict row
+                removed.append(previous_articles[url])
 
-        logger.info(f"[DeltaChecker] {site.name} → New: {len(new)}, Updated: {len(updated)}, Removed: {len(removed)}")
-        current_articles_map = {
-            "new": new,
-            "updated": updated,
-            "removed": removed
-        }
-        return previous_articles, current_articles_map
+        return previous_articles, {"new": new, "updated": updated, "removed": removed}
 
     @staticmethod
     def is_foreign_article(article, site_name):

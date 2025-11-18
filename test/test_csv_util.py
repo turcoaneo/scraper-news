@@ -5,7 +5,7 @@ from datetime import datetime
 from pathlib import Path
 
 import service.util.csv_util
-from service.util.csv_util import get_site_file_path, save_articles_to_csv, fix_romanian_diacritics
+from service.util.csv_util import get_site_file_name, save_articles_to_csv, fix_romanian_diacritics
 
 
 class DummyArticle:
@@ -52,21 +52,22 @@ class TestCsvUtil(unittest.TestCase):
     def tearDown(self):
         shutil.rmtree(self.temp_dir)
 
-    def test_get_site_file_path(self):
-        path_normal = get_site_file_path(self.site_name, self.temp_dir, use_temp=False)
-        path_temp = get_site_file_path(self.site_name, self.temp_dir, use_temp=True)
+    def test_get_site_file_name(self):
+        path_normal = get_site_file_name(self.site_name, use_temp=False)
+        path_temp = get_site_file_name(self.site_name, use_temp=True)
 
         today = datetime.now().strftime('%Y%m%d')
-        self.assertTrue(str(path_normal).endswith(f"{self.site_name}_{today}.csv"))
-        self.assertTrue(str(path_temp).endswith(f"{self.site_name}_{today}_buffer.csv"))
+        self.assertTrue(path_normal.endswith(f"{self.site_name}_{today}.csv"))
+        self.assertTrue(path_temp.endswith(f"{self.site_name}_{today}_buffer.csv"))
 
     def test_save_articles_to_csv_atomic(self):
         self.save_csv(use_temp=True)
         self.assert_path()
 
     def test_save_articles_to_csv_final(self):
-        self.save_csv(use_temp=False)
-        self.assert_path()
+        temp_false = False
+        self.save_csv(use_temp=temp_false)
+        self.assert_path(use_temp=temp_false)
 
     def save_csv(self, use_temp=True):
         save_articles_to_csv(
@@ -78,8 +79,8 @@ class TestCsvUtil(unittest.TestCase):
             use_temp=use_temp
         )
 
-    def assert_path(self):
-        final_path = get_site_file_path(self.site_name, self.temp_dir, use_temp=False)
+    def assert_path(self, use_temp=True):
+        final_path = Path(self.temp_dir) / get_site_file_name(self.site_name, use_temp=use_temp)
         self.assertTrue(final_path.exists())
         with open(final_path, encoding="utf-8") as f:
             content = f.read()
