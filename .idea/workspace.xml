@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="22401e38-3721-4fd8-b77a-f843b1aa4640" name=" Deployment." comment=" Deployment. Fixing port.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/monitor_resources.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/monitor_resources.py" afterDir="false" />
-    </list>
+    <list default="true" id="22401e38-3721-4fd8-b77a-f843b1aa4640" name=" Deployment." comment=" Deployment. Fixing monitoring daemon." />
     <list id="a7f942ad-3c95-41b0-b4b7-f43fce9ff07e" name="Changes" comment="" />
     <list id="6508d4bf-b1d4-4e03-bff8-2d311d3ea368" name="Env" comment="">
       <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
@@ -452,7 +447,7 @@
       <workItem from="1763284540492" duration="3905000" />
       <workItem from="1763365666464" duration="16402000" />
       <workItem from="1763447097517" duration="4592000" />
-      <workItem from="1763460637451" duration="784000" />
+      <workItem from="1763460637451" duration="1397000" />
     </task>
     <task id="LOCAL-00068" summary=" Deployment. T5 upload to GitHub.">
       <option name="closed" value="true" />
@@ -662,7 +657,15 @@
       <option name="project" value="LOCAL" />
       <updated>1763447382729</updated>
     </task>
-    <option name="localTasksCounter" value="94" />
+    <task id="LOCAL-00094" summary=" Deployment. Fixing monitoring daemon.">
+      <option name="closed" value="true" />
+      <created>1763461443726</created>
+      <option name="number" value="00094" />
+      <option name="presentableId" value="LOCAL-00094" />
+      <option name="project" value="LOCAL" />
+      <updated>1763461443726</updated>
+    </task>
+    <option name="localTasksCounter" value="95" />
     <option name="createBranch" value="false" />
     <option name="useBranch" value="true" />
     <servers />
@@ -671,7 +674,6 @@
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value=" Deployment." />
     <MESSAGE value=" Deployment. Bert upload to GitHub." />
     <MESSAGE value=" Deployment. T5 upload to GitHub." />
     <MESSAGE value=" Deployment. Lora and Bert checkpoint." />
@@ -696,7 +698,8 @@
     <MESSAGE value=" Deployment. GitHub Action. Port." />
     <MESSAGE value=" Deployment. Fixing health check." />
     <MESSAGE value=" Deployment. Fixing port." />
-    <option name="LAST_COMMIT_MESSAGE" value=" Deployment. Fixing port." />
+    <MESSAGE value=" Deployment. Fixing monitoring daemon." />
+    <option name="LAST_COMMIT_MESSAGE" value=" Deployment. Fixing monitoring daemon." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
