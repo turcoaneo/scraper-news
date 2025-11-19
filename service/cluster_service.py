@@ -54,7 +54,7 @@ class ClusterService:
             if APP_ENV == "uat":
                 storage.save("buffer.json", serialized)
                 logger.info("Saved JBF to S3")
-                return "s3://{}/storage/buffer.json".format(storage.bucket)
+                return "s3://{}/{}/buffer.json".format(storage.bucket, storage.prefix)
             else:
                 jbf_path = ClusterService.get_csv_buffer_result_path()
                 with open(jbf_path, "wb") as f:

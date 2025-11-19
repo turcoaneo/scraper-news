@@ -1,7 +1,6 @@
 import csv
 import io
 import os
-from datetime import datetime
 from pathlib import Path
 
 import boto3
