@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="22401e38-3721-4fd8-b77a-f843b1aa4640" name=" Deployment." comment=" Deployment. Storage CSV.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/cluster_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/cluster_service.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/s3_storage.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/s3_storage.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/util/csv_util.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/util/csv_util.py" afterDir="false" />
-    </list>
+    <list default="true" id="22401e38-3721-4fd8-b77a-f843b1aa4640" name=" Deployment." comment=" Deployment. Storage CSV, fix." />
     <list id="a7f942ad-3c95-41b0-b4b7-f43fce9ff07e" name="Changes" comment="" />
     <list id="6508d4bf-b1d4-4e03-bff8-2d311d3ea368" name="Env" comment="">
       <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
@@ -478,7 +473,7 @@
       <workItem from="1763284540492" duration="3905000" />
       <workItem from="1763365666464" duration="16402000" />
       <workItem from="1763447097517" duration="4592000" />
-      <workItem from="1763460637451" duration="23928000" />
+      <workItem from="1763460637451" duration="24538000" />
     </task>
     <task id="LOCAL-00068" summary=" Deployment. T5 upload to GitHub.">
       <option name="closed" value="true" />
@@ -728,7 +723,15 @@
       <option name="project" value="LOCAL" />
       <updated>1763557226087</updated>
     </task>
-    <option name="localTasksCounter" value="99" />
+    <task id="LOCAL-00099" summary=" Deployment. Storage CSV, fix.">
+      <option name="closed" value="true" />
+      <created>1763559398709</created>
+      <option name="number" value="00099" />
+      <option name="presentableId" value="LOCAL-00099" />
+      <option name="project" value="LOCAL" />
+      <updated>1763559398709</updated>
+    </task>
+    <option name="localTasksCounter" value="100" />
     <option name="createBranch" value="false" />
     <option name="useBranch" value="true" />
     <servers />
@@ -737,7 +740,6 @@
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value=" Deployment. Deleting." />
     <MESSAGE value=" Deployment. HF models." />
     <MESSAGE value=" Deployment. Fix." />
     <MESSAGE value=" Deployment. Move to root." />
@@ -762,7 +764,8 @@
     <MESSAGE value=" Deployment. S3 storage." />
     <MESSAGE value=" Deployment. S3 storage plus." />
     <MESSAGE value=" Deployment. Storage CSV." />
-    <option name="LAST_COMMIT_MESSAGE" value=" Deployment. Storage CSV." />
+    <MESSAGE value=" Deployment. Storage CSV, fix." />
+    <option name="LAST_COMMIT_MESSAGE" value=" Deployment. Storage CSV, fix." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
