@@ -35,6 +35,7 @@ class DeltaChecker:
                     previous_articles[row["url"]] = row
             except s3.exceptions.NoSuchKey:
                 pass
+            logger.info(f"{site.name} - previous articles: {len(previous_articles)}")
         else:
             if csv_path is None:
                 csv_path = Path(PROJECT_ROOT) / S3_PREFIX / filename
