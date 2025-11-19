@@ -14,7 +14,7 @@ from service.util.buffer_util import update_buffer_timestamp, delete_delta_file_
 from service.util.declension_util import DeclensionUtil
 from service.util.delta_checker import DeltaChecker
 from service.util.logger_util import get_logger
-from service.util.path_util import PROJECT_ROOT, T5_MODEL_PATH
+from service.util.path_util import T5_MODEL_PATH
 from service.util.timing_util import elapsed_time, log_thread_id
 
 logger = get_logger()

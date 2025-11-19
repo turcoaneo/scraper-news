@@ -19,7 +19,7 @@ class DeltaChecker:
     @staticmethod
     def get_site_deltas(site: SiteScraper, csv_path=None) -> tuple:
         # today_str = datetime.now().strftime('%Y%m%d')
-        filename = get_site_file_name(site.name)
+        filename = get_site_file_name(site.name, True)
 
         previous_articles = {}
 

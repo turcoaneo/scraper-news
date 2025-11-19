@@ -25,7 +25,7 @@ class TestSiteScraper(unittest.TestCase):
         path = self.scraper.site_file_path()
         self.assertIsInstance(path, Path)
         self.assertTrue(str(path).endswith(".csv"))
-        self.assertIn("test_site_", str(path))
+        self.assertIn("test_site", str(path))
 
     def test_compute_weight(self):
         self.scraper.compute_weight(total_traffic=5000)

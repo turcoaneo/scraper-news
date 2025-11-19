@@ -12,7 +12,7 @@ from bs4 import BeautifulSoup
 from model.article import Article
 from model.model_type import ModelType
 from service.article_scraper import ArticleScraper
-from service.util.csv_util import save_articles_to_csv
+from service.util.csv_util import save_articles_to_csv, get_site_file_name
 from service.util.logger_util import get_logger
 from service.util.path_util import PROJECT_ROOT
 
@@ -67,7 +67,8 @@ class SiteScraper:
             print("-" * 60)
 
     def site_file_path(self) -> Path:
-        filename = f"{self.name}_{datetime.now().strftime('%Y%m%d')}.csv"
+        # filename = f"{self.name}_{datetime.now().strftime('%Y%m%d')}.csv"
+        filename = get_site_file_name(self.name, True)
         return Path(self.file_base).joinpath(filename)
 
     def save_to_csv(self, use_temp: bool = False):
