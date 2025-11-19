@@ -58,7 +58,7 @@ class TestSiteScraper(unittest.TestCase):
             comments=0
         )
         self.scraper.articles.add(article)
-        path = self.scraper.site_file_path()
+        path = self.scraper.site_file_path(False)
         self.scraper.save_to_csv()
         self.assertTrue(path.exists())
         path.unlink()  # Clean up

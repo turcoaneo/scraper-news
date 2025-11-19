@@ -66,9 +66,9 @@ class SiteScraper:
             print(f"🕒 Published: {readable_time}")
             print("-" * 60)
 
-    def site_file_path(self) -> Path:
+    def site_file_path(self, use_temp=True) -> Path:
         # filename = f"{self.name}_{datetime.now().strftime('%Y%m%d')}.csv"
-        filename = get_site_file_name(self.name, True)
+        filename = get_site_file_name(self.name, use_temp=use_temp)
         return Path(self.file_base).joinpath(filename)
 
     def save_to_csv(self, use_temp: bool = False):
