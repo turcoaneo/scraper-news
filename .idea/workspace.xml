@@ -4,13 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="22401e38-3721-4fd8-b77a-f843b1aa4640" name=" Deployment." comment=" Deployment. S3 storage.">
+    <list default="true" id="22401e38-3721-4fd8-b77a-f843b1aa4640" name=" Deployment." comment=" Deployment. S3 storage plus.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/utils/env_vars.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/utils/env_vars.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service/util/csv_util.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/util/csv_util.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service/util/delta_checker.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/util/delta_checker.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/AboutView-BC0VcmfA.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/index-C3ISUUk0.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/assets/AboutView-BC0VcmfA.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/AboutView-CGZSaLA0.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/assets/index-C3ISUUk0.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/index-FS2vtFnr.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/test_csv_util.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test_csv_util.py" afterDir="false" />
     </list>
@@ -129,6 +128,8 @@
     "Python tests.Python tests for test_csv2jsonl.TestCsvToJsonlConverter.test_creates_valid_jsonl_NaN.executor": "Run",
     "Python tests.Python tests for test_csv2jsonl.TestCsvToJsonlConverter.test_creates_valid_jsonl_from_float.executor": "Run",
     "Python tests.Python tests for test_csv_util.TestCsvUtil.executor": "Run",
+    "Python tests.Python tests for test_csv_util.TestCsvUtil.test_get_site_file_name.executor": "Run",
+    "Python tests.Python tests for test_csv_util.TestCsvUtil.test_get_site_file_path.executor": "Run",
     "Python tests.Python tests for test_csv_util.TestCsvUtil.test_save_articles_to_csv_atomic.executor": "Debug",
     "Python tests.Python tests for test_csv_util.TestCsvUtil.test_save_articles_to_csv_final.executor": "Debug",
     "Python tests.Python tests for test_csv_util.TestCsvUtil.test_save_articles_to_csv_temp_only.executor": "Run",
@@ -236,7 +237,7 @@
       <recent name="D:\WORKSPACE\Python\scraper-news\storage" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.Main - FastAPI and Scraper Cron">
+  <component name="RunManager" selected="Python.FastAPI">
     <configuration default="true" type="DjangoTestsConfigurationType">
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -458,7 +459,7 @@
       <workItem from="1763284540492" duration="3905000" />
       <workItem from="1763365666464" duration="16402000" />
       <workItem from="1763447097517" duration="4592000" />
-      <workItem from="1763460637451" duration="16046000" />
+      <workItem from="1763460637451" duration="21838000" />
     </task>
     <task id="LOCAL-00068" summary=" Deployment. T5 upload to GitHub.">
       <option name="closed" value="true" />
@@ -692,7 +693,15 @@
       <option name="project" value="LOCAL" />
       <updated>1763482613757</updated>
     </task>
-    <option name="localTasksCounter" value="97" />
+    <task id="LOCAL-00097" summary=" Deployment. S3 storage plus.">
+      <option name="closed" value="true" />
+      <created>1763491546518</created>
+      <option name="number" value="00097" />
+      <option name="presentableId" value="LOCAL-00097" />
+      <option name="project" value="LOCAL" />
+      <updated>1763491546518</updated>
+    </task>
+    <option name="localTasksCounter" value="98" />
     <option name="createBranch" value="false" />
     <option name="useBranch" value="true" />
     <servers />
@@ -701,7 +710,6 @@
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value=" Deployment. Lora and Bert checkpoint." />
     <MESSAGE value=" Deployment. Ignore models." />
     <MESSAGE value=" Deployment. Deleting." />
     <MESSAGE value=" Deployment. HF models." />
@@ -726,7 +734,8 @@
     <MESSAGE value=" Deployment. Fixing monitoring daemon." />
     <MESSAGE value=" Deployment. Fixing URL." />
     <MESSAGE value=" Deployment. S3 storage." />
-    <option name="LAST_COMMIT_MESSAGE" value=" Deployment. S3 storage." />
+    <MESSAGE value=" Deployment. S3 storage plus." />
+    <option name="LAST_COMMIT_MESSAGE" value=" Deployment. S3 storage plus." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -749,13 +758,13 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/scraper_news$scraper_job.coverage" NAME="SCRAPER JOB Coverage Results" MODIFIED="1761118909149" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cron_jobs" />
     <SUITE FILE_PATH="coverage/scraper_news$article_timestamp_util.coverage" NAME="article_timestamp_util Coverage Results" MODIFIED="1761824298098" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/service/util" />
-    <SUITE FILE_PATH="coverage/scraper_news$.coverage" NAME=" Coverage Results" MODIFIED="1763491200876" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/scraper_news$.coverage" NAME=" Coverage Results" MODIFIED="1763555290815" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/scraper_news$Scraper_Cron.coverage" NAME="Scraper Cron Coverage Results" MODIFIED="1760774637564" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="D:\WORKSPACE\Python\scraper-news" />
     <SUITE FILE_PATH="coverage/scraper_news$main.coverage" NAME="Main - FastAPI and Scraper Cron Coverage Results" MODIFIED="1760774789944" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/scraper_news$python__m_spacy_download_ro_core_news_sm.coverage" NAME="python -m spacy download ro_core_news_sm Coverage Results" MODIFIED="1762675507625" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/scraper_news$FastAPI.coverage" NAME="FastAPI Coverage Results" MODIFIED="1763385193487" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/" />
+    <SUITE FILE_PATH="coverage/scraper_news$FastAPI.coverage" NAME="FastAPI Coverage Results" MODIFIED="1763556483431" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/" />
     <SUITE FILE_PATH="coverage/scraper_news$run.coverage" NAME="run Coverage Results" MODIFIED="1760539226178" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/scraper_news$SCRAPER_JOB.coverage" NAME="SCRAPER JOB Coverage Results" MODIFIED="1762968085375" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cron_jobs" />
-    <SUITE FILE_PATH="coverage/scraper_news$Main___FastAPI_and_Scraper_Cron.coverage" NAME="Main - FastAPI and Scraper Cron Coverage Results" MODIFIED="1763480425825" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/scraper_news$Main___FastAPI_and_Scraper_Cron.coverage" NAME="Main - FastAPI and Scraper Cron Coverage Results" MODIFIED="1763556079635" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

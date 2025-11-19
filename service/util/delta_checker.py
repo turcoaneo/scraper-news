@@ -7,7 +7,7 @@ import boto3
 
 from app.utils.env_vars import APP_ENV, S3_PREFIX, S3_BUCKET
 from service.site_scraper import SiteScraper
-from service.util.csv_util import is_filtered
+from service.util.csv_util import is_filtered, get_site_file_name
 from service.util.logger_util import get_logger
 from service.util.path_util import PROJECT_ROOT
 
@@ -18,8 +18,8 @@ class DeltaChecker:
 
     @staticmethod
     def get_site_deltas(site: SiteScraper, csv_path=None) -> tuple:
-        today_str = datetime.now().strftime('%Y%m%d')
-        filename = f"{site.name}_{today_str}.csv"
+        # today_str = datetime.now().strftime('%Y%m%d')
+        filename = get_site_file_name(site.name)
 
         previous_articles = {}
 

@@ -56,9 +56,8 @@ class TestCsvUtil(unittest.TestCase):
         path_normal = get_site_file_name(self.site_name, use_temp=False)
         path_temp = get_site_file_name(self.site_name, use_temp=True)
 
-        today = datetime.now().strftime('%Y%m%d')
-        self.assertTrue(path_normal.endswith(f"{self.site_name}_{today}.csv"))
-        self.assertTrue(path_temp.endswith(f"{self.site_name}_{today}_buffer.csv"))
+        self.assertTrue(path_normal.endswith(f"{self.site_name}.csv"))
+        self.assertTrue(path_temp.endswith(f"{self.site_name}_buffer.csv"))
 
     def test_save_articles_to_csv_atomic(self):
         self.save_csv(use_temp=True)
