@@ -67,7 +67,7 @@ class ArticleScraper:
             else:
                 result = EntityExtractorFacade.get_bert_extractor_cached().extract_with_roberta(summary)
         except Exception as e:
-            logger.error("EntityExtractorFacade error for {self.homepage_title}", str(e))
+            logger.error(f"EntityExtractorFacade error for {self.homepage_title}", str(e))
 
         return {
             "title": str(self.extract_title()),

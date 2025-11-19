@@ -33,8 +33,8 @@ class DeltaChecker:
                 for row in reader:
                     row["timestamp"] = datetime.fromisoformat(row["timestamp"])
                     previous_articles[row["url"]] = row
-            except s3.exceptions.NoSuchKey:
-                pass
+            except s3.exceptions.NoSuchKey as e:
+                logger.error(f"No such file or directory", str(e))
             logger.info(f"{site.name} - previous articles: {len(previous_articles)}")
         else:
             if csv_path is None:
