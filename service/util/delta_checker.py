@@ -23,7 +23,7 @@ class DeltaChecker:
 
         previous_articles = {}
 
-        if APP_ENV == "UAT":
+        if APP_ENV == "uat":
             s3 = boto3.client("s3")
             s3_key = f"{S3_PREFIX}/{filename}"
             try:
