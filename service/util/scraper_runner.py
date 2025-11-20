@@ -10,7 +10,7 @@ from app.utils.env_vars import HF_TOKEN
 from model.article import Article
 from model.model_type import ModelType
 from service.cluster_service import ClusterService
-from service.util.buffer_util import update_buffer_timestamp, delete_delta_file_if_exists
+from service.util.buffer_util import delete_delta_file_if_exists, update_delta_timestamp
 from service.util.declension_util import DeclensionUtil
 from service.util.delta_checker import DeltaChecker
 from service.util.logger_util import get_logger
@@ -84,8 +84,10 @@ def run_scraper(minutes=1440):
 
     # Phase 1: Scraping (parallel)
     threads = [threading.Thread(target=process_site, args=(site,)) for site in sites]
-    for t in threads: t.start()
-    for t in threads: t.join()
+    for t in threads:
+        t.start()
+    for t in threads:
+        t.join()
 
     site_deltas = DeltaChecker.get_all_deltas(sites)
 
@@ -98,7 +100,7 @@ def run_scraper(minutes=1440):
             break
     if is_skipped_for_all:
         logger.info("[Scraper] No deltas detected. Skipping declension, saving, and clustering.")
-        update_buffer_timestamp()
+        update_delta_timestamp()
         return
 
     # Phase 2: Declension (single-threaded, safe)
@@ -120,6 +122,7 @@ def run_scraper(minutes=1440):
                                             article.keywords]
                 except Exception as e:
                     logger.info(f"[Declension Error] {site.name}: {e}")
+
             process_declension()
 
     # Phase 3: Merging old and deltas
@@ -137,8 +140,10 @@ def run_scraper(minutes=1440):
 
     # Phase 4: Saving (parallel)
     threads = [threading.Thread(target=save_site, args=(site,)) for site in sites]
-    for t in threads: t.start()
-    for t in threads: t.join()
+    for t in threads:
+        t.start()
+    for t in threads:
+        t.join()
 
     # Phase 5: Clustering and buffer creation
     ClusterService.save_cluster_buffer(sites, minutes)

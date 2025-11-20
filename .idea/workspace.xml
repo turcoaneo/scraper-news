@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="22401e38-3721-4fd8-b77a-f843b1aa4640" name=" Deployment." comment=" Deployment. S3 declension delta fix.">
+    <list default="true" id="22401e38-3721-4fd8-b77a-f843b1aa4640" name=" Deployment." comment=" Deployment. S3 update buffer.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/cluster_buffer_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/cluster_buffer_service.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/s3_storage.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/s3_storage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/config/sites_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/sites_config.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service/util/buffer_util.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/util/buffer_util.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/util/scraper_runner.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/util/scraper_runner.py" afterDir="false" />
     </list>
     <list id="a7f942ad-3c95-41b0-b4b7-f43fce9ff07e" name="Changes" comment="" />
     <list id="6508d4bf-b1d4-4e03-bff8-2d311d3ea368" name="Env" comment="">
@@ -457,7 +457,7 @@
       <workItem from="1763284540492" duration="3905000" />
       <workItem from="1763365666464" duration="16402000" />
       <workItem from="1763447097517" duration="4592000" />
-      <workItem from="1763460637451" duration="39965000" />
+      <workItem from="1763460637451" duration="40581000" />
     </task>
     <task id="LOCAL-00068" summary=" Deployment. T5 upload to GitHub.">
       <option name="closed" value="true" />
@@ -763,7 +763,15 @@
       <option name="project" value="LOCAL" />
       <updated>1763573941791</updated>
     </task>
-    <option name="localTasksCounter" value="106" />
+    <task id="LOCAL-00106" summary=" Deployment. S3 update buffer.">
+      <option name="closed" value="true" />
+      <created>1763624695383</created>
+      <option name="number" value="00106" />
+      <option name="presentableId" value="LOCAL-00106" />
+      <option name="project" value="LOCAL" />
+      <updated>1763624695383</updated>
+    </task>
+    <option name="localTasksCounter" value="107" />
     <option name="createBranch" value="false" />
     <option name="useBranch" value="true" />
     <servers />
@@ -783,7 +791,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value=" Deployment. GitHub Action." />
     <MESSAGE value=" Deployment. GitHub Action. Verify ENV." />
     <MESSAGE value=" Deployment. GitHub Action.Fix." />
     <MESSAGE value=" Deployment. GitHub Action.Refactoring." />
@@ -808,7 +815,8 @@
     <MESSAGE value=" Deployment. Storage CSV, logger." />
     <MESSAGE value=" Deployment. Storage CSV, logger new." />
     <MESSAGE value=" Deployment. S3 declension delta fix." />
-    <option name="LAST_COMMIT_MESSAGE" value=" Deployment. S3 declension delta fix." />
+    <MESSAGE value=" Deployment. S3 update buffer." />
+    <option name="LAST_COMMIT_MESSAGE" value=" Deployment. S3 update buffer." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -832,11 +840,6 @@
           <url>file://$PROJECT_DIR$/service/util/delta_checker.py</url>
           <line>82</line>
           <option name="timeStamp" value="16" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/service/util/scraper_runner.py</url>
-          <line>93</line>
-          <option name="timeStamp" value="17" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/test/test_site_scraper.py</url>
@@ -868,6 +871,6 @@
     <SUITE FILE_PATH="coverage/scraper_news$FastAPI.coverage" NAME="FastAPI Coverage Results" MODIFIED="1763556483431" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/" />
     <SUITE FILE_PATH="coverage/scraper_news$run.coverage" NAME="run Coverage Results" MODIFIED="1760539226178" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/scraper_news$SCRAPER_JOB.coverage" NAME="SCRAPER JOB Coverage Results" MODIFIED="1763565018300" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cron_jobs" />
-    <SUITE FILE_PATH="coverage/scraper_news$Main___FastAPI_and_Scraper_Cron.coverage" NAME="Main - FastAPI and Scraper Cron Coverage Results" MODIFIED="1763566392369" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/scraper_news$Main___FastAPI_and_Scraper_Cron.coverage" NAME="Main - FastAPI and Scraper Cron Coverage Results" MODIFIED="1763625280432" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
