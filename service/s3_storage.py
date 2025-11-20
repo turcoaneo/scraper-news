@@ -1,13 +1,13 @@
 import boto3
 from botocore.exceptions import ClientError
 
-from app.utils.env_vars import merged
+from app.utils.env_vars import S3_BUCKET, S3_PREFIX
 
 
 class S3Storage:
     def __init__(self):
-        self.bucket = merged.get("S3_BUCKET", "scraper-storage-uat")
-        self.prefix = merged.get("S3_PREFIX", "storage")
+        self.bucket = S3_BUCKET
+        self.prefix = S3_PREFIX
         self.client = boto3.client("s3")
 
     def save(self, filename: str, content: bytes):
