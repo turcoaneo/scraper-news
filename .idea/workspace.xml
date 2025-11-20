@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="22401e38-3721-4fd8-b77a-f843b1aa4640" name=" Deployment." comment=" Deployment. S3 update buffer.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/config/sites_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/sites_config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/util/buffer_util.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/util/buffer_util.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/util/scraper_runner.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/util/scraper_runner.py" afterDir="false" />
+    <list default="true" id="22401e38-3721-4fd8-b77a-f843b1aa4640" name=" Deployment." comment=" Deployment. S3 update delta.">
+      <change beforePath="$PROJECT_DIR$/service/site_scraper.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/site_scraper.py" afterDir="false" />
     </list>
     <list id="a7f942ad-3c95-41b0-b4b7-f43fce9ff07e" name="Changes" comment="" />
     <list id="6508d4bf-b1d4-4e03-bff8-2d311d3ea368" name="Env" comment="">
@@ -457,7 +454,7 @@
       <workItem from="1763284540492" duration="3905000" />
       <workItem from="1763365666464" duration="16402000" />
       <workItem from="1763447097517" duration="4592000" />
-      <workItem from="1763460637451" duration="40581000" />
+      <workItem from="1763460637451" duration="41455000" />
     </task>
     <task id="LOCAL-00068" summary=" Deployment. T5 upload to GitHub.">
       <option name="closed" value="true" />
@@ -771,7 +768,15 @@
       <option name="project" value="LOCAL" />
       <updated>1763624695383</updated>
     </task>
-    <option name="localTasksCounter" value="107" />
+    <task id="LOCAL-00107" summary=" Deployment. S3 update delta.">
+      <option name="closed" value="true" />
+      <created>1763625449546</created>
+      <option name="number" value="00107" />
+      <option name="presentableId" value="LOCAL-00107" />
+      <option name="project" value="LOCAL" />
+      <updated>1763625449546</updated>
+    </task>
+    <option name="localTasksCounter" value="108" />
     <option name="createBranch" value="false" />
     <option name="useBranch" value="true" />
     <servers />
@@ -791,7 +796,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value=" Deployment. GitHub Action. Verify ENV." />
     <MESSAGE value=" Deployment. GitHub Action.Fix." />
     <MESSAGE value=" Deployment. GitHub Action.Refactoring." />
     <MESSAGE value=" Deployment. GitHub Action. Removing env." />
@@ -816,16 +820,12 @@
     <MESSAGE value=" Deployment. Storage CSV, logger new." />
     <MESSAGE value=" Deployment. S3 declension delta fix." />
     <MESSAGE value=" Deployment. S3 update buffer." />
-    <option name="LAST_COMMIT_MESSAGE" value=" Deployment. S3 update buffer." />
+    <MESSAGE value=" Deployment. S3 update delta." />
+    <option name="LAST_COMMIT_MESSAGE" value=" Deployment. S3 update delta." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/service/article_scraper.py</url>
-          <line>41</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/service/util/delta_checker.py</url>
           <line>48</line>

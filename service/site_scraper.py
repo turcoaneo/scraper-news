@@ -9,6 +9,7 @@ from urllib.parse import urlparse
 import requests
 from bs4 import BeautifulSoup
 
+from app.utils.env_vars import APP_ENV
 from model.article import Article
 from model.model_type import ModelType
 from service.article_scraper import ArticleScraper
@@ -83,6 +84,8 @@ class SiteScraper:
 
     # noinspection PyTypeChecker
     def load_recent_from_csv(self, minutes=180, filename_override=None):
+        if APP_ENV == 'uat':
+            return
         filename = filename_override or self.site_file_path()
         cutoff = datetime.now(timezone.utc) - timedelta(minutes=minutes)
 
