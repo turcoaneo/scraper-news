@@ -14,7 +14,7 @@ logger = get_logger()
 
 def update_buffer_timestamp():
     try:
-        if APP_ENV == "UAT":
+        if APP_ENV == "uat":
             _update_buffer_timestamp_s3()
         else:
             _update_buffer_timestamp_local()
@@ -61,7 +61,7 @@ def get_s3_delta_path() -> str:
 
 
 def update_delta_timestamp():
-    if APP_ENV == "UAT":
+    if APP_ENV == "uat":
         _update_delta_timestamp_s3()
     else:
         path = get_delta_path()
@@ -74,7 +74,7 @@ def update_delta_timestamp():
 
 
 def read_delta_timestamp():
-    if APP_ENV == "UAT":
+    if APP_ENV == "uat":
         return _read_delta_timestamp_s3()
     else:
         path = get_delta_path()
@@ -90,7 +90,7 @@ def read_delta_timestamp():
 
 
 def delete_delta_file_if_exists():
-    if APP_ENV == "UAT":
+    if APP_ENV == "uat":
         _delete_delta_file_s3()
     else:
         path = get_delta_path()
