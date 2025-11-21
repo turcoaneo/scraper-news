@@ -131,6 +131,17 @@ class TestClusterFilterUtil(unittest.TestCase):
         )
         self.assertEqual(len(result), 0)
 
+    def test_exclusion_precedence_over_inclusion(self):
+        """Cluster 1 has 'snooker' (included) but also 'snooker' (excluded).
+        Exclusion must win → cluster dropped."""
+        result = ClusterFilterUtil.apply_filter(
+            self.sample_clusters,
+            places=["title", "keywords", "entities", "summary"],
+            including=["snooker"],
+            excluding=["snooker"]
+        )
+        self.assertEqual(len(result), 0)
+
 
 if __name__ == "__main__":
     unittest.main()
