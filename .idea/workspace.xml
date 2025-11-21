@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="22401e38-3721-4fd8-b77a-f843b1aa4640" name=" Deployment." comment=" Deployment. Filtering.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/test_cluster_filter_util.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test_cluster_filter_util.py" afterDir="false" />
-    </list>
+    <list default="true" id="22401e38-3721-4fd8-b77a-f843b1aa4640" name=" Deployment." comment=" Deployment. Static folder." />
     <list id="a7f942ad-3c95-41b0-b4b7-f43fce9ff07e" name="Changes" comment="" />
     <list id="6508d4bf-b1d4-4e03-bff8-2d311d3ea368" name="Env" comment="">
       <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
@@ -462,7 +459,7 @@
       <workItem from="1763365666464" duration="16402000" />
       <workItem from="1763447097517" duration="4592000" />
       <workItem from="1763460637451" duration="63916000" />
-      <workItem from="1763735417270" duration="1543000" />
+      <workItem from="1763735417270" duration="1599000" />
     </task>
     <task id="LOCAL-00068" summary=" Deployment. T5 upload to GitHub.">
       <option name="closed" value="true" />
@@ -808,7 +805,15 @@
       <option name="project" value="LOCAL" />
       <updated>1763734865861</updated>
     </task>
-    <option name="localTasksCounter" value="111" />
+    <task id="LOCAL-00111" summary=" Deployment. Static folder.">
+      <option name="closed" value="true" />
+      <created>1763737740056</created>
+      <option name="number" value="00111" />
+      <option name="presentableId" value="LOCAL-00111" />
+      <option name="project" value="LOCAL" />
+      <updated>1763737740056</updated>
+    </task>
+    <option name="localTasksCounter" value="112" />
     <option name="createBranch" value="false" />
     <option name="useBranch" value="true" />
     <servers />
@@ -828,7 +833,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value=" Deployment. GitHub Action. Removing def." />
     <MESSAGE value=" Deployment. GitHub Action. Adding new def type." />
     <MESSAGE value=" Deployment. GitHub Action. Monitoring." />
     <MESSAGE value=" Deployment. GitHub Action. Monitoring max." />
@@ -853,7 +857,8 @@
     <MESSAGE value=" Deployment. Fix loading and config." />
     <MESSAGE value=" Deployment. Fix uat." />
     <MESSAGE value=" Deployment. Filtering." />
-    <option name="LAST_COMMIT_MESSAGE" value=" Deployment. Filtering." />
+    <MESSAGE value=" Deployment. Static folder." />
+    <option name="LAST_COMMIT_MESSAGE" value=" Deployment. Static folder." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
