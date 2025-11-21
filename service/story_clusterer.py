@@ -156,6 +156,7 @@ class StoryClusterer:
                     "site": article.site,
                     "title": article.title,
                     "url": article.url,
+                    "summary": article.summary,
                     "keywords": keywords,
                     "entities": entities
                 })

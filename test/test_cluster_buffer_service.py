@@ -8,7 +8,7 @@ from service.cluster_buffer_service import ClusterBufferService  # adjust path a
 
 class TestClusterBufferService(unittest.TestCase):
 
-    @patch("service.cluster_buffer_service.ClusterBufferService.get_buffer_path")
+    @patch("service.cluster_buffer_service.ClusterBufferService._get_buffer_path")
     def test_get_cached_clusters_success(self, mock_get_path):
         mock_path = Path("mock_buffer.json")
         mock_get_path.return_value = mock_path
@@ -24,7 +24,7 @@ class TestClusterBufferService(unittest.TestCase):
             self.assertIn("timestamp", result)
             self.assertEqual(result["clusters"][0]["title"], "Mock")
 
-    @patch("service.cluster_buffer_service.ClusterBufferService.get_buffer_path")
+    @patch("service.cluster_buffer_service.ClusterBufferService._get_buffer_path")
     def test_get_cached_clusters_missing_file(self, mock_get_path):
         mock_path = Path("nonexistent.json")
         mock_get_path.return_value = mock_path
@@ -32,4 +32,4 @@ class TestClusterBufferService(unittest.TestCase):
         with patch("pathlib.Path.exists", return_value=False):
             result = ClusterBufferService.get_cached_clusters()
             self.assertIn("error", result)
-            self.assertEqual(result["error"], "Buffer not available")
+            self.assertEqual(result["error"], "Buffer not available or malformed")

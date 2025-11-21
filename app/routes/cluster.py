@@ -3,11 +3,18 @@
 from fastapi import APIRouter
 from fastapi.responses import JSONResponse
 
+from app.routes.cluster_filter_request import ClusterFilterRequest
 from service.cluster_buffer_service import ClusterBufferService
 from service.cluster_service import ClusterService
 from service.scraper_service import ScraperService
 
 router = APIRouter()
+
+
+@router.post("/cluster-cached-filtered")
+async def cluster_cached_filtered_news(request_filter: ClusterFilterRequest):
+    result = ClusterBufferService.get_cached_filtered_clusters(request_filter)
+    return JSONResponse(content=result)
 
 
 @router.get("/cluster")
