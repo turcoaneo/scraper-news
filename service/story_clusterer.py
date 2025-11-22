@@ -133,8 +133,7 @@ class StoryClusterer:
             })
 
         # final ordering
-        scored.sort(key=lambda x: x["score"], reverse=True)
-        return scored
+        return sorted(scored, key=lambda x: (x["score"], x["cluster"]), reverse=True)
 
     def print_score_by_cluster(self):
         clusters = self.score_clusters()
