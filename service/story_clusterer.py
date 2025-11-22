@@ -1,5 +1,6 @@
 from typing import List, Dict
 
+from service.util.logger_util import get_logger
 from service.util.summary_util import merge_summaries
 
 
@@ -41,6 +42,9 @@ def _verify_cluster(article_i, article_j, cluster_id, clusters, threshold, compo
             cluster_id[0] = cluster_id[0] + 1
         return True
     return False
+
+
+logger = get_logger()
 
 
 class StoryClusterer:
@@ -95,19 +99,42 @@ class StoryClusterer:
         self.print_score_by_cluster()
 
     def score_clusters(self):
-        # Build a lookup map from site name to weight
         site_weights = {scraper.name: scraper.weight for scraper in self.site_scrapers}
-
         scored = []
+
         for key, articles in self.clusters.items():
-            score = sum(site_weights.get(article.site, 0.0) for article in articles)
+            # derive from the same source
+            sites_in_cluster = [a.site for a in articles]
+            weights_in_cluster = [site_weights.get(a.site, 0.0) for a in articles]
+            score_raw = sum(weights_in_cluster)
+            score = round(score_raw, 3)
+
+            # consistency debug
+            logger.debug(
+                f"[Cluster {key}] sites={sites_in_cluster} "
+                f"weights={weights_in_cluster} sum={score_raw:.6f} rounded={score:.3f}"
+            )
+
+            # sanity: recompute sum from distinct sites if desired (should match if unique)
+            unique_sites = sorted(set(sites_in_cluster))
+            unique_sum = sum(site_weights.get(s, 0.0) for s in unique_sites)
+            if abs(unique_sum - score_raw) > 1e-9:
+                logger.warning(
+                    f"[Cluster {key}] mismatch: per-article sum={score_raw:.6f} "
+                    f"per-site sum={unique_sum:.6f} (sites={unique_sites})"
+                )
+
             scored.append({
-                "score": round(score, 3),
+                "score": score,
                 "cluster": key,
-                "articles": articles
+                "articles": articles,  # keep the same list you used for sites/weights
+                "sites": sites_in_cluster,  # do not rebuild elsewhere
+                "weights": weights_in_cluster  # include for transparency
             })
 
-        return sorted(scored, key=lambda x: x["score"], reverse=True)
+        # final ordering
+        scored.sort(key=lambda x: x["score"], reverse=True)
+        return scored
 
     def print_score_by_cluster(self):
         clusters = self.score_clusters()

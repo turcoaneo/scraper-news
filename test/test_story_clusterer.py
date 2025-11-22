@@ -18,48 +18,6 @@ class MockScraper:
 class TestStoryClusterer(unittest.TestCase):
     now = datetime.now(timezone.utc)
 
-    def test_story_clusterer(self):
-        articles_site1 = [
-            Article(
-                "SiteA",
-                self.now,
-                "Lionel Messi joins Inter Miami",
-                [],
-                ["lionel", "messi", "miami", "transfer"],
-                ["Lionel Messi", "Inter Miami"],
-                "https://sitea.com/messi-miami"
-            ),
-            Article(
-                "SiteA",
-                self.now,
-                "Cristiano Ronaldo scores again",
-                [],
-                ["ronaldo", "goal", "match"],
-                ["Cristiano Ronaldo"],
-                "https://sitea.com/ronaldo-goal"
-            )
-        ]
-
-        articles_site2 = [
-            Article(
-                "SiteB",
-                self.now,
-                "Messi signs with Miami club",
-                [],
-                ["Lionel Messi", "Inter Miami"],
-                ["messi", "miami", "contract"],
-                "https://siteb.com/messi-signs"
-            )
-        ]
-
-        scraper1 = MockScraper("SiteA", 0.6, articles_site1)
-        scraper2 = MockScraper("SiteB", 0.4, articles_site2)
-
-        clusterer = StoryClusterer([scraper1, scraper2], minutes=180)
-        clusterer.cluster_stories()
-        # clusterer.print_clusters()
-        clusterer.print_matched_clusters()
-
     def setUp(self):
         self.articles_site1 = [
             Article(
@@ -101,6 +59,13 @@ class TestStoryClusterer(unittest.TestCase):
         self.clusterer = StoryClusterer([self.scraper1, self.scraper2], 180, 0.4, 0.5)
         self.clusterer.cluster_stories()
 
+    def test_score_clusters(self):
+        scored = self.clusterer.score_clusters()
+        self.assertEqual(len(scored), 1)
+        scores = [cluster["score"] for cluster in scored]
+        self.assertTrue(all(isinstance(score, float) for score in scores))
+        self.assertAlmostEqual(scores[0], 0.8, places=2)  # 0.6 + 0.4 for Chivu cluster
+
     def test_cluster_stories(self):
         clusters = self.clusterer.clusters
         self.assertEqual(len(clusters), 1)  # One cluster for Chivu, none for Hagi
@@ -108,13 +73,6 @@ class TestStoryClusterer(unittest.TestCase):
         titles = [article.title for article in chivu_cluster]
         self.assertIn("Cristi Chivu la Inter Milano", titles)
         self.assertIn("Cristi Chivu dorit de Inter", titles)
-
-    def test_score_clusters(self):
-        scored = self.clusterer.score_clusters()
-        self.assertEqual(len(scored), 1)
-        scores = [cluster["score"] for cluster in scored]
-        self.assertTrue(all(isinstance(score, float) for score in scores))
-        self.assertAlmostEqual(scores[0], 0.8, places=2)  # 0.6 + 0.4 for Chivu cluster
 
     def test_entity_string_bug(self):
         buggy_article = Article(
@@ -224,6 +182,48 @@ class TestStoryClusterer(unittest.TestCase):
 
         # Should be skipped due to single source
         self.assertEqual(len(matched), 0)
+
+    def test_story_clusterer(self):
+        articles_site1 = [
+            Article(
+                "SiteA",
+                self.now,
+                "Lionel Messi joins Inter Miami",
+                [],
+                ["lionel", "messi", "miami", "transfer"],
+                ["Lionel Messi", "Inter Miami"],
+                "https://sitea.com/messi-miami"
+            ),
+            Article(
+                "SiteA",
+                self.now,
+                "Cristiano Ronaldo scores again",
+                [],
+                ["ronaldo", "goal", "match"],
+                ["Cristiano Ronaldo"],
+                "https://sitea.com/ronaldo-goal"
+            )
+        ]
+
+        articles_site2 = [
+            Article(
+                "SiteB",
+                self.now,
+                "Messi signs with Miami club",
+                [],
+                ["Lionel Messi", "Inter Miami"],
+                ["messi", "miami", "contract"],
+                "https://siteb.com/messi-signs"
+            )
+        ]
+
+        scraper1 = MockScraper("SiteA", 0.6, articles_site1)
+        scraper2 = MockScraper("SiteB", 0.4, articles_site2)
+
+        clusterer = StoryClusterer([scraper1, scraper2], minutes=180)
+        clusterer.cluster_stories()
+        # clusterer.print_clusters()
+        clusterer.print_matched_clusters()
 
 
 if __name__ == "__main__":
