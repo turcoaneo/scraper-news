@@ -54,18 +54,24 @@ def run_scraper(minutes=1440):
         logger.info(f"Saving CSV for {log_thread_id(threading.get_ident(), site.name)}")
         site.save_to_csv(use_temp=True)
 
-    def merge_articles(p_deltas: dict, previous_map: dict[str, Article]) -> list[Article]:
+    def merge_articles(p_deltas: dict, previous_map: dict[str, Article], p_site_name: str) -> list[Article]:
 
         # Remove deleted
-        for removed in p_deltas["removed"]:
-            previous_map.pop(removed["url"], None)  # removed is a dict row
+        removed_delta = p_deltas["removed"]
+        logger.info(f"{p_site_name} has {len(removed_delta)} articles to be removed from")
+        for removed in removed_delta:
+            previous_map.pop(removed.url, None)
 
         # Replace updated
-        for updated in p_deltas["updated"]:
+        updated_delta = p_deltas["updated"]
+        logger.info(f"{p_site_name} has {len(updated_delta)} articles to be updated")
+        for updated in updated_delta:
             previous_map[updated.url] = updated
 
         # Add new
-        for new in p_deltas["new"]:
+        new_delta = p_deltas["new"]
+        logger.info(f"{p_site_name} has {len(new_delta)} new articles")
+        for new in new_delta:
             previous_map[new.url] = new
 
         return list(previous_map.values())
@@ -127,16 +133,17 @@ def run_scraper(minutes=1440):
 
     # Phase 3: Merging old and deltas
     for site in sites:
-        site_delta_tuple_result = site_deltas[site.name]
+        site_name = site.name
+        site_delta_tuple_result = site_deltas[site_name]
         deltas = site_delta_tuple_result[1]
         raw_previous = site_delta_tuple_result[0] or {}
         previous_articles = {
-            url: dict_to_article(row, site.name)
+            url: dict_to_article(row, site_name)
             for url, row in raw_previous.items()
         }
-        merged_articles = merge_articles(deltas, previous_articles)
+        merged_articles = merge_articles(deltas, previous_articles, site_name)
         site.articles = set(merged_articles)  # set instead of list
-        logger.info(f"{site.name} - {len(site.articles)} articles")
+        logger.info(f"{site_name} - {len(site.articles)} articles")
 
     # Phase 4: Saving (parallel)
     threads = [threading.Thread(target=save_site, args=(site,)) for site in sites]
