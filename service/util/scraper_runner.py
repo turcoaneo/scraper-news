@@ -60,19 +60,22 @@ def run_scraper(minutes=1440):
         removed_delta = p_deltas["removed"]
         logger.info(f"{p_site_name} has {len(removed_delta)} articles to be removed from")
         for removed in removed_delta:
-            previous_map.pop(removed.url, None)
+            url = removed.url if hasattr(removed, "url") else removed.get("url")
+            previous_map.pop(url, None)
 
         # Replace updated
         updated_delta = p_deltas["updated"]
         logger.info(f"{p_site_name} has {len(updated_delta)} articles to be updated")
         for updated in updated_delta:
-            previous_map[updated.url] = updated
+            url = updated.url if hasattr(updated, "url") else updated.get("url")
+            previous_map[url] = updated
 
         # Add new
         new_delta = p_deltas["new"]
         logger.info(f"{p_site_name} has {len(new_delta)} new articles")
         for new in new_delta:
-            previous_map[new.url] = new
+            url = new.url if hasattr(new, "url") else new.get("url")
+            previous_map[url] = new
 
         return list(previous_map.values())
 
