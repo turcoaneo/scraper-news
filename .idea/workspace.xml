@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="22401e38-3721-4fd8-b77a-f843b1aa4640" name=" Deployment." comment=" Deployment. Static folder - UAT.">
-      <change afterPath="$PROJECT_DIR$/static/assets/index-mjIAJpxU.css" afterDir="false" />
+    <list default="true" id="22401e38-3721-4fd8-b77a-f843b1aa4640" name=" Deployment." comment=" Deployment. Static folder - UAT - filter color.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/AboutView-Dr3-chEU.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/AboutView-BFen3Kgp.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/index-BUfqPTir.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/index-cugvgXib.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/index-D--Y3QKj.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/assets/AboutView-BFen3Kgp.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/AboutView-CHHSqsEZ.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/assets/index-cugvgXib.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/index-1IklUUQ3.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/assets/index-mjIAJpxU.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/index-C6q3nbQF.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
     </list>
     <list id="a7f942ad-3c95-41b0-b4b7-f43fce9ff07e" name="Changes" comment="" />
@@ -466,7 +465,7 @@
       <workItem from="1763365666464" duration="16402000" />
       <workItem from="1763447097517" duration="4592000" />
       <workItem from="1763460637451" duration="63916000" />
-      <workItem from="1763735417270" duration="3450000" />
+      <workItem from="1763735417270" duration="4412000" />
     </task>
     <task id="LOCAL-00068" summary=" Deployment. T5 upload to GitHub.">
       <option name="closed" value="true" />
@@ -828,7 +827,15 @@
       <option name="project" value="LOCAL" />
       <updated>1763737837705</updated>
     </task>
-    <option name="localTasksCounter" value="113" />
+    <task id="LOCAL-00113" summary=" Deployment. Static folder - UAT - filter color.">
+      <option name="closed" value="true" />
+      <created>1763804013191</created>
+      <option name="number" value="00113" />
+      <option name="presentableId" value="LOCAL-00113" />
+      <option name="project" value="LOCAL" />
+      <updated>1763804013191</updated>
+    </task>
+    <option name="localTasksCounter" value="114" />
     <option name="createBranch" value="false" />
     <option name="useBranch" value="true" />
     <servers />
@@ -848,7 +855,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value=" Deployment. GitHub Action. Monitoring." />
     <MESSAGE value=" Deployment. GitHub Action. Monitoring max." />
     <MESSAGE value=" Deployment. GitHub Action. Monitoring max, fix." />
     <MESSAGE value=" Deployment. GitHub Action. UAT FE." />
@@ -873,7 +879,8 @@
     <MESSAGE value=" Deployment. Filtering." />
     <MESSAGE value=" Deployment. Static folder." />
     <MESSAGE value=" Deployment. Static folder - UAT." />
-    <option name="LAST_COMMIT_MESSAGE" value=" Deployment. Static folder - UAT." />
+    <MESSAGE value=" Deployment. Static folder - UAT - filter color." />
+    <option name="LAST_COMMIT_MESSAGE" value=" Deployment. Static folder - UAT - filter color." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
