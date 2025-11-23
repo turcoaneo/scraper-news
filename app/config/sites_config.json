@@ -1,6 +1,7 @@
 [
   {
     "name": "gsp",
+    "display_name": "GSP",
     "base_url": "https://www.gsp.ro",
     "traffic": 3.6,
     "time_selector": "p.data-autor",
@@ -12,6 +13,7 @@
   },
   {
     "name": "digisport",
+    "display_name": "Digisport",
     "base_url": "https://www.digisport.ro",
     "traffic": 3.3,
     "time_selector": "cite",
@@ -23,6 +25,7 @@
   },
   {
     "name": "fanatik",
+    "display_name": "Fanatik",
     "base_url": "https://www.fanatik.ro",
     "traffic": 2.9,
     "time_selector": "div.date_published",
@@ -34,6 +37,7 @@
   },
   {
     "name": "prosport",
+    "display_name": "Prosport",
     "base_url": "https://www.prosport.ro",
     "traffic": 3.1,
     "time_selector": "div.display-flex.gap-5",

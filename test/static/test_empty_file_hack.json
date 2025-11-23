@@ -1,0 +1,4 @@
+{
+  "name": "test_empty_file_hack.json",
+  "reason": "We need a static folder so that app it mounted for routes / endpoints test"
+}
