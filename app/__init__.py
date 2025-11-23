@@ -55,4 +55,11 @@ def create_app() -> FastAPI:
 
     from app.routes.cluster import router as cluster_router
     app.include_router(cluster_router)
+
+    from fastapi.responses import FileResponse
+
+    @app.get("/{path_name:path}")
+    async def spa_fallback(path_name: str):
+        logger.info("Refresh maybe, fallback for: %s", path_name)
+        return FileResponse("templates/index.html")
     return app
