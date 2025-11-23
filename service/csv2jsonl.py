@@ -20,7 +20,7 @@ class CsvToJsonlConverter:
             lambda x: [k.strip() for k in str(x).split(",")] if pd.notna(x) else []
         )
 
-        with open(self.output_file, "w", encoding="utf-8") as f:
+        with open(self.output_file, "w", encoding="utf-8", newline="") as f:
             for _, row in df.iterrows():
                 json.dump({
                     "summary": row["summary"],

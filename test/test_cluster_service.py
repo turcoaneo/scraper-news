@@ -63,7 +63,7 @@ class TestClusterService(unittest.TestCase):
         self.assertIsNotNone(result_path)
         self.assertTrue(result_path.exists())
 
-        with open(result_path, "r", encoding="utf-8") as f:
+        with open(result_path, "r", encoding="utf-8", newline="") as f:
             data = json.load(f)
             self.assertIn("timestamp", data)
             self.assertEqual(data["clusters"], [{"id": 1, "title": "Mock Story"}])

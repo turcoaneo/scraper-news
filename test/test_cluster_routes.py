@@ -44,7 +44,7 @@ class TestClusterRoutes(unittest.TestCase):
         response = self.client.get("/sites")
         self.assertEqual(response.status_code, 200)
         sites = response.json()
-        self.assertEqual(sites, ["GSP", "Digisport", "Fanatik", "Prosport"])
+        self.assertEqual(sites, ["Digisport", "GSP", "Prosport", "Fanatik"])
 
     @patch("json.load", side_effect=ValueError("mocked invalid JSON"))
     def test_sites_endpoint_invalid_json(self, mock_json_load):

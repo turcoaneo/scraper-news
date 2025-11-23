@@ -46,7 +46,7 @@ def save_articles_to_csv(site_name, base_url, articles, filter_keys, base_path: 
     else:
         os.makedirs(base_path, exist_ok=True)
         temp_path = Path(base_path) / filename
-        with open(temp_path, "w", encoding="utf-8") as f:
+        with open(temp_path, "w", encoding="utf-8", newline="") as f:
             f.write(csv_data)
 
 

@@ -43,7 +43,7 @@ def _update_buffer_timestamp_local():
         logger.warning(f"[Buffer] No buffer file found at {path}")
         return
 
-    with open(path, "r+", encoding="utf-8") as f:
+    with open(path, "r+", encoding="utf-8", newline="") as f:
         data = json.load(f)
         data["timestamp"] = datetime.now().isoformat()
         f.seek(0)
@@ -66,7 +66,7 @@ def update_delta_timestamp():
     else:
         path = get_delta_path()
         try:
-            with open(path, "w", encoding="utf-8") as f:
+            with open(path, "w", encoding="utf-8", newline="") as f:
                 json.dump({"delta": datetime.now().isoformat()}, f, ensure_ascii=False, indent=2)
             logger.info(f"[Buffer] Delta timestamp updated in {path}")
         except Exception as e:
@@ -81,7 +81,7 @@ def read_delta_timestamp():
         if not path.exists():
             return None
         try:
-            with open(path, "r", encoding="utf-8") as f:
+            with open(path, "r", encoding="utf-8", newline="") as f:
                 data = json.load(f)
             return data.get("delta")
         except Exception as e:

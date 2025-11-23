@@ -55,5 +55,5 @@ class ClaudePromptBuilder:
 
 
 def load_training_data(json_path: str) -> List[Dict]:
-    with open(json_path, "r", encoding="utf-8") as f:
+    with open(json_path, "r", encoding="utf-8", newline="") as f:
         return json.load(f)

@@ -55,7 +55,7 @@ class ClusterBufferService:
                 if not buffer_path.exists():
                     logger.warning(f"Buffer file not found: {buffer_path}")
                     return {}
-                with open(buffer_path, "r", encoding="utf-8") as f:
+                with open(buffer_path, "r", encoding="utf-8", newline="") as f:
                     data = json.load(f)
 
             if "timestamp" not in data or "clusters" not in data:

@@ -12,7 +12,7 @@ def load_sites_from_config(config_path: str = None) -> List[SiteScraper]:
         # config_path = Path(__file__).parent / "sites_config.json"
         config_path = get_project_root() / "app" / "config" / "sites_config.json"
 
-    with open(config_path, "r", encoding="utf-8") as f:
+    with open(config_path, "r", encoding="utf-8", newline="") as f:
         config = json.load(f)
 
     sites = []

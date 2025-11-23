@@ -13,7 +13,7 @@ output_path = os.path.join(BASE_DIR, "storage", "csv2jsonl_output.json")
 class TestCsvToJsonlConverter(unittest.TestCase):
 
     def test_conversion_creates_valid_jsonl(self):
-        with open(input_path, "w", encoding="utf-8") as f:
+        with open(input_path, "w", encoding="utf-8", newline="") as f:
             f.write('"summary","entities","keywords"\n')
             f.write('"Summary12","Entity1,Entity2","Keyword1,Keyword2"\n')
             f.write('"Summary34","Entity3,Entity4","Keyword3,Keyword4"\n')
@@ -24,7 +24,7 @@ class TestCsvToJsonlConverter(unittest.TestCase):
         converter.convert()
 
         # Validate
-        with open(output_path, "r", encoding="utf-8") as f:
+        with open(output_path, "r", encoding="utf-8", newline="") as f:
             lines = f.readlines()
             self.assertEqual(len(lines), 2)
             obj = json.loads(lines[0])
@@ -37,7 +37,7 @@ class TestCsvToJsonlConverter(unittest.TestCase):
         # os.remove(output_path)
 
     def test_creates_valid_jsonl_diacritics(self):
-        with open(input_path, "w", encoding="utf-8") as f:
+        with open(input_path, "w", encoding="utf-8", newline="") as f:
             f.write('"summary","entities","keywords"\n')
             f.write('"Școala și viața în România merg împreună pe 15 septembrie","text,1-0,text","1-2,text"\n')
 
@@ -47,7 +47,7 @@ class TestCsvToJsonlConverter(unittest.TestCase):
         converter.convert()
 
         # Validate
-        with open(output_path, "r", encoding="utf-8") as f:
+        with open(output_path, "r", encoding="utf-8", newline="") as f:
             lines = f.readlines()
             self.assertEqual(len(lines), 1)
             obj = json.loads(lines[0])
@@ -60,7 +60,7 @@ class TestCsvToJsonlConverter(unittest.TestCase):
         # os.remove(output_path)
 
     def test_creates_valid_jsonl_NaN(self):
-        with open(input_path, "w", encoding="utf-8") as f:
+        with open(input_path, "w", encoding="utf-8", newline="") as f:
             f.write('"summary","entities","keywords"\n')
             f.write('"Școala și viața","",""\n')
 
@@ -70,7 +70,7 @@ class TestCsvToJsonlConverter(unittest.TestCase):
         converter.convert()
 
         # Validate
-        with open(output_path, "r", encoding="utf-8") as f:
+        with open(output_path, "r", encoding="utf-8", newline="") as f:
             lines = f.readlines()
             self.assertEqual(len(lines), 1)
             obj = json.loads(lines[0])

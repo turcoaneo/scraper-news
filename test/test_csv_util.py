@@ -81,7 +81,7 @@ class TestCsvUtil(unittest.TestCase):
     def assert_path(self, use_temp=True):
         final_path = Path(self.temp_dir) / get_site_file_name(self.site_name, use_temp=use_temp)
         self.assertTrue(final_path.exists())
-        with open(final_path, encoding="utf-8") as f:
+        with open(final_path, encoding="utf-8", newline="") as f:
             content = f.read()
             self.assertIn("Test Title", content)
             self.assertIn("Entity1", content)

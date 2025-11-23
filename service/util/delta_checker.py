@@ -40,7 +40,7 @@ class DeltaChecker:
             if csv_path is None:
                 csv_path = Path(PROJECT_ROOT) / S3_PREFIX / filename
             if csv_path.exists():
-                with open(csv_path, encoding="utf-8") as f:
+                with open(csv_path, encoding="utf-8", newline="") as f:
                     reader = csv.DictReader(f)
                     for row in reader:
                         row["timestamp"] = datetime.fromisoformat(row["timestamp"])

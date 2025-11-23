@@ -90,7 +90,7 @@ class SiteScraper:
         cutoff = datetime.now(timezone.utc) - timedelta(minutes=minutes)
 
         try:
-            with open(filename, mode="r", encoding="utf-8") as file:
+            with open(filename, mode="r", encoding="utf-8", newline="") as file:
                 reader = csv.DictReader(file)
                 for row in reader:
                     try:

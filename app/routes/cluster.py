@@ -47,7 +47,7 @@ async def scrape_sites_async():
 async def list_sites():
     config_path = PROJECT_ROOT / "app" / "config" / "sites_config.json"
     try:
-        with open(config_path, "r", encoding="utf-8") as f:
+        with open(config_path, "r", encoding="utf-8", newline="") as f:
             sites_config = json.load(f)
             # Extract only display_name values
             sites = [site.get("display_name") for site in sites_config if "display_name" in site]
