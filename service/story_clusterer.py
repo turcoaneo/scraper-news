@@ -156,12 +156,17 @@ class StoryClusterer:
     def get_matched_clusters(self) -> List[Dict]:
         result = []
         clusters = self.score_clusters()
-        for i, scored_cluster in enumerate(clusters, 1):
-            articles_cluster = self.clusters[i - 1]
+        for scored_cluster in clusters:
+            articles_cluster = scored_cluster["articles"]  # use directly
             sites = {article.site for article in articles_cluster}
             if len(sites) < 2:
-                print(f"[SKIP] Cluster #{i} has only one site: {sites}")
+                print(f"[SKIP] Cluster {scored_cluster['cluster']} has only one site: {sites}")
                 continue
+
+            logger.debug(
+                f"Matched cluster {scored_cluster['cluster']} "
+                f"score={scored_cluster['score']} sites={sites}"
+            )
 
             articles = []
             summaries = []
@@ -186,7 +191,6 @@ class StoryClusterer:
                     "keywords": keywords,
                     "entities": entities
                 })
-
                 summaries.append(article.summary)
 
             result.append({
