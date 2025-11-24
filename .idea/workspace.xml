@@ -6,14 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="22401e38-3721-4fd8-b77a-f843b1aa4640" name=" Deployment." comment="Adding Sport ro.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notebooks/hf_model_uploader.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/notebooks/hf_model_uploader.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/notebooks/hugging_face_training_ents_keys.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/notebooks/hugging_face_training_ents_keys.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/notebooks/t5_declension.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/notebooks/t5_declension.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/site_scraper.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/site_scraper.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/util/csv_util.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/util/csv_util.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/util/scraper_runner.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/util/scraper_runner.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/storage/duplets_dictionary.py" beforeDir="false" afterPath="$PROJECT_DIR$/storage/duplets_dictionary.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/storage/t5_duplets.txt" beforeDir="false" afterPath="$PROJECT_DIR$/storage/t5_duplets.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/test_site_scraper.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test_site_scraper.py" afterDir="false" />
     </list>
     <list id="a7f942ad-3c95-41b0-b4b7-f43fce9ff07e" name="Changes" comment="" />
     <list id="6508d4bf-b1d4-4e03-bff8-2d311d3ea368" name="Env" comment="">
@@ -136,6 +133,8 @@
     "Python tests.Python tests for test_cluster_service.test_cluster_news.executor": "Run",
     "Python tests.Python tests for test_cluster_service.test_delete_old_csvs.executor": "Run",
     "Python tests.Python tests for test_cluster_service.test_scrape_sites_async.executor": "Run",
+    "Python tests.Python tests for test_cooldown_persistence.TestCooldownPersistence.executor": "Run",
+    "Python tests.Python tests for test_cooldown_persistence.TestCooldownPersistence.test_save_and_load_cooldowns.executor": "Debug",
     "Python tests.Python tests for test_csv2jsonl.TestCsvToJsonlConverter.executor": "Run",
     "Python tests.Python tests for test_csv2jsonl.TestCsvToJsonlConverter.test_conversion_creates_valid_jsonl.executor": "Run",
     "Python tests.Python tests for test_csv2jsonl.TestCsvToJsonlConverter.test_creates_valid_jsonl_NaN.executor": "Run",
@@ -206,6 +205,7 @@
     "Python tests.Python tests in test_cluster_filter_util.py.executor": "Debug",
     "Python tests.Python tests in test_cluster_routes.py.executor": "Run",
     "Python tests.Python tests in test_cluster_service.py.executor": "Run",
+    "Python tests.Python tests in test_cooldown_persistence.py.executor": "Run",
     "Python tests.Python tests in test_csv_util.py.executor": "Run",
     "Python tests.Python tests in test_declension_util.py.executor": "Run",
     "Python tests.Python tests in test_delta_checker.py.executor": "Run",
@@ -478,30 +478,6 @@
       <workItem from="1763447097517" duration="4592000" />
       <workItem from="1763460637451" duration="63916000" />
       <workItem from="1763735417270" duration="31321000" />
-    </task>
-    <task id="LOCAL-00076" summary=" Deployment. Docker and HF models.">
-      <option name="closed" value="true" />
-      <created>1763148425985</created>
-      <option name="number" value="00076" />
-      <option name="presentableId" value="LOCAL-00076" />
-      <option name="project" value="LOCAL" />
-      <updated>1763148425985</updated>
-    </task>
-    <task id="LOCAL-00077" summary=" Deployment. GitHub Action.">
-      <option name="closed" value="true" />
-      <created>1763285483822</created>
-      <option name="number" value="00077" />
-      <option name="presentableId" value="LOCAL-00077" />
-      <option name="project" value="LOCAL" />
-      <updated>1763285483822</updated>
-    </task>
-    <task id="LOCAL-00078" summary=" Deployment. GitHub Action. Non-automatic.">
-      <option name="closed" value="true" />
-      <created>1763286352455</created>
-      <option name="number" value="00078" />
-      <option name="presentableId" value="LOCAL-00078" />
-      <option name="project" value="LOCAL" />
-      <updated>1763286352455</updated>
     </task>
     <task id="LOCAL-00079" summary=" Deployment. GitHub Action.Fix.">
       <option name="closed" value="true" />
@@ -855,7 +831,31 @@
       <option name="project" value="LOCAL" />
       <updated>1763965081016</updated>
     </task>
-    <option name="localTasksCounter" value="123" />
+    <task id="LOCAL-00123" summary="Adding Sport ro, improved for 429 error.">
+      <option name="closed" value="true" />
+      <created>1763979035908</created>
+      <option name="number" value="00123" />
+      <option name="presentableId" value="LOCAL-00123" />
+      <option name="project" value="LOCAL" />
+      <updated>1763979035908</updated>
+    </task>
+    <task id="LOCAL-00124" summary="Cooldown for Sport ro.">
+      <option name="closed" value="true" />
+      <created>1763982937518</created>
+      <option name="number" value="00124" />
+      <option name="presentableId" value="LOCAL-00124" />
+      <option name="project" value="LOCAL" />
+      <updated>1763982937518</updated>
+    </task>
+    <task id="LOCAL-00125" summary="Adding Sport ro. Test class.">
+      <option name="closed" value="true" />
+      <created>1763982968996</created>
+      <option name="number" value="00125" />
+      <option name="presentableId" value="LOCAL-00125" />
+      <option name="project" value="LOCAL" />
+      <updated>1763982968996</updated>
+    </task>
+    <option name="localTasksCounter" value="126" />
     <option name="createBranch" value="false" />
     <option name="useBranch" value="true" />
     <servers />
@@ -875,9 +875,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value=" Deployment. S3 storage plus." />
-    <MESSAGE value=" Deployment. Storage CSV." />
-    <MESSAGE value=" Deployment. Storage CSV, fix." />
     <MESSAGE value=" Deployment. Storage CSV, fix UAT." />
     <MESSAGE value=" Deployment. Storage CSV, fix test." />
     <MESSAGE value=" Deployment. Storage CSV, logger." />
@@ -899,8 +896,11 @@
     <MESSAGE value=" Deployment. Score fix #9." />
     <MESSAGE value="Dynamic site list." />
     <MESSAGE value="CSV empty line fix." />
+    <MESSAGE value="Adding Sport ro, improved for 429 error." />
+    <MESSAGE value="Cooldown for Sport ro." />
     <MESSAGE value="Adding Sport ro." />
-    <option name="LAST_COMMIT_MESSAGE" value="Adding Sport ro." />
+    <MESSAGE value="Adding Sport ro. Test class." />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding Sport ro. Test class." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -930,6 +930,11 @@
           <line>2</line>
           <option name="timeStamp" value="51" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/test/test_cooldown_persistence.py</url>
+          <line>40</line>
+          <option name="timeStamp" value="59" />
+        </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
@@ -944,13 +949,13 @@
     <SUITE FILE_PATH="coverage/scraper_news$__init__.coverage" NAME="__init__ Coverage Results" MODIFIED="1763901124446" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app" />
     <SUITE FILE_PATH="coverage/scraper_news$scraper_job.coverage" NAME="SCRAPER JOB Coverage Results" MODIFIED="1761118909149" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cron_jobs" />
     <SUITE FILE_PATH="coverage/scraper_news$article_timestamp_util.coverage" NAME="article_timestamp_util Coverage Results" MODIFIED="1761824298098" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/service/util" />
-    <SUITE FILE_PATH="coverage/scraper_news$.coverage" NAME=" Coverage Results" MODIFIED="1763975703678" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/scraper_news$.coverage" NAME=" Coverage Results" MODIFIED="1763982127817" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/scraper_news$Scraper_Cron.coverage" NAME="Scraper Cron Coverage Results" MODIFIED="1760774637564" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="D:\WORKSPACE\Python\scraper-news" />
     <SUITE FILE_PATH="coverage/scraper_news$main.coverage" NAME="Main - FastAPI and Scraper Cron Coverage Results" MODIFIED="1760774789944" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/scraper_news$python__m_spacy_download_ro_core_news_sm.coverage" NAME="python -m spacy download ro_core_news_sm Coverage Results" MODIFIED="1762675507625" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/scraper_news$FastAPI.coverage" NAME="FastAPI Coverage Results" MODIFIED="1763731727177" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/" />
     <SUITE FILE_PATH="coverage/scraper_news$run.coverage" NAME="run Coverage Results" MODIFIED="1760539226178" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/scraper_news$SCRAPER_JOB.coverage" NAME="SCRAPER JOB Coverage Results" MODIFIED="1763565018300" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cron_jobs" />
-    <SUITE FILE_PATH="coverage/scraper_news$Main___FastAPI_and_Scraper_Cron.coverage" NAME="Main - FastAPI and Scraper Cron Coverage Results" MODIFIED="1763970548067" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/scraper_news$Main___FastAPI_and_Scraper_Cron.coverage" NAME="Main - FastAPI and Scraper Cron Coverage Results" MODIFIED="1763982565294" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

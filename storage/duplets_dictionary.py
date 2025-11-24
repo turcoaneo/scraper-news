@@ -299,8 +299,8 @@ new_duplets += [
     ("copilului", "copil"),
     ("mamei", "mamă"),
     ("mamelor", "mame"),
-    ("femeii", "femeia"),
-    ("doamnei", "doamna"),
+    ("femeii", "femeie"),
+    ("doamnei", "doamnă"),
     ("profesoarei", "profesoara"),
     ("profesoarelor", "profesoare"),
     ("prietenei", "prietena"),
@@ -467,7 +467,87 @@ new_duplets += [
     ("tîrgului", "târg"),
 ]
 
+new_duplets += [
+    ("Barcelonei", "Barcelona"),
+    ("Barcelona", "Barcelona"),
+    ("Madrid", "Madrid"),
+    ("Madridului", "Madrid"),
+    ("Londrei", "Londra"),
+    ("Egiptului", "Egiptului"),
+    ("Danemarcei", "Danemarca"),
+    ("Suediei", "Suedia"),
+    ("Suedia", "Suedia"),
+    ("Angliei", "Anglia"),
+]
+
+new_duplets += [
+    ("Italiei", "Italia"),
+    ("Parisului", "Paris"),
+    ("Kievului", "Kiev"),
+    ("Moscovei", "Moscova"),
+    ("Bagdadului", "Bagdad"),
+    ("Spaniei", "Spania"),
+    ("Americii", "America"),
+    ("Sinăii", "Sinaia"),
+    ("fricii", "frică"),
+    ("Greciei", "Grecia"),
+]
+
+new_duplets += [
+    ("Chinei", "China"),
+    ("Chiajnei", "Chiajna"),
+    ("Siriei", "Siria"),
+    ("Malayeziei", "Malayezia"),
+    ("Camerunului", "Camerun"),
+    ("Libiei", "Libia"),
+    ("Arabiei Saudite", "Arabia Saudită"),
+    ("Arabiei", "Arabia"),
+    ("saudiților", "saudiți"),
+    ("sauditului", "saudit"),
+]
+
+new_duplets += [
+    ("Rwandei", "Rwanda"),
+    ("Ugandei", "Uganda"),
+    ("Olandei", "Olandei"),
+    ("Țărilor de Jos", "Țările de Jos"),
+    ("țărilor", "țări"),
+    ("țării", "țară"),
+    ("gării", "gară"),
+    ("mării", "mare"),
+    ("Mării Negre", "Marea Neagră"),
+    ("Mării Baltice", "Marea Baltică"),
+]
+
+new_duplets += [
+    ("Mării Mediterane", "Marea Mediterană"),
+    ("Căii Lactee", "Calea Lactee"),
+    ("căi", "căi"),
+    ("căii", "cale"),
+    ("căilor", "căi"),
+    ("calelor", "cale"),
+    ("cale", "cale"),
+    ("cală", "cală"),
+    ("mierii", "miere"),
+    ("Lisabonei", "Lisabona"),
+]
+
+new_duplets += [
+    ("Portugaliei", "Portugalia"),
+    ("Mexicului", "Mexic"),
+    ("Uruguayului", "Uruguay"),
+    ("Paraguayului", "Paraguay"),
+    ("Braziliei", "Brazilia"),
+    ("Argentinei", "Argentina"),
+    ("Coreei", "Coreea"),
+    ("Coreei de Sud", "Coreea de Sud"),
+    ("Coreei de Nord", "Coreea de Nord"),
+    ("Țării de Foc", "Țara de Foc"),
+]
+
 test_cases = [
+    ("cale", "cale"),
+    ("calelor", "cale"),
     ("copilului", "copil"),
     ("copiii", "copii"),
     ("mamei", "mamă"),
@@ -515,6 +595,13 @@ test_cases = [
     ("Șubă", "Șubă"),
     ("Mihai Șubă", "Mihai Șubă"),
     ("Bogdan Țapu", "Bogdan Țapu"),
+    ("Ugandei", "Uganda"),
+    ("Rwandei", "Rwanda"),
+    ("Barcelonei", "Barcelona"),
+    ("Berlinului", "Berlin"),
+    ("Japoniei", "Japonia"),
+    ("Chiajnei", "Chiajna"),
+    ("Coastei de Azur", "Coasta de Azur"),
 ]
 
 

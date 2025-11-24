@@ -228,8 +228,8 @@ normalize: sud-africanelor	sud-africane
 normalize: copilului	copil
 normalize: mamei	mamă
 normalize: mamelor	mame
-normalize: femeii	femeia
-normalize: doamnei	doamna
+normalize: femeii	femeie
+normalize: doamnei	doamnă
 normalize: profesoarei	profesoara
 normalize: profesoarelor	profesoare
 normalize: prietenei	prietena
@@ -356,3 +356,63 @@ normalize: tîrgul	târg
 normalize: târgul	târg
 normalize: tîrgul	târg
 normalize: tîrgului	târg
+normalize: Barcelonei	Barcelona
+normalize: Barcelona	Barcelona
+normalize: Madrid	Madrid
+normalize: Madridului	Madrid
+normalize: Londrei	Londra
+normalize: Egiptului	Egiptului
+normalize: Danemarcei	Danemarca
+normalize: Suediei	Suedia
+normalize: Suedia	Suedia
+normalize: Angliei	Anglia
+normalize: Italiei	Italia
+normalize: Parisului	Paris
+normalize: Kievului	Kiev
+normalize: Moscovei	Moscova
+normalize: Bagdadului	Bagdad
+normalize: Spaniei	Spania
+normalize: Americii	America
+normalize: Sinăii	Sinaia
+normalize: fricii	frică
+normalize: Greciei	Grecia
+normalize: Chinei	China
+normalize: Chiajnei	Chiajna
+normalize: Siriei	Siria
+normalize: Malayeziei	Malayezia
+normalize: Camerunului	Camerun
+normalize: Libiei	Libia
+normalize: Arabiei Saudite	Arabia Saudită
+normalize: Arabiei	Arabia
+normalize: saudiților	saudiți
+normalize: sauditului	saudit
+normalize: Rwandei	Rwanda
+normalize: Ugandei	Uganda
+normalize: Olandei	Olandei
+normalize: Țărilor de Jos	Țările de Jos
+normalize: țărilor	țări
+normalize: țării	țară
+normalize: gării	gară
+normalize: mării	mare
+normalize: Mării Negre	Marea Neagră
+normalize: Mării Baltice	Marea Baltică
+normalize: Mării Mediterane	Marea Mediterană
+normalize: Căii Lactee	Calea Lactee
+normalize: căi	căi
+normalize: căii	cale
+normalize: căilor	căi
+normalize: calelor	cale
+normalize: cale	cale
+normalize: cală	cală
+normalize: mierii	miere
+normalize: Lisabonei	Lisabona
+normalize: Portugaliei	Portugalia
+normalize: Mexicului	Mexic
+normalize: Uruguayului	Uruguay
+normalize: Paraguayului	Paraguay
+normalize: Braziliei	Brazilia
+normalize: Argentinei	Argentina
+normalize: Coreei	Coreea
+normalize: Coreei de Sud	Coreea de Sud
+normalize: Coreei de Nord	Coreea de Nord
+normalize: Țării de Foc	Țara de Foc
