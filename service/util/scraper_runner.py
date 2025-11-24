@@ -1,6 +1,8 @@
 # service/util/scraper_runner.py
 
+import json
 import threading
+from datetime import datetime, timezone, timedelta
 from functools import lru_cache
 
 from transformers import T5Tokenizer, T5ForConditionalGeneration
@@ -14,10 +16,43 @@ from service.util.buffer_util import delete_delta_file_if_exists, update_delta_t
 from service.util.declension_util import DeclensionUtil
 from service.util.delta_checker import DeltaChecker
 from service.util.logger_util import get_logger
-from service.util.path_util import T5_MODEL_PATH
+from service.util.path_util import T5_MODEL_PATH, PROJECT_ROOT
 from service.util.timing_util import elapsed_time, log_thread_id
 
 logger = get_logger()
+
+# At module level
+_last_scrape_times = {}
+_lock = threading.Lock()
+COOLDOWN_FILE = PROJECT_ROOT / 'storage' / 'cooldown.json'
+
+
+def load_cooldowns():
+    """Restore last scrape times from JSON file."""
+    global _last_scrape_times
+    if COOLDOWN_FILE.exists():
+        try:
+            with open(COOLDOWN_FILE, "r", encoding="utf-8") as f:
+                data = json.load(f)
+                _last_scrape_times = {
+                    site: datetime.fromisoformat(ts)
+                    for site, ts in data.items()
+                }
+        except Exception as e:
+            logger.warning(f"Failed to load cooldowns: {e}")
+            _last_scrape_times = {}
+
+
+def save_cooldowns():
+    """Persist last scrape times to JSON file."""
+    try:
+        with open(COOLDOWN_FILE, "w", encoding="utf-8") as f:
+            json.dump(
+                {site: ts.isoformat() for site, ts in _last_scrape_times.items()},
+                f
+            )
+    except Exception as e:
+        logger.warning(f"Failed to save cooldowns: {e}")
 
 
 @lru_cache(maxsize=1)
@@ -33,6 +68,8 @@ def get_model_and_tokenizer():
 
 @elapsed_time("run_scraper")
 def run_scraper(minutes=1440):
+    load_cooldowns()  # restore cooldowns at startup
+
     logger.info("*" * 100)
     logger.info(f"Running {log_thread_id(threading.get_ident(), 'scraper')}")
     sites = load_sites_from_config()
@@ -44,20 +81,19 @@ def run_scraper(minutes=1440):
         checked_traffic += site.weight
     logger.debug(f"Total: {checked_traffic}")
 
-    from datetime import datetime, timezone, timedelta
-
-    # Keep a global dict of last scrape times
-    _last_scrape_times = {}
-
     @elapsed_time("process_site")
     def process_site(site):
         now = datetime.now(timezone.utc)
-        if site.name.lower() == "sport":
-            last = _last_scrape_times.get(site.name)
-            if last and (now - last) < timedelta(minutes=60):
-                logger.info(f"Skipping {site.name} scrape (cooldown active)")
-                return
-            _last_scrape_times[site.name] = now
+        cooldown = 60 if site.name.lower() == "sport" else 0
+
+        if cooldown:
+            with _lock:
+                last = _last_scrape_times.get(site.name)
+                if last and (now - last) < timedelta(minutes=cooldown):
+                    logger.info(f"Skipping {site.name} scrape (cooldown active)")
+                    return
+                _last_scrape_times[site.name] = now
+                save_cooldowns()  # persist after update
 
         logger.info(f"Scraping {log_thread_id(threading.get_ident(), site.name)}")
         site.scrape_recent_articles(minutes)
@@ -140,8 +176,7 @@ def run_scraper(minutes=1440):
                     for article in articles_to_declension:
                         article.entities = [DeclensionUtil.normalize(ent, (tokenizer, model)) for ent in
                                             article.entities]
-                        article.keywords = [DeclensionUtil.normalize(kw, (tokenizer, model)) for kw in
-                                            article.keywords]
+                        article.keywords = [DeclensionUtil.normalize(kw, (tokenizer, model)) for kw in article.keywords]
                 except Exception as e:
                     logger.info(f"[Declension Error] {site.name}: {e}")
 
