@@ -4,7 +4,6 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Literal, Optional
 from urllib.parse import urljoin
-from urllib.parse import urlparse
 
 import requests
 from bs4 import BeautifulSoup
@@ -117,48 +116,35 @@ class SiteScraper:
         except FileNotFoundError:
             print(f"CSV file not found: {filename}")
 
-    def scrape_recent_articles(self, minutes=180):
-        from datetime import timezone
-        cutoff = datetime.now(timezone.utc) - timedelta(minutes=minutes)
-
+    def fetch_homepage(self):
         response = requests.get(self.base_url, headers={"User-Agent": "Mozilla/5.0"})
-        soup = BeautifulSoup(response.text, "html.parser")
+        response.raise_for_status()
+        return BeautifulSoup(response.text, "html.parser")
 
+    def extract_article_links(self, soup):
+        seen = set()
         for block in soup.select(self.block_selector):
-            try:
-                link_tag = block.select_one(self.link_selector)
-                if not link_tag or not link_tag.has_attr("href"):
-                    continue
-
-                relative_url = link_tag["href"]
-                if "/video/" in relative_url:
-                    continue
-                if not relative_url.startswith("http"):
-                    full_url = urljoin(self.base_url, relative_url)
-                else:
-                    full_url = relative_url
-
-                hostname = urlparse(full_url).hostname or ""
-                if self.name.lower() not in hostname.lower():
-                    logger.debug(f"{relative_url} not of {self.name}")
-                    continue
-
-                if self.title_strategy == "text":
-                    homepage_title = link_tag.get_text(strip=True)
-                elif self.title_strategy == "attribute" and self.title_attribute:
-                    homepage_title = link_tag.get(self.title_attribute, "").strip()
-                else:
-                    continue
-
-                article_scraper = ArticleScraper(full_url, homepage_title, self.time_selector)
-                article_scraper.fetch()
-                article_data = article_scraper.extract_data(self.model_type)
-
-                if article_data and article_data["timestamp"] >= cutoff:
-                    self.articles.add(Article(self.name, article_data["timestamp"], article_data["title"],
-                                              article_data["entities"], article_data["keywords"],
-                                              article_data["summary"], article_data["url"], article_data["comments"]))
-
-            except Exception as ex:
-                print("Failing scraping recent articles - ", ex)
+            link_tag = block.select_one(self.link_selector)
+            if not link_tag or not link_tag.has_attr("href"):
                 continue
+            full_url = urljoin(self.base_url, link_tag["href"]) if not link_tag["href"].startswith("http") else \
+                link_tag["href"]
+            if full_url in seen:
+                continue
+            seen.add(full_url)
+            yield full_url, link_tag
+
+    def scrape_recent_articles(self, minutes=180):
+        cutoff = datetime.now(timezone.utc) - timedelta(minutes=minutes)
+        soup = self.fetch_homepage()
+        for full_url, link_tag in self.extract_article_links(soup):
+            homepage_title = (
+                link_tag.get_text(strip=True)
+                if self.title_strategy == "text"
+                else link_tag.get(self.title_attribute, "").strip()
+            )
+            article_scraper = ArticleScraper(full_url, homepage_title, self.time_selector)
+            article_scraper.fetch()
+            article_data = article_scraper.extract_data(self.model_type)
+            if article_data and article_data["timestamp"] >= cutoff:
+                self.articles.add(Article(self.name, **article_data))

@@ -44,8 +44,21 @@ def run_scraper(minutes=1440):
         checked_traffic += site.weight
     logger.debug(f"Total: {checked_traffic}")
 
+    from datetime import datetime, timezone, timedelta
+
+    # Keep a global dict of last scrape times
+    _last_scrape_times = {}
+
     @elapsed_time("process_site")
     def process_site(site):
+        now = datetime.now(timezone.utc)
+        if site.name.lower() == "sport":
+            last = _last_scrape_times.get(site.name)
+            if last and (now - last) < timedelta(minutes=60):
+                logger.info(f"Skipping {site.name} scrape (cooldown active)")
+                return
+            _last_scrape_times[site.name] = now
+
         logger.info(f"Scraping {log_thread_id(threading.get_ident(), site.name)}")
         site.scrape_recent_articles(minutes)
 

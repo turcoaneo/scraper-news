@@ -1,4 +1,5 @@
 import csv
+import html
 import io
 import os
 from pathlib import Path
@@ -77,7 +78,12 @@ def is_filtered(article, filter_place_keys):
     return False
 
 
-def fix_romanian_diacritics(text):
+def fix_romanian_diacritics(text: str) -> str:
+    if not text:
+        return text
+    # First decode HTML entities (&icirc; → î, etc.)
+    text = html.unescape(text)
+    # Then normalize legacy cedilla forms
     return (
         text.replace("ş", "ș")
         .replace("Ş", "Ș")
