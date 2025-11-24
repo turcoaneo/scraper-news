@@ -70,6 +70,16 @@ def extract_timestamp_from_selector(soup: BeautifulSoup, selector: str, return_b
         logger.debug(f"No valid timestamp found in selector: {selector} for {href}")
         return get_fallback_date(selector, return_both)
 
+    # Sport.ro-style: <span data-utc-date="2025-11-23 16:57:42">
+    if tag.has_attr("data-utc-date"):
+        try:
+            raw_dt = tag["data-utc-date"]
+            local_dt = parser.parse(raw_dt)  # already full datetime string
+            utc_dt = local_dt.astimezone(timezone.utc)
+            return (local_dt, utc_dt) if return_both else utc_dt
+        except Exception as e:
+            logger.warning(f"[Timestamp] Failed to parse Sport.ro data-utc-date: {e}")
+
     # noinspection PyArgumentList
     text = tag.get_text(separator=" ", strip=True)
 

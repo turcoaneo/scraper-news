@@ -68,10 +68,27 @@ class TestArticleTimestampUtil(unittest.TestCase):
         self.assertEqual(ts.hour, 10)  # UTC conversion from 12:52 EEST
         self.assertEqual(ts.minute, 52)
 
+    def test_sport_span_utc(self):
+        html = '''
+        <div class="sport-article-block__date">Data publicarii: <span
+                                data-utc-date="2025-11-23 16:57:42"
+                                data-date-format="{day} {Month} {year}, {hour}:{minute}"></span>
+                        </div>
+        '''
+        soup = BeautifulSoup(html, "html.parser")
+        ts = ts_util.extract_timestamp_from_selector(soup, "div.sport-article-block__date span[data-utc-date]")
+        self.assertEqual(ts.year, 2025)
+        self.assertEqual(ts.month, 11)
+        self.assertEqual(ts.day, 23)
+        self.assertEqual(ts.hour, 14)  # UTC conversion from 12:52 EEST
+        self.assertEqual(ts.minute, 57)
+
     def test_gsp_data_autor_original(self):
         html = '''
         <p class="data-autor">
-            Articol de <a rel="author" href="https://www.gsp.ro/autor/mihai-sovei-4006.html">Mihai Șovei</a>            - Publicat joi, 30 octombrie 2025,  15:55            / Actualizat joi, 30 octombrie 2025 15:55                    </p>
+            Articol de <a rel="author" href="https://www.gsp.ro/autor/mihai-sovei-4006.html">Mihai Șovei</a>
+            - Publicat joi, 30 octombrie 2025,  15:55            / Actualizat joi, 30 octombrie 2025 15:55
+            </p>
         '''
 
         soup = BeautifulSoup(html, "html.parser")

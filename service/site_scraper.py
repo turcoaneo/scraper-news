@@ -131,6 +131,8 @@ class SiteScraper:
                     continue
 
                 relative_url = link_tag["href"]
+                if "/video/" in relative_url:
+                    continue
                 if not relative_url.startswith("http"):
                     full_url = urljoin(self.base_url, relative_url)
                 else:

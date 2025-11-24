@@ -24,6 +24,18 @@
     "model": "BERT"
   },
   {
+    "name": "sport",
+    "display_name": "Sport.ro",
+    "base_url": "https://www.sport.ro",
+    "traffic": 13.7,
+    "time_selector": "div.sport-article-block__date span[data-utc-date]",
+    "block_selector": "div.sport-news-block__seven-wa-right",
+    "link_selector": "a",
+    "title_strategy": "text",
+    "title_attribute": null,
+    "model": "BERT"
+  },
+  {
     "name": "prosport",
     "display_name": "Prosport",
     "base_url": "https://www.prosport.ro",

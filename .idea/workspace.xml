@@ -4,26 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="22401e38-3721-4fd8-b77a-f843b1aa4640" name=" Deployment." comment="Dynamic site list.">
+    <list default="true" id="22401e38-3721-4fd8-b77a-f843b1aa4640" name=" Deployment." comment="CSV empty line fix.">
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/config/loader.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/loader.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routes/cluster.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/cluster.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/claude_prompt_builder.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/claude_prompt_builder.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/cluster_buffer_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/cluster_buffer_service.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/csv2jsonl.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/csv2jsonl.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/config/sites_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/sites_config.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service/site_scraper.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/site_scraper.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/util/buffer_util.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/util/buffer_util.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/util/csv_util.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/util/csv_util.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/util/delta_checker.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/util/delta_checker.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/AboutView-el1Q3lWP.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/AboutView-B9TkpCA0.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/index-WfvCY3eG.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/index-BflpFyWg.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/storage/csv2jsonl_input.csv" beforeDir="false" afterPath="$PROJECT_DIR$/test/storage/csv2jsonl_input.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/test_benchmark_models.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test_benchmark_models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/test_cluster_routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test_cluster_routes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/test_cluster_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test_cluster_service.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/test_csv2jsonl.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test_csv2jsonl.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/test_csv_util.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test_csv_util.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/util/article_timestamp_util.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/util/article_timestamp_util.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/test_article_timestamp_util.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test_article_timestamp_util.py" afterDir="false" />
     </list>
     <list id="a7f942ad-3c95-41b0-b4b7-f43fce9ff07e" name="Changes" comment="" />
     <list id="6508d4bf-b1d4-4e03-bff8-2d311d3ea368" name="Env" comment="">
@@ -70,6 +57,14 @@
   <component name="KubernetesApiProvider">{
   &quot;isMigrated&quot;: true
 }</component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/.env">
+      <ranges>
+        <range start1="1" end1="6" start2="1" end2="6" changelist="6508d4bf-b1d4-4e03-bff8-2d311d3ea368" />
+        <range start1="14" end1="15" start2="14" end2="15" changelist="22401e38-3721-4fd8-b77a-f843b1aa4640" />
+      </ranges>
+    </file>
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -489,14 +484,6 @@
       <workItem from="1763460637451" duration="63916000" />
       <workItem from="1763735417270" duration="31321000" />
     </task>
-    <task id="LOCAL-00074" summary=" Deployment. Fix.">
-      <option name="closed" value="true" />
-      <created>1763113322210</created>
-      <option name="number" value="00074" />
-      <option name="presentableId" value="LOCAL-00074" />
-      <option name="project" value="LOCAL" />
-      <updated>1763113322210</updated>
-    </task>
     <task id="LOCAL-00075" summary=" Deployment. Move to root.">
       <option name="closed" value="true" />
       <created>1763113605261</created>
@@ -865,7 +852,15 @@
       <option name="project" value="LOCAL" />
       <updated>1763900058039</updated>
     </task>
-    <option name="localTasksCounter" value="121" />
+    <task id="LOCAL-00121" summary="CSV empty line fix.">
+      <option name="closed" value="true" />
+      <created>1763925516631</created>
+      <option name="number" value="00121" />
+      <option name="presentableId" value="LOCAL-00121" />
+      <option name="project" value="LOCAL" />
+      <updated>1763925516631</updated>
+    </task>
+    <option name="localTasksCounter" value="122" />
     <option name="createBranch" value="false" />
     <option name="useBranch" value="true" />
     <servers />
@@ -885,7 +880,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value=" Deployment. Fixing URL." />
     <MESSAGE value=" Deployment. S3 storage." />
     <MESSAGE value=" Deployment. S3 storage plus." />
     <MESSAGE value=" Deployment. Storage CSV." />
@@ -910,7 +904,8 @@
     <MESSAGE value=" Deployment. Score fix #8." />
     <MESSAGE value=" Deployment. Score fix #9." />
     <MESSAGE value="Dynamic site list." />
-    <option name="LAST_COMMIT_MESSAGE" value="Dynamic site list." />
+    <MESSAGE value="CSV empty line fix." />
+    <option name="LAST_COMMIT_MESSAGE" value="CSV empty line fix." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
