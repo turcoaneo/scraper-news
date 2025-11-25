@@ -3,9 +3,10 @@ import os
 import unittest
 
 from service.csv2jsonl import CsvToJsonlConverter
+from service.util.path_util import PROJECT_ROOT
 
 # Setup
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+BASE_DIR = PROJECT_ROOT
 input_path = os.path.join(BASE_DIR, "storage", "csv2jsonl_input.csv")
 output_path = os.path.join(BASE_DIR, "storage", "csv2jsonl_output.json")
 
