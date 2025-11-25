@@ -23,10 +23,10 @@ def run_scraper(minutes=1440):
     logger.info(f"Running {log_thread_id(threading.get_ident(), 'scraper')}")
     sites = load_sites_from_config()
 
-    # Compute weights
+    # Phase 0: Compute weights
     ScrapeRunnerUtil.compute_weights(sites)
 
-    # Phase 1: Scraping
+    # Phase 1: Scraping (parallel)
     threads = [threading.Thread(target=ScrapeRunnerUtil.process_site, args=(site, minutes)) for site in sites]
     for t in threads:
         t.start()

@@ -4,16 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="22401e38-3721-4fd8-b77a-f843b1aa4640" name=" Deployment." comment="Cooldown refactoring.">
-      <change afterPath="$PROJECT_DIR$/service/util/scrape_runner_declension_util.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/util/scrape_runner_merge_util.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/util/scrape_runner_util.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/test_cron_util/test_scrape_runner_declension_util.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/test_cron_util/test_scrape_runner_merge_util.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/test_cron_util/test_scrape_runner_util.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/util/scraper_runner.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/util/scraper_runner.py" afterDir="false" />
-    </list>
+    <list default="true" id="22401e38-3721-4fd8-b77a-f843b1aa4640" name=" Deployment." comment="Runner refactoring. Fix saving." />
     <list id="a7f942ad-3c95-41b0-b4b7-f43fce9ff07e" name="Changes" comment="" />
     <list id="6508d4bf-b1d4-4e03-bff8-2d311d3ea368" name="Env" comment="">
       <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
@@ -590,22 +581,6 @@
       <workItem from="1763460637451" duration="63916000" />
       <workItem from="1763735417270" duration="31321000" />
     </task>
-    <task id="LOCAL-00087" summary=" Deployment. GitHub Action. Monitoring max.">
-      <option name="closed" value="true" />
-      <created>1763403796847</created>
-      <option name="number" value="00087" />
-      <option name="presentableId" value="LOCAL-00087" />
-      <option name="project" value="LOCAL" />
-      <updated>1763403796847</updated>
-    </task>
-    <task id="LOCAL-00088" summary=" Deployment. GitHub Action. Monitoring max, fix.">
-      <option name="closed" value="true" />
-      <created>1763403973286</created>
-      <option name="number" value="00088" />
-      <option name="presentableId" value="LOCAL-00088" />
-      <option name="project" value="LOCAL" />
-      <updated>1763403973286</updated>
-    </task>
     <task id="LOCAL-00089" summary=" Deployment. GitHub Action. UAT FE.">
       <option name="closed" value="true" />
       <created>1763404707124</created>
@@ -966,7 +941,23 @@
       <option name="project" value="LOCAL" />
       <updated>1764093749696</updated>
     </task>
-    <option name="localTasksCounter" value="134" />
+    <task id="LOCAL-00134" summary="Runner refactoring.">
+      <option name="closed" value="true" />
+      <created>1764096555019</created>
+      <option name="number" value="00134" />
+      <option name="presentableId" value="LOCAL-00134" />
+      <option name="project" value="LOCAL" />
+      <updated>1764096555019</updated>
+    </task>
+    <task id="LOCAL-00135" summary="Runner refactoring. Fix saving.">
+      <option name="closed" value="true" />
+      <created>1764096850980</created>
+      <option name="number" value="00135" />
+      <option name="presentableId" value="LOCAL-00135" />
+      <option name="project" value="LOCAL" />
+      <updated>1764096850980</updated>
+    </task>
+    <option name="localTasksCounter" value="136" />
     <option name="createBranch" value="false" />
     <option name="useBranch" value="true" />
     <servers />
@@ -986,8 +977,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value=" Deployment. Fix loading and config." />
-    <MESSAGE value=" Deployment. Fix uat." />
     <MESSAGE value=" Deployment. Filtering." />
     <MESSAGE value=" Deployment. Static folder." />
     <MESSAGE value=" Deployment. Static folder - UAT." />
@@ -1011,7 +1000,9 @@
     <MESSAGE value="Test refactoring #1." />
     <MESSAGE value="Test refactoring #2." />
     <MESSAGE value="Cooldown refactoring." />
-    <option name="LAST_COMMIT_MESSAGE" value="Cooldown refactoring." />
+    <MESSAGE value="Runner refactoring." />
+    <MESSAGE value="Runner refactoring. Fix saving." />
+    <option name="LAST_COMMIT_MESSAGE" value="Runner refactoring. Fix saving." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
