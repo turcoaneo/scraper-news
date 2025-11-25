@@ -4,13 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="22401e38-3721-4fd8-b77a-f843b1aa4640" name=" Deployment." comment="Adding Sport ro.">
-      <change afterPath="$PROJECT_DIR$/service/util/s3_util.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/test_s3_util.py" afterDir="false" />
+    <list default="true" id="22401e38-3721-4fd8-b77a-f843b1aa4640" name=" Deployment." comment="S3 util. fix.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/util/buffer_util.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/util/buffer_util.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/util/csv_util.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/util/csv_util.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/util/delta_checker.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/util/delta_checker.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/util/scraper_runner.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/util/scraper_runner.py" afterDir="false" />
     </list>
     <list id="a7f942ad-3c95-41b0-b4b7-f43fce9ff07e" name="Changes" comment="" />
     <list id="6508d4bf-b1d4-4e03-bff8-2d311d3ea368" name="Env" comment="">
@@ -260,7 +256,7 @@
       <recent name="D:\WORKSPACE\Python\scraper-news\storage" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.Python tests for test_s3_util.TestS3Util.test_patch_json">
+  <component name="RunManager" selected="Python.Main - FastAPI and Scraper Cron">
     <configuration default="true" type="DjangoTestsConfigurationType">
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -381,51 +377,11 @@
       <option name="docutils_open_in_browser" value="false" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for test_s3_util.TestS3Util" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
-      <module name="scraper-news" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_s3_util.TestS3Util&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Python tests for test_s3_util.TestS3Util.test_patch_json" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
-      <module name="scraper-news" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_s3_util.TestS3Util.test_patch_json&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
     <list>
       <item itemvalue="Python.FastAPI" />
       <item itemvalue="Python.Main - FastAPI and Scraper Cron" />
       <item itemvalue="Python.SCRAPER JOB" />
-      <item itemvalue="Python tests.Python tests for test_s3_util.TestS3Util" />
-      <item itemvalue="Python tests.Python tests for test_s3_util.TestS3Util.test_patch_json" />
     </list>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Python tests.Python tests for test_s3_util.TestS3Util.test_patch_json" />
-        <item itemvalue="Python tests.Python tests for test_s3_util.TestS3Util" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -524,22 +480,6 @@
       <workItem from="1763447097517" duration="4592000" />
       <workItem from="1763460637451" duration="63916000" />
       <workItem from="1763735417270" duration="31321000" />
-    </task>
-    <task id="LOCAL-00081" summary=" Deployment. GitHub Action.Refactoring.">
-      <option name="closed" value="true" />
-      <created>1763369048581</created>
-      <option name="number" value="00081" />
-      <option name="presentableId" value="LOCAL-00081" />
-      <option name="project" value="LOCAL" />
-      <updated>1763369048581</updated>
-    </task>
-    <task id="LOCAL-00082" summary=" Deployment. GitHub Action. Removing env.">
-      <option name="closed" value="true" />
-      <created>1763370210260</created>
-      <option name="number" value="00082" />
-      <option name="presentableId" value="LOCAL-00082" />
-      <option name="project" value="LOCAL" />
-      <updated>1763370210260</updated>
     </task>
     <task id="LOCAL-00083" summary=" Deployment. GitHub Action. Removing def.">
       <option name="closed" value="true" />
@@ -901,7 +841,23 @@
       <option name="project" value="LOCAL" />
       <updated>1764051798050</updated>
     </task>
-    <option name="localTasksCounter" value="128" />
+    <task id="LOCAL-00128" summary="S3 util.">
+      <option name="closed" value="true" />
+      <created>1764058773272</created>
+      <option name="number" value="00128" />
+      <option name="presentableId" value="LOCAL-00128" />
+      <option name="project" value="LOCAL" />
+      <updated>1764058773272</updated>
+    </task>
+    <task id="LOCAL-00129" summary="S3 util. fix.">
+      <option name="closed" value="true" />
+      <created>1764058886058</created>
+      <option name="number" value="00129" />
+      <option name="presentableId" value="LOCAL-00129" />
+      <option name="project" value="LOCAL" />
+      <updated>1764058886058</updated>
+    </task>
+    <option name="localTasksCounter" value="130" />
     <option name="createBranch" value="false" />
     <option name="useBranch" value="true" />
     <servers />
@@ -921,8 +877,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value=" Deployment. Storage CSV, fix test." />
-    <MESSAGE value=" Deployment. Storage CSV, logger." />
     <MESSAGE value=" Deployment. Storage CSV, logger new." />
     <MESSAGE value=" Deployment. S3 declension delta fix." />
     <MESSAGE value=" Deployment. S3 update buffer." />
@@ -944,9 +898,11 @@
     <MESSAGE value="Adding Sport ro, improved for 429 error." />
     <MESSAGE value="Cooldown for Sport ro." />
     <MESSAGE value="Adding Sport ro. Test class." />
-    <MESSAGE value="Adding Sport ro." />
     <MESSAGE value="Fixing Sport ro." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixing Sport ro." />
+    <MESSAGE value="Adding Sport ro." />
+    <MESSAGE value="S3 util." />
+    <MESSAGE value="S3 util. fix." />
+    <option name="LAST_COMMIT_MESSAGE" value="S3 util. fix." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1002,6 +958,6 @@
     <SUITE FILE_PATH="coverage/scraper_news$FastAPI.coverage" NAME="FastAPI Coverage Results" MODIFIED="1763731727177" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/" />
     <SUITE FILE_PATH="coverage/scraper_news$run.coverage" NAME="run Coverage Results" MODIFIED="1760539226178" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/scraper_news$SCRAPER_JOB.coverage" NAME="SCRAPER JOB Coverage Results" MODIFIED="1763565018300" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cron_jobs" />
-    <SUITE FILE_PATH="coverage/scraper_news$Main___FastAPI_and_Scraper_Cron.coverage" NAME="Main - FastAPI and Scraper Cron Coverage Results" MODIFIED="1764050209912" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/scraper_news$Main___FastAPI_and_Scraper_Cron.coverage" NAME="Main - FastAPI and Scraper Cron Coverage Results" MODIFIED="1764059754862" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

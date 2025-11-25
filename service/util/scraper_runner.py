@@ -8,6 +8,7 @@ from functools import lru_cache
 from transformers import T5Tokenizer, T5ForConditionalGeneration
 
 from app.config.loader import load_sites_from_config
+from app.utils.env_vars import APP_ENV, S3_BUCKET, S3_PREFIX
 from app.utils.env_vars import HF_TOKEN
 from model.article import Article
 from model.model_type import ModelType
@@ -17,6 +18,7 @@ from service.util.declension_util import DeclensionUtil
 from service.util.delta_checker import DeltaChecker
 from service.util.logger_util import get_logger
 from service.util.path_util import T5_MODEL_PATH, PROJECT_ROOT
+from service.util.s3_util import S3Util
 from service.util.timing_util import elapsed_time, log_thread_id
 
 logger = get_logger()
@@ -26,8 +28,11 @@ _last_scrape_times = {}
 _lock = threading.Lock()
 COOLDOWN_FILE = PROJECT_ROOT / 'storage' / 'cooldown.json'
 
+s3_util = S3Util(S3_BUCKET, S3_PREFIX)
 
-def load_cooldowns():
+
+def _load_cooldowns_local():
+    """Restore last scrape times from local JSON file."""
     global _last_scrape_times
     if COOLDOWN_FILE.exists():
         try:
@@ -37,22 +42,65 @@ def load_cooldowns():
                     site: datetime.fromisoformat(ts)
                     for site, ts in data.items()
                 }
-                logger.info("Restore last scrape times from JSON file.")
+                logger.info("Restore last scrape times from local JSON file.")
         except Exception as e:
-            logger.warning(f"Failed to load cooldowns: {e}")
+            logger.warning(f"Failed to load cooldowns locally: {e}")
             _last_scrape_times = {}
 
 
-def save_cooldowns():
+def _save_cooldowns_local():
+    """Persist last scrape times to local JSON file."""
     try:
         with open(COOLDOWN_FILE, "w", encoding="utf-8") as f:
             json.dump(
                 {site: ts.isoformat() for site, ts in _last_scrape_times.items()},
                 f
             )
-            logger.info("Persist last scrape times to JSON file.")
+            logger.info("Persist last scrape times to local JSON file.")
     except Exception as e:
-        logger.warning(f"Failed to save cooldowns: {e}")
+        logger.warning(f"Failed to save cooldowns locally: {e}")
+
+
+def _load_cooldowns_s3():
+    """Restore last scrape times from S3 JSON file."""
+    global _last_scrape_times
+    data = s3_util.read_json(f"{S3_PREFIX}/cooldown.json")
+    if data:
+        try:
+            _last_scrape_times = {
+                site: datetime.fromisoformat(ts)
+                for site, ts in data.items()
+            }
+            logger.info("Restore last scrape times from S3 JSON file.")
+        except Exception as e:
+            logger.warning(f"Failed to parse cooldowns from S3: {e}")
+            _last_scrape_times = {}
+    else:
+        _last_scrape_times = {}
+
+
+def _save_cooldowns_s3():
+    """Persist last scrape times to S3 JSON file."""
+    try:
+        payload = {site: ts.isoformat() for site, ts in _last_scrape_times.items()}
+        s3_util.write_json(f"{S3_PREFIX}/cooldown.json", payload)
+        logger.info("Persist last scrape times to S3 JSON file.")
+    except Exception as e:
+        logger.warning(f"Failed to save cooldowns to S3: {e}")
+
+
+def load_cooldowns():
+    if APP_ENV == "uat":
+        _load_cooldowns_s3()
+    else:
+        _load_cooldowns_local()
+
+
+def save_cooldowns():
+    if APP_ENV == "uat":
+        _save_cooldowns_s3()
+    else:
+        _save_cooldowns_local()
 
 
 @lru_cache(maxsize=1)
