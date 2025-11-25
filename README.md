@@ -133,3 +133,28 @@ zip -s 90m -r t5_decorator_model.zip t5_decorator_model
 cat bert_model.z* bert_model.zip > tmp.zip
 unzip tmp.zip
 ```
+
+## S3 Boto
+### Login
+```shell
+aws ecr get-login-password --region eu-north-1 | docker login --username AWS --password-stdin 509399624827.dkr.ecr.eu-north-1.amazonaws.com
+```
+### Display content directly
+```shell
+aws s3 cp s3://scraper-storage-uat/storage/cooldown.json -
+```
+### Download locally
+```shell
+aws s3 cp s3://scraper-storage-uat/storage/cooldown.json C:\downloads\cooldown.json
+```
+```bash
+aws s3 cp s3://scraper-storage-uat/storage/cooldown.json C:/downloads/cooldown.json
+```
+### Filter
+```bash
+aws s3 cp s3://scraper-storage-uat/storage/cooldown.json - | grep "sport"
+```
+```shell
+aws s3 cp s3://scraper-storage-uat/storage/cooldown.json - | Select-String "sport"
+```
+
