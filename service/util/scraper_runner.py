@@ -1,6 +1,5 @@
 # service/util/scraper_runner.py
 
-import json
 import threading
 from datetime import datetime, timezone, timedelta
 from functools import lru_cache
@@ -8,7 +7,6 @@ from functools import lru_cache
 from transformers import T5Tokenizer, T5ForConditionalGeneration
 
 from app.config.loader import load_sites_from_config
-from app.utils.env_vars import APP_ENV, S3_BUCKET, S3_PREFIX
 from app.utils.env_vars import HF_TOKEN
 from model.article import Article
 from model.model_type import ModelType
@@ -17,90 +15,15 @@ from service.util.buffer_util import delete_delta_file_if_exists, update_delta_t
 from service.util.declension_util import DeclensionUtil
 from service.util.delta_checker import DeltaChecker
 from service.util.logger_util import get_logger
-from service.util.path_util import T5_MODEL_PATH, PROJECT_ROOT
-from service.util.s3_util import S3Util
+from service.util.path_util import T5_MODEL_PATH
 from service.util.timing_util import elapsed_time, log_thread_id
+from service.util.cooldown_util import (
+    load_cooldowns,
+    update_scrape_time,
+    get_last_scrape_times,
+)
 
 logger = get_logger()
-
-# At module level
-_last_scrape_times = {}
-_lock = threading.Lock()
-COOLDOWN_FILE = PROJECT_ROOT / 'storage' / 'cooldown.json'
-
-s3_util = S3Util(S3_BUCKET, S3_PREFIX)
-
-
-def _load_cooldowns_local():
-    """Restore last scrape times from local JSON file."""
-    global _last_scrape_times
-    if COOLDOWN_FILE.exists():
-        try:
-            with open(COOLDOWN_FILE, "r", encoding="utf-8") as f:
-                data = json.load(f)
-                _last_scrape_times = {
-                    site: datetime.fromisoformat(ts)
-                    for site, ts in data.items()
-                }
-                logger.info("Restore last scrape times from local JSON file.")
-        except Exception as e:
-            logger.warning(f"Failed to load cooldowns locally: {e}")
-            _last_scrape_times = {}
-
-
-def _save_cooldowns_local():
-    """Persist last scrape times to local JSON file."""
-    try:
-        with open(COOLDOWN_FILE, "w", encoding="utf-8") as f:
-            json.dump(
-                {site: ts.isoformat() for site, ts in _last_scrape_times.items()},
-                f
-            )
-            logger.info("Persist last scrape times to local JSON file.")
-    except Exception as e:
-        logger.warning(f"Failed to save cooldowns locally: {e}")
-
-
-def _load_cooldowns_s3():
-    """Restore last scrape times from S3 JSON file."""
-    global _last_scrape_times
-    data = s3_util.read_json(f"{S3_PREFIX}/cooldown.json")
-    if data:
-        try:
-            _last_scrape_times = {
-                site: datetime.fromisoformat(ts)
-                for site, ts in data.items()
-            }
-            logger.info("Restore last scrape times from S3 JSON file.")
-        except Exception as e:
-            logger.warning(f"Failed to parse cooldowns from S3: {e}")
-            _last_scrape_times = {}
-    else:
-        _last_scrape_times = {}
-
-
-def _save_cooldowns_s3():
-    """Persist last scrape times to S3 JSON file."""
-    try:
-        payload = {site: ts.isoformat() for site, ts in _last_scrape_times.items()}
-        s3_util.write_json(f"{S3_PREFIX}/cooldown.json", payload)
-        logger.info("Persist last scrape times to S3 JSON file.")
-    except Exception as e:
-        logger.warning(f"Failed to save cooldowns to S3: {e}")
-
-
-def load_cooldowns():
-    if APP_ENV == "uat":
-        _load_cooldowns_s3()
-    else:
-        _load_cooldowns_local()
-
-
-def save_cooldowns():
-    if APP_ENV == "uat":
-        _save_cooldowns_s3()
-    else:
-        _save_cooldowns_local()
 
 
 @lru_cache(maxsize=1)
@@ -135,13 +58,11 @@ def run_scraper(minutes=1440):
         cooldown = 60 if site.name.lower() == "sport" else 0
 
         if cooldown:
-            with _lock:
-                last = _last_scrape_times.get(site.name)
-                if last and (now - last) < timedelta(minutes=cooldown):
-                    logger.info(f"Skipping {site.name} scrape (cooldown active)")
-                    return
-                _last_scrape_times[site.name] = now
-                save_cooldowns()  # persist after update
+            last = get_last_scrape_times().get(site.name)
+            if last and (now - last) < timedelta(minutes=cooldown):
+                logger.info(f"Skipping {site.name} scrape (cooldown active)")
+                return
+            update_scrape_time(site.name, now)
 
         logger.info(f"Scraping {log_thread_id(threading.get_ident(), site.name)}")
         site.scrape_recent_articles(minutes)
@@ -152,22 +73,18 @@ def run_scraper(minutes=1440):
         site.save_to_csv(use_temp=True)
 
     def merge_articles(p_deltas: dict, previous_map: dict[str, Article], p_site_name: str) -> list[Article]:
-
-        # Remove deleted
         removed_delta = p_deltas["removed"]
-        logger.info(f"{p_site_name} has {len(removed_delta)} articles to be removed from")
+        logger.info(f"{p_site_name} has {len(removed_delta)} articles to be removed")
         for removed in removed_delta:
             url = removed.url if hasattr(removed, "url") else removed.get("url")
             previous_map.pop(url, None)
 
-        # Replace updated
         updated_delta = p_deltas["updated"]
         logger.info(f"{p_site_name} has {len(updated_delta)} articles to be updated")
         for updated in updated_delta:
             url = updated.url if hasattr(updated, "url") else updated.get("url")
             previous_map[url] = updated
 
-        # Add new
         new_delta = p_deltas["new"]
         logger.info(f"{p_site_name} has {len(new_delta)} new articles")
         for new in new_delta:
@@ -185,7 +102,7 @@ def run_scraper(minutes=1440):
             keywords=row.get("keywords", ""),
             summary=row.get("summary", ""),
             url=row["url"],
-            comments=int(row.get("comments", 0))
+            comments=int(row.get("comments", 0)),
         )
 
     # Phase 1: Scraping (parallel)
@@ -222,9 +139,12 @@ def run_scraper(minutes=1440):
             def process_declension():
                 try:
                     for article in articles_to_declension:
-                        article.entities = [DeclensionUtil.normalize(ent, (tokenizer, model)) for ent in
-                                            article.entities]
-                        article.keywords = [DeclensionUtil.normalize(kw, (tokenizer, model)) for kw in article.keywords]
+                        article.entities = [
+                            DeclensionUtil.normalize(ent, (tokenizer, model)) for ent in article.entities
+                        ]
+                        article.keywords = [
+                            DeclensionUtil.normalize(kw, (tokenizer, model)) for kw in article.keywords
+                        ]
                 except Exception as e:
                     logger.info(f"[Declension Error] {site.name}: {e}")
 
@@ -241,7 +161,7 @@ def run_scraper(minutes=1440):
             for url, row in raw_previous.items()
         }
         merged_articles = merge_articles(deltas, previous_articles, site_name)
-        site.articles = set(merged_articles)  # set instead of list
+        site.articles = set(merged_articles)
         logger.info(f"{site_name} - {len(site.articles)} articles")
 
     # Phase 4: Saving (parallel)
