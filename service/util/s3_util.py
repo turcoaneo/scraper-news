@@ -58,8 +58,8 @@ class S3Util:
                 if "timestamp" in row:
                     try:
                         row["timestamp"] = datetime.fromisoformat(row["timestamp"])
-                    except Exception:
-                        pass
+                    except Exception as e:
+                        logger.error(f"[S3Util] error: {e}")
             return rows
         except self.client.exceptions.NoSuchKey:
             logger.debug(f"[S3Util] No such CSV key: {key}")
