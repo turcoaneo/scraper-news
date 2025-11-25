@@ -24,6 +24,9 @@ def save_articles_to_csv(site_name, base_url, articles, filter_keys, base_path: 
     writer = csv.DictWriter(output, fieldnames=columns, quoting=csv.QUOTE_MINIMAL)
     writer.writeheader()
 
+    if articles is None or len(articles) == 0:
+        return
+
     for article in articles:
         if base_url not in article.url or is_filtered(article, filter_keys):
             continue

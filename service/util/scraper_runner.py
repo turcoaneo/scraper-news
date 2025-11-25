@@ -28,7 +28,6 @@ COOLDOWN_FILE = PROJECT_ROOT / 'storage' / 'cooldown.json'
 
 
 def load_cooldowns():
-    """Restore last scrape times from JSON file."""
     global _last_scrape_times
     if COOLDOWN_FILE.exists():
         try:
@@ -38,19 +37,20 @@ def load_cooldowns():
                     site: datetime.fromisoformat(ts)
                     for site, ts in data.items()
                 }
+                logger.info("Restore last scrape times from JSON file.")
         except Exception as e:
             logger.warning(f"Failed to load cooldowns: {e}")
             _last_scrape_times = {}
 
 
 def save_cooldowns():
-    """Persist last scrape times to JSON file."""
     try:
         with open(COOLDOWN_FILE, "w", encoding="utf-8") as f:
             json.dump(
                 {site: ts.isoformat() for site, ts in _last_scrape_times.items()},
                 f
             )
+            logger.info("Persist last scrape times to JSON file.")
     except Exception as e:
         logger.warning(f"Failed to save cooldowns: {e}")
 
