@@ -4,9 +4,8 @@ import io
 import os
 from pathlib import Path
 
-import boto3
-
 from app.utils.env_vars import APP_ENV, S3_PREFIX, S3_BUCKET
+from service.util.s3_util import S3Util
 
 
 def get_site_file_name(site_name: str, use_temp: bool = False) -> str:
@@ -44,9 +43,9 @@ def save_articles_to_csv(site_name, base_url, articles, filter_keys, base_path: 
     csv_data = output.getvalue()
 
     if APP_ENV == "uat":
-        s3 = boto3.client("s3")
+        s3_util = S3Util(S3_BUCKET, S3_PREFIX)
         s3_key = f"{S3_PREFIX}/{filename}"
-        s3.put_object(Bucket=S3_BUCKET, Key=s3_key, Body=csv_data.encode("utf-8"))
+        s3_util.write_csv(s3_key, csv_data)
     else:
         os.makedirs(base_path, exist_ok=True)
         temp_path = Path(base_path) / filename

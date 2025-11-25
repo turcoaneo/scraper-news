@@ -3,12 +3,13 @@
 import json
 from datetime import datetime
 
-import boto3
-
-from app.utils.env_vars import APP_ENV, S3_BUCKET, S3_PREFIX
+from app.utils.env_vars import APP_ENV
+from app.utils.env_vars import S3_BUCKET, S3_PREFIX
 from service.cluster_service import ClusterService
 from service.util.logger_util import get_logger
+from service.util.s3_util import S3Util
 
+s3_util = S3Util(S3_BUCKET, S3_PREFIX)
 logger = get_logger()
 
 
@@ -20,36 +21,6 @@ def update_buffer_timestamp():
             _update_buffer_timestamp_local()
     except Exception as e:
         logger.error(f"[Buffer] Failed to update timestamp: {e}")
-
-
-def _update_buffer_timestamp_s3():
-    s3 = boto3.client("s3")
-    response = s3.get_object(Bucket=S3_BUCKET, Key=S3_PREFIX)
-    data = json.loads(response["Body"].read().decode("utf-8"))
-
-    data["timestamp"] = datetime.now().isoformat()
-
-    s3.put_object(
-        Bucket=S3_BUCKET,
-        Key=S3_PREFIX,
-        Body=json.dumps(data, ensure_ascii=False, indent=2).encode("utf-8")
-    )
-    logger.info(f"[Buffer] Timestamp updated in S3: {S3_PREFIX}")
-
-
-def _update_buffer_timestamp_local():
-    path = ClusterService.get_csv_buffer_result_path()
-    if not path.exists():
-        logger.warning(f"[Buffer] No buffer file found at {path}")
-        return
-
-    with open(path, "r+", encoding="utf-8", newline="") as f:
-        data = json.load(f)
-        data["timestamp"] = datetime.now().isoformat()
-        f.seek(0)
-        json.dump(data, f, ensure_ascii=False, indent=2)
-        f.truncate()
-    logger.info(f"[Buffer] Timestamp updated in {path}")
 
 
 def get_delta_path():
@@ -104,39 +75,42 @@ def delete_delta_file_if_exists():
             logger.error(f"[Buffer] Failed to delete delta file: {e}")
 
 
+def _update_buffer_timestamp_local():
+    path = ClusterService.get_csv_buffer_result_path()
+    if not path.exists():
+        logger.warning(f"[Buffer] No buffer file found at {path}")
+        return
+
+    with open(path, "r+", encoding="utf-8", newline="") as f:
+        data = json.load(f)
+        data["timestamp"] = datetime.now().isoformat()
+        f.seek(0)
+        json.dump(data, f, ensure_ascii=False, indent=2)
+        f.truncate()
+    logger.info(f"[Buffer] Timestamp updated in {path}")
+
+
+def _update_buffer_timestamp_s3():
+    def set_timestamp(data: dict) -> dict:
+        data["timestamp"] = datetime.now().isoformat()
+        return data
+
+    s3_util.patch_json(S3_PREFIX, set_timestamp)
+    logger.info(f"[Buffer] Timestamp updated in S3: {S3_PREFIX}")
+
+
 def _update_delta_timestamp_s3():
-    s3 = boto3.client("s3")
     key = get_s3_delta_path()
     payload = {"delta": datetime.now().isoformat()}
-    s3.put_object(
-        Bucket=S3_BUCKET,
-        Key=key,
-        Body=json.dumps(payload, ensure_ascii=False, indent=2).encode("utf-8")
-    )
-    logger.info(f"[Buffer] Delta timestamp updated in S3: {key}")
+    s3_util.write_json(key, payload)
 
 
 def _read_delta_timestamp_s3():
-    s3 = boto3.client("s3")
     key = get_s3_delta_path()
-    try:
-        response = s3.get_object(Bucket=S3_BUCKET, Key=key)
-        data = json.loads(response["Body"].read().decode("utf-8"))
-        return data.get("delta")
-    except s3.exceptions.NoSuchKey:
-        return None
-    except Exception as e:
-        logger.error(f"[Buffer] Failed to read delta timestamp from S3: {e}")
-        return None
+    data = s3_util.read_json(key)
+    return data.get("delta") if data else None
 
 
 def _delete_delta_file_s3():
-    s3 = boto3.client("s3")
     key = get_s3_delta_path()
-    try:
-        s3.delete_object(Bucket=S3_BUCKET, Key=key)
-        logger.info(f"[Buffer] Deleted delta file in S3: {key}")
-    except s3.exceptions.NoSuchKey:
-        logger.debug(f"[Buffer] No delta file to delete in S3: {key}")
-    except Exception as e:
-        logger.error(f"[Buffer] Failed to delete delta file from S3: {e}")
+    s3_util.delete_object(key)

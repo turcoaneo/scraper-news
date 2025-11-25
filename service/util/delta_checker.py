@@ -1,15 +1,13 @@
 import csv
-import io
 from datetime import datetime
 from pathlib import Path
-
-import boto3
 
 from app.utils.env_vars import APP_ENV, S3_PREFIX, S3_BUCKET
 from service.site_scraper import SiteScraper
 from service.util.csv_util import is_filtered, get_site_file_name
 from service.util.logger_util import get_logger
 from service.util.path_util import PROJECT_ROOT
+from service.util.s3_util import S3Util
 
 logger = get_logger()
 
@@ -24,24 +22,18 @@ class DeltaChecker:
         previous_articles = {}
 
         if APP_ENV == "uat":
-            s3 = boto3.client("s3")
+            s3_util = S3Util(S3_BUCKET, S3_PREFIX)
             s3_key = f"{S3_PREFIX}/{filename}"
-            try:
-                response = s3.get_object(Bucket=S3_BUCKET, Key=s3_key)
-                content = response["Body"].read().decode("utf-8")
-                reader: csv.DictReader = csv.DictReader(io.StringIO(content))
-                for row in reader:
-                    row["timestamp"] = datetime.fromisoformat(row["timestamp"])
-                    previous_articles[row["url"]] = row
-            except s3.exceptions.NoSuchKey as e:
-                logger.error(f"No such file or directory", str(e))
+            rows = s3_util.read_csv(s3_key)
+            for row in rows:
+                previous_articles[row["url"]] = row
             logger.info(f"{site.name} - previous articles: {len(previous_articles)}")
         else:
             if csv_path is None:
                 csv_path = Path(PROJECT_ROOT) / S3_PREFIX / filename
             if csv_path.exists():
                 with open(csv_path, encoding="utf-8", newline="") as f:
-                    reader = csv.DictReader(f)
+                    reader: csv.DictReader = csv.DictReader(f)
                     for row in reader:
                         row["timestamp"] = datetime.fromisoformat(row["timestamp"])
                         previous_articles[row["url"]] = row
