@@ -28,8 +28,10 @@ def run_scraper(minutes=1440):
 
     # Phase 1: Scraping
     threads = [threading.Thread(target=ScrapeRunnerUtil.process_site, args=(site, minutes)) for site in sites]
-    for t in threads: t.start()
-    for t in threads: t.join()
+    for t in threads:
+        t.start()
+    for t in threads:
+        t.join()
 
     # Phase 2: Declension
     site_deltas = ScrapeRunnerDeclensionUtil.process_declension_phase(sites)
@@ -38,6 +40,13 @@ def run_scraper(minutes=1440):
 
     # Phase 3: Merging
     ScrapeRunnerMergeUtil.process_merge_phase(sites, site_deltas)
+
+    # Phase 4: Saving (parallel)
+    threads = [threading.Thread(target=ScrapeRunnerUtil.save_site, args=(site,)) for site in sites]
+    for t in threads:
+        t.start()
+    for t in threads:
+        t.join()
 
     # Phase 5: Clustering
     ClusterService.save_cluster_buffer(sites, minutes)
