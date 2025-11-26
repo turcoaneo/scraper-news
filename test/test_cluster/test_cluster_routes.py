@@ -36,6 +36,7 @@ class TestClusterRoutes(unittest.TestCase):
 
     @patch("app.routes.cluster.PROJECT_ROOT", new_callable=lambda: Path("/nonexistent"))
     def test_sites_endpoint_invalid_path(self, mock_project_root):
+        assert mock_project_root is not None
         response = self.client.get("/sites")
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response.json(), [])
@@ -48,6 +49,7 @@ class TestClusterRoutes(unittest.TestCase):
 
     @patch("json.load", side_effect=ValueError("mocked invalid JSON"))
     def test_sites_endpoint_invalid_json(self, mock_json_load):
+        assert mock_json_load is not None
         response = self.client.get("/sites")
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response.json(), [])
