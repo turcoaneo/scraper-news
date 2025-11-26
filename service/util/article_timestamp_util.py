@@ -60,6 +60,15 @@ def get_local_utc_date(match: re.Match, return_both: bool = False):
         raise ValueError(f"Failed to parse translated date string: {date_str}") from e
 
 
+def parse_iam(match_obj, return_both: bool = True):
+    raw = match_obj.group()
+    # keep only the datetime bit
+    dt_part = re.search(r"\d{2}\.\d{2}\.\d{4}\s*\d{2}:\d{2}", raw).group()
+    local_dt = parser.parse(dt_part, dayfirst=True)
+    utc_dt = local_dt.astimezone(timezone.utc)
+    return (local_dt, utc_dt) if return_both else utc_dt
+
+
 def extract_timestamp_from_selector(soup: BeautifulSoup, selector: str, return_both: bool = False):
     tag = extract_time_tag(soup, selector)
     if not tag:
@@ -83,6 +92,30 @@ def extract_timestamp_from_selector(soup: BeautifulSoup, selector: str, return_b
     # noinspection PyArgumentList
     text = tag.get_text(separator=" ", strip=True)
 
+    # iAM-style
+    # Normalize non-breaking spaces and punctuation noise
+    text = (text
+            .replace("\xa0", " ")
+            .replace("|", "|")
+            .replace(" ,", ",")
+            .strip())
+
+    # IAM-style: "Publicat: 26.11.2025 18:10" and "Actualizat: 26.11.2025 18:13"
+    match_iam_updated = re.search(r"Actualizat:\s*\d{2}\.\d{2}\.\d{4}\s*\d{2}:\d{2}", text, flags=re.IGNORECASE)
+    match_iam_published = re.search(r"Publicat:\s*\d{2}\.\d{2}\.\d{4}\s*\d{2}:\d{2}", text, flags=re.IGNORECASE)
+
+    if match_iam_updated:
+        try:
+            return parse_iam(match_iam_updated, return_both)
+        except Exception as e:
+            logger.warning(f"[Timestamp] Failed to parse IAM 'Actualizat': {e}")
+
+    if match_iam_published:
+        try:
+            return parse_iam(match_iam_published, return_both)
+        except Exception as e:
+            logger.warning(f"[Timestamp] Failed to parse IAM 'Publicat': {e}")
+
     # Digisport-style: 30.10.2025, 13:08
     match_digisport = re.search(r"\d{2}\.\d{2}\.\d{4}[,|]\s*\d{2}:\d{2}", text)
     if match_digisport:
@@ -99,9 +132,6 @@ def extract_timestamp_from_selector(soup: BeautifulSoup, selector: str, return_b
         return (local_dt, utc_dt) if return_both else utc_dt
 
     # Golazo-style: Prefer 'Actualizat', fallback to 'Publicat'
-    # Examples (observed/likely):
-    # "Actualizat 25 noiembrie 2025, 12:34"
-    # "Publicat 25 noiembrie 2025, 12:34"
     match_golazo_updated = re.search(
         r"Actualizat\s+(?:\w+,)?\s*\d{1,2}\s+\w+\.?\s+\d{4}[,]?\s*\d{2}:\d{2}", text, flags=re.IGNORECASE
     )

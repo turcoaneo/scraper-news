@@ -86,7 +86,7 @@
     "display_name": "iAM Sport",
     "base_url": "https://iamsport.ro",
     "traffic": 2.3,
-    "time_selector": "p",
+    "time_selector": "p.semnatura",
     "block_selector": "div.news-item",
     "link_selector": "a.link",
     "title_strategy": "text",

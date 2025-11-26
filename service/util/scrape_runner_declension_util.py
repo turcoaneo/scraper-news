@@ -29,7 +29,6 @@ class ScrapeRunnerDeclensionUtil:
             update_delta_timestamp()
             return None
 
-        # Phase 2: Declension
         tokenizer, model = ScrapeRunnerUtil.get_model_and_tokenizer()
 
         for site in sites:
@@ -37,12 +36,15 @@ class ScrapeRunnerDeclensionUtil:
             articles_to_declension = deltas["new"] + deltas["updated"]
             logger.info(f"[Articles to Declension] {site.name}: {len(articles_to_declension)}")
 
-        for site in sites:
+            if len(articles_to_declension) == 0:
+                logger.info(f"No declensions detected. Skipping declension for {site.name}")
+                continue
+
             if site.model_type == ModelType.BERT:
                 @elapsed_time(f"Declension for {site.name}")
-                def process_declension():
+                def process_declension(articles):
                     try:
-                        for article in articles_to_declension:
+                        for article in articles:
                             article.entities = [
                                 DeclensionUtil.normalize(ent, (tokenizer, model)) for ent in article.entities
                             ]
@@ -52,6 +54,6 @@ class ScrapeRunnerDeclensionUtil:
                     except Exception as e:
                         logger.info(f"[Declension Error] {site.name}: {e}")
 
-                process_declension()
+                process_declension(articles_to_declension)
 
         return site_deltas
