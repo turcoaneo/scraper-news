@@ -91,5 +91,16 @@
     "link_selector": "a.link",
     "title_strategy": "text",
     "model": "BERT"
+  },
+  {
+    "name": "eurosport",
+    "display_name": "Eurosport.ro",
+    "base_url": "https://www.eurosport.ro",
+    "traffic": 2.0,
+    "time_selector": "div.typo-tk-rs-caption-sm.text-content-block-default-text-fill-03.single-line",
+    "block_selector": "a.card-hover.relative.flex.w-full.overflow-hidden",
+    "link_selector": "a.card-hover.relative.flex.w-full.overflow-hidden",
+    "title_strategy": "text",
+    "model": "BERT"
   }
 ]

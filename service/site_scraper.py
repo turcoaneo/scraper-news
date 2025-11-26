@@ -67,7 +67,6 @@ class SiteScraper:
             print("-" * 60)
 
     def site_file_path(self, use_temp=True) -> Path:
-        # filename = f"{self.name}_{datetime.now().strftime('%Y%m%d')}.csv"
         filename = get_site_file_name(self.name, use_temp=use_temp)
         return Path(self.file_base).joinpath(filename)
 
@@ -117,7 +116,13 @@ class SiteScraper:
             print(f"CSV file not found: {filename}")
 
     def fetch_homepage(self):
-        response = requests.get(self.base_url, headers={"User-Agent": "Mozilla/5.0"})
+        url = self.base_url
+        if self.name == "eurosport":
+            url += "/latest-news.shtml"
+        if self.name == "as":
+            url += "/toate-stirile"
+
+        response = requests.get(url, headers={"User-Agent": "Mozilla/5.0"})
         response.raise_for_status()
         return BeautifulSoup(response.text, "html.parser")
 
