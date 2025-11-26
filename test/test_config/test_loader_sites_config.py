@@ -39,7 +39,7 @@ class TestSiteConfig(unittest.TestCase):
                 "title_attribute": None
             },
             "golazo": {
-                "base_url": "https://www.golazo.ro",
+                "base_url": "https://golazo.ro",
                 "title_strategy": "text",
                 "title_attribute": None
             }
