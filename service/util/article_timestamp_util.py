@@ -43,7 +43,7 @@ def get_local_utc_date(match: re.Match, return_both: bool = False):
     raw = match.group()
 
     # Extract only the date portion (e.g., "30 octombrie 2025 09:41")
-    date_match = re.search(r"\d{1,2}\s+\w+\.?\s+\d{4}[,]?\s*\d{2}:\d{2}", raw)
+    date_match = re.search(r"\d{1,2}\s+\w+\.?\s+\d{4},?\s*\d{2}:\d{2}", raw)
     if not date_match:
         raise ValueError(f"No valid datetime found in match: {raw}")
     date_str = date_match.group()
@@ -133,7 +133,7 @@ def extract_timestamp_from_selector(soup: BeautifulSoup, selector: str, return_b
 
     # Golazo-style: Prefer 'Actualizat', fallback to 'Publicat'
     match_golazo_updated = re.search(
-        r"Actualizat\s+(?:\w+,)?\s*\d{1,2}\s+\w+\.?\s+\d{4}[,]?\s*\d{2}:\d{2}", text, flags=re.IGNORECASE
+        r"Actualizat\s+(?:\w+,)?\s*\d{1,2}\s+\w+\.?\s+\d{4},?\s*\d{2}:\d{2}", text, flags=re.IGNORECASE
     )
     if match_golazo_updated:
         try:
@@ -142,7 +142,7 @@ def extract_timestamp_from_selector(soup: BeautifulSoup, selector: str, return_b
             logger.warning(f"[Timestamp] Failed to parse Golazo 'Actualizat': {e}")
 
     match_golazo_published = re.search(
-        r"Publicat\s+(?:\w+,)?\s*\d{1,2}\s+\w+\.?\s+\d{4}[,]?\s*\d{2}:\d{2}", text, flags=re.IGNORECASE
+        r"Publicat\s+(?:\w+,)?\s*\d{1,2}\s+\w+\.?\s+\d{4},?\s*\d{2}:\d{2}", text, flags=re.IGNORECASE
     )
     if match_golazo_published:
         try:
@@ -151,14 +151,14 @@ def extract_timestamp_from_selector(soup: BeautifulSoup, selector: str, return_b
             logger.warning(f"[Timestamp] Failed to parse Golazo 'Publicat': {e}")
 
     # GSP-style: Prefer 'Actualizat', fallback to 'Publicat'
-    match_updated = re.search(r"Actualizat\s+(?:\w+,)?\s*\d{1,2}\s+\w+\s+\d{4}[,]?\s*\d{2}:\d{2}", text)
+    match_updated = re.search(r"Actualizat\s+(?:\w+,)?\s*\d{1,2}\s+\w+\s+\d{4},?\s*\d{2}:\d{2}", text)
     if match_updated:
         try:
             return get_local_utc_date(match_updated, return_both)
         except Exception as e:
             logger.warning(f"[Timestamp] Failed to parse 'Actualizat': {e}")
 
-    match_published = re.search(r"Publicat\s+(?:\w+,)?\s*\d{1,2}\s+\w+\s+\d{4}[,]?\s*\d{2}:\d{2}", text)
+    match_published = re.search(r"Publicat\s+(?:\w+,)?\s*\d{1,2}\s+\w+\s+\d{4},?\s*\d{2}:\d{2}", text)
     if match_published:
         try:
             return get_local_utc_date(match_published, return_both)
@@ -166,7 +166,7 @@ def extract_timestamp_from_selector(soup: BeautifulSoup, selector: str, return_b
             logger.warning(f"[Timestamp] Failed to parse 'Publicat': {e}")
 
     # GSP fallback: 30 octombrie 2025, 12:15
-    match_gsp_fallback = re.search(r"\d{1,2}\s+\w+\s+\d{4}[,]?\s*\d{2}:\d{2}", text)
+    match_gsp_fallback = re.search(r"\d{1,2}\s+\w+\s+\d{4},?\s*\d{2}:\d{2}", text)
     if match_gsp_fallback:
         try:
             return get_local_utc_date(match_gsp_fallback, return_both)

@@ -80,8 +80,34 @@ class TestArticleTimestampUtil(unittest.TestCase):
         self.assertEqual(ts.year, 2025)
         self.assertEqual(ts.month, 11)
         self.assertEqual(ts.day, 23)
-        self.assertEqual(ts.hour, 14)  # UTC conversion from 12:52 EEST
+        self.assertEqual(ts.hour, 14)  # UTC conversion
         self.assertEqual(ts.minute, 57)
+
+    def test_iam_data_timestamp(self):
+        html = '''
+        <p class="semnatura">Publicat: 26.11.2025 18:10 Actualizat: 26.11.2025 18:13</p>
+        '''
+
+        soup = BeautifulSoup(html, "html.parser")
+        ts = ts_util.extract_timestamp_from_selector(soup, "p.semnatura")
+        self.assertEqual(ts.year, 2025)
+        self.assertEqual(ts.month, 11)
+        self.assertEqual(ts.day, 26)
+        self.assertEqual(ts.hour, 16)  # UTC conversion
+        self.assertEqual(ts.minute, 13)
+
+    def test_iam_data_timestamp_published(self):
+        html = '''
+        <p class="semnatura">Publicat: 26.11.2025 18:10</p>
+        '''
+
+        soup = BeautifulSoup(html, "html.parser")
+        ts = ts_util.extract_timestamp_from_selector(soup, "p.semnatura")
+        self.assertEqual(ts.year, 2025)
+        self.assertEqual(ts.month, 11)
+        self.assertEqual(ts.day, 26)
+        self.assertEqual(ts.hour, 16)  # UTC conversion
+        self.assertEqual(ts.minute, 10)
 
     def test_gsp_data_autor_original(self):
         html = '''
@@ -113,7 +139,7 @@ class TestArticleTimestampUtil(unittest.TestCase):
     def test_get_local_utc_date_no_comma(self):
         text = "Actualizat joi, 30 octombrie 2025 09:41"
         import re
-        match_updated = re.search(r"Actualizat\s+(?:\w+,)?\s*\d{1,2}\s+\w+\s+\d{4}[,]?\s*\d{2}:\d{2}", text)
+        match_updated = re.search(r"Actualizat\s+(?:\w+,)?\s*\d{1,2}\s+\w+\s+\d{4},?\s*\d{2}:\d{2}", text)
         self.assertIsNotNone(match_updated)
 
         result = ts_util.get_local_utc_date(match=match_updated, return_both=True)
@@ -128,7 +154,7 @@ class TestArticleTimestampUtil(unittest.TestCase):
     def test_get_local_utc_date(self):
         text = "Actualizat joi, 31 iulie 2023, 10:01"
         import re
-        match_updated = re.search(r"Actualizat\s+(?:\w+,)?\s*\d{1,2}\s+\w+\s+\d{4}[,]?\s*\d{2}:\d{2}", text)
+        match_updated = re.search(r"Actualizat\s+(?:\w+,)?\s*\d{1,2}\s+\w+\s+\d{4},?\s*\d{2}:\d{2}", text)
         self.assertIsNotNone(match_updated)
 
         result = ts_util.get_local_utc_date(match=match_updated, return_both=True)
