@@ -1,4 +1,3 @@
-import os
 import unittest
 
 from app.config.loader import load_sites_from_config
@@ -10,7 +9,7 @@ class TestSiteConfig(unittest.TestCase):
         # config_path = os.path.join(base_dir, "app", "config", "sites_config.json")
         # sites = load_sites_from_config(config_path)
         sites = load_sites_from_config()
-        assert len(sites) == 6
+        assert len(sites) == 8
 
         expected_fields = {
             "digisport": {
@@ -40,6 +39,16 @@ class TestSiteConfig(unittest.TestCase):
             },
             "golazo": {
                 "base_url": "https://golazo.ro",
+                "title_strategy": "text",
+                "title_attribute": None
+            },
+            "as": {
+                "base_url": "https://as.ro",
+                "title_strategy": "text",
+                "title_attribute": None
+            },
+            "iamsport": {
+                "base_url": "https://iamsport.ro",
                 "title_strategy": "text",
                 "title_attribute": None
             }

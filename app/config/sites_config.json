@@ -71,6 +71,17 @@
     "model": "BERT"
   },
   {
+    "name": "as",
+    "display_name": "AS.ro",
+    "base_url": "https://as.ro",
+    "traffic": 4.4,
+    "time_selector": "p",
+    "block_selector": "a.news-item",
+    "link_selector": "a.news-item",
+    "title_strategy": "text",
+    "model": "BERT"
+  },
+  {
     "name": "iamsport",
     "display_name": "iAM Sport",
     "base_url": "https://iamsport.ro",
