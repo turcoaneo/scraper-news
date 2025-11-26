@@ -4,14 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="22401e38-3721-4fd8-b77a-f843b1aa4640" name=" Deployment." comment="Golazo. UAT.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="22401e38-3721-4fd8-b77a-f843b1aa4640" name=" Deployment." comment="About.">
+      <change afterPath="$PROJECT_DIR$/static/assets/AboutView-DttsDu0m.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/assets/AboutView-C_v9wVaw.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
     </list>
     <list id="a7f942ad-3c95-41b0-b4b7-f43fce9ff07e" name="Changes" comment="" />
     <list id="6508d4bf-b1d4-4e03-bff8-2d311d3ea368" name="Env" comment="">
       <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
     </list>
-    <list id="53257271-e7b8-4d79-880d-23a742d856a8" name="Local ENV FE" comment="Local ENV FE." />
+    <list id="53257271-e7b8-4d79-880d-23a742d856a8" name="Local ENV FE" comment="Local ENV FE.">
+      <change beforePath="$PROJECT_DIR$/static/assets/AboutView-lYGs12LA.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/AboutView-CpgUgP3W.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/assets/index-CVo6Fpd1.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/index-DZIfFAgs.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -489,14 +494,6 @@
       <workItem from="1763460637451" duration="63916000" />
       <workItem from="1763735417270" duration="31321000" />
     </task>
-    <task id="LOCAL-00093" summary=" Deployment. Fixing port.">
-      <option name="closed" value="true" />
-      <created>1763447382729</created>
-      <option name="number" value="00093" />
-      <option name="presentableId" value="LOCAL-00093" />
-      <option name="project" value="LOCAL" />
-      <updated>1763447382729</updated>
-    </task>
     <task id="LOCAL-00094" summary=" Deployment. Fixing monitoring daemon.">
       <option name="closed" value="true" />
       <created>1763461443726</created>
@@ -865,7 +862,15 @@
       <option name="project" value="LOCAL" />
       <updated>1764146635994</updated>
     </task>
-    <option name="localTasksCounter" value="140" />
+    <task id="LOCAL-00140" summary="About.">
+      <option name="closed" value="true" />
+      <created>1764151455553</created>
+      <option name="number" value="00140" />
+      <option name="presentableId" value="LOCAL-00140" />
+      <option name="project" value="LOCAL" />
+      <updated>1764151455553</updated>
+    </task>
+    <option name="localTasksCounter" value="141" />
     <option name="createBranch" value="false" />
     <option name="useBranch" value="true" />
     <servers />
@@ -885,7 +890,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value=" Deployment. UAT." />
     <MESSAGE value=" Deployment. Fix score, again." />
     <MESSAGE value=" Deployment. Logging." />
     <MESSAGE value=" Deployment. Logging fix." />
@@ -910,7 +914,8 @@
     <MESSAGE value="Golazo." />
     <MESSAGE value="Golazo #2." />
     <MESSAGE value="Golazo. UAT." />
-    <option name="LAST_COMMIT_MESSAGE" value="Golazo. UAT." />
+    <MESSAGE value="About." />
+    <option name="LAST_COMMIT_MESSAGE" value="About." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -941,6 +946,6 @@
     <SUITE FILE_PATH="coverage/scraper_news$FastAPI.coverage" NAME="FastAPI Coverage Results" MODIFIED="1763731727177" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/" />
     <SUITE FILE_PATH="coverage/scraper_news$run.coverage" NAME="run Coverage Results" MODIFIED="1760539226178" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/scraper_news$SCRAPER_JOB.coverage" NAME="SCRAPER JOB Coverage Results" MODIFIED="1763565018300" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cron_jobs" />
-    <SUITE FILE_PATH="coverage/scraper_news$Main___FastAPI_and_Scraper_Cron.coverage" NAME="Main - FastAPI and Scraper Cron Coverage Results" MODIFIED="1764150363929" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/scraper_news$Main___FastAPI_and_Scraper_Cron.coverage" NAME="Main - FastAPI and Scraper Cron Coverage Results" MODIFIED="1764151527117" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
