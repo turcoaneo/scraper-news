@@ -62,7 +62,7 @@
   {
     "name": "golazo",
     "display_name": "Golazo",
-    "base_url": "https://www.golazo.ro",
+    "base_url": "https://golazo.ro",
     "traffic": 6.6,
     "time_selector": "span.article__date",
     "block_selector": "div.news-item",
