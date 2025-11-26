@@ -4,14 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="22401e38-3721-4fd8-b77a-f843b1aa4640" name=" Deployment." comment="Runner refactoring. Fix saving." />
+    <list default="true" id="22401e38-3721-4fd8-b77a-f843b1aa4640" name=" Deployment." comment="Runner refactoring new.">
+      <change afterPath="$PROJECT_DIR$/static/assets/AboutView-BPrhT683.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/AboutView-C73Rxt76.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/config/sites_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/sites_config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/article_scraper.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/article_scraper.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/site_scraper.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/site_scraper.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/util/article_timestamp_util.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/util/article_timestamp_util.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/assets/AboutView-CWxrk3MA.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/test_article/test_article_scraper.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test_article/test_article_scraper.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/test_cluster/test_cluster_routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test_cluster/test_cluster_routes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/test_config/test_loader_sites_config.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test_config/test_loader_sites_config.py" afterDir="false" />
+    </list>
     <list id="a7f942ad-3c95-41b0-b4b7-f43fce9ff07e" name="Changes" comment="" />
     <list id="6508d4bf-b1d4-4e03-bff8-2d311d3ea368" name="Env" comment="">
       <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
     </list>
     <list id="53257271-e7b8-4d79-880d-23a742d856a8" name="Local ENV FE" comment="Local ENV FE.">
-      <change beforePath="$PROJECT_DIR$/static/assets/AboutView-QnwK480I.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/AboutView-B7GpAqNC.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/index-11rK1kYM.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/index-CxGrWL5I.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/assets/AboutView-QnwK480I.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/assets/index-11rK1kYM.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/index-a1WxasU-.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -75,6 +87,8 @@
     "Notification.DoNotAsk-CythonWarning": "true",
     "Python tests.Python tests for test_article.test_article_filter.TestArticleFilter.executor": "Run",
     "Python tests.Python tests for test_article.test_article_scraper.TestArticleScraper.executor": "Run",
+    "Python tests.Python tests for test_article.test_article_scraper.TestArticleScraper.test_golazo_title_with_inline_spans.executor": "Run",
+    "Python tests.Python tests for test_article.test_article_scraper.TestArticleScraper.test_gsp_title_with_multiple_tags.executor": "Run",
     "Python tests.Python tests for test_article_extract_data.TestArticleExtractor.executor": "Run",
     "Python tests.Python tests for test_article_extract_data.TestArticleExtractor.test_extract_data_returns_expected_dict.executor": "Debug",
     "Python tests.Python tests for test_article_extract_data.TestArticleExtractor.test_extract_data_returns_none_if_invalid.executor": "Debug",
@@ -106,6 +120,7 @@
     "Python tests.Python tests for test_claude_prompt_builder.TestClaudePromptBuilder.executor": "Run",
     "Python tests.Python tests for test_claude_prompt_builder.TestClaudePromptBuilder.test_extract_entities_and_keywords.executor": "Run",
     "Python tests.Python tests for test_claude_prompt_builder.TestClaudePromptBuilder.test_send_prompt_to_claude.executor": "Debug",
+    "Python tests.Python tests for test_cluster.test_cluster_routes.TestClusterRoutes.test_sites_endpoint_display_names.executor": "Run",
     "Python tests.Python tests for test_cluster_buffer_service.TestClusterBufferService.executor": "Run",
     "Python tests.Python tests for test_cluster_buffer_service.TestClusterBufferService.test_get_cached_clusters_missing_file.executor": "Run",
     "Python tests.Python tests for test_cluster_buffer_service.TestClusterBufferService.test_get_cached_clusters_success.executor": "Debug",
@@ -132,6 +147,7 @@
     "Python tests.Python tests for test_cluster_service.test_cluster_news.executor": "Run",
     "Python tests.Python tests for test_cluster_service.test_delete_old_csvs.executor": "Run",
     "Python tests.Python tests for test_cluster_service.test_scrape_sites_async.executor": "Run",
+    "Python tests.Python tests for test_config.test_loader_sites_config.TestSiteConfig.test_site_config_fields.executor": "Run",
     "Python tests.Python tests for test_cooldown_persistence.TestCooldownPersistence.executor": "Run",
     "Python tests.Python tests for test_cooldown_persistence.TestCooldownPersistence.test_save_and_load_cooldowns.executor": "Debug",
     "Python tests.Python tests for test_cron_util.test_scrape_runner_declension_util.TestScrapeRunnerDeclensionUtil.executor": "Run",
@@ -262,7 +278,7 @@
       <recent name="D:\DEV\scraper-news\test\test_s3" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.Python tests for test_cron_util.test_scrape_runner_util.TestScrapeRunnerUtil.test_merge_articles">
+  <component name="RunManager" selected="Python.Main - FastAPI and Scraper Cron">
     <configuration default="true" type="DjangoTestsConfigurationType">
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -383,105 +399,11 @@
       <option name="docutils_open_in_browser" value="false" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for test_cron_util.test_scrape_runner_declension_util.TestScrapeRunnerDeclensionUtil" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
-      <module name="scraper-news" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_cron_util.test_scrape_runner_declension_util.TestScrapeRunnerDeclensionUtil&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Python tests for test_cron_util.test_scrape_runner_merge_util.TestScrapeRunnerMergeUtil" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
-      <module name="scraper-news" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_cron_util.test_scrape_runner_merge_util.TestScrapeRunnerMergeUtil&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Python tests for test_cron_util.test_scrape_runner_util.TestScrapeRunnerUtil" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
-      <module name="scraper-news" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_cron_util.test_scrape_runner_util.TestScrapeRunnerUtil&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Python tests for test_cron_util.test_scrape_runner_util.TestScrapeRunnerUtil.test_merge_articles" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
-      <module name="scraper-news" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_cron_util.test_scrape_runner_util.TestScrapeRunnerUtil.test_merge_articles&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Python tests in test_cooldown_persistence.py" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
-      <module name="scraper-news" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/test/test_cron_util/test_cooldown_persistence.py&quot;" />
-      <option name="_new_targetType" value="&quot;PATH&quot;" />
-      <method v="2" />
-    </configuration>
     <list>
       <item itemvalue="Python.FastAPI" />
       <item itemvalue="Python.Main - FastAPI and Scraper Cron" />
       <item itemvalue="Python.SCRAPER JOB" />
-      <item itemvalue="Python tests.Python tests for test_cron_util.test_scrape_runner_declension_util.TestScrapeRunnerDeclensionUtil" />
-      <item itemvalue="Python tests.Python tests for test_cron_util.test_scrape_runner_merge_util.TestScrapeRunnerMergeUtil" />
-      <item itemvalue="Python tests.Python tests for test_cron_util.test_scrape_runner_util.TestScrapeRunnerUtil" />
-      <item itemvalue="Python tests.Python tests for test_cron_util.test_scrape_runner_util.TestScrapeRunnerUtil.test_merge_articles" />
-      <item itemvalue="Python tests.Python tests in test_cooldown_persistence.py" />
     </list>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Python tests.Python tests for test_cron_util.test_scrape_runner_util.TestScrapeRunnerUtil.test_merge_articles" />
-        <item itemvalue="Python tests.Python tests for test_cron_util.test_scrape_runner_merge_util.TestScrapeRunnerMergeUtil" />
-        <item itemvalue="Python tests.Python tests for test_cron_util.test_scrape_runner_declension_util.TestScrapeRunnerDeclensionUtil" />
-        <item itemvalue="Python tests.Python tests for test_cron_util.test_scrape_runner_util.TestScrapeRunnerUtil" />
-        <item itemvalue="Python tests.Python tests in test_cooldown_persistence.py" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -580,14 +502,6 @@
       <workItem from="1763447097517" duration="4592000" />
       <workItem from="1763460637451" duration="63916000" />
       <workItem from="1763735417270" duration="31321000" />
-    </task>
-    <task id="LOCAL-00089" summary=" Deployment. GitHub Action. UAT FE.">
-      <option name="closed" value="true" />
-      <created>1763404707124</created>
-      <option name="number" value="00089" />
-      <option name="presentableId" value="LOCAL-00089" />
-      <option name="project" value="LOCAL" />
-      <updated>1763404707124</updated>
     </task>
     <task id="LOCAL-00090" summary=" Deployment. GitHub Action. Port.">
       <option name="closed" value="true" />
@@ -957,7 +871,15 @@
       <option name="project" value="LOCAL" />
       <updated>1764096850980</updated>
     </task>
-    <option name="localTasksCounter" value="136" />
+    <task id="LOCAL-00136" summary="Runner refactoring new.">
+      <option name="closed" value="true" />
+      <created>1764096947380</created>
+      <option name="number" value="00136" />
+      <option name="presentableId" value="LOCAL-00136" />
+      <option name="project" value="LOCAL" />
+      <updated>1764096947380</updated>
+    </task>
+    <option name="localTasksCounter" value="137" />
     <option name="createBranch" value="false" />
     <option name="useBranch" value="true" />
     <servers />
@@ -977,7 +899,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value=" Deployment. Filtering." />
     <MESSAGE value=" Deployment. Static folder." />
     <MESSAGE value=" Deployment. Static folder - UAT." />
     <MESSAGE value=" Deployment. Static folder - UAT - filter color." />
@@ -1002,45 +923,16 @@
     <MESSAGE value="Cooldown refactoring." />
     <MESSAGE value="Runner refactoring." />
     <MESSAGE value="Runner refactoring. Fix saving." />
-    <option name="LAST_COMMIT_MESSAGE" value="Runner refactoring. Fix saving." />
+    <MESSAGE value="Runner refactoring new." />
+    <option name="LAST_COMMIT_MESSAGE" value="Runner refactoring new." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/service/util/cluster_filter_util.py</url>
-          <line>39</line>
-          <option name="timeStamp" value="43" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/test/test_cluster/test_cluster_filter_util.py</url>
-          <line>102</line>
-          <option name="timeStamp" value="46" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/service/story_clusterer.py</url>
-          <line>202</line>
-          <option name="timeStamp" value="49" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/app/routes/cluster.py</url>
-          <line>47</line>
-          <option name="timeStamp" value="50" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/main.py</url>
-          <line>2</line>
-          <option name="timeStamp" value="51" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/test/test_cron_util/test_cooldown_persistence.py</url>
-          <line>40</line>
-          <option name="timeStamp" value="59" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/test/test_cron_util/test_scrape_runner_util.py</url>
-          <line>33</line>
-          <option name="timeStamp" value="60" />
+        <line-breakpoint suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/service/site_scraper.py</url>
+          <line>125</line>
+          <option name="timeStamp" value="77" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
@@ -1056,13 +948,13 @@
     <SUITE FILE_PATH="coverage/scraper_news$__init__.coverage" NAME="__init__ Coverage Results" MODIFIED="1763901124446" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app" />
     <SUITE FILE_PATH="coverage/scraper_news$scraper_job.coverage" NAME="SCRAPER JOB Coverage Results" MODIFIED="1761118909149" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cron_jobs" />
     <SUITE FILE_PATH="coverage/scraper_news$article_timestamp_util.coverage" NAME="article_timestamp_util Coverage Results" MODIFIED="1761824298098" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/service/util" />
-    <SUITE FILE_PATH="coverage/scraper_news$.coverage" NAME=" Coverage Results" MODIFIED="1764096113170" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/scraper_news$.coverage" NAME=" Coverage Results" MODIFIED="1764145198836" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/scraper_news$Scraper_Cron.coverage" NAME="Scraper Cron Coverage Results" MODIFIED="1760774637564" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="D:\WORKSPACE\Python\scraper-news" />
     <SUITE FILE_PATH="coverage/scraper_news$main.coverage" NAME="Main - FastAPI and Scraper Cron Coverage Results" MODIFIED="1760774789944" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/scraper_news$python__m_spacy_download_ro_core_news_sm.coverage" NAME="python -m spacy download ro_core_news_sm Coverage Results" MODIFIED="1762675507625" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/scraper_news$FastAPI.coverage" NAME="FastAPI Coverage Results" MODIFIED="1763731727177" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/" />
     <SUITE FILE_PATH="coverage/scraper_news$run.coverage" NAME="run Coverage Results" MODIFIED="1760539226178" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/scraper_news$SCRAPER_JOB.coverage" NAME="SCRAPER JOB Coverage Results" MODIFIED="1763565018300" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cron_jobs" />
-    <SUITE FILE_PATH="coverage/scraper_news$Main___FastAPI_and_Scraper_Cron.coverage" NAME="Main - FastAPI and Scraper Cron Coverage Results" MODIFIED="1764095392033" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/scraper_news$Main___FastAPI_and_Scraper_Cron.coverage" NAME="Main - FastAPI and Scraper Cron Coverage Results" MODIFIED="1764145212779" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

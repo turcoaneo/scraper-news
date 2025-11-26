@@ -125,6 +125,8 @@ class SiteScraper:
         seen = set()
         for block in soup.select(self.block_selector):
             link_tag = block.select_one(self.link_selector)
+            # if link_tag.get_text(strip=True) == 'Citește mai mult':
+            #     link_tag = block.select(self.link_selector)[1]
             if not link_tag or not link_tag.has_attr("href"):
                 continue
             full_url = urljoin(self.base_url, link_tag["href"]) if not link_tag["href"].startswith("http") else \

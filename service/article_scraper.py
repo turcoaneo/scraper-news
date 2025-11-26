@@ -81,19 +81,30 @@ class ArticleScraper:
 
     def extract_title(self, unwanted_tags=None):
         if unwanted_tags is None:
-            unwanted_tags = ["Exclusiv", "UPDATE", "Oficial", "FOTO", "VIDEO", "FOTO ȘI VIDEO", "EXCLUSIV / UPDATE"]
+            unwanted_tags = [
+                "Exclusiv", "UPDATE", "Oficial", "FOTO", "VIDEO",
+                "FOTO ȘI VIDEO", "EXCLUSIV / UPDATE"
+            ]
 
         tag = self._extract_title()
         if not tag:
             return ""
 
-        # Remove span tags with known classes
+        # Remove span tags with known classes (as before)
         for span in tag.find_all("span", class_=["tag", "marcaj"]):
             span.extract()
 
-        title = tag.get_text(strip=True)
+        # For Golazo: unwrap inline <span>, <strong>, <u> but keep their text
+        for inline in tag.find_all(["span", "strong", "u"]):
+            inline.unwrap()
 
-        # Remove unwanted phrases from the beginning of the title
+        # Now get text with spaces between inline elements
+        title = tag.get_text(" ", strip=True)
+
+        # Normalize multiple spaces
+        title = " ".join(title.split())
+
+        # Remove unwanted phrases from the beginning
         for phrase in unwanted_tags:
             if title.upper().startswith(phrase.upper()):
                 title = title[len(phrase):].strip(" :–-")

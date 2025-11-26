@@ -36,6 +36,8 @@ class TestArticleScraper(unittest.TestCase):
     @patch("service.article_scraper.ArticleScraper._extract_summary", return_value="Rezumat test")
     @patch("service.article_scraper.ArticleScraper._extract_comments", return_value=3)
     def test_extract_data(self, mock_summary, mock_comments, mock_extract):  # reverse order for patched params
+        assert mock_summary is not None
+        assert mock_comments is not None
         mock_extract.return_value = {
             "entities": ["Rapid București", "CFR Cluj"],
             "keywords": ["victorie", "dramatică"]
@@ -110,6 +112,45 @@ class TestArticleScraper(unittest.TestCase):
         scraper = ArticleScraper("url", "title", "")
         scraper.soup = BeautifulSoup(html, "html.parser")
         self.assertEqual(scraper.extract_title(unwanted_tags=["Blah Blah"]), "Titlu important")
+
+    def test_golazo_title_with_inline_spans(self):
+        html = '''
+        <h1 class="news-item__title">
+            <strong> Șocat de viața din Arabia Saudită </strong>
+            Fostul jucător din Serie A <u><span>și-a</span> reziliat contractul</u>
+            după câteva zile: <span>„M-am</span> săturat!” » Ce <span>l-a</span> lăsat fără cuvinte
+        </h1>
+        '''
+        scraper = ArticleScraper("url", "title", "")
+        scraper.soup = BeautifulSoup(html, "html.parser")
+        title = scraper.extract_title()
+        self.assertEqual(title, "Șocat de viața din Arabia Saudită Fostul jucător din Serie A și-a reziliat "
+                                "contractul după câteva zile: „M-am săturat!” » Ce l-a lăsat fără cuvinte")
+
+    def test_golazo_title_with_strong_and_u(self):
+        html = '''
+        <h1 class="news-item__title">
+            <strong> Nimiciți de scandalul pariurilor</strong>
+            Un club din Turcia a rămas <u> doar cu 7 fotbaliști:</u>
+            <span>„Staff-ul</span> e mai mare decât lotul de jucători”
+        </h1>
+        '''
+        scraper = ArticleScraper("url", "title", "")
+        scraper.soup = BeautifulSoup(html, "html.parser")
+        title = scraper.extract_title()
+        self.assertEqual(title, "Nimiciți de scandalul pariurilor Un club din Turcia a rămas doar cu 7 fotbaliști: "
+                                "„Staff-ul e mai mare decât lotul de jucători”")
+
+    def test_golazo_title_removes_unwanted_prefix(self):
+        html = '''
+        <h1 class="news-item__title">
+            <span class="tag">VIDEO</span> CFR Cluj câștigă în prelungiri
+        </h1>
+        '''
+        scraper = ArticleScraper("url", "title", "")
+        scraper.soup = BeautifulSoup(html, "html.parser")
+        title = scraper.extract_title()
+        self.assertEqual(title, "CFR Cluj câștigă în prelungiri")
 
 
 if __name__ == "__main__":

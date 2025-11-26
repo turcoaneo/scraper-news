@@ -10,7 +10,7 @@ class TestSiteConfig(unittest.TestCase):
         # config_path = os.path.join(base_dir, "app", "config", "sites_config.json")
         # sites = load_sites_from_config(config_path)
         sites = load_sites_from_config()
-        assert len(sites) == 5
+        assert len(sites) == 6
 
         expected_fields = {
             "digisport": {
@@ -35,6 +35,11 @@ class TestSiteConfig(unittest.TestCase):
             },
             "sport": {
                 "base_url": "https://www.sport.ro",
+                "title_strategy": "text",
+                "title_attribute": None
+            },
+            "golazo": {
+                "base_url": "https://www.golazo.ro",
                 "title_strategy": "text",
                 "title_attribute": None
             }
