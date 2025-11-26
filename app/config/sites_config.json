@@ -69,5 +69,16 @@
     "link_selector": "a.link",
     "title_strategy": "text",
     "model": "BERT"
+  },
+  {
+    "name": "iamsport",
+    "display_name": "iAM Sport",
+    "base_url": "https://iamsport.ro",
+    "traffic": 2.3,
+    "time_selector": "p",
+    "block_selector": "div.news-item",
+    "link_selector": "a.link",
+    "title_strategy": "text",
+    "model": "BERT"
   }
 ]
