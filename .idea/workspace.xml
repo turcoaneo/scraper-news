@@ -4,12 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="22401e38-3721-4fd8-b77a-f843b1aa4640" name=" Deployment." comment="Golazo.">
-      <change beforePath="$PROJECT_DIR$/static/assets/AboutView-BPrhT683.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/AboutView-QnwK480I.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/index-11rK1kYM.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/test_cluster/test_cluster_routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test_cluster/test_cluster_routes.py" afterDir="false" />
+    <list default="true" id="22401e38-3721-4fd8-b77a-f843b1aa4640" name=" Deployment." comment="Golazo. UAT.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <list id="a7f942ad-3c95-41b0-b4b7-f43fce9ff07e" name="Changes" comment="" />
     <list id="6508d4bf-b1d4-4e03-bff8-2d311d3ea368" name="Env" comment="">
@@ -493,22 +489,6 @@
       <workItem from="1763460637451" duration="63916000" />
       <workItem from="1763735417270" duration="31321000" />
     </task>
-    <task id="LOCAL-00091" summary=" Deployment. Fixing port.">
-      <option name="closed" value="true" />
-      <created>1763407987665</created>
-      <option name="number" value="00091" />
-      <option name="presentableId" value="LOCAL-00091" />
-      <option name="project" value="LOCAL" />
-      <updated>1763407987665</updated>
-    </task>
-    <task id="LOCAL-00092" summary=" Deployment. Fixing health check.">
-      <option name="closed" value="true" />
-      <created>1763409727928</created>
-      <option name="number" value="00092" />
-      <option name="presentableId" value="LOCAL-00092" />
-      <option name="project" value="LOCAL" />
-      <updated>1763409727928</updated>
-    </task>
     <task id="LOCAL-00093" summary=" Deployment. Fixing port.">
       <option name="closed" value="true" />
       <created>1763447382729</created>
@@ -869,7 +849,23 @@
       <option name="project" value="LOCAL" />
       <updated>1764146061225</updated>
     </task>
-    <option name="localTasksCounter" value="138" />
+    <task id="LOCAL-00138" summary="Golazo #2.">
+      <option name="closed" value="true" />
+      <created>1764146584847</created>
+      <option name="number" value="00138" />
+      <option name="presentableId" value="LOCAL-00138" />
+      <option name="project" value="LOCAL" />
+      <updated>1764146584847</updated>
+    </task>
+    <task id="LOCAL-00139" summary="Golazo. UAT.">
+      <option name="closed" value="true" />
+      <created>1764146635994</created>
+      <option name="number" value="00139" />
+      <option name="presentableId" value="LOCAL-00139" />
+      <option name="project" value="LOCAL" />
+      <updated>1764146635994</updated>
+    </task>
+    <option name="localTasksCounter" value="140" />
     <option name="createBranch" value="false" />
     <option name="useBranch" value="true" />
     <servers />
@@ -889,8 +885,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value=" Deployment. Static folder - UAT." />
-    <MESSAGE value=" Deployment. Static folder - UAT - filter color." />
     <MESSAGE value=" Deployment. UAT." />
     <MESSAGE value=" Deployment. Fix score, again." />
     <MESSAGE value=" Deployment. Logging." />
@@ -914,7 +908,9 @@
     <MESSAGE value="Runner refactoring. Fix saving." />
     <MESSAGE value="Runner refactoring new." />
     <MESSAGE value="Golazo." />
-    <option name="LAST_COMMIT_MESSAGE" value="Golazo." />
+    <MESSAGE value="Golazo #2." />
+    <MESSAGE value="Golazo. UAT." />
+    <option name="LAST_COMMIT_MESSAGE" value="Golazo. UAT." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -945,6 +941,6 @@
     <SUITE FILE_PATH="coverage/scraper_news$FastAPI.coverage" NAME="FastAPI Coverage Results" MODIFIED="1763731727177" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/" />
     <SUITE FILE_PATH="coverage/scraper_news$run.coverage" NAME="run Coverage Results" MODIFIED="1760539226178" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/scraper_news$SCRAPER_JOB.coverage" NAME="SCRAPER JOB Coverage Results" MODIFIED="1763565018300" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cron_jobs" />
-    <SUITE FILE_PATH="coverage/scraper_news$Main___FastAPI_and_Scraper_Cron.coverage" NAME="Main - FastAPI and Scraper Cron Coverage Results" MODIFIED="1764146086946" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/scraper_news$Main___FastAPI_and_Scraper_Cron.coverage" NAME="Main - FastAPI and Scraper Cron Coverage Results" MODIFIED="1764150363929" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
