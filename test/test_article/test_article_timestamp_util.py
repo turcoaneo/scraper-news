@@ -122,8 +122,47 @@ class TestArticleTimestampUtil(unittest.TestCase):
         self.assertEqual(ts.year, 2025)
         self.assertEqual(ts.month, 10)
         self.assertEqual(ts.day, 30)
-        self.assertEqual(ts.hour, 13)  # UTC conversion from 12:52 EEST
+        self.assertEqual(ts.hour, 13)  # UTC conversion from 12:55 EEST
         self.assertEqual(ts.minute, 55)
+
+    def test_as_data_autor(self):
+        html = '''
+        div class="autor-data">
+            <p><span class="new-design-left">Publicat: 27 noiembrie 2025, 17:17</span></p>
+        </div>
+        '''
+
+        soup = BeautifulSoup(html, "html.parser")
+        ts = ts_util.extract_timestamp_from_selector(soup, "span.new-design-right")
+        self.assertEqual(ts.year, 2025)
+        self.assertEqual(ts.month, 11)
+        self.assertEqual(ts.day, 27)
+        self.assertEqual(ts.hour, 15)  # UTC conversion
+        self.assertEqual(ts.minute, 17)
+
+    def test_as_data_autor_author(self):
+        html = '''
+        <div class="autor-data">
+        <!--<a href="https://as.ro/author/bogdan-stanescu" class="thumb autor__foto" title="Bogdan Stănescu">
+            </a>--->
+        <p>
+            <span class="new-design-left">
+               <a href="https://as.ro/author/bogdan-stanescu" title="Bogdan Stănescu">Bogdan Stănescu</a>
+            </span>
+            <span class="new-design-right">Publicat: 27 noiembrie 2025, 18:22</span>
+        </p>
+        <!--<div class="autor__spacer"></div>-->
+        <!--<div class="autor__social"></div>-->
+        </div>
+        '''
+
+        soup = BeautifulSoup(html, "html.parser")
+        ts = ts_util.extract_timestamp_from_selector(soup, "span.new-design-right")
+        self.assertEqual(ts.year, 2025)
+        self.assertEqual(ts.month, 11)
+        self.assertEqual(ts.day, 27)
+        self.assertEqual(ts.hour, 16)  # UTC conversion
+        self.assertEqual(ts.minute, 22)
 
     def test_get_fallback_date(self):
         result = ts_util.get_fallback_date("Irrelevant", return_both=True)
