@@ -129,11 +129,14 @@ class SiteScraper:
     def extract_article_links(self, soup):
         seen = set()
         for block in soup.select(self.block_selector):
-            link_tag = block.select_one(self.link_selector)
-            if not link_tag or not link_tag.has_attr("href"):
-                continue
-            full_url = urljoin(self.base_url, link_tag["href"]) if not link_tag["href"].startswith("http") else \
-                link_tag["href"]
+            href = block["href"]
+            link_tag = block
+            if not href:
+                link_tag = block.select_one(self.link_selector)
+                if not link_tag or not link_tag.has_attr("href"):
+                    continue
+                href = link_tag["href"]
+            full_url = urljoin(self.base_url, href) if not href.startswith("http") else href
             if full_url in seen:
                 continue
             seen.add(full_url)
