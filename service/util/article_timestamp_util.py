@@ -72,12 +72,15 @@ def parse_iam(match_obj, return_both: bool = True):
 def extract_timestamp_from_selector(soup: BeautifulSoup, selector: str, return_both: bool = False):
     tag = extract_time_tag(soup, selector)
     if not tag:
-        link_tag = soup.find("a", class_="read-more-link") or soup.find("a", title="Mergi la articol")
-        href = None
-        if link_tag and link_tag.has_attr("href"):
-            href = link_tag["href"]
-        logger.debug(f"No valid timestamp found in selector: {selector} for {href}")
-        return get_fallback_date(selector, return_both)
+        selector = "span.new-design-left"
+        tag = extract_time_tag(soup, selector)
+        if not tag:
+            link_tag = soup.find("a", class_="read-more-link") or soup.find("a", title="Mergi la articol")
+            href = None
+            if link_tag and link_tag.has_attr("href"):
+                href = link_tag["href"]
+            logger.debug(f"No valid timestamp found in selector: {selector} for {href}")
+            return get_fallback_date(selector, return_both)
 
     # Sport.ro-style: <span data-utc-date="2025-11-23 16:57:42">
     if tag.has_attr("data-utc-date"):
@@ -91,6 +94,32 @@ def extract_timestamp_from_selector(soup: BeautifulSoup, selector: str, return_b
 
     # noinspection PyArgumentList
     text = tag.get_text(separator=" ", strip=True)
+
+    # AS.ro-style ISO timestamps: 2025-11-27T09:08:33.017107+00:00
+    match_iso = re.search(r"\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?(?:\+00:00|Z)?", text)
+    if match_iso:
+        try:
+            local_dt = parser.parse(match_iso.group())
+            utc_dt = local_dt.astimezone(timezone.utc)
+            return (local_dt, utc_dt) if return_both else utc_dt
+        except Exception as e:
+            logger.warning(f"[Timestamp] Failed to parse AS.ro ISO timestamp: {e}")
+
+    # AS.ro-style: Publicat: 27 noiembrie 2025, 10:02
+    match_as_published = re.search(
+        r"Publicat:\s*\d{1,2}\s+[A-Za-zăâîșț]+\.?\s+\d{4},\s*\d{1,2}:\d{2}",
+        text,
+        flags=re.IGNORECASE
+    )
+    if match_as_published:
+        try:
+            raw = match_as_published.group()
+            # Extract just the datetime part
+            dt_part = re.search(r"\d{1,2}\s+\w+\s+\d{4},\s*\d{1,2}:\d{2}", raw).group()
+            # Translate Romanian month names to English
+            return map_timestamp_month_ro_en(dt_part, return_both)
+        except Exception as e:
+            logger.warning(f"[Timestamp] Failed to parse AS.ro 'Publicat': {e}")
 
     # iAM-style
     # Normalize non-breaking spaces and punctuation noise
@@ -177,10 +206,28 @@ def extract_timestamp_from_selector(soup: BeautifulSoup, selector: str, return_b
     match_prosport = re.search(r"\d{1,2}\s+\w+\.?\s+\d{4},\s*\d{2}:\d{2}", text)
     if match_prosport:
         cleaned = match_prosport.group()
-        for ro, en in RO_TO_EN_MONTHS.items():
-            cleaned = re.sub(rf"\b{re.escape(ro)}\b", en, cleaned, flags=re.IGNORECASE)
-        local_dt = parser.parse(cleaned, dayfirst=True)
+        return map_timestamp_month_ro_en(cleaned, return_both)
+
+    return get_fallback_date(selector, return_both)
+
+
+def map_timestamp_month_ro_en(dt_part, return_both):
+    # If dt_part already looks like ISO, parse directly
+    if re.match(r"\d{4}-\d{2}-\d{2}T", dt_part):
+        local_dt = parser.parse(dt_part)
         utc_dt = local_dt.astimezone(timezone.utc)
         return (local_dt, utc_dt) if return_both else utc_dt
 
-    return get_fallback_date(selector, return_both)
+    # Otherwise, translate Romanian months
+    for ro, en in RO_TO_EN_MONTHS.items():
+        dt_part = re.sub(rf"\b{re.escape(ro)}\b", en, dt_part, flags=re.IGNORECASE)
+
+    local_dt = parser.parse(dt_part, dayfirst=True)
+    utc_dt = local_dt.astimezone(timezone.utc)
+    return (normalize_dt(local_dt), normalize_dt(utc_dt)) if return_both else normalize_dt(utc_dt)
+
+
+def normalize_dt(dt):
+    # Strip seconds and microseconds
+    dt_clean = dt.replace(second=0, microsecond=0)
+    return dt_clean

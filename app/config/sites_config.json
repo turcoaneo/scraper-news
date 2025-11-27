@@ -75,7 +75,7 @@
     "display_name": "AS.ro",
     "base_url": "https://as.ro",
     "traffic": 4.4,
-    "time_selector": "p",
+    "time_selector": "span.new-design-right",
     "block_selector": "a.news-item",
     "link_selector": "",
     "title_strategy": "text",

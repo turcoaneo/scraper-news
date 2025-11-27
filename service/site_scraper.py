@@ -129,17 +129,22 @@ class SiteScraper:
     def extract_article_links(self, soup):
         seen = set()
         for block in soup.select(self.block_selector):
-            href = block["href"]
+            href = block.get("href")  # may be None
             link_tag = block
+
             if not href:
                 link_tag = block.select_one(self.link_selector)
                 if not link_tag or not link_tag.has_attr("href"):
                     continue
                 href = link_tag["href"]
+
+            # normalize href
             full_url = urljoin(self.base_url, href) if not href.startswith("http") else href
+
             if full_url in seen:
                 continue
             seen.add(full_url)
+
             yield full_url, link_tag
 
     def scrape_recent_articles(self, minutes=180):
@@ -151,6 +156,8 @@ class SiteScraper:
                 if self.title_strategy == "text"
                 else link_tag.get(self.title_attribute, "").strip()
             )
+            if self.name == "as":
+                homepage_title = link_tag.h2.text or homepage_title
             article_scraper = ArticleScraper(full_url, homepage_title, self.time_selector)
             article_scraper.fetch()
             article_data = article_scraper.extract_data(self.model_type)
