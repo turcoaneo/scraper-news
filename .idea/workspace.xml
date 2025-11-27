@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="22401e38-3721-4fd8-b77a-f843b1aa4640" name=" Deployment." comment="UAT." />
+    <list default="true" id="22401e38-3721-4fd8-b77a-f843b1aa4640" name=" Deployment." comment="Deployment. UAT.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <list id="a7f942ad-3c95-41b0-b4b7-f43fce9ff07e" name="Changes" comment="" />
     <list id="6508d4bf-b1d4-4e03-bff8-2d311d3ea368" name="Env" comment="">
       <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
@@ -488,22 +490,6 @@
       <workItem from="1763460637451" duration="63916000" />
       <workItem from="1763735417270" duration="31321000" />
     </task>
-    <task id="LOCAL-00104" summary=" Deployment. Storage CSV, logger new.">
-      <option name="closed" value="true" />
-      <created>1763571892603</created>
-      <option name="number" value="00104" />
-      <option name="presentableId" value="LOCAL-00104" />
-      <option name="project" value="LOCAL" />
-      <updated>1763571892603</updated>
-    </task>
-    <task id="LOCAL-00105" summary=" Deployment. S3 declension delta fix.">
-      <option name="closed" value="true" />
-      <created>1763573941791</created>
-      <option name="number" value="00105" />
-      <option name="presentableId" value="LOCAL-00105" />
-      <option name="project" value="LOCAL" />
-      <updated>1763573941791</updated>
-    </task>
     <task id="LOCAL-00106" summary=" Deployment. S3 update buffer.">
       <option name="closed" value="true" />
       <created>1763624695383</created>
@@ -864,7 +850,23 @@
       <option name="project" value="LOCAL" />
       <updated>1764185928028</updated>
     </task>
-    <option name="localTasksCounter" value="151" />
+    <task id="LOCAL-00151" summary="Deployment. Local.">
+      <option name="closed" value="true" />
+      <created>1764186322486</created>
+      <option name="number" value="00151" />
+      <option name="presentableId" value="LOCAL-00151" />
+      <option name="project" value="LOCAL" />
+      <updated>1764186322486</updated>
+    </task>
+    <task id="LOCAL-00152" summary="Deployment. UAT.">
+      <option name="closed" value="true" />
+      <created>1764186348794</created>
+      <option name="number" value="00152" />
+      <option name="presentableId" value="LOCAL-00152" />
+      <option name="project" value="LOCAL" />
+      <updated>1764186348794</updated>
+    </task>
+    <option name="localTasksCounter" value="153" />
     <option name="createBranch" value="false" />
     <option name="useBranch" value="true" />
     <servers />
@@ -884,8 +886,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Adding Sport ro." />
-    <MESSAGE value="S3 util." />
     <MESSAGE value="S3 util. fix." />
     <MESSAGE value="Deployment. S3 util." />
     <MESSAGE value="Test refactoring #1." />
@@ -909,7 +909,9 @@
     <MESSAGE value="CSS." />
     <MESSAGE value="Eurosport." />
     <MESSAGE value="UAT." />
-    <option name="LAST_COMMIT_MESSAGE" value="UAT." />
+    <MESSAGE value="Deployment. Local." />
+    <MESSAGE value="Deployment. UAT." />
+    <option name="LAST_COMMIT_MESSAGE" value="Deployment. UAT." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -940,6 +942,6 @@
     <SUITE FILE_PATH="coverage/scraper_news$FastAPI.coverage" NAME="FastAPI Coverage Results" MODIFIED="1763731727177" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/" />
     <SUITE FILE_PATH="coverage/scraper_news$run.coverage" NAME="run Coverage Results" MODIFIED="1760539226178" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/scraper_news$SCRAPER_JOB.coverage" NAME="SCRAPER JOB Coverage Results" MODIFIED="1763565018300" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cron_jobs" />
-    <SUITE FILE_PATH="coverage/scraper_news$Main___FastAPI_and_Scraper_Cron.coverage" NAME="Main - FastAPI and Scraper Cron Coverage Results" MODIFIED="1764185608951" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/scraper_news$Main___FastAPI_and_Scraper_Cron.coverage" NAME="Main - FastAPI and Scraper Cron Coverage Results" MODIFIED="1764223857362" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
