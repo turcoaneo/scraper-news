@@ -4,18 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="22401e38-3721-4fd8-b77a-f843b1aa4640" name=" Deployment." comment="Fix Eurosport.">
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+    <list default="true" id="22401e38-3721-4fd8-b77a-f843b1aa4640" name=" Deployment." comment="Fix AS.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/config/sites_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/sites_config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/site_scraper.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/site_scraper.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/util/article_timestamp_util.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/util/article_timestamp_util.py" afterDir="false" />
     </list>
     <list id="a7f942ad-3c95-41b0-b4b7-f43fce9ff07e" name="Changes" comment="" />
     <list id="6508d4bf-b1d4-4e03-bff8-2d311d3ea368" name="Env" comment="">
       <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
     </list>
-    <list id="53257271-e7b8-4d79-880d-23a742d856a8" name="Local ENV FE" comment="Local ENV FE." />
+    <list id="53257271-e7b8-4d79-880d-23a742d856a8" name="Local ENV FE" comment="Local ENV FE.">
+      <change beforePath="$PROJECT_DIR$/static/assets/AboutView-CgExlOyU.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/AboutView-Bcp3e9ki.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/assets/index-CNd0Lv9c.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/index-BAjnbDn8.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -56,14 +56,6 @@
   <component name="KubernetesApiProvider">{
   &quot;isMigrated&quot;: true
 }</component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/.env">
-      <ranges>
-        <range start1="1" end1="6" start2="1" end2="6" changelist="6508d4bf-b1d4-4e03-bff8-2d311d3ea368" />
-        <range start1="14" end1="15" start2="14" end2="15" changelist="22401e38-3721-4fd8-b77a-f843b1aa4640" />
-      </ranges>
-    </file>
-  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -502,14 +494,6 @@
       <workItem from="1763460637451" duration="63916000" />
       <workItem from="1763735417270" duration="31321000" />
     </task>
-    <task id="LOCAL-00109" summary=" Deployment. Fix uat.">
-      <option name="closed" value="true" />
-      <created>1763632767399</created>
-      <option name="number" value="00109" />
-      <option name="presentableId" value="LOCAL-00109" />
-      <option name="project" value="LOCAL" />
-      <updated>1763632767399</updated>
-    </task>
     <task id="LOCAL-00110" summary=" Deployment. Filtering.">
       <option name="closed" value="true" />
       <created>1763734865861</created>
@@ -878,7 +862,15 @@
       <option name="project" value="LOCAL" />
       <updated>1764231598985</updated>
     </task>
-    <option name="localTasksCounter" value="156" />
+    <task id="LOCAL-00156" summary="Fix AS.">
+      <option name="closed" value="true" />
+      <created>1764246195685</created>
+      <option name="number" value="00156" />
+      <option name="presentableId" value="LOCAL-00156" />
+      <option name="project" value="LOCAL" />
+      <updated>1764246195685</updated>
+    </task>
+    <option name="localTasksCounter" value="157" />
     <option name="createBranch" value="false" />
     <option name="useBranch" value="true" />
     <servers />
@@ -898,7 +890,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Test refactoring #2." />
     <MESSAGE value="Cooldown refactoring." />
     <MESSAGE value="Runner refactoring." />
     <MESSAGE value="Runner refactoring. Fix saving." />
@@ -921,9 +912,10 @@
     <MESSAGE value="Deployment. Local." />
     <MESSAGE value="Deployment. UAT." />
     <MESSAGE value="Deployment. UAT. Fix CSS." />
-    <MESSAGE value="Fix Eurosport." />
     <MESSAGE value="Fix Eurosport, again." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix Eurosport, again." />
+    <MESSAGE value="Fix Eurosport." />
+    <MESSAGE value="Fix AS." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix AS." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -959,6 +951,6 @@
     <SUITE FILE_PATH="coverage/scraper_news$FastAPI.coverage" NAME="FastAPI Coverage Results" MODIFIED="1763731727177" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/" />
     <SUITE FILE_PATH="coverage/scraper_news$run.coverage" NAME="run Coverage Results" MODIFIED="1760539226178" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/scraper_news$SCRAPER_JOB.coverage" NAME="SCRAPER JOB Coverage Results" MODIFIED="1763565018300" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cron_jobs" />
-    <SUITE FILE_PATH="coverage/scraper_news$Main___FastAPI_and_Scraper_Cron.coverage" NAME="Main - FastAPI and Scraper Cron Coverage Results" MODIFIED="1764241501776" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/scraper_news$Main___FastAPI_and_Scraper_Cron.coverage" NAME="Main - FastAPI and Scraper Cron Coverage Results" MODIFIED="1764250813058" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
