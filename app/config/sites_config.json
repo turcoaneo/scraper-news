@@ -77,7 +77,7 @@
     "traffic": 4.4,
     "time_selector": "p",
     "block_selector": "a.news-item",
-    "link_selector": "a.news-item",
+    "link_selector": "",
     "title_strategy": "text",
     "model": "BERT"
   },
@@ -98,6 +98,8 @@
     "base_url": "https://www.eurosport.ro",
     "traffic": 2.0,
     "time_selector": "div.typo-tk-rs-caption-sm.text-content-block-default-text-fill-03.single-line",
+    "block_selector": "a.card-hover.relative.flex.w-full.overflow-hidden",
+    "link_selector": "",
     "title_strategy": "text",
     "model": "BERT"
   }
