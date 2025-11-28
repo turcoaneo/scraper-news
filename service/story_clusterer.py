@@ -1,7 +1,7 @@
 from typing import List, Dict
 
 from service.util.logger_util import get_logger
-from service.util.summary_util import merge_summaries
+from service.util.merged_summary_by_keys_util import merge_summaries_with_keywords
 
 
 def _jaccard_similarity(set1, set2):
@@ -195,7 +195,8 @@ class StoryClusterer:
 
             result.append({
                 "score": scored_cluster["score"],
-                "summary": merge_summaries(summaries),
+                # "summary": merge_summaries(summaries),
+                "summary": merge_summaries_with_keywords(summaries),
                 "sites": sorted(sites),
                 "articles": articles
             })

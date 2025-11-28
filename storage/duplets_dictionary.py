@@ -545,6 +545,45 @@ new_duplets += [
     ("Țării de Foc", "Țara de Foc"),
 ]
 
+new_duplets += [
+    ("lungire", "lungire"),
+    ("lungiri", "lungiri"),
+    ("lungirii", "lungire"),
+    ("lungirilor", "lungiri"),
+    ("prelungirilor", "prelungiri"),
+    ("prelungiri", "prelungiri"),
+    ("prelungirii", "prelungire"),
+    ("prelungire", "prelungire"),
+    ("amăgire", "amăgire"),
+    ("amăgirii", "amăgire"),
+]
+
+new_duplets += [
+    ("amăgirilor", "amăgiri"),
+    ("lungime", "lungime"),
+    ("lungimii", "lungime"),
+    ("lungimi", "lungimi"),
+    ("lungimilor", "lungimi"),
+    ("mulțimi", "mulțimi"),
+    ("mulțimilor", "mulțimi"),
+    ("mulțimii", "mulțime"),
+    ("mulțime", "mulțime"),
+    ("mulțumire", "mulțumire"),
+]
+
+new_duplets += [
+    ("mulțumirii", "mulțumire"),
+    ("mulțumirilor", "mulțumiri"),
+    ("latitudine", "latitudine"),
+    ("latitudinii", "latitudine"),
+    ("latitudini", "latitudini"),
+    ("latitudinilor", "latitudini"),
+    ("longitudine", "longitudine"),
+    ("longitudinii", "longitudine"),
+    ("longitudini", "longitudini"),
+    ("longitudinilor", "longitudini"),
+]
+
 test_cases = [
     ("cale", "cale"),
     ("calelor", "cale"),
@@ -602,6 +641,12 @@ test_cases = [
     ("Japoniei", "Japonia"),
     ("Chiajnei", "Chiajna"),
     ("Coastei de Azur", "Coasta de Azur"),
+    ("molime", "molime"),
+    ("molimii", "molime"),
+    ("molimilor", "molimi"),
+    ("molimi", "molimi"),
+    ("prelungiri", "prelungiri"),
+    ("prelungirilor", "prelungiri"),
 ]
 
 
