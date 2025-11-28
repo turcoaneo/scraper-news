@@ -84,7 +84,7 @@ class TestSiteScraper(unittest.TestCase):
     # 🔎 New tests for scrape_recent_articles
 
     @patch("service.site_scraper.requests.get")
-    def test_scrape_recent_articles_deduplicates(self, mock_get):
+    def test_scrape_recent_articles_deduplicate(self, mock_get):
         # Fake homepage with duplicate links
         html = """
         <div class="article"><a href="/article1">Title1</a></div>
