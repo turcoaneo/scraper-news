@@ -6,6 +6,28 @@ from model.model_type import ModelType
 from service.site_scraper import SiteScraper
 
 
+def _make_block(href=None, inner_href=None):
+    """Helper to create a fake block element with optional hrefs."""
+    block = MagicMock()
+    block.get.return_value = href
+    # Simulate dict‑style access
+    block.__getitem__.side_effect = (
+        lambda k: {"href": href}[k] if href else None
+    )
+
+    if inner_href:
+        inner_link = MagicMock()
+        inner_link.has_attr.return_value = True
+        inner_link.__getitem__.side_effect = (
+            lambda k: {"href": inner_href}[k]
+        )
+        block.select_one.return_value = inner_link
+    else:
+        block.select_one.return_value = None
+
+    return block
+
+
 class TestExtractArticleLinks(unittest.TestCase):
 
     def setUp(self):
@@ -20,30 +42,9 @@ class TestExtractArticleLinks(unittest.TestCase):
             model=ModelType.BERT
         )
 
-    def _make_block(self, href=None, inner_href=None):
-        """Helper to create a fake block element with optional hrefs."""
-        block = MagicMock()
-        block.get.return_value = href
-        # Simulate dict‑style access
-        block.__getitem__.side_effect = (
-            lambda k: {"href": href}[k] if href else None
-        )
-
-        if inner_href:
-            inner_link = MagicMock()
-            inner_link.has_attr.return_value = True
-            inner_link.__getitem__.side_effect = (
-                lambda k: {"href": inner_href}[k]
-            )
-            block.select_one.return_value = inner_link
-        else:
-            block.select_one.return_value = None
-
-        return block
-
     def test_direct_href(self):
         """Block has direct href → should yield normalized full_url"""
-        block = self._make_block(href="/article1")
+        block = _make_block(href="/article1")
         soup = MagicMock()
         soup.select.return_value = [block]
 
@@ -52,7 +53,7 @@ class TestExtractArticleLinks(unittest.TestCase):
 
     def test_inner_link_href(self):
         """Block has no href, but inner link has one → should yield"""
-        block = self._make_block(href=None, inner_href="/article2")
+        block = _make_block(href=None, inner_href="/article2")
         soup = MagicMock()
         soup.select.return_value = [block]
 
@@ -61,7 +62,7 @@ class TestExtractArticleLinks(unittest.TestCase):
 
     def test_skip_block_without_href(self):
         """Block has no href and no inner link → should skip"""
-        block = self._make_block(href=None, inner_href=None)
+        block = _make_block(href=None, inner_href=None)
         soup = MagicMock()
         soup.select.return_value = [block]
 
@@ -70,7 +71,7 @@ class TestExtractArticleLinks(unittest.TestCase):
 
     def test_full_url_preserved(self):
         """Block href already absolute → should not prepend base_url"""
-        block = self._make_block(href="https://other.com/article3")
+        block = _make_block(href="https://other.com/article3")
         soup = MagicMock()
         soup.select.return_value = [block]
 
@@ -79,8 +80,8 @@ class TestExtractArticleLinks(unittest.TestCase):
 
     def test_duplicate_links_skipped(self):
         """Duplicate hrefs → only one yielded"""
-        block1 = self._make_block(href="/dup")
-        block2 = self._make_block(href="/dup")
+        block1 = _make_block(href="/dup")
+        block2 = _make_block(href="/dup")
         soup = MagicMock()
         soup.select.return_value = [block1, block2]
 
