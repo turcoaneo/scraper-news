@@ -416,3 +416,33 @@ normalize: Coreei	Coreea
 normalize: Coreei de Sud	Coreea de Sud
 normalize: Coreei de Nord	Coreea de Nord
 normalize: Țării de Foc	Țara de Foc
+normalize: lungire	lungire
+normalize: lungiri	lungiri
+normalize: lungirii	lungire
+normalize: lungirilor	lungiri
+normalize: prelungirilor	prelungiri
+normalize: prelungiri	prelungiri
+normalize: prelungirii	prelungire
+normalize: prelungire	prelungire
+normalize: amăgire	amăgire
+normalize: amăgirii	amăgire
+normalize: amăgirilor	amăgiri
+normalize: lungime	lungime
+normalize: lungimii	lungime
+normalize: lungimi	lungimi
+normalize: lungimilor	lungimi
+normalize: mulțimi	mulțimi
+normalize: mulțimilor	mulțimi
+normalize: mulțimii	mulțime
+normalize: mulțime	mulțime
+normalize: mulțumire	mulțumire
+normalize: mulțumirii	mulțumire
+normalize: mulțumirilor	mulțumiri
+normalize: latitudine	latitudine
+normalize: latitudinii	latitudine
+normalize: latitudini	latitudini
+normalize: latitudinilor	latitudini
+normalize: longitudine	longitudine
+normalize: longitudinii	longitudine
+normalize: longitudini	longitudini
+normalize: longitudinilor	longitudini
