@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="22401e38-3721-4fd8-b77a-f843b1aa4640" name=" Deployment." comment="CSS. Deployment. UAT.">
+    <list default="true" id="22401e38-3721-4fd8-b77a-f843b1aa4640" name=" Deployment." comment="Merged summary improved. Deployment. UAT.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/util/merged_summary_by_keys_util.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/util/merged_summary_by_keys_util.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/test_llm/test_summary_util.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test_llm/test_summary_util.py" afterDir="false" />
     </list>
     <list id="a7f942ad-3c95-41b0-b4b7-f43fce9ff07e" name="Changes" comment="" />
     <list id="6508d4bf-b1d4-4e03-bff8-2d311d3ea368" name="Env" comment="">
@@ -248,7 +246,7 @@
     "Python tests.Python tests in test_site_scraper_article_links.py.executor": "Run",
     "Python tests.Python tests in test_story_clusterer.py.executor": "Run",
     "Python tests.Python tests in test_summary_util.py.executor": "Run",
-    "Python.FastAPI.executor": "Debug",
+    "Python.FastAPI.executor": "Run",
     "Python.Main - FastAPI and Cron.executor": "Debug",
     "Python.Main - FastAPI and Scraper Cron.executor": "Run",
     "Python.SCRAPER JOB.executor": "Run",
@@ -289,7 +287,7 @@
       <recent name="D:\DEV\scraper-news\test\test_s3" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.Main - FastAPI and Scraper Cron">
+  <component name="RunManager" selected="Python.FastAPI">
     <configuration default="true" type="DjangoTestsConfigurationType">
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -514,15 +512,7 @@
       <workItem from="1763460637451" duration="63916000" />
       <workItem from="1763735417270" duration="31321000" />
       <workItem from="1764349886494" duration="8000" />
-      <workItem from="1764349905817" duration="9092000" />
-    </task>
-    <task id="LOCAL-00118" summary=" Deployment. Score fix #8.">
-      <option name="closed" value="true" />
-      <created>1763821126498</created>
-      <option name="number" value="00118" />
-      <option name="presentableId" value="LOCAL-00118" />
-      <option name="project" value="LOCAL" />
-      <updated>1763821126498</updated>
+      <workItem from="1764349905817" duration="10410000" />
     </task>
     <task id="LOCAL-00119" summary=" Deployment. Score fix #9.">
       <option name="closed" value="true" />
@@ -892,7 +882,15 @@
       <option name="project" value="LOCAL" />
       <updated>1764352900397</updated>
     </task>
-    <option name="localTasksCounter" value="165" />
+    <task id="LOCAL-00165" summary="Merged summary improved. Deployment. UAT.">
+      <option name="closed" value="true" />
+      <created>1764406626286</created>
+      <option name="number" value="00165" />
+      <option name="presentableId" value="LOCAL-00165" />
+      <option name="project" value="LOCAL" />
+      <updated>1764406626286</updated>
+    </task>
+    <option name="localTasksCounter" value="166" />
     <option name="createBranch" value="false" />
     <option name="useBranch" value="true" />
     <servers />
@@ -912,7 +910,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="About." />
     <MESSAGE value="About. New." />
     <MESSAGE value="Golazo fix." />
     <MESSAGE value="About. UAT." />
@@ -937,7 +934,8 @@
     <MESSAGE value="New summary." />
     <MESSAGE value="New T5 model." />
     <MESSAGE value="CSS. Deployment. UAT." />
-    <option name="LAST_COMMIT_MESSAGE" value="CSS. Deployment. UAT." />
+    <MESSAGE value="Merged summary improved. Deployment. UAT." />
+    <option name="LAST_COMMIT_MESSAGE" value="Merged summary improved. Deployment. UAT." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -970,7 +968,7 @@
     <SUITE FILE_PATH="coverage/scraper_news$Scraper_Cron.coverage" NAME="Scraper Cron Coverage Results" MODIFIED="1760774637564" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="D:\WORKSPACE\Python\scraper-news" />
     <SUITE FILE_PATH="coverage/scraper_news$main.coverage" NAME="Main - FastAPI and Scraper Cron Coverage Results" MODIFIED="1760774789944" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/scraper_news$python__m_spacy_download_ro_core_news_sm.coverage" NAME="python -m spacy download ro_core_news_sm Coverage Results" MODIFIED="1762675507625" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/scraper_news$FastAPI.coverage" NAME="FastAPI Coverage Results" MODIFIED="1763731727177" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/" />
+    <SUITE FILE_PATH="coverage/scraper_news$FastAPI.coverage" NAME="FastAPI Coverage Results" MODIFIED="1764407327110" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/" />
     <SUITE FILE_PATH="coverage/scraper_news$run.coverage" NAME="run Coverage Results" MODIFIED="1760539226178" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/scraper_news$SCRAPER_JOB.coverage" NAME="SCRAPER JOB Coverage Results" MODIFIED="1763565018300" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cron_jobs" />
     <SUITE FILE_PATH="coverage/scraper_news$Main___FastAPI_and_Scraper_Cron.coverage" NAME="Main - FastAPI and Scraper Cron Coverage Results" MODIFIED="1764405739017" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
