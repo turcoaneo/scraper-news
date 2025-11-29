@@ -7,12 +7,31 @@ from service.util.scrape_runner_util import ScrapeRunnerUtil
 from service.util.spacy_ents_keys import extract_keywords_from_summary
 
 
-def merge_summaries_with_keywords(summaries: List[str], max_sentences: int = 3) -> str:
+def clean_summary_text(text: str) -> str:
+    # Remove stray numbers after sentence punctuation or quotes
+    text = re.sub(r'([.!?])\s*["“”\']?\d+\b', r'\1', text)
+    # Remove trailing digits glued to words (but keep structured numbers like years or scores)
+    text = re.sub(r'\b([A-Za-zĂÂÎȘȚăâîșț]+)\d+\b', r'\1', text)
+    return text
+
+
+def normalize_sentence(text: str) -> str:
+    # unify 'este' → 'e'
+    text = re.sub(r'\b[Ee]ste\b', 'e', text)
+    return text
+
+
+def merge_summaries_with_keywords(
+    summaries: List[str],
+    max_sentences: int = 3,
+    overlap_threshold: int = 8
+) -> str:
     if not summaries:
         return "No summaries"
 
-    # Step 1: Merge summaries into one text
-    all_text = " ".join(summaries)
+    # Step 1: Clean and merge summaries
+    cleaned_summaries = [clean_summary_text(s) for s in summaries]
+    all_text = " ".join(cleaned_summaries)
     all_text = all_text.replace("[...]", ".").replace("....", ".")
     if not all_text.strip().endswith((".", "!", "?")):
         all_text += "."
@@ -48,14 +67,23 @@ def merge_summaries_with_keywords(summaries: List[str], max_sentences: int = 3) 
         key=lambda s: (-sentence_counts[s], sentences.index(s))
     )
 
-    # Step 8: Deduplicate and trim to max_sentences
+    # Step 8: Deduplicate, normalize, remove similar sentences, and trim
     final_sentences: List[str] = []
-    seen = set()
     for s in sorted_sentences:
-        if s not in seen:
-            final_sentences.append(s)
-            seen.add(s)
+        s_norm = normalize_sentence(s)
+        words = set(re.findall(r'\w+', s_norm.lower()))
+        # Adaptive overlap threshold: min(8, half of sentence length)
+        adaptive_threshold = min(overlap_threshold, max(2, len(words) // 2))
+        too_similar = any(
+            len(words & set(re.findall(r'\w+', normalize_sentence(prev).lower())))
+            >= adaptive_threshold
+            for prev in final_sentences
+        )
+        if too_similar:
+            continue
+        final_sentences.append(s_norm)
         if len(final_sentences) >= max_sentences:
             break
 
-    return " ".join(final_sentences)
+    # Hard cap length
+    return " ".join(final_sentences[:max_sentences])

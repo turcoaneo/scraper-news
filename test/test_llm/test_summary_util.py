@@ -5,6 +5,29 @@ from service.util.merged_summary_by_keys_util import merge_summaries_with_keywor
 
 class TestSummaryUtilFlatMap(unittest.TestCase):
 
+    def test_merge_summaries_real_keywords(self):
+        summaries = [
+            "Ioan Neculaie (68 de ani), omul de afaceri care a fost patron la FC Brașov între 1999 și 2015, a fost "
+            "condamnat la 10 ani de închisoare cu executare, pentru evaziune fiscală.",
+            "Oamenii care au fost în fotbalul românesc continuă să aibă probleme cu legea, iar acum o condamnare de "
+            "10 ani a venit pe numele celui care visa să se lupte pentru locurile fruntașe.",
+            "Ioan Neculaie, fost patron la FC Brașov în perioada în care echipa activa în Liga 1, a fost condamnat "
+            "la 10 ani de închisoare pentru evaziune fiscală. Verdictul nu e definitiv și poate fi atacat.",
+            "Fostul patron al lui FC Brașov, Ioan Neculaie (68 de ani), a fost condamnat de Tribunalul Brașov la "
+            "10 ani de închisoare. Decizia instanței nu e definitivă.156",
+            "Omul de afaceri Ioan Neculaie, fost patron al celor de la FC Brașov, a fost condamnat la 10 ani de "
+            "închisoare, potrivit informațiilor publicate pe portalul instanțelor. Hotărârea nu este definitivă.",
+        ]
+        result = merge_summaries_with_keywords(summaries)
+        # Should contain key entities/keywords
+        self.assertIn("Ioan Neculaie", result)
+        self.assertIn("FC Brașov", result)
+        # Should not exceed 3 sentences
+        self.assertLessEqual(len(result.split('.')), 4)
+        self.assertEqual("Ioan Neculaie (68 de ani), omul de afaceri care a fost patron la FC Brașov între 1999 "
+                         "și 2015, a fost condamnat la 10 ani de închisoare cu executare, pentru evaziune fiscală. "
+                         "Decizia instanței nu e definitivă.", result)
+
     def test_merge_summaries_basic_keywords(self):
         summaries = [
             "CFR Cluj a scăpat două puncte în prelungiri. Mandorlini a fost nervos.",
