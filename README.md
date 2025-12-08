@@ -103,7 +103,7 @@ find . -name "__pycache__" -exec rm -r {} +
 ## Docker
 ### Build
 ```bash
-docker build -t scraper-news
+docker build -t scraper-news .
 docker build -t scraper-news --no-cache .
 ```
 
