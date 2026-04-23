@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="22401e38-3721-4fd8-b77a-f843b1aa4640" name=" Deployment." comment="Deployment - HF token." />
+    <list default="true" id="22401e38-3721-4fd8-b77a-f843b1aa4640" name=" Deployment." comment="Deployment - HF token 2.">
+      <change beforePath="$PROJECT_DIR$/infra/terraform/variables.tf" beforeDir="false" afterPath="$PROJECT_DIR$/infra/terraform/variables.tf" afterDir="false" />
+    </list>
     <list id="a7f942ad-3c95-41b0-b4b7-f43fce9ff07e" name="Changes" comment="" />
     <list id="6508d4bf-b1d4-4e03-bff8-2d311d3ea368" name="Env" comment="">
       <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
@@ -523,15 +525,7 @@
       <workItem from="1776853859679" duration="2919000" />
       <workItem from="1776872811128" duration="4005000" />
       <workItem from="1776920761548" duration="3007000" />
-      <workItem from="1776928791459" duration="11992000" />
-    </task>
-    <task id="LOCAL-00126" summary="Adding Sport ro.">
-      <option name="closed" value="true" />
-      <created>1764000128731</created>
-      <option name="number" value="00126" />
-      <option name="presentableId" value="LOCAL-00126" />
-      <option name="project" value="LOCAL" />
-      <updated>1764000128731</updated>
+      <workItem from="1776928791459" duration="12542000" />
     </task>
     <task id="LOCAL-00127" summary="Fixing Sport ro.">
       <option name="closed" value="true" />
@@ -901,7 +895,15 @@
       <option name="project" value="LOCAL" />
       <updated>1776940588710</updated>
     </task>
-    <option name="localTasksCounter" value="173" />
+    <task id="LOCAL-00173" summary="Deployment - HF token 2.">
+      <option name="closed" value="true" />
+      <created>1776941394253</created>
+      <option name="number" value="00173" />
+      <option name="presentableId" value="LOCAL-00173" />
+      <option name="project" value="LOCAL" />
+      <updated>1776941394253</updated>
+    </task>
+    <option name="localTasksCounter" value="174" />
     <option name="createBranch" value="false" />
     <option name="useBranch" value="true" />
     <servers />
@@ -921,7 +923,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="CSS." />
     <MESSAGE value="Eurosport." />
     <MESSAGE value="UAT." />
     <MESSAGE value="Deployment. Local." />
@@ -946,7 +947,8 @@
     <MESSAGE value="Deployment - new URL." />
     <MESSAGE value="Deployment - app env." />
     <MESSAGE value="Deployment - HF token." />
-    <option name="LAST_COMMIT_MESSAGE" value="Deployment - HF token." />
+    <MESSAGE value="Deployment - HF token 2." />
+    <option name="LAST_COMMIT_MESSAGE" value="Deployment - HF token 2." />
   </component>
   <component name="VgoProject">
     <integration-enabled>false</integration-enabled>

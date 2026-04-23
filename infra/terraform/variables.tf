@@ -52,13 +52,13 @@ variable "container_port" {
 
 variable "cpu" {
   type        = string
-  default     = "1024"
+  default     = "2048"
   description = "Fargate task CPU units"
 }
 
 variable "memory" {
   type        = string
-  default     = "2048"
+  default     = "4096"
   description = "Fargate task memory (MiB)"
 }
 
