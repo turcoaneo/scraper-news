@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="22401e38-3721-4fd8-b77a-f843b1aa4640" name=" Deployment." comment="Deployment - Terraform.">
+    <list default="true" id="22401e38-3721-4fd8-b77a-f843b1aa4640" name=" Deployment." comment="Deployment - new URL.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/AboutView-XyiOq3i_.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/AboutView-CgAybYte.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/index-CCP2pULV.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/index-PygWPc4S.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
     </list>
     <list id="a7f942ad-3c95-41b0-b4b7-f43fce9ff07e" name="Changes" comment="" />
     <list id="6508d4bf-b1d4-4e03-bff8-2d311d3ea368" name="Env" comment="">
@@ -528,15 +525,7 @@
       <workItem from="1776853859679" duration="2919000" />
       <workItem from="1776872811128" duration="4005000" />
       <workItem from="1776920761548" duration="3007000" />
-      <workItem from="1776928791459" duration="6195000" />
-    </task>
-    <task id="LOCAL-00123" summary="Adding Sport ro, improved for 429 error.">
-      <option name="closed" value="true" />
-      <created>1763979035908</created>
-      <option name="number" value="00123" />
-      <option name="presentableId" value="LOCAL-00123" />
-      <option name="project" value="LOCAL" />
-      <updated>1763979035908</updated>
+      <workItem from="1776928791459" duration="7839000" />
     </task>
     <task id="LOCAL-00124" summary="Cooldown for Sport ro.">
       <option name="closed" value="true" />
@@ -906,7 +895,15 @@
       <option name="project" value="LOCAL" />
       <updated>1776933863796</updated>
     </task>
-    <option name="localTasksCounter" value="170" />
+    <task id="LOCAL-00170" summary="Deployment - new URL.">
+      <option name="closed" value="true" />
+      <created>1776935376480</created>
+      <option name="number" value="00170" />
+      <option name="presentableId" value="LOCAL-00170" />
+      <option name="project" value="LOCAL" />
+      <updated>1776935376480</updated>
+    </task>
+    <option name="localTasksCounter" value="171" />
     <option name="createBranch" value="false" />
     <option name="useBranch" value="true" />
     <servers />
@@ -926,7 +923,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="AS.ro." />
     <MESSAGE value="Iam timestamp." />
     <MESSAGE value="Iam timestamp. Tests." />
     <MESSAGE value="CSS." />
@@ -951,11 +947,23 @@
     <MESSAGE value="Go-changes" />
     <MESSAGE value="Deployment." />
     <MESSAGE value="Deployment - Terraform." />
-    <option name="LAST_COMMIT_MESSAGE" value="Deployment - Terraform." />
+    <MESSAGE value="Deployment - new URL." />
+    <option name="LAST_COMMIT_MESSAGE" value="Deployment - new URL." />
   </component>
   <component name="VgoProject">
     <integration-enabled>false</integration-enabled>
     <settings-migrated>true</settings-migrated>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/service/util/timing_util.py</url>
+          <line>23</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/scraper_news$__init__.coverage" NAME="__init__ Coverage Results" MODIFIED="1763901124446" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app" />

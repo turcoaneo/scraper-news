@@ -157,6 +157,13 @@ resource "aws_ecs_task_definition" "this" {
       image     = var.image_url
       essential = true
 
+      environment = [
+        {
+          name  = "APP_ENV"
+          value = "uat"
+        }
+      ]
+
       portMappings = [{
         containerPort = var.container_port
         protocol      = "tcp"
