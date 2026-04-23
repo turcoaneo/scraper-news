@@ -8,7 +8,7 @@ uvicorn
 python-dotenv
 spacy>=3.8.5
 sentencepiece
-peft
+peft==0.10.0
 protobuf
 hf_xet
 psutil

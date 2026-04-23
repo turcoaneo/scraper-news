@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="22401e38-3721-4fd8-b77a-f843b1aa4640" name=" Deployment." comment="Deployment - pytorch again.">
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+    <list default="true" id="22401e38-3721-4fd8-b77a-f843b1aa4640" name=" Deployment." comment="Deployment - again.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <list id="a7f942ad-3c95-41b0-b4b7-f43fce9ff07e" name="Changes" comment="" />
     <list id="6508d4bf-b1d4-4e03-bff8-2d311d3ea368" name="Env" comment="">
@@ -525,15 +525,7 @@
       <workItem from="1776853859679" duration="2919000" />
       <workItem from="1776872811128" duration="4005000" />
       <workItem from="1776920761548" duration="3007000" />
-      <workItem from="1776928791459" duration="25242000" />
-    </task>
-    <task id="LOCAL-00143" summary="Golazo. Fix.">
-      <option name="closed" value="true" />
-      <created>1764153962911</created>
-      <option name="number" value="00143" />
-      <option name="presentableId" value="LOCAL-00143" />
-      <option name="project" value="LOCAL" />
-      <updated>1764153962911</updated>
+      <workItem from="1776928791459" duration="26357000" />
     </task>
     <task id="LOCAL-00144" summary="iAM sport.">
       <option name="closed" value="true" />
@@ -903,7 +895,15 @@
       <option name="project" value="LOCAL" />
       <updated>1776958264572</updated>
     </task>
-    <option name="localTasksCounter" value="190" />
+    <task id="LOCAL-00190" summary="Deployment - again.">
+      <option name="closed" value="true" />
+      <created>1776958598076</created>
+      <option name="number" value="00190" />
+      <option name="presentableId" value="LOCAL-00190" />
+      <option name="project" value="LOCAL" />
+      <updated>1776958598076</updated>
+    </task>
+    <option name="localTasksCounter" value="191" />
     <option name="createBranch" value="false" />
     <option name="useBranch" value="true" />
     <servers />
@@ -923,7 +923,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Merged summary improved. Deployment. UAT." />
     <MESSAGE value="Scroll button. Deployment. UAT." />
     <MESSAGE value="Readme fix, docker." />
     <MESSAGE value="Go-changes" />
@@ -948,7 +947,8 @@
     <MESSAGE value="Deployment - pytorch." />
     <MESSAGE value="Deployment - pytorch 2." />
     <MESSAGE value="Deployment - pytorch again." />
-    <option name="LAST_COMMIT_MESSAGE" value="Deployment - pytorch again." />
+    <MESSAGE value="Deployment - again." />
+    <option name="LAST_COMMIT_MESSAGE" value="Deployment - again." />
   </component>
   <component name="VgoProject">
     <integration-enabled>false</integration-enabled>
