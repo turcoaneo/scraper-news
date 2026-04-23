@@ -4,13 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="22401e38-3721-4fd8-b77a-f843b1aa4640" name=" Deployment." comment="Deployment - Cpu.">
+    <list default="true" id="22401e38-3721-4fd8-b77a-f843b1aa4640" name=" Deployment." comment="Deployment - Token.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/utils/env_vars.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/utils/env_vars.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/extractor_ents_keys.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/extractor_ents_keys.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/AboutView-CgAybYte.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/AboutView-uEzHlJXd.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/index-PygWPc4S.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/index-CKmRs_KE.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
     </list>
     <list id="a7f942ad-3c95-41b0-b4b7-f43fce9ff07e" name="Changes" comment="" />
     <list id="6508d4bf-b1d4-4e03-bff8-2d311d3ea368" name="Env" comment="">
@@ -530,15 +526,7 @@
       <workItem from="1776853859679" duration="2919000" />
       <workItem from="1776872811128" duration="4005000" />
       <workItem from="1776920761548" duration="3007000" />
-      <workItem from="1776928791459" duration="14480000" />
-    </task>
-    <task id="LOCAL-00128" summary="S3 util.">
-      <option name="closed" value="true" />
-      <created>1764058773272</created>
-      <option name="number" value="00128" />
-      <option name="presentableId" value="LOCAL-00128" />
-      <option name="project" value="LOCAL" />
-      <updated>1764058773272</updated>
+      <workItem from="1776928791459" duration="16580000" />
     </task>
     <task id="LOCAL-00129" summary="S3 util. fix.">
       <option name="closed" value="true" />
@@ -908,7 +896,15 @@
       <option name="project" value="LOCAL" />
       <updated>1776941915180</updated>
     </task>
-    <option name="localTasksCounter" value="175" />
+    <task id="LOCAL-00175" summary="Deployment - Token.">
+      <option name="closed" value="true" />
+      <created>1776946113915</created>
+      <option name="number" value="00175" />
+      <option name="presentableId" value="LOCAL-00175" />
+      <option name="project" value="LOCAL" />
+      <updated>1776946113916</updated>
+    </task>
+    <option name="localTasksCounter" value="176" />
     <option name="createBranch" value="false" />
     <option name="useBranch" value="true" />
     <servers />
@@ -928,7 +924,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="UAT." />
     <MESSAGE value="Deployment. Local." />
     <MESSAGE value="Deployment. UAT. Fix CSS." />
     <MESSAGE value="Fix Eurosport, again." />
@@ -953,7 +948,8 @@
     <MESSAGE value="Deployment - HF token." />
     <MESSAGE value="Deployment - HF token 2." />
     <MESSAGE value="Deployment - Cpu." />
-    <option name="LAST_COMMIT_MESSAGE" value="Deployment - Cpu." />
+    <MESSAGE value="Deployment - Token." />
+    <option name="LAST_COMMIT_MESSAGE" value="Deployment - Token." />
   </component>
   <component name="VgoProject">
     <integration-enabled>false</integration-enabled>
