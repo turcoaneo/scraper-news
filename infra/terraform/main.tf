@@ -161,17 +161,24 @@ resource "aws_ecs_task_definition" "this" {
         {
           name  = "APP_ENV"
           value = "uat"
+        },
+        {
+          name  = "HF_TOKEN"
+          value = var.hf_token
         }
       ]
 
-      portMappings = [{
-        containerPort = var.container_port
-        protocol      = "tcp"
-      }]
+
+      portMappings = [
+        {
+          containerPort = var.container_port
+          protocol      = "tcp"
+        }
+      ]
 
       logConfiguration = {
         logDriver = "awslogs"
-        options = {
+        options   = {
           awslogs-group         = aws_cloudwatch_log_group.scraper.name
           awslogs-region        = var.aws_region
           awslogs-stream-prefix = "ecs"
@@ -192,8 +199,8 @@ resource "aws_ecs_service" "this" {
   launch_type     = "FARGATE"
 
   network_configuration {
-    subnets         = module.vpc.public_subnets
-    security_groups = [aws_security_group.ecs.id]
+    subnets          = module.vpc.public_subnets
+    security_groups  = [aws_security_group.ecs.id]
     assign_public_ip = true
   }
 
