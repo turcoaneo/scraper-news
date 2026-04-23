@@ -1,11 +1,13 @@
+# syntax=docker/dockerfile:1
 FROM python:3.11.0-slim
 
 WORKDIR /app
 
-COPY requirements_docker.txt ./requirements.txt
-RUN pip install --upgrade pip && \
-    pip install --no-cache-dir -r requirements.txt -f https://download.pytorch.org/whl/cpu
-
 COPY . ./
+
+COPY requirements_docker.txt ./requirements.txt
+
+RUN chmod +x ./build_backend.sh
+RUN ./build_backend.sh
 
 CMD ["python", "main.py"]
