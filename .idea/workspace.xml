@@ -4,18 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="22401e38-3721-4fd8-b77a-f843b1aa4640" name=" Deployment." comment="Deployment.">
-      <change afterPath="$PROJECT_DIR$/.github/workflows/ci-cd.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.github/workflows/terraform.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/infra/terraform/backend.tf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/infra/terraform/main.tf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/infra/terraform/outputs.tf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/infra/terraform/variables.tf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.github/workflows/deploy.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/deploy.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/scraper-news.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/scraper-news.iml" afterDir="false" />
+    <list default="true" id="22401e38-3721-4fd8-b77a-f843b1aa4640" name=" Deployment." comment="Deployment - Terraform.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/assets/AboutView-XyiOq3i_.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/AboutView-CgAybYte.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/assets/index-CCP2pULV.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/index-PygWPc4S.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
     </list>
     <list id="a7f942ad-3c95-41b0-b4b7-f43fce9ff07e" name="Changes" comment="" />
     <list id="6508d4bf-b1d4-4e03-bff8-2d311d3ea368" name="Env" comment="">
@@ -535,15 +528,7 @@
       <workItem from="1776853859679" duration="2919000" />
       <workItem from="1776872811128" duration="4005000" />
       <workItem from="1776920761548" duration="3007000" />
-      <workItem from="1776928791459" duration="4924000" />
-    </task>
-    <task id="LOCAL-00122" summary="Adding Sport ro.">
-      <option name="closed" value="true" />
-      <created>1763965081016</created>
-      <option name="number" value="00122" />
-      <option name="presentableId" value="LOCAL-00122" />
-      <option name="project" value="LOCAL" />
-      <updated>1763965081016</updated>
+      <workItem from="1776928791459" duration="6195000" />
     </task>
     <task id="LOCAL-00123" summary="Adding Sport ro, improved for 429 error.">
       <option name="closed" value="true" />
@@ -913,7 +898,15 @@
       <option name="project" value="LOCAL" />
       <updated>1765375275585</updated>
     </task>
-    <option name="localTasksCounter" value="169" />
+    <task id="LOCAL-00169" summary="Deployment - Terraform.">
+      <option name="closed" value="true" />
+      <created>1776933863796</created>
+      <option name="number" value="00169" />
+      <option name="presentableId" value="LOCAL-00169" />
+      <option name="project" value="LOCAL" />
+      <updated>1776933863796</updated>
+    </task>
+    <option name="localTasksCounter" value="170" />
     <option name="createBranch" value="false" />
     <option name="useBranch" value="true" />
     <servers />
@@ -933,7 +926,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="iAM sport." />
     <MESSAGE value="AS.ro." />
     <MESSAGE value="Iam timestamp." />
     <MESSAGE value="Iam timestamp. Tests." />
@@ -956,9 +948,10 @@
     <MESSAGE value="Merged summary improved. Deployment. UAT." />
     <MESSAGE value="Scroll button. Deployment. UAT." />
     <MESSAGE value="Readme fix, docker." />
-    <MESSAGE value="Deployment." />
     <MESSAGE value="Go-changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Go-changes" />
+    <MESSAGE value="Deployment." />
+    <MESSAGE value="Deployment - Terraform." />
+    <option name="LAST_COMMIT_MESSAGE" value="Deployment - Terraform." />
   </component>
   <component name="VgoProject">
     <integration-enabled>false</integration-enabled>
