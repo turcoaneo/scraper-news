@@ -18,8 +18,8 @@ botocore
 pydantic
 # torch>=2.0.0
 # CPU-only PyTorch (no CUDA/cuDNN downloads)
-torch==2.11.0
-numpy>=2.0.0
+torch==2.2.2+cpu
+numpy<2
 # pandas
 # datasets
 # evaluate
