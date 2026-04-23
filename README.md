@@ -158,3 +158,37 @@ aws s3 cp s3://scraper-storage-uat/storage/cooldown.json - | grep "sport"
 aws s3 cp s3://scraper-storage-uat/storage/cooldown.json - | Select-String "sport"
 ```
 
+### GitHub Actions
+#### CI‑CD (Build & Push Image)
+#### Deploy (Restart ECS Tasks)
+#### Terraform (Infrastructure Lifecycle)
+
+
+### Run Terraform from local CLI
+
+```shell
+terraform init
+terraform validate
+terraform plan -var-file="dev.tfvars"
+terraform apply -var-file="dev.tfvars" -auto-approve
+
+terraform destroy -var-file="dev.tfvars" -auto-approve
+```
+
+#### Check (sub)domain alias
+```shell
+terraform output alb_friendly_dns
+```
+
+#### Check ALB
+```shell
+aws elbv2 describe-load-balancers --names scraper-news-alb
+```
+
+#### Solve inconsistency if the case
+```shell
+aws dynamodb delete-item \
+  --table-name scraper-news-tf-locks \
+  --key '{"LockID": {"S": "scraper-news-tf-state/terraform.tf-state"}}'
+```
+
