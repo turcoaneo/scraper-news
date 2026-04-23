@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="22401e38-3721-4fd8-b77a-f843b1aa4640" name=" Deployment." comment="Deployment - again.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infra/terraform/main.tf" beforeDir="false" afterPath="$PROJECT_DIR$/infra/terraform/main.tf" afterDir="false" />
     </list>
     <list id="a7f942ad-3c95-41b0-b4b7-f43fce9ff07e" name="Changes" comment="" />
     <list id="6508d4bf-b1d4-4e03-bff8-2d311d3ea368" name="Env" comment="">
@@ -525,15 +526,7 @@
       <workItem from="1776853859679" duration="2919000" />
       <workItem from="1776872811128" duration="4005000" />
       <workItem from="1776920761548" duration="3007000" />
-      <workItem from="1776928791459" duration="26357000" />
-    </task>
-    <task id="LOCAL-00144" summary="iAM sport.">
-      <option name="closed" value="true" />
-      <created>1764160281485</created>
-      <option name="number" value="00144" />
-      <option name="presentableId" value="LOCAL-00144" />
-      <option name="project" value="LOCAL" />
-      <updated>1764160281485</updated>
+      <workItem from="1776928791459" duration="28243000" />
     </task>
     <task id="LOCAL-00145" summary="AS.ro.">
       <option name="closed" value="true" />
@@ -903,7 +896,15 @@
       <option name="project" value="LOCAL" />
       <updated>1776958598076</updated>
     </task>
-    <option name="localTasksCounter" value="191" />
+    <task id="LOCAL-00191" summary="Deployment - again.">
+      <option name="closed" value="true" />
+      <created>1776959653662</created>
+      <option name="number" value="00191" />
+      <option name="presentableId" value="LOCAL-00191" />
+      <option name="project" value="LOCAL" />
+      <updated>1776959653662</updated>
+    </task>
+    <option name="localTasksCounter" value="192" />
     <option name="createBranch" value="false" />
     <option name="useBranch" value="true" />
     <servers />
