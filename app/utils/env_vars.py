@@ -19,7 +19,6 @@ LOG_LEVEL = merged.get("LOG_LEVEL", "warning")
 LLM_ROOT = merged.get("LLM_ROOT", "local")
 HF_TOKEN = merged.get("HF_TOKEN", None)
 
-
 S3_BUCKET = merged.get("S3_BUCKET", "scraper-storage-uat")
 S3_PREFIX = merged.get("S3_PREFIX", "storage")
 
@@ -35,3 +34,7 @@ FILTER_PLACE_KEYS = {
     "including": clean_list(merged.get("FILTER_INCLUDING", "")),
     "excluding": clean_list(merged.get("FILTER_EXCLUDING", "")),
 }
+
+
+def get_hf_token():
+    return os.getenv("HF_TOKEN", "")

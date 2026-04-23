@@ -1,4 +1,3 @@
-import os
 from pathlib import Path
 from typing import Dict, List
 
@@ -6,7 +5,7 @@ import torch
 from huggingface_hub import hf_hub_download
 from transformers import AutoTokenizer, AutoModelForTokenClassification
 
-from app.utils.env_vars import HF_TOKEN, LLM_ROOT
+from app.utils.env_vars import get_hf_token, LLM_ROOT
 from service.util.spacy_ents_keys import SpacyEntsKeys
 from service.util.span_utils import SpanUtils
 
@@ -34,7 +33,7 @@ class EntityKeywordExtractor:
         self.model_path = model_path
         self.use_torch_script = use_torch_script
         self.tokenizer_path = tokenizer_path or model_path
-        self.hf_token = hf_token or HF_TOKEN
+        self.hf_token = hf_token or get_hf_token()
 
         self.tokenizer = AutoTokenizer.from_pretrained(self.tokenizer_path, token=self.hf_token)
 
