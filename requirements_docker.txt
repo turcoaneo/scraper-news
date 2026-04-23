@@ -19,7 +19,7 @@ pydantic
 # torch>=2.0.0
 # CPU-only PyTorch (no CUDA/cuDNN downloads)
 torch==2.11.0
-numpy<2
+numpy>=2.0.0
 # pandas
 # datasets
 # evaluate
