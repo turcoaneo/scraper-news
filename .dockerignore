@@ -12,7 +12,9 @@ venv/
 bert_model.pt
 *.pyc
 .requirements.txt
+requirements.txt
 .requirements_docker.txt
+requirements_docker.txt
 !storage/duplets_dictionary.py
 !storage/training/example.json
 *.env.*
