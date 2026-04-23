@@ -67,3 +67,8 @@ variable "desired_count" {
   default     = 1
   description = "Number of desired ECS tasks"
 }
+
+variable "hf_token" {
+  type        = string
+  description = "HuggingFace access token"
+}
