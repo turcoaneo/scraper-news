@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="22401e38-3721-4fd8-b77a-f843b1aa4640" name=" Deployment." comment="Deployment - CI-CD fix 2." />
+    <list default="true" id="22401e38-3721-4fd8-b77a-f843b1aa4640" name=" Deployment." comment="Deployment - CI-CD fix with 3.13.">
+      <change beforePath="$PROJECT_DIR$/requirements_docker.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements_docker.txt" afterDir="false" />
+    </list>
     <list id="a7f942ad-3c95-41b0-b4b7-f43fce9ff07e" name="Changes" comment="" />
     <list id="6508d4bf-b1d4-4e03-bff8-2d311d3ea368" name="Env" comment="">
       <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
@@ -523,15 +525,7 @@
       <workItem from="1776853859679" duration="2919000" />
       <workItem from="1776872811128" duration="4005000" />
       <workItem from="1776920761548" duration="3007000" />
-      <workItem from="1776928791459" duration="18908000" />
-    </task>
-    <task id="LOCAL-00133" summary="Cooldown refactoring.">
-      <option name="closed" value="true" />
-      <created>1764093749696</created>
-      <option name="number" value="00133" />
-      <option name="presentableId" value="LOCAL-00133" />
-      <option name="project" value="LOCAL" />
-      <updated>1764093749696</updated>
+      <workItem from="1776928791459" duration="19316000" />
     </task>
     <task id="LOCAL-00134" summary="Runner refactoring.">
       <option name="closed" value="true" />
@@ -901,7 +895,15 @@
       <option name="project" value="LOCAL" />
       <updated>1776949975072</updated>
     </task>
-    <option name="localTasksCounter" value="180" />
+    <task id="LOCAL-00180" summary="Deployment - CI-CD fix with 3.13.">
+      <option name="closed" value="true" />
+      <created>1776950775249</created>
+      <option name="number" value="00180" />
+      <option name="presentableId" value="LOCAL-00180" />
+      <option name="project" value="LOCAL" />
+      <updated>1776950775249</updated>
+    </task>
+    <option name="localTasksCounter" value="181" />
     <option name="createBranch" value="false" />
     <option name="useBranch" value="true" />
     <servers />
@@ -921,7 +923,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fix AS." />
     <MESSAGE value="Deployment. UAT." />
     <MESSAGE value="Update tests." />
     <MESSAGE value="Add test." />
@@ -946,7 +947,8 @@
     <MESSAGE value="Deployment - Dockerfile revert." />
     <MESSAGE value="Deployment - CI-CD fix." />
     <MESSAGE value="Deployment - CI-CD fix 2." />
-    <option name="LAST_COMMIT_MESSAGE" value="Deployment - CI-CD fix 2." />
+    <MESSAGE value="Deployment - CI-CD fix with 3.13." />
+    <option name="LAST_COMMIT_MESSAGE" value="Deployment - CI-CD fix with 3.13." />
   </component>
   <component name="VgoProject">
     <integration-enabled>false</integration-enabled>
