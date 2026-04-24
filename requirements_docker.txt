@@ -3,7 +3,7 @@ requests
 snscrape
 python-dateutil
 python-dotenv
-numpy<2
+numpy
 #pandas
 
 # --- Cloud / Infra ---
@@ -25,4 +25,4 @@ sentencepiece
 transformers>=4.30.0
 peft
 accelerate>=0.26.0
-torch
+torch==2.2.2+cpu
