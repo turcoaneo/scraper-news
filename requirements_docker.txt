@@ -1,31 +1,28 @@
+# --- Core ---
 requests
 snscrape
 python-dateutil
-pytest
-flasgger
-fastapi
-uvicorn
 python-dotenv
-spacy>=3.8.5
-sentencepiece
-peft
-protobuf
-hf_xet
-psutil
-transformers>=4.30.0
+numpy
+pandas
+
+# --- Cloud / Infra ---
 boto3
 botocore
 pydantic
-# torch>=2.0.0
-# CPU-only PyTorch (no CUDA/cuDNN downloads)
-torch==2.2.2+cpu
-numpy<2
-# pandas
-# datasets
-# evaluate
-# scikit-learn
-# accelerate>=0.26.0
-# spacy>=3.8.5
-# anthropic
-# openai
-# flask
+psutil
+protobuf
+hf_xet
+
+# --- API ---
+fastapi
+uvicorn
+flasgger
+
+# --- NLP / Model ---
+spacy>=3.8.5
+sentencepiece
+transformers>=4.30.0
+peft
+accelerate>=0.26.0
+torch>=2.0.0
