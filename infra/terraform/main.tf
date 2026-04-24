@@ -10,10 +10,12 @@ module "vpc" {
   name   = "scraper-news-vpc"
   cidr   = "10.0.0.0/16"
 
-  azs            = ["eu-north-1a", "eu-north-1b"]
-  public_subnets = ["10.0.1.0/24", "10.0.2.0/24"]
+  azs = ["eu-north-1a", "eu-north-1b"]
 
-  enable_nat_gateway = false
+  public_subnets  = ["10.0.1.0/24", "10.0.2.0/24"]
+  private_subnets = ["10.0.3.0/24", "10.0.4.0/24"]
+
+  enable_nat_gateway = true
 }
 
 # -------------------------
@@ -251,7 +253,7 @@ resource "aws_ecs_service" "this" {
   network_configuration {
     subnets          = module.vpc.public_subnets
     security_groups  = [aws_security_group.ecs.id]
-    assign_public_ip = true
+    assign_public_ip = false
   }
 
   load_balancer {
