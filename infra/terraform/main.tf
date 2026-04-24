@@ -252,10 +252,11 @@ resource "aws_ecs_service" "this" {
   launch_type     = "FARGATE"
 
   network_configuration {
-    subnets          = module.vpc.public_subnets
+    subnets          = module.vpc.private_subnets
     security_groups  = [aws_security_group.ecs.id]
     assign_public_ip = false
   }
+
 
   load_balancer {
     target_group_arn = aws_lb_target_group.this.arn
