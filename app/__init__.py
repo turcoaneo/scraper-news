@@ -53,6 +53,14 @@ def create_app() -> FastAPI:
     async def index(request: Request):
         return templates.TemplateResponse("index.html", {"request": request})
 
+    @app.get("/debug-request")
+    async def debug_request(request: Request):
+        return {
+            "state": str(request.state.__dict__),
+            "path_params": request.path_params,
+            "query_params": dict(request.query_params),
+        }
+
     from app.routes.cluster import router as cluster_router
     app.include_router(cluster_router)
 
@@ -62,4 +70,5 @@ def create_app() -> FastAPI:
     async def spa_fallback(path_name: str):
         logger.info("Refresh maybe, fallback for: %s", path_name)
         return FileResponse("templates/index.html")
+
     return app

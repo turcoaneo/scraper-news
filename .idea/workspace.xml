@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="22401e38-3721-4fd8-b77a-f843b1aa4640" name=" Deployment." comment="Deployment - index.">
+    <list default="true" id="22401e38-3721-4fd8-b77a-f843b1aa4640" name=" Deployment." comment="Deployment - index 2.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <list id="a7f942ad-3c95-41b0-b4b7-f43fce9ff07e" name="Changes" comment="" />
@@ -526,15 +526,7 @@
       <workItem from="1776872811128" duration="4005000" />
       <workItem from="1776920761548" duration="3007000" />
       <workItem from="1776928791459" duration="28869000" />
-      <workItem from="1777008753317" duration="25740000" />
-    </task>
-    <task id="LOCAL-00176" summary="Deployment - Dockerfile.">
-      <option name="closed" value="true" />
-      <created>1776948296476</created>
-      <option name="number" value="00176" />
-      <option name="presentableId" value="LOCAL-00176" />
-      <option name="project" value="LOCAL" />
-      <updated>1776948296476</updated>
+      <workItem from="1777008753317" duration="26812000" />
     </task>
     <task id="LOCAL-00177" summary="Deployment - Dockerfile revert.">
       <option name="closed" value="true" />
@@ -904,7 +896,15 @@
       <option name="project" value="LOCAL" />
       <updated>1777039811372</updated>
     </task>
-    <option name="localTasksCounter" value="223" />
+    <task id="LOCAL-00223" summary="Deployment - index 2.">
+      <option name="closed" value="true" />
+      <created>1777043302654</created>
+      <option name="number" value="00223" />
+      <option name="presentableId" value="LOCAL-00223" />
+      <option name="project" value="LOCAL" />
+      <updated>1777043302654</updated>
+    </task>
+    <option name="localTasksCounter" value="224" />
     <option name="createBranch" value="false" />
     <option name="useBranch" value="true" />
     <servers />
@@ -924,7 +924,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Deployment - req 2." />
     <MESSAGE value="Deployment - alpine." />
     <MESSAGE value="Deployment - req original." />
     <MESSAGE value="Deployment - full." />
@@ -949,7 +948,8 @@
     <MESSAGE value="Deployment - private subnets." />
     <MESSAGE value="Deployment - port." />
     <MESSAGE value="Deployment - index." />
-    <option name="LAST_COMMIT_MESSAGE" value="Deployment - index." />
+    <MESSAGE value="Deployment - index 2." />
+    <option name="LAST_COMMIT_MESSAGE" value="Deployment - index 2." />
   </component>
   <component name="VgoProject">
     <integration-enabled>false</integration-enabled>
