@@ -8,11 +8,11 @@ uvicorn
 python-dotenv
 spacy>=3.8.5
 sentencepiece
-peft==0.10.0
+peft
 protobuf
 hf_xet
 psutil
-transformers==4.29.2
+transformers>=4.30.0
 boto3
 botocore
 pydantic
