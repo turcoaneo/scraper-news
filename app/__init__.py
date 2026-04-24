@@ -49,24 +49,30 @@ def create_app() -> FastAPI:
     from fastapi.staticfiles import StaticFiles
     app.mount("/static", StaticFiles(directory="static"), name="static")
 
-    @app.get("/", include_in_schema=False)
-    async def index(request: Request):
-        return templates.TemplateResponse("index.html", {"request": request})
+    from fastapi.responses import FileResponse
 
-    @app.get("/debug-request")
-    async def debug_request(request: Request):
-        return {
-            "state": str(request.state.__dict__),
-            "path_params": request.path_params,
-            "query_params": dict(request.query_params),
-        }
+    @app.get("/")
+    def root():
+        return FileResponse("templates/index.html")
 
-    from fastapi import Response
-
-    @app.get("/__debug_index")
-    async def debug_index():
-        with open("templates/index.html", "r") as f:
-            return Response(f.read(), media_type="text/plain")
+    # @app.get("/", include_in_schema=False)
+    # async def index(request: Request):
+    #     return templates.TemplateResponse("index.html", {"request": request})
+    #
+    # @app.get("/debug-request")
+    # async def debug_request(request: Request):
+    #     return {
+    #         "state": str(request.state.__dict__),
+    #         "path_params": request.path_params,
+    #         "query_params": dict(request.query_params),
+    #     }
+    #
+    # from fastapi import Response
+    #
+    # @app.get("/__debug_index")
+    # async def debug_index():
+    #     with open("templates/index.html", "r") as f:
+    #         return Response(f.read(), media_type="text/plain")
 
     from app.routes.cluster import router as cluster_router
     app.include_router(cluster_router)
