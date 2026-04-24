@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="22401e38-3721-4fd8-b77a-f843b1aa4640" name=" Deployment." comment="Deployment - torch new.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infra/terraform/main.tf" beforeDir="false" afterPath="$PROJECT_DIR$/infra/terraform/main.tf" afterDir="false" />
+    <list default="true" id="22401e38-3721-4fd8-b77a-f843b1aa4640" name=" Deployment." comment="Deployment - new.">
       <change beforePath="$PROJECT_DIR$/requirements_docker.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements_docker.txt" afterDir="false" />
     </list>
     <list id="a7f942ad-3c95-41b0-b4b7-f43fce9ff07e" name="Changes" comment="" />
@@ -528,15 +526,7 @@
       <workItem from="1776872811128" duration="4005000" />
       <workItem from="1776920761548" duration="3007000" />
       <workItem from="1776928791459" duration="28869000" />
-      <workItem from="1777008753317" duration="16941000" />
-    </task>
-    <task id="LOCAL-00168" summary="Deployment.">
-      <option name="closed" value="true" />
-      <created>1765375275584</created>
-      <option name="number" value="00168" />
-      <option name="presentableId" value="LOCAL-00168" />
-      <option name="project" value="LOCAL" />
-      <updated>1765375275585</updated>
+      <workItem from="1777008753317" duration="17574000" />
     </task>
     <task id="LOCAL-00169" summary="Deployment - Terraform.">
       <option name="closed" value="true" />
@@ -906,7 +896,15 @@
       <option name="project" value="LOCAL" />
       <updated>1777026708099</updated>
     </task>
-    <option name="localTasksCounter" value="215" />
+    <task id="LOCAL-00215" summary="Deployment - new.">
+      <option name="closed" value="true" />
+      <created>1777028280383</created>
+      <option name="number" value="00215" />
+      <option name="presentableId" value="LOCAL-00215" />
+      <option name="project" value="LOCAL" />
+      <updated>1777028280383</updated>
+    </task>
+    <option name="localTasksCounter" value="216" />
     <option name="createBranch" value="false" />
     <option name="useBranch" value="true" />
     <servers />
@@ -926,7 +924,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Deployment - pytorch." />
     <MESSAGE value="Deployment - pytorch 2." />
     <MESSAGE value="Deployment - pytorch again." />
     <MESSAGE value="Deployment - role." />
@@ -951,7 +948,8 @@
     <MESSAGE value="Deployment - torch 2.1.2." />
     <MESSAGE value="Deployment - torch removed." />
     <MESSAGE value="Deployment - torch new." />
-    <option name="LAST_COMMIT_MESSAGE" value="Deployment - torch new." />
+    <MESSAGE value="Deployment - new." />
+    <option name="LAST_COMMIT_MESSAGE" value="Deployment - new." />
   </component>
   <component name="VgoProject">
     <integration-enabled>false</integration-enabled>
