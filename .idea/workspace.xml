@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="22401e38-3721-4fd8-b77a-f843b1aa4640" name=" Deployment." comment="Deployment - new config 2.">
-      <change beforePath="$PROJECT_DIR$/requirements_docker.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements_docker.txt" afterDir="false" />
-    </list>
+    <list default="true" id="22401e38-3721-4fd8-b77a-f843b1aa4640" name=" Deployment." comment="Deployment - new config 3." />
     <list id="a7f942ad-3c95-41b0-b4b7-f43fce9ff07e" name="Changes" comment="" />
     <list id="6508d4bf-b1d4-4e03-bff8-2d311d3ea368" name="Env" comment="">
       <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
@@ -526,23 +524,7 @@
       <workItem from="1776872811128" duration="4005000" />
       <workItem from="1776920761548" duration="3007000" />
       <workItem from="1776928791459" duration="28869000" />
-      <workItem from="1777008753317" duration="10793000" />
-    </task>
-    <task id="LOCAL-00161" summary="Update test, article links.">
-      <option name="closed" value="true" />
-      <created>1764311232011</created>
-      <option name="number" value="00161" />
-      <option name="presentableId" value="LOCAL-00161" />
-      <option name="project" value="LOCAL" />
-      <updated>1764311232011</updated>
-    </task>
-    <task id="LOCAL-00162" summary="New summary.">
-      <option name="closed" value="true" />
-      <created>1764324981960</created>
-      <option name="number" value="00162" />
-      <option name="presentableId" value="LOCAL-00162" />
-      <option name="project" value="LOCAL" />
-      <updated>1764324981960</updated>
+      <workItem from="1777008753317" duration="11340000" />
     </task>
     <task id="LOCAL-00163" summary="New T5 model.">
       <option name="closed" value="true" />
@@ -904,7 +886,23 @@
       <option name="project" value="LOCAL" />
       <updated>1777021605232</updated>
     </task>
-    <option name="localTasksCounter" value="208" />
+    <task id="LOCAL-00208" summary="Deployment - no torch.">
+      <option name="closed" value="true" />
+      <created>1777022084510</created>
+      <option name="number" value="00208" />
+      <option name="presentableId" value="LOCAL-00208" />
+      <option name="project" value="LOCAL" />
+      <updated>1777022084510</updated>
+    </task>
+    <task id="LOCAL-00209" summary="Deployment - new config 3.">
+      <option name="closed" value="true" />
+      <created>1777022278610</created>
+      <option name="number" value="00209" />
+      <option name="presentableId" value="LOCAL-00209" />
+      <option name="project" value="LOCAL" />
+      <updated>1777022278610</updated>
+    </task>
+    <option name="localTasksCounter" value="210" />
     <option name="createBranch" value="false" />
     <option name="useBranch" value="true" />
     <servers />
@@ -924,8 +922,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Deployment - CI-CD fix." />
-    <MESSAGE value="Deployment - CI-CD fix 2." />
     <MESSAGE value="Deployment - CI-CD fix with 3.13." />
     <MESSAGE value="Deployment - CI-CD fix with 3.13, again." />
     <MESSAGE value="Deployment - numpy." />
@@ -948,8 +944,10 @@
     <MESSAGE value="Deployment - slim." />
     <MESSAGE value="Deployment - new config docker." />
     <MESSAGE value="Deployment - new config." />
+    <MESSAGE value="Deployment - no torch." />
     <MESSAGE value="Deployment - new config 2." />
-    <option name="LAST_COMMIT_MESSAGE" value="Deployment - new config 2." />
+    <MESSAGE value="Deployment - new config 3." />
+    <option name="LAST_COMMIT_MESSAGE" value="Deployment - new config 3." />
   </component>
   <component name="VgoProject">
     <integration-enabled>false</integration-enabled>
