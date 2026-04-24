@@ -25,4 +25,3 @@ sentencepiece
 transformers>=4.30.0
 peft
 accelerate>=0.26.0
-torch==2.1.2+cpu

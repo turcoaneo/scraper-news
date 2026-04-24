@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="22401e38-3721-4fd8-b77a-f843b1aa4640" name=" Deployment." comment="Deployment - new config torch numpy.">
+    <list default="true" id="22401e38-3721-4fd8-b77a-f843b1aa4640" name=" Deployment." comment="Deployment - torch 2.1.2.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements_docker.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements_docker.txt" afterDir="false" />
     </list>
     <list id="a7f942ad-3c95-41b0-b4b7-f43fce9ff07e" name="Changes" comment="" />
     <list id="6508d4bf-b1d4-4e03-bff8-2d311d3ea368" name="Env" comment="">
@@ -526,15 +527,7 @@
       <workItem from="1776872811128" duration="4005000" />
       <workItem from="1776920761548" duration="3007000" />
       <workItem from="1776928791459" duration="28869000" />
-      <workItem from="1777008753317" duration="12759000" />
-    </task>
-    <task id="LOCAL-00165" summary="Merged summary improved. Deployment. UAT.">
-      <option name="closed" value="true" />
-      <created>1764406626286</created>
-      <option name="number" value="00165" />
-      <option name="presentableId" value="LOCAL-00165" />
-      <option name="project" value="LOCAL" />
-      <updated>1764406626286</updated>
+      <workItem from="1777008753317" duration="13849000" />
     </task>
     <task id="LOCAL-00166" summary="Scroll button. Deployment. UAT.">
       <option name="closed" value="true" />
@@ -904,7 +897,15 @@
       <option name="project" value="LOCAL" />
       <updated>1777023095123</updated>
     </task>
-    <option name="localTasksCounter" value="212" />
+    <task id="LOCAL-00212" summary="Deployment - torch 2.1.2.">
+      <option name="closed" value="true" />
+      <created>1777024201120</created>
+      <option name="number" value="00212" />
+      <option name="presentableId" value="LOCAL-00212" />
+      <option name="project" value="LOCAL" />
+      <updated>1777024201120</updated>
+    </task>
+    <option name="localTasksCounter" value="213" />
     <option name="createBranch" value="false" />
     <option name="useBranch" value="true" />
     <servers />
@@ -924,7 +925,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Deployment - numpy." />
     <MESSAGE value="Deployment - docker ignore 2." />
     <MESSAGE value="Deployment - docker ignore." />
     <MESSAGE value="Deployment - pytorch." />
@@ -947,9 +947,10 @@
     <MESSAGE value="Deployment - no torch." />
     <MESSAGE value="Deployment - new config 2." />
     <MESSAGE value="Deployment - new config 3." />
-    <MESSAGE value="Deployment - new config torch numpy." />
     <MESSAGE value="Deployment - new config torch numpy 2." />
-    <option name="LAST_COMMIT_MESSAGE" value="Deployment - new config torch numpy 2." />
+    <MESSAGE value="Deployment - new config torch numpy." />
+    <MESSAGE value="Deployment - torch 2.1.2." />
+    <option name="LAST_COMMIT_MESSAGE" value="Deployment - torch 2.1.2." />
   </component>
   <component name="VgoProject">
     <integration-enabled>false</integration-enabled>
