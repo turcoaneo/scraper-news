@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="22401e38-3721-4fd8-b77a-f843b1aa4640" name=" Deployment." comment="Deployment - cpu.">
+    <list default="true" id="22401e38-3721-4fd8-b77a-f843b1aa4640" name=" Deployment." comment="Deployment - subnets.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infra/terraform/main.tf" beforeDir="false" afterPath="$PROJECT_DIR$/infra/terraform/main.tf" afterDir="false" />
     </list>
     <list id="a7f942ad-3c95-41b0-b4b7-f43fce9ff07e" name="Changes" comment="" />
     <list id="6508d4bf-b1d4-4e03-bff8-2d311d3ea368" name="Env" comment="">
@@ -527,15 +526,7 @@
       <workItem from="1776872811128" duration="4005000" />
       <workItem from="1776920761548" duration="3007000" />
       <workItem from="1776928791459" duration="28869000" />
-      <workItem from="1777008753317" duration="18622000" />
-    </task>
-    <task id="LOCAL-00171" summary="Deployment - app env.">
-      <option name="closed" value="true" />
-      <created>1776937060147</created>
-      <option name="number" value="00171" />
-      <option name="presentableId" value="LOCAL-00171" />
-      <option name="project" value="LOCAL" />
-      <updated>1776937060147</updated>
+      <workItem from="1777008753317" duration="19589000" />
     </task>
     <task id="LOCAL-00172" summary="Deployment - HF token.">
       <option name="closed" value="true" />
@@ -905,7 +896,15 @@
       <option name="project" value="LOCAL" />
       <updated>1777029010305</updated>
     </task>
-    <option name="localTasksCounter" value="218" />
+    <task id="LOCAL-00218" summary="Deployment - subnets.">
+      <option name="closed" value="true" />
+      <created>1777030590809</created>
+      <option name="number" value="00218" />
+      <option name="presentableId" value="LOCAL-00218" />
+      <option name="project" value="LOCAL" />
+      <updated>1777030590809</updated>
+    </task>
+    <option name="localTasksCounter" value="219" />
     <option name="createBranch" value="false" />
     <option name="useBranch" value="true" />
     <servers />
@@ -925,7 +924,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Deployment - pytorch again." />
     <MESSAGE value="Deployment - role." />
     <MESSAGE value="Deployment - again." />
     <MESSAGE value="Deployment - req." />
@@ -950,7 +948,8 @@
     <MESSAGE value="Deployment - torch new." />
     <MESSAGE value="Deployment - new." />
     <MESSAGE value="Deployment - cpu." />
-    <option name="LAST_COMMIT_MESSAGE" value="Deployment - cpu." />
+    <MESSAGE value="Deployment - subnets." />
+    <option name="LAST_COMMIT_MESSAGE" value="Deployment - subnets." />
   </component>
   <component name="VgoProject">
     <integration-enabled>false</integration-enabled>
