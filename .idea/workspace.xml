@@ -527,15 +527,7 @@
       <workItem from="1776872811128" duration="4005000" />
       <workItem from="1776920761548" duration="3007000" />
       <workItem from="1776928791459" duration="28869000" />
-      <workItem from="1777008753317" duration="28831000" />
-    </task>
-    <task id="LOCAL-00178" summary="Deployment - CI-CD fix.">
-      <option name="closed" value="true" />
-      <created>1776949444650</created>
-      <option name="number" value="00178" />
-      <option name="presentableId" value="LOCAL-00178" />
-      <option name="project" value="LOCAL" />
-      <updated>1776949444650</updated>
+      <workItem from="1777008753317" duration="29615000" />
     </task>
     <task id="LOCAL-00179" summary="Deployment - CI-CD fix 2.">
       <option name="closed" value="true" />
@@ -905,7 +897,15 @@
       <option name="project" value="LOCAL" />
       <updated>1777047094378</updated>
     </task>
-    <option name="localTasksCounter" value="225" />
+    <task id="LOCAL-00225" summary="Deployment - debug.">
+      <option name="closed" value="true" />
+      <created>1777060485928</created>
+      <option name="number" value="00225" />
+      <option name="presentableId" value="LOCAL-00225" />
+      <option name="project" value="LOCAL" />
+      <updated>1777060485928</updated>
+    </task>
+    <option name="localTasksCounter" value="226" />
     <option name="createBranch" value="false" />
     <option name="useBranch" value="true" />
     <servers />
