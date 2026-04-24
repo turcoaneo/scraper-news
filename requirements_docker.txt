@@ -3,7 +3,7 @@ requests
 snscrape
 python-dateutil
 python-dotenv
-numpy
+numpy<2
 #pandas
 
 # --- Cloud / Infra ---

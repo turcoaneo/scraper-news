@@ -107,10 +107,10 @@ resource "aws_lb_target_group" "this" {
 
   health_check {
     path                = "/health"
-    interval            = 30
-    timeout             = 10
-    healthy_threshold   = 5
-    unhealthy_threshold = 5
+    interval            = 300
+    timeout             = 120
+    healthy_threshold   = 2
+    unhealthy_threshold = 10
   }
 
 }
@@ -258,11 +258,6 @@ resource "aws_ecs_service" "this" {
     target_group_arn = aws_lb_target_group.this.arn
     container_name   = var.container_name
     container_port   = var.container_port
-  }
-
-  deployment_circuit_breaker {
-    enable   = true
-    rollback = true
   }
 
   health_check_grace_period_seconds = 120
