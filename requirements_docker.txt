@@ -22,6 +22,7 @@ flasgger
 # --- NLP / Model ---
 spacy>=3.8.5
 sentencepiece
-transformers>=4.30.0
 peft
 accelerate>=0.26.0
+torch==2.1.2+cpu
+transformers==4.36.2
