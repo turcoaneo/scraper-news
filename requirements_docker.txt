@@ -4,7 +4,7 @@ snscrape
 python-dateutil
 python-dotenv
 numpy
-pandas
+#pandas
 
 # --- Cloud / Infra ---
 boto3

@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="22401e38-3721-4fd8-b77a-f843b1aa4640" name=" Deployment." comment="Deployment - role.">
+    <list default="true" id="22401e38-3721-4fd8-b77a-f843b1aa4640" name=" Deployment." comment="Deployment - new config.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <list id="a7f942ad-3c95-41b0-b4b7-f43fce9ff07e" name="Changes" comment="" />
@@ -526,119 +526,7 @@
       <workItem from="1776872811128" duration="4005000" />
       <workItem from="1776920761548" duration="3007000" />
       <workItem from="1776928791459" duration="28869000" />
-      <workItem from="1777008753317" duration="518000" />
-    </task>
-    <task id="LOCAL-00146" summary="Iam timestamp.">
-      <option name="closed" value="true" />
-      <created>1764179193205</created>
-      <option name="number" value="00146" />
-      <option name="presentableId" value="LOCAL-00146" />
-      <option name="project" value="LOCAL" />
-      <updated>1764179193205</updated>
-    </task>
-    <task id="LOCAL-00147" summary="Iam timestamp. Tests.">
-      <option name="closed" value="true" />
-      <created>1764179834819</created>
-      <option name="number" value="00147" />
-      <option name="presentableId" value="LOCAL-00147" />
-      <option name="project" value="LOCAL" />
-      <updated>1764179834819</updated>
-    </task>
-    <task id="LOCAL-00148" summary="CSS.">
-      <option name="closed" value="true" />
-      <created>1764183296768</created>
-      <option name="number" value="00148" />
-      <option name="presentableId" value="LOCAL-00148" />
-      <option name="project" value="LOCAL" />
-      <updated>1764183296768</updated>
-    </task>
-    <task id="LOCAL-00149" summary="UAT.">
-      <option name="closed" value="true" />
-      <created>1764183369644</created>
-      <option name="number" value="00149" />
-      <option name="presentableId" value="LOCAL-00149" />
-      <option name="project" value="LOCAL" />
-      <updated>1764183369644</updated>
-    </task>
-    <task id="LOCAL-00150" summary="Eurosport.">
-      <option name="closed" value="true" />
-      <created>1764185928028</created>
-      <option name="number" value="00150" />
-      <option name="presentableId" value="LOCAL-00150" />
-      <option name="project" value="LOCAL" />
-      <updated>1764185928028</updated>
-    </task>
-    <task id="LOCAL-00151" summary="Deployment. Local.">
-      <option name="closed" value="true" />
-      <created>1764186322486</created>
-      <option name="number" value="00151" />
-      <option name="presentableId" value="LOCAL-00151" />
-      <option name="project" value="LOCAL" />
-      <updated>1764186322486</updated>
-    </task>
-    <task id="LOCAL-00152" summary="Deployment. UAT.">
-      <option name="closed" value="true" />
-      <created>1764186348794</created>
-      <option name="number" value="00152" />
-      <option name="presentableId" value="LOCAL-00152" />
-      <option name="project" value="LOCAL" />
-      <updated>1764186348794</updated>
-    </task>
-    <task id="LOCAL-00153" summary="Deployment. UAT. Fix CSS.">
-      <option name="closed" value="true" />
-      <created>1764226862614</created>
-      <option name="number" value="00153" />
-      <option name="presentableId" value="LOCAL-00153" />
-      <option name="project" value="LOCAL" />
-      <updated>1764226862614</updated>
-    </task>
-    <task id="LOCAL-00154" summary="Fix Eurosport.">
-      <option name="closed" value="true" />
-      <created>1764231331143</created>
-      <option name="number" value="00154" />
-      <option name="presentableId" value="LOCAL-00154" />
-      <option name="project" value="LOCAL" />
-      <updated>1764231331143</updated>
-    </task>
-    <task id="LOCAL-00155" summary="Fix Eurosport, again.">
-      <option name="closed" value="true" />
-      <created>1764231598985</created>
-      <option name="number" value="00155" />
-      <option name="presentableId" value="LOCAL-00155" />
-      <option name="project" value="LOCAL" />
-      <updated>1764231598985</updated>
-    </task>
-    <task id="LOCAL-00156" summary="Fix AS.">
-      <option name="closed" value="true" />
-      <created>1764246195685</created>
-      <option name="number" value="00156" />
-      <option name="presentableId" value="LOCAL-00156" />
-      <option name="project" value="LOCAL" />
-      <updated>1764246195685</updated>
-    </task>
-    <task id="LOCAL-00157" summary="Deployment. UAT.">
-      <option name="closed" value="true" />
-      <created>1764254588074</created>
-      <option name="number" value="00157" />
-      <option name="presentableId" value="LOCAL-00157" />
-      <option name="project" value="LOCAL" />
-      <updated>1764254588074</updated>
-    </task>
-    <task id="LOCAL-00158" summary="Add test.">
-      <option name="closed" value="true" />
-      <created>1764262409650</created>
-      <option name="number" value="00158" />
-      <option name="presentableId" value="LOCAL-00158" />
-      <option name="project" value="LOCAL" />
-      <updated>1764262409650</updated>
-    </task>
-    <task id="LOCAL-00159" summary="Update tests.">
-      <option name="closed" value="true" />
-      <created>1764262654920</created>
-      <option name="number" value="00159" />
-      <option name="presentableId" value="LOCAL-00159" />
-      <option name="project" value="LOCAL" />
-      <updated>1764262654920</updated>
+      <workItem from="1777008753317" duration="10216000" />
     </task>
     <task id="LOCAL-00160" summary="Add test, article links.">
       <option name="closed" value="true" />
@@ -904,7 +792,119 @@
       <option name="project" value="LOCAL" />
       <updated>1776965467404</updated>
     </task>
-    <option name="localTasksCounter" value="193" />
+    <task id="LOCAL-00193" summary="Deployment - again.">
+      <option name="closed" value="true" />
+      <created>1777009398493</created>
+      <option name="number" value="00193" />
+      <option name="presentableId" value="LOCAL-00193" />
+      <option name="project" value="LOCAL" />
+      <updated>1777009398493</updated>
+    </task>
+    <task id="LOCAL-00194" summary="Deployment - again.">
+      <option name="closed" value="true" />
+      <created>1777009461509</created>
+      <option name="number" value="00194" />
+      <option name="presentableId" value="LOCAL-00194" />
+      <option name="project" value="LOCAL" />
+      <updated>1777009461509</updated>
+    </task>
+    <task id="LOCAL-00195" summary="Deployment - req.">
+      <option name="closed" value="true" />
+      <created>1777010627474</created>
+      <option name="number" value="00195" />
+      <option name="presentableId" value="LOCAL-00195" />
+      <option name="project" value="LOCAL" />
+      <updated>1777010627474</updated>
+    </task>
+    <task id="LOCAL-00196" summary="Deployment - req 2.">
+      <option name="closed" value="true" />
+      <created>1777011040007</created>
+      <option name="number" value="00196" />
+      <option name="presentableId" value="LOCAL-00196" />
+      <option name="project" value="LOCAL" />
+      <updated>1777011040007</updated>
+    </task>
+    <task id="LOCAL-00197" summary="Deployment - docker 2.">
+      <option name="closed" value="true" />
+      <created>1777011246673</created>
+      <option name="number" value="00197" />
+      <option name="presentableId" value="LOCAL-00197" />
+      <option name="project" value="LOCAL" />
+      <updated>1777011246673</updated>
+    </task>
+    <task id="LOCAL-00198" summary="Deployment - req original.">
+      <option name="closed" value="true" />
+      <created>1777011511340</created>
+      <option name="number" value="00198" />
+      <option name="presentableId" value="LOCAL-00198" />
+      <option name="project" value="LOCAL" />
+      <updated>1777011511340</updated>
+    </task>
+    <task id="LOCAL-00199" summary="Deployment - alpine.">
+      <option name="closed" value="true" />
+      <created>1777012219285</created>
+      <option name="number" value="00199" />
+      <option name="presentableId" value="LOCAL-00199" />
+      <option name="project" value="LOCAL" />
+      <updated>1777012219285</updated>
+    </task>
+    <task id="LOCAL-00200" summary="Deployment - full.">
+      <option name="closed" value="true" />
+      <created>1777012420614</created>
+      <option name="number" value="00200" />
+      <option name="presentableId" value="LOCAL-00200" />
+      <option name="project" value="LOCAL" />
+      <updated>1777012420614</updated>
+    </task>
+    <task id="LOCAL-00201" summary="Deployment - bullseye.">
+      <option name="closed" value="true" />
+      <created>1777013886789</created>
+      <option name="number" value="00201" />
+      <option name="presentableId" value="LOCAL-00201" />
+      <option name="project" value="LOCAL" />
+      <updated>1777013886789</updated>
+    </task>
+    <task id="LOCAL-00202" summary="Deployment - req simple.">
+      <option name="closed" value="true" />
+      <created>1777014789484</created>
+      <option name="number" value="00202" />
+      <option name="presentableId" value="LOCAL-00202" />
+      <option name="project" value="LOCAL" />
+      <updated>1777014789484</updated>
+    </task>
+    <task id="LOCAL-00203" summary="Deployment - ignore.">
+      <option name="closed" value="true" />
+      <created>1777015041760</created>
+      <option name="number" value="00203" />
+      <option name="presentableId" value="LOCAL-00203" />
+      <option name="project" value="LOCAL" />
+      <updated>1777015041760</updated>
+    </task>
+    <task id="LOCAL-00204" summary="Deployment - slim.">
+      <option name="closed" value="true" />
+      <created>1777015625806</created>
+      <option name="number" value="00204" />
+      <option name="presentableId" value="LOCAL-00204" />
+      <option name="project" value="LOCAL" />
+      <updated>1777015625806</updated>
+    </task>
+    <task id="LOCAL-00205" summary="Deployment - new config.">
+      <option name="closed" value="true" />
+      <created>1777020154512</created>
+      <option name="number" value="00205" />
+      <option name="presentableId" value="LOCAL-00205" />
+      <option name="project" value="LOCAL" />
+      <updated>1777020154512</updated>
+    </task>
+    <task id="LOCAL-00206" summary="Deployment - new config docker.">
+      <option name="closed" value="true" />
+      <created>1777020457084</created>
+      <option name="number" value="00206" />
+      <option name="presentableId" value="LOCAL-00206" />
+      <option name="project" value="LOCAL" />
+      <updated>1777020457084</updated>
+    </task>
+    <option name="localTasksCounter" value="207" />
     <option name="createBranch" value="false" />
     <option name="useBranch" value="true" />
     <servers />
@@ -924,17 +924,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Readme fix, docker." />
-    <MESSAGE value="Go-changes" />
-    <MESSAGE value="Deployment." />
-    <MESSAGE value="Deployment - Terraform." />
-    <MESSAGE value="Deployment - new URL." />
-    <MESSAGE value="Deployment - app env." />
-    <MESSAGE value="Deployment - HF token." />
-    <MESSAGE value="Deployment - HF token 2." />
-    <MESSAGE value="Deployment - Cpu." />
-    <MESSAGE value="Deployment - Token." />
-    <MESSAGE value="Deployment - Dockerfile." />
     <MESSAGE value="Deployment - Dockerfile revert." />
     <MESSAGE value="Deployment - CI-CD fix." />
     <MESSAGE value="Deployment - CI-CD fix 2." />
@@ -943,13 +932,24 @@
     <MESSAGE value="Deployment - numpy." />
     <MESSAGE value="Deployment - docker ignore 2." />
     <MESSAGE value="Deployment - docker ignore." />
-    <MESSAGE value="Deployment - req." />
     <MESSAGE value="Deployment - pytorch." />
     <MESSAGE value="Deployment - pytorch 2." />
     <MESSAGE value="Deployment - pytorch again." />
-    <MESSAGE value="Deployment - again." />
     <MESSAGE value="Deployment - role." />
-    <option name="LAST_COMMIT_MESSAGE" value="Deployment - role." />
+    <MESSAGE value="Deployment - again." />
+    <MESSAGE value="Deployment - req." />
+    <MESSAGE value="Deployment - docker 2." />
+    <MESSAGE value="Deployment - req 2." />
+    <MESSAGE value="Deployment - alpine." />
+    <MESSAGE value="Deployment - req original." />
+    <MESSAGE value="Deployment - full." />
+    <MESSAGE value="Deployment - req simple." />
+    <MESSAGE value="Deployment - bullseye." />
+    <MESSAGE value="Deployment - ignore." />
+    <MESSAGE value="Deployment - slim." />
+    <MESSAGE value="Deployment - new config." />
+    <MESSAGE value="Deployment - new config docker." />
+    <option name="LAST_COMMIT_MESSAGE" value="Deployment - new config docker." />
   </component>
   <component name="VgoProject">
     <integration-enabled>false</integration-enabled>
