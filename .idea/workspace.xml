@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="22401e38-3721-4fd8-b77a-f843b1aa4640" name=" Deployment." comment="Deployment - debug.">
+    <list default="true" id="22401e38-3721-4fd8-b77a-f843b1aa4640" name=" Deployment." comment="Deployment - main TF.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/infra/terraform/main.tf" beforeDir="false" afterPath="$PROJECT_DIR$/infra/terraform/main.tf" afterDir="false" />
     </list>
     <list id="a7f942ad-3c95-41b0-b4b7-f43fce9ff07e" name="Changes" comment="" />
@@ -527,15 +528,7 @@
       <workItem from="1776872811128" duration="4005000" />
       <workItem from="1776920761548" duration="3007000" />
       <workItem from="1776928791459" duration="28869000" />
-      <workItem from="1777008753317" duration="29615000" />
-    </task>
-    <task id="LOCAL-00179" summary="Deployment - CI-CD fix 2.">
-      <option name="closed" value="true" />
-      <created>1776949975072</created>
-      <option name="number" value="00179" />
-      <option name="presentableId" value="LOCAL-00179" />
-      <option name="project" value="LOCAL" />
-      <updated>1776949975072</updated>
+      <workItem from="1777008753317" duration="31424000" />
     </task>
     <task id="LOCAL-00180" summary="Deployment - CI-CD fix with 3.13.">
       <option name="closed" value="true" />
@@ -905,7 +898,15 @@
       <option name="project" value="LOCAL" />
       <updated>1777060485928</updated>
     </task>
-    <option name="localTasksCounter" value="226" />
+    <task id="LOCAL-00226" summary="Deployment - main TF.">
+      <option name="closed" value="true" />
+      <created>1777061207621</created>
+      <option name="number" value="00226" />
+      <option name="presentableId" value="LOCAL-00226" />
+      <option name="project" value="LOCAL" />
+      <updated>1777061207621</updated>
+    </task>
+    <option name="localTasksCounter" value="227" />
     <option name="createBranch" value="false" />
     <option name="useBranch" value="true" />
     <servers />
@@ -925,7 +926,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Deployment - req original." />
     <MESSAGE value="Deployment - full." />
     <MESSAGE value="Deployment - req simple." />
     <MESSAGE value="Deployment - bullseye." />
@@ -950,7 +950,8 @@
     <MESSAGE value="Deployment - index." />
     <MESSAGE value="Deployment - index 2." />
     <MESSAGE value="Deployment - debug." />
-    <option name="LAST_COMMIT_MESSAGE" value="Deployment - debug." />
+    <MESSAGE value="Deployment - main TF." />
+    <option name="LAST_COMMIT_MESSAGE" value="Deployment - main TF." />
   </component>
   <component name="VgoProject">
     <integration-enabled>false</integration-enabled>

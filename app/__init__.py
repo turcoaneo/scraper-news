@@ -61,6 +61,13 @@ def create_app() -> FastAPI:
             "query_params": dict(request.query_params),
         }
 
+    from fastapi import Response
+
+    @app.get("/__debug_index")
+    async def debug_index():
+        with open("templates/index.html", "r") as f:
+            return Response(f.read(), media_type="text/plain")
+
     from app.routes.cluster import router as cluster_router
     app.include_router(cluster_router)
 
